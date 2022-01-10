@@ -1,7 +1,7 @@
 # LING 567 - Bardi
 ## Hanieh Nezakati + Tara Wueger
 
-Type sth
+Type testing
 
 ```
 git add .
@@ -10,3 +10,4 @@ git push
 
 git pull
 ```
+
