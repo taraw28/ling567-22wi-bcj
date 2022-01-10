@@ -1,1 +1,2 @@
-# ling567-22wi-bcj
+# LING 567 - Bardi
+## Hanieh Nezakati + Tara Wueger
