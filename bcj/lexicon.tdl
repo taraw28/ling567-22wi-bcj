@@ -1,0 +1,634 @@
+;;; -*- Mode: TDL; Coding: utf-8 -*-
+;;; Nouns
+
+gool := noun2-noun-lex &
+  [ STEM < "gool" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_father_n_rel" ].
+
+larda := noun2-noun-lex &
+  [ STEM < "larda" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_bottom_n_rel" ].
+
+niiminiimi := noun2-noun-lex &
+  [ STEM < "niiminiimi" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_sand.soakage_n_rel" ].
+
+booroó́ := noun2-noun-lex &
+  [ STEM < "booroó́" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_place_n_rel" ].
+
+niimbal := noun2-noun-lex &
+  [ STEM < "niimbal" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_foot_n_rel" ].
+
+bardi := noun2-noun-lex &
+  [ STEM < "bardi" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_bardi_n_rel" ].
+
+nilngga := noun2-noun-lex &
+  [ STEM < "nilngga" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_red.snapper_n_rel" ].
+
+̀̀goorlil := noun2-noun-lex &
+  [ STEM < "̀̀goorlil" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_turtle_n_rel" ].
+
+iwanyoo := noun2-noun-lex &
+  [ STEM < "iwanyoo" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_sunday.island_n_rel" ].
+
+anggi := noun2-noun-lex &
+  [ STEM < "anggi" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_what_n_rel" ].
+
+niyangala := noun2-noun-lex &
+  [ STEM < "niyangala" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_tongue_n_rel" ].
+
+aamba := noun2-noun-lex &
+  [ STEM < "aamba" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_man_n_rel" ].
+
+joolganmolon := noun2-noun-lex &
+  [ STEM < "joolganmolon" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_chasing.turtles_n_rel" ].
+
+barni_1 := noun2-noun-lex &
+  [ STEM < "barni" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_this.way_n_rel" ].
+
+booroo := noun2-noun-lex &
+  [ STEM < "booroo" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_country-or-place_n_rel" ].
+
+oolá́ := noun2-noun-lex &
+  [ STEM < "oolá́" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_water_n_rel" ].
+
+garrjadiny := noun2-noun-lex &
+  [ STEM < "garrjadiny" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_g_n_rel" ].
+
+jard := noun2-noun-lex &
+  [ STEM < "jard" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_put.weight_n_rel" ].
+
+gaanyga := noun2-noun-lex &
+  [ STEM < "gaanyga" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_mainland_n_rel" ].
+
+barrgan := noun2-noun-lex &
+  [ STEM < "barrgan" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_cold.season_n_rel" ].
+
+boolgoon := noun2-noun-lex &
+  [ STEM < "boolgoon" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_b_n_rel" ].
+
+oorany := noun2-noun-lex &
+  [ STEM < "oorany" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_woman_n_rel" ].
+
+goowidi := noun2-noun-lex &
+  [ STEM < "goowidi" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_month_n_rel" ].
+
+ninga := noun2-noun-lex &
+  [ STEM < "ninga" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_name_n_rel" ].
+
+nankarr := noun2-noun-lex &
+  [ STEM < "nankarr" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_point.the.shore_n_rel" ].
+
+nyoolnyool := noun2-noun-lex &
+  [ STEM < "nyoolnyool" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_nyulnyul_n_rel" ].
+
+ngarrigoon := noun2-noun-lex &
+  [ STEM < "ngarrigoon" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_ng_n_rel" ].
+
+jawanan := noun2-noun-lex &
+  [ STEM < "jawanan" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_j_n_rel" ].
+
+baawa := noun2-noun-lex &
+  [ STEM < "baawa" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_child_n_rel" ].
+
+ambooriny := noun2-noun-lex &
+  [ STEM < "ambooriny" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_people_n_rel" ].
+
+biidin := noun2-noun-lex &
+  [ STEM < "biidin" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_fresh.water_n_rel" ].
+
+boowa := noun2-noun-lex &
+  [ STEM < "boowa" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_inedible.food_n_rel" ].
+
+riiwa := noun2-noun-lex &
+  [ STEM < "riiwa" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_hole_n_rel" ].
+
+goorlil := noun2-noun-lex &
+  [ STEM < "goorlil" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_turtle_n_rel" ].
+
+niimarl := noun2-noun-lex &
+  [ STEM < "niimarl" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_hand_n_rel" ].
+
+alalgoord := noun2-noun-lex &
+  [ STEM < "alalgoord" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_wave_n_rel" ].
+
+morr := noun2-noun-lex &
+  [ STEM < "morr" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_way_n_rel" ].
+
+galaloong := noun2-noun-lex &
+  [ STEM < "galaloong" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_g_n_rel" ].
+
+̀̀aamba := noun2-noun-lex &
+  [ STEM < "̀̀aamba" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_man_n_rel" ].
+
+aalga := noun2-noun-lex &
+  [ STEM < "aalga" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_day-or-sun_n_rel" ].
+
+garrin := noun2-noun-lex &
+  [ STEM < "garrin" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_hill_n_rel" ].
+
+ngamari := noun2-noun-lex &
+  [ STEM < "ngamari" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_tobacco_n_rel" ].
+
+niimidi := noun2-noun-lex &
+  [ STEM < "niimidi" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_knee_n_rel" ].
+
+ardiyooloon := noun2-noun-lex &
+  [ STEM < "ardiyooloon" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_one.arm.point_n_rel" ].
+
+bardoon := noun2-noun-lex &
+  [ STEM < "bardoon" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_skin_n_rel" ].
+
+ngalngoorarra := noun2-noun-lex &
+  [ STEM < "ngalngoorarra" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_ng_n_rel" ].
+
+jalan := noun2-noun-lex &
+  [ STEM < "jalan" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_tallon.island_n_rel" ].
+
+oola_1 := noun2-noun-lex &
+  [ STEM < "oola" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_water-or-cloud_n_rel" ].
+
+booloonggooloonggoo := noun2-noun-lex &
+  [ STEM < "booloonggooloonggoo" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_b_n_rel" ].
+
+wiliwili := noun2-noun-lex &
+  [ STEM < "wiliwili" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_fishing.line_n_rel" ].
+
+aarli := noun2-noun-lex &
+  [ STEM < "aarli" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_fish_n_rel" ].
+
+niimarlga := noun2-noun-lex &
+  [ STEM < "niimarlga" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_by.himself_n_rel" ].
+
+̀̀oomban := noun2-noun-lex &
+  [ STEM < "̀̀oomban" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_fresh.water.soak_n_rel" ].
+
+iniinalang := noun2-noun-lex &
+  [ STEM < "iniinalang" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_islands_n_rel" ].
+
+̀̀oola := noun2-noun-lex &
+  [ STEM < "̀̀oola" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_water_n_rel" ].
+
+nirirrjarr := noun2-noun-lex &
+  [ STEM < "nirirrjarr" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_along.the.edge_n_rel" ].
+
+aarlimay := noun2-noun-lex &
+  [ STEM < "aarlimay" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_food_n_rel" ].
+
+gaanyji := noun2-noun-lex &
+  [ STEM < "gaanyji" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_bone_n_rel" ].
+
+gooljoo := noun2-noun-lex &
+  [ STEM < "gooljoo" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_grass_n_rel" ].
+
+barnoorarra := noun2-noun-lex &
+  [ STEM < "barnoorarra" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_northerners_n_rel" ].
+
+jawal := noun2-noun-lex &
+  [ STEM < "jawal" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_story_n_rel" ].
+
+goowidí́ := noun2-noun-lex &
+  [ STEM < "goowidí́" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_moon_n_rel" ].
+
+gooloo := noun2-noun-lex &
+  [ STEM < "gooloo" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_father_n_rel" ].
+
+goolamana := noun2-noun-lex &
+  [ STEM < "goolamana" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_g_n_rel" ].
+
+ambooriný́ := noun2-noun-lex &
+  [ STEM < "ambooriný́" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_people_n_rel" ].
+
+gaalwa := noun2-noun-lex &
+  [ STEM < "gaalwa" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_raft_n_rel" ].
+
+irrol := noun2-noun-lex &
+  [ STEM < "irrol" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_spear_n_rel" ].
+
+̀̀barnanggarr := noun2-noun-lex &
+  [ STEM < "̀̀barnanggarr" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_today_n_rel" ].
+
+goolinarr := noun2-noun-lex &
+  [ STEM < "goolinarr" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_g_n_rel" ].
+
+mooyoon := noun2-noun-lex &
+  [ STEM < "mooyoon" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_morning_n_rel" ].
+
+mirridiidi := noun2-noun-lex &
+  [ STEM < "mirridiidi" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_little.people_n_rel" ].
+
+goolboo := noun2-noun-lex &
+  [ STEM < "goolboo" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_rock_n_rel" ].
+
+gaarra := noun2-noun-lex &
+  [ STEM < "gaarra" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_tide-or-sea-or-salt.water_n_rel" ].
+
+niinga := noun2-noun-lex &
+  [ STEM < "niinga" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_name_n_rel" ].
+
+irrngirrngi := noun2-noun-lex &
+  [ STEM < "irrngirrngi" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_names_n_rel" ].
+
+alalgoordoo := noun2-noun-lex &
+  [ STEM < "alalgoordoo" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_wave_n_rel" ].
+
+jayirri := noun2-noun-lex &
+  [ STEM < "jayirri" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_jackson.island_n_rel" ].
+
+iwany := noun2-noun-lex &
+  [ STEM < "iwany" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_sunday.island_n_rel" ].
+
+nyoonoo := noun2-noun-lex &
+  [ STEM < "nyoonoo" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_other.side_n_rel" ].
+
+jooloom := noun2-noun-lex &
+  [ STEM < "jooloom" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_middle.island_n_rel" ].
+
+aarl := noun2-noun-lex &
+  [ STEM < "aarl" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_fish_n_rel" ].
+
+ayin := noun2-noun-lex &
+  [ STEM < "ayin" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_fish.trap_n_rel" ].
+
+̀̀aarli := noun2-noun-lex &
+  [ STEM < "̀̀aarli" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_fish_n_rel" ].
+
+gardiny := noun2-noun-lex &
+  [ STEM < "gardiny" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_swan.island_n_rel" ].
+
+nyanbirroonony := noun2-noun-lex &
+  [ STEM < "nyanbirroonony" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_other.side_n_rel" ].
+
+̀̀mayi := noun2-noun-lex &
+  [ STEM < "̀̀mayi" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_plant.food_n_rel" ].
+
+marnany := noun2-noun-lex &
+  [ STEM < "marnany" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_reef_n_rel" ].
+
+balalbalalngarr := noun2-noun-lex &
+  [ STEM < "balalbalalngarr" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_b_n_rel" ].
+
+ngaanka := noun2-noun-lex &
+  [ STEM < "ngaanka" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_language_n_rel" ].
+
+jamarda := noun2-noun-lex &
+  [ STEM < "jamarda" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_coming.this.way_n_rel" ].
+
+miroorroo := noun2-noun-lex &
+  [ STEM < "miroorroo" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_powerful.place_n_rel" ].
+
+nyarr := noun3-noun-lex &
+  [ STEM < "nyarr" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_comit_n_rel" ].
+
+marr := noun7-noun-lex &
+  [ STEM < "marr" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_sembl_n_rel" ].
+
+nan := noun11-noun-lex &
+  [ STEM < "nan" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_times_n_rel" ].
+
+;;; Adjectives
+
+;;; Case-marking adpositions
+
+in-marker_rooban := case-marking-adp-lex &
+  [ STEM < "rooban" >,
+    SYNSEM.LOCAL [ CONT [ HOOK [ ICONS-KEY.IARG1 #clause,
+                                 CLAUSE-KEY #clause ],
+                          ICONS.LIST < > ],
+                   CAT.HEAD [ CASE in,
+                              CASE-MARKED + ] ] ].
+
+;;; Verbs
+
+n_1 := verb1-verb-lex &
+  [ STEM < "n" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_cont_v_rel" ].
+
+ny := verb2-verb-lex &
+  [ STEM < "ny" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_catch_v_rel" ].
+
+jala := verb2-verb-lex &
+  [ STEM < "jala" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_see_v_rel" ].
+
+minjal := verb2-verb-lex &
+  [ STEM < "minjal" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_wait.for_v_rel" ].
+
+jilngi := verb2-verb-lex &
+  [ STEM < "jilngi" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_tell_v_rel" ].
+
+goondoorroo := verb2-verb-lex &
+  [ STEM < "goondoorroo" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_cross.over_v_rel" ].
+
+na := verb3-verb-lex &
+  [ STEM < "na" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_rem.pst_v_rel" ].
+
+ń́ := verb4-verb-lex &
+  [ STEM < "ń́" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_cont_v_rel" ].
+
+ya := verb4-verb-lex &
+  [ STEM < "ya" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_fut_v_rel" ].
+
+goodil := verb7-verb-lex &
+  [ STEM < "goodil" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_turn_v_rel" ].
+
+irr_1 := verb7-verb-lex &
+  [ STEM < "irr" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_do_v_rel" ].
+
+oola_2 := verb7-verb-lex &
+  [ STEM < "oola" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_rain_v_rel" ].
+
+jiiny := verb7-verb-lex &
+  [ STEM < "jiiny" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_point_v_rel" ].
+
+milimil := verb7-verb-lex &
+  [ STEM < "milimil" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_write_v_rel" ].
+
+yoorr := verb7-verb-lex &
+  [ STEM < "yoorr" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_come.down_v_rel" ].
+
+daab := verb7-verb-lex &
+  [ STEM < "daab" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_climb.up-or-climb-or-go.ashore_v_rel" ].
+
+goondoorr := verb7-verb-lex &
+  [ STEM < "goondoorr" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_get.giddy.and.die_v_rel" ].
+
+anarrá́ := verb7-verb-lex &
+  [ STEM < "anarrá́" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_pick.up_v_rel" ].
+
+̀̀daab := verb7-verb-lex &
+  [ STEM < "̀̀daab" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_climb.up_v_rel" ].
+
+jirrjirr := verb7-verb-lex &
+  [ STEM < "jirrjirr" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_stand.up-or-stand_v_rel" ].
+
+lagal := verb7-verb-lex &
+  [ STEM < "lagal" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_climb_v_rel" ].
+
+nganyjal := verb7-verb-lex &
+  [ STEM < "nganyjal" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_we.don_v_rel" ].
+
+darral := verb7-verb-lex &
+  [ STEM < "darral" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_come.out_v_rel" ].
+
+rawin := verb7-verb-lex &
+  [ STEM < "rawin" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_go.as.group_v_rel" ].
+
+roowil_1 := verb7-verb-lex &
+  [ STEM < "roowil" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_walk_v_rel" ].
+
+gir := verb7-verb-lex &
+  [ STEM < "gir" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_stay_v_rel" ].
+
+joobool := verb7-verb-lex &
+  [ STEM < "joobool" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_splash-or-swim_v_rel" ].
+
+daag := verb7-verb-lex &
+  [ STEM < "daag" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_sleep_v_rel" ].
+
+barnkarda := verb7-verb-lex &
+  [ STEM < "barnkarda" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_it_v_rel" ].
+
+darr := verb7-verb-lex &
+  [ STEM < "darr" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_come_v_rel" ].
+
+arr := verb7-verb-lex &
+  [ STEM < "arr" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_go_v_rel" ].
+
+wiinyja := verb7-verb-lex &
+  [ STEM < "wiinyja" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_fill.up_v_rel" ].
+
+irrgoordoo := verb7-verb-lex &
+  [ STEM < "irrgoordoo" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_t.know.how.many_v_rel" ].
+
+ningarrarda := verb7-verb-lex &
+  [ STEM < "ningarrarda" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_believe_v_rel" ].
+
+moonggoon := verb8-verb-lex &
+  [ STEM < "moonggoon" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_know_v_rel" ].
+
+rli := verb9-verb-lex &
+  [ STEM < "rli" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_eat_v_rel" ].
+
+ng_1 := verb10-verb-lex &
+  [ STEM < "ng" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_appl_v_rel" ].
+
+rn := verb11-verb-lex &
+  [ STEM < "rn" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_cont_v_rel" ].
+
+n_2 := verb13-verb-lex &
+  [ STEM < "n" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_rem.pst_v_rel" ].
+
+ná́ := verb15-verb-lex &
+  [ STEM < "ná́" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_rem.pst_v_rel" ].
+
+oong := verb16-verb-lex &
+  [ STEM < "oong" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_ins_v_rel" ].
+
+nga := verb17-verb-lex &
+  [ STEM < "nga" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_name_v_rel" ].
+
+ng_2 := verb18-verb-lex &
+  [ STEM < "ng" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_ins_v_rel" ].
+
+iidi := verb20-verb-lex &
+  [ STEM < "iidi" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_go_v_rel" ].
+
+arrḿ́ := verb20-verb-lex &
+  [ STEM < "arrḿ́" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_get.up_v_rel" ].
+
+a := verb22-verb-lex &
+  [ STEM < "a" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_fut_v_rel" ].
+
+roowil_2 := verb23-verb-lex &
+  [ STEM < "roowil" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_walk_v_rel" ].
+
+;;; Auxiliaries
+
+irr_2 := aux1-aux-lex &
+  [ STEM < "irr" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_do_v_rel" ].
+
+̀̀arra := aux2-aux-lex &
+  [ STEM < "̀̀arra" > ].
+
+amba := aux3-aux-lex &
+  [ STEM < "amba" > ].
+
+amb := aux4-aux-lex &
+  [ STEM < "amb" > ].
+
+arra := neg5-aux-lex &
+  [ STEM < "arra" >,
+    SYNSEM.LKEYS.KEYREL.PRED "neg_rel" ].
+
+ba := aux6-aux-lex &
+  [ STEM < "ba" > ].
+
+b := aux7-aux-lex &
+  [ STEM < "b" > ].
+
+jamb := aux8-aux-lex &
+  [ STEM < "jamb" > ].
+
+;;; Determiners
+
+̀̀Jarri := det1-determiner-lex &
+  [ STEM < "̀̀Jarri" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_exist_q_rel" ].
+
+jarri := det2-determiner-lex &
+  [ STEM < "jarri" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_exist_q_rel" ].
+
+barni_2 := det3-determiner-lex &
+  [ STEM < "barni" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_exist_q_rel" ].
+
+;;; Adverbs
+
+agal2 := conj-lex &
+  [ STEM < "agal" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_and_coord_rel",
+    CFORM "2" ].
+
+agal4 := conj-lex &
+  [ STEM < "agal" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_and_coord_rel",
+    CFORM "4" ].
