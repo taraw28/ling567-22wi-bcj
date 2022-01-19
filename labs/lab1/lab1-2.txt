@@ -1,0 +1,62 @@
+1.
+	1. The dog danced
+	2. I danced
+	3. Many cats chased a dog
+	4. The cats chase a dog
+
+2.
+	1. Many cat chased a dog
+	2. Me chases the cat
+
+3.
+	1. HEAD-SPEC rule
+	2. SUBJ-HEAD rule
+
+4.
+	1. det3-determiner-lex := determiner-lex & no-icons-lex-item &
+		  [ SYNSEM [ L-QUE -,
+			     LOCAL.CAT.VAL.SPEC.FIRST.LOCAL.CONT.HOOK.INDEX.PNG.NUM pl ] ].
+	singular-lex-rule := const-lex-rule & num-lex-rule-super &
+		  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.NUM sg ].
+	2. 1sg-acc-pronoun-noun-lex := no-spr-noun-lex &
+		  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.PNG [ PER 1st,
+				                         NUM sg ],
+				   CAT.HEAD.CASE acc ] ].
+	3sg-lex-rule := infl-lex-rule & pernumtense-lex-rule-super &
+		  [ SYNSEM.LOCAL [ CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER 3rd,
+				                                                  NUM sg ],
+				   CONT.HOOK.INDEX.E.TENSE nonpast ] ].
+
+5.
+	1. The lexical entry for cat inherits the following constraints from the common-noun-lex, the basic-noun-lex, and the noun-lex:
+		  [ SYNSEM [ LOCAL.CAT.HEAD noun,
+			     LKEYS.KEYREL noun-relation ]].
+		  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PER 3rd,
+		      INFLECTED.NUM-FLAG - ].
+		  [ SYNSEM.LOCAL.CAT.VAL [ SPR < #spr &
+				                 [ LOCAL.CAT.HEAD det ] >,
+				           COMPS < >,
+				           SUBJ < >,
+				           SPEC < > ],
+		    ARG-ST < #spr > ].
+	identifying _cat_n_rel with the INDEX of cat.
+	2. The lexical entry for chased inherits the following constraints from the basic-verb-lex and the verb-lex.
+		   [ SYNSEM.LKEYS.KEYREL event-relation ].
+		   [ SYNSEM.LOCAL [ CAT.VAL [ SPEC < >,
+				             SUBJ < #subj > ],
+				   CONT.HOOK.XARG #xarg ],
+		    ARG-ST.FIRST #subj &
+				 [ LOCAL [ CAT cat-sat &
+				               [ VAL [ SPR < >,
+				                       COMPS < > ] ],
+				           CONT.HOOK.INDEX #xarg ] ],
+		    INFLECTED.PERNUMTENSE-FLAG - ].
+
+	identifying _chase_v_rel with the INDEX of chased via #xarg.
+
+6.
+	1.
+	2.
+	3. 
+
+7.

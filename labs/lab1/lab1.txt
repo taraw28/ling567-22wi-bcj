@@ -1,0 +1,70 @@
+Tara Wueger (netid 1863846)
+1/7/2022
+Lab 1
+
+1.
+	1. I danced
+	2. I chased many cats
+	3. A cat dances
+	4. Many dogs chased me
+
+2.
+	1. The cats chase a dogs
+	2. I chases the dog
+
+3.
+	1. HEAD-SPEC rule
+	2. SUBJ-HEAD rule
+
+4.
+	1. "a": det2-determiner-lex := determiner-lex & no-icons-lex-item &
+			  [ SYNSEM [ L-QUE -,
+				     LOCAL.CAT.VAL.SPEC.FIRST.LOCAL.CONT.HOOK.INDEX.PNG.NUM sg ] ].
+	"dogs": "dog" -> "dogs":
+		plural-lex-rule := infl-lex-rule & num-lex-rule-super &
+			  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.NUM pl ].
+	From the lexical entry of "a", it is a det2-determiner-lex which means that it inherits NUM sg. The noun "dog" is a common-noun-lex which undergoes the plural-lex rule (becoming "dogs") and therfore inherits NUM pl. When the HEAD-SPEC rule tries to unify "a" and "dogs", there is a conflict between NUM sg (from "a") and NUM pl (from "dogs").
+	2. "I": 1sg-nom-pronoun-noun-lex := no-spr-noun-lex &
+			  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.PNG [ PER 1st,
+						                 NUM sg ],
+					   CAT.HEAD.CASE nom ] ].
+	"chases the dog": "chase" -> "chases":
+		3sg-lex-rule := infl-lex-rule & pernumtense-lex-rule-super &
+			  [ SYNSEM.LOCAL [ CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PER 3rd,
+									                  NUM sg ],
+					   CONT.HOOK.INDEX.E.TENSE nonpast ] ].
+	Per its lexical entry, "I" is a 1sg-nom-pronoun-noun-lex, which means that it inherits PER 1st. The verb "chase" is a tr-verb-lex which undergoes the 3sg-lex-rule (becoming "chases") and therefore inherits PER 3rd. When the SUBJ-HEAD rule tries to unify "I" and "chases the dog", there is a conflict between PER 1st (from "I") and PER 3rd (from "chases").
+
+5.
+	1. The lexical entry for cat inherits the following constraints from the common-noun-lex, the basic-noun-lex, and the noun-lex:
+		  [ SYNSEM [ LOCAL.CAT.HEAD noun,
+			     LKEYS.KEYREL noun-relation ]].
+		  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PER 3rd,
+		      INFLECTED.NUM-FLAG - ].
+		  [ SYNSEM.LOCAL.CAT.VAL [ SPR < #spr &
+				                 [ LOCAL.CAT.HEAD det ] >,
+				           COMPS < >,
+				           SUBJ < >,
+				           SPEC < > ],
+		    ARG-ST < #spr > ].
+	identifying _cat_n_rel with the INDEX of cat.
+	2. The lexical entry for chased inherits the following constraints from the basic-verb-lex and the verb-lex.
+		   [ SYNSEM.LKEYS.KEYREL event-relation ].
+		   [ SYNSEM.LOCAL [ CAT.VAL [ SPEC < >,
+				             SUBJ < #subj > ],
+				   CONT.HOOK.XARG #xarg ],
+		    ARG-ST.FIRST #subj &
+				 [ LOCAL [ CAT cat-sat &
+				               [ VAL [ SPR < >,
+				                       COMPS < > ] ],
+				           CONT.HOOK.INDEX #xarg ] ],
+		    INFLECTED.PERNUMTENSE-FLAG - ].
+
+	identifying _chase_v_rel with the INDEX of chased via #xarg.
+	
+6.
+	1. Could you write out the commands you used in emacs to be able to search the whole folder? It's a bit difficult to see on the recording from Thursday's lecture. All I remember was that it used "greb" but I'm not sure how to actually navigate to a folder.
+	2. Is there a place you recommend putting our downloaded grammar folder? Mine is currently in my "shared" folder but I'm not sure if that is most convenient.
+	3. Looking through all of the tdl files in the English grammar is really overwhelming. It seems like there are so many features that I don't recognize. Additionally, the syntax of the tdl files is completely new to me. Will we be learning how to construct these files or will we have to figure that out on our own?
+
+7. N/A
