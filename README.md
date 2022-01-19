@@ -1,6 +1,7 @@
 # LING 567 - Bardi (bcj)
 Hanieh Nezakati + Tara Wueger
 
+(test)
 ## Git Commands
 ```
 git add .
