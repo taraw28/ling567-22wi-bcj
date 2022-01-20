@@ -2,7 +2,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Grammar of bardi
 ;;; created at:
-;;;     Wed Jan 19 00:55:09 UTC 2022
+;;;     Thu Jan 20 21:00:21 UTC 2022
 ;;; based on Matrix customization system version of:
 ;;;     Mon Aug  2 23:22:15 UTC 2021
 ;;;
@@ -29,14 +29,14 @@ head :+ [ PRON bool,
 +np :+ [ CASE-MARKED bool,
     CASE case ].
 
-inflected :+ [ NOUN-PC9-FLAG luk,
+inflected :+ [ NOUN-PC5-FLAG luk,
     NOUN-PC12-FLAG luk,
-    NOUN-PC5-FLAG luk,
+    NOUN-PC9-FLAG luk,
     VERB-PC62-FLAG luk ].
 
-infl-satisfied :+ [ NOUN-PC9-FLAG na-or-+,
+infl-satisfied :+ [ NOUN-PC5-FLAG na-or-+,
     NOUN-PC12-FLAG na-or-+,
-    NOUN-PC5-FLAG na-or-+,
+    NOUN-PC9-FLAG na-or-+,
     VERB-PC62-FLAG na-or-+ ].
 
 png :+ [ PER person,
@@ -106,14 +106,12 @@ finite := form.
 
 ;;; Tense
 
-past := tense.
-present := tense.
-future := tense.
-irrealis := tense.
+pst := tense.
+prs := tense.
+fut := tense.
 
 ;;; Aspect
 
-rl := aspect.
 cont := aspect.
 rem := aspect.
 rec := aspect.
@@ -375,8 +373,7 @@ aux2-aux-lex := subj-raise-aux-no-pred &
 ; might not be true.
 
 aux3-aux-lex := subj-raise-aux-no-pred &
-  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.ASPECT rl,
-                   CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ].
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ].
 
 ; To keep the semantically empty ones from spinning on
 ; generation, require complement to be [AUX -].  The
@@ -385,8 +382,7 @@ aux3-aux-lex := subj-raise-aux-no-pred &
 ; might not be true.
 
 aux4-aux-lex := subj-raise-aux-no-pred &
-  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.ASPECT rl,
-                   CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ].
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ].
 
 neg5-aux-lex := subj-raise-aux-with-pred &
   [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ].
@@ -398,8 +394,7 @@ neg5-aux-lex := subj-raise-aux-with-pred &
 ; might not be true.
 
 aux6-aux-lex := subj-raise-aux-no-pred &
-  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.ASPECT rl,
-                   CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ].
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ].
 
 ; To keep the semantically empty ones from spinning on
 ; generation, require complement to be [AUX -].  The
@@ -408,8 +403,7 @@ aux6-aux-lex := subj-raise-aux-no-pred &
 ; might not be true.
 
 aux7-aux-lex := subj-raise-aux-no-pred &
-  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.ASPECT rl,
-                   CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ].
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ].
 
 ; To keep the semantically empty ones from spinning on
 ; generation, require complement to be [AUX -].  The
@@ -418,8 +412,7 @@ aux7-aux-lex := subj-raise-aux-no-pred &
 ; might not be true.
 
 aux8-aux-lex := subj-raise-aux-no-pred &
-  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.ASPECT rl,
-                   CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ].
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ].
 
 ;;; Complementizers
 
@@ -468,52 +461,52 @@ det3-determiner-lex := determiner-lex & no-icons-lex-item &
 
 ;;; Intermediate rule types
 
-verb-pc8-rule-dtr := word-or-lexrule.
-noun-pc8-rule-dtr := word-or-lexrule.
-noun-pc21-rule-dtr := word-or-lexrule.
-verb-pc6-rule-dtr := word-or-lexrule.
-verb-pc72-rule-dtr := word-or-lexrule.
-noun-pc1-rule-dtr := word-or-lexrule.
-noun-pc9-rule-dtr := word-or-lexrule.
-noun-pc5-rule-dtr := word-or-lexrule.
-verb-pc63-rule-dtr := word-or-lexrule.
-noun-pc26-rule-dtr := word-or-lexrule.
-verb-pc23-rule-dtr := word-or-lexrule.
-verb-pc70-rule-dtr := word-or-lexrule.
-verb-pc77-rule-dtr := word-or-lexrule.
-noun-pc24-rule-dtr := word-or-lexrule.
-verb-pc1-rule-dtr := word-or-lexrule.
-noun-pc32-rule-dtr := word-or-lexrule.
+verb-pc46-rule-dtr := word-or-lexrule.
+verb-pc9-rule-dtr := word-or-lexrule.
 noun-pc20-rule-dtr := word-or-lexrule.
+verb-pc8-rule-dtr := word-or-lexrule.
+noun-pc17-rule-dtr := word-or-lexrule.
 noun-pc23-rule-dtr := word-or-lexrule.
-noun-pc13-rule-dtr := word-or-lexrule.
 verb-pc69-rule-dtr := word-or-lexrule.
 noun-pc12-rule-dtr := word-or-lexrule.
-verb-pc7-rule-dtr := word-or-lexrule.
-noun-pc3-rule-dtr := word-or-lexrule.
-verb-pc43-rule-dtr := word-or-lexrule.
-noun-pc17-rule-dtr := word-or-lexrule.
+verb-pc13-rule-dtr := word-or-lexrule.
+noun-pc5-rule-dtr := word-or-lexrule.
 verb-pc25-rule-dtr := word-or-lexrule.
+verb-pc19-rule-dtr := word-or-lexrule.
+verb-pc53-rule-dtr := word-or-lexrule.
+verb-pc22-rule-dtr := word-or-lexrule.
 noun-pc22-rule-dtr := word-or-lexrule.
-noun-pc6-rule-dtr := word-or-lexrule.
-verb-pc46-rule-dtr := word-or-lexrule.
-noun-pc18-rule-dtr := word-or-lexrule.
-verb-pc4-rule-dtr := word-or-lexrule.
 verb-pc3-rule-dtr := word-or-lexrule.
-verb-pc9-rule-dtr := word-or-lexrule.
-verb-pc15-rule-dtr := word-or-lexrule.
 noun-pc2-rule-dtr := word-or-lexrule.
-verb-pc5-rule-dtr := word-or-lexrule.
+verb-pc70-rule-dtr := word-or-lexrule.
+verb-pc72-rule-dtr := word-or-lexrule.
+verb-pc1-rule-dtr := word-or-lexrule.
+verb-pc4-rule-dtr := word-or-lexrule.
 verb-pc28-rule-dtr := word-or-lexrule.
 verb-pc30-rule-dtr := word-or-lexrule.
-verb-pc38-rule-dtr := word-or-lexrule.
-verb-pc13-rule-dtr := word-or-lexrule.
-verb-pc53-rule-dtr := word-or-lexrule.
-verb-pc12-rule-dtr := word-or-lexrule.
-verb-pc22-rule-dtr := word-or-lexrule.
+noun-pc26-rule-dtr := word-or-lexrule.
+noun-pc32-rule-dtr := word-or-lexrule.
 verb-pc51-rule-dtr := word-or-lexrule.
 verb-pc2-rule-dtr := word-or-lexrule.
-verb-pc19-rule-dtr := word-or-lexrule.
+verb-pc15-rule-dtr := word-or-lexrule.
+verb-pc5-rule-dtr := word-or-lexrule.
+noun-pc24-rule-dtr := word-or-lexrule.
+noun-pc6-rule-dtr := word-or-lexrule.
+noun-pc21-rule-dtr := word-or-lexrule.
+verb-pc77-rule-dtr := word-or-lexrule.
+noun-pc1-rule-dtr := word-or-lexrule.
+noun-pc8-rule-dtr := word-or-lexrule.
+verb-pc38-rule-dtr := word-or-lexrule.
+noun-pc9-rule-dtr := word-or-lexrule.
+verb-pc6-rule-dtr := word-or-lexrule.
+verb-pc43-rule-dtr := word-or-lexrule.
+noun-pc3-rule-dtr := word-or-lexrule.
+verb-pc63-rule-dtr := word-or-lexrule.
+noun-pc13-rule-dtr := word-or-lexrule.
+verb-pc7-rule-dtr := word-or-lexrule.
+verb-pc12-rule-dtr := word-or-lexrule.
+verb-pc23-rule-dtr := word-or-lexrule.
+noun-pc18-rule-dtr := word-or-lexrule.
 
 ;;; Lexical rule types
 
@@ -604,12 +597,12 @@ noun-pc10_lrt1-lex-rule := noun-pc10-lex-rule-super.
 
 noun-pc12-lex-rule-super := add-only-no-ccont-rule & const-lex-rule & noun-pc13-rule-dtr &
   [ INFLECTED [ NOUN-PC12-FLAG +,
-                NOUN-PC9-FLAG #noun-pc9,
                 NOUN-PC5-FLAG #noun-pc5,
+                NOUN-PC9-FLAG #noun-pc9,
                 VERB-PC62-FLAG #verb-pc62 ],
     DTR noun-pc12-rule-dtr &
-        [ INFLECTED [ NOUN-PC9-FLAG #noun-pc9,
-                      NOUN-PC5-FLAG #noun-pc5,
+        [ INFLECTED [ NOUN-PC5-FLAG #noun-pc5,
+                      NOUN-PC9-FLAG #noun-pc9,
                       VERB-PC62-FLAG #verb-pc62 ] ] ].
 
 noun-pc12_lrt1-lex-rule := noun-pc12-lex-rule-super &

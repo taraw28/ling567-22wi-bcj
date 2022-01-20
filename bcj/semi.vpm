@@ -51,14 +51,12 @@ PNG.GEND : PNG.GEND
   * <> *
 
 E.TENSE : E.TENSE
-  past <> past
-  present <> present
-  future <> future
-  irrealis <> irrealis
+  pst <> pst
+  prs <> prs
+  fut <> fut
   * <> *
 
 E.ASPECT : E.ASPECT
-  rl <> rl
   cont <> cont
   rem <> rem
   rec <> rec

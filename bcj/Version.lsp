@@ -1,4 +1,4 @@
 ;;; -*- Mode: TDL; Coding: utf-8 -*-
 (in-package :common-lisp-user)
 
-(defparameter *grammar-version* "bardi (2022-01-19_00:55:09_UTC)")
+(defparameter *grammar-version* "bardi (2022-01-20_21:00:21_UTC)")
