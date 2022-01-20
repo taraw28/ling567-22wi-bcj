@@ -11,8 +11,8 @@ Vetted: f
 Judgement: g
 Phenomena: c
 Inyjarrmin gool.
-I-ny-jarrmi-n 		gool-∅
-3-PST-get.up-REM.PST	father-ABS
+I-ny-jarrmi-n gool
+3-PST-get.up-REM.PST father.ABS
 `The father got up.'
 
 #2 noun-ins intrans-verb
@@ -21,8 +21,8 @@ Vetted: f
 Judgement: g
 Phenomena: c
 Niimarlgang daab innyanana.
-Niimarlga-ng 	daab 		i-n-nya-na-na
-by.himself-INS	go.ashore 	3-TR-catch-CONT-REM.PST
+Niimarlga-ng daab i-n-nya-na-na
+by.himself-INS go.ashore 3-TR-catch-CONT-REM.PST
 `He went ashore by himself.'
 
 #3 *noun-erg intrans-verb
@@ -31,8 +31,8 @@ Vetted: f
 Judgement: u
 Phenomena: c
 Inyjarrmin goolnim.
-I-ny-jarrmi-n 		gool-nim
-3-PST-get.up-REM.PST	father-ERG
+I-ny-jarrmi-n gool-nim
+3-PST-get.up-REM.PST father-ERG
 `The father got up.'
 
 #4 *intrans-verb noun-erg
@@ -41,8 +41,8 @@ Vetted: f
 Judgement: u
 Phenomena: c
 Goolnim Inyjarrmin.
-Gool-nim	i-ny-jarrmi-n
-father-ERG	3-PST-get.up-REM.PST
+Gool-nim i-ny-jarrmi-n
+father-ERG 3-PST-get.up-REM.PST
 `The father got up.'
 
 #5 noun-erg noun-abs trans-verb
@@ -51,8 +51,8 @@ Vetted: f
 Judgement: g
 Phenomena: c
 Aambanim aarli inamanyana.
-Aamba-nim	aarli-∅		i-na-ma-nya-na
-man-ERG		fish-ABS	3-TR-PST-catch-REM.PST
+Aamba-nim aarli i-na-ma-nya-na
+man-ERG fish.ABS 3-TR-PST-catch-REM.PST
 `The man caught the fish.'
 
 #6 trans-verb noun-ins
@@ -61,8 +61,8 @@ Vetted: f
 Judgement: g
 Phenomena: c
 Ingirrinyanajin aarling.
-I-ngi-rr-i-nya-na=jin			aarli-ng
-3-PST-AUG-TR-catch-APPL.PST=3M.IO	fish-INS
+I-ngi-rr-i-nya-na=jin aarli-ng
+3-PST-AUG-TR-catch-APPL.PST=3M.IO fish-INS
 `They caught fish with him.'
 
 #7 *noun-abs trans-verb noun-abs
@@ -71,8 +71,8 @@ Vetted: f
 Judgement: u
 Phenomena: c
 Aamba aarli inamanyana.
-Aamba	aarli-∅		i-na-ma-nya-na
-man	fish-ABS	3-TR-PST-catch-REM.PST
+Aamba aarli i-na-ma-nya-na
+man fish.ABS 3-TR-PST-catch-REM.PST
 `The man caught the fish.'
 
 #8 *noun-abs trans-verb noun-erg
@@ -81,8 +81,8 @@ Vetted: f
 Judgement: u
 Phenomena: c
 Aamba aarlinim inamanyana.
-Aamba	aarli-nim	i-na-ma-nya-na
-man	fish-ERG	3-TR-PST-catch-REM.PST
+Aamba aarli-nim i-na-ma-nya-na
+man fish-ERG 3-TR-PST-catch-REM.PST
 `The man caught the fish.'
 
 #9 present
@@ -121,8 +121,8 @@ Vetted: t
 Judgement: g
 Phenomena: tam
 Anarla kiiba may!
-A-n-arl-a	jiiba	may
-IMP-TR-eat-FUT	this	food
+A-n-arl-a jiiba may
+IMP-TR-eat-FUT this food
 `Eat this food!'
 
 #13 future perfect (bad)
@@ -141,8 +141,8 @@ Vetted: t
 Judgement: g
 Phenomena: tam
 Arra ngalinyan aarli.
-Arra	ng-l-inya-n		aarli
-NEG	1-IRR-catch-CONT	fish
+Arra ng-l-inya-n aarli
+NEG 1-IRR-catch-CONT fish
 `I didn't catch a fish.'
 
 #15 recent past
@@ -151,8 +151,8 @@ Vetted: t
 Judgement: g
 Phenomena: tam
 Garrinngan daab innyagal.
-Garrin-ngan	daab		i-n-nya-gal
-hill-ALL	go.up.to	3-TR-catch-REC.PST
+Garrin-ngan daab i-n-nya-gal
+hill-ALL go.up.to 3-TR-catch-REC.PST
 `He went up the hill.'
 
 #16 remote past
