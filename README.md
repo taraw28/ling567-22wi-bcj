@@ -10,6 +10,9 @@ git push
 git pull
 ```
 
+## 1/20 Notes
+- question about ø since it's included in a lot of glosses but make_item has an issue with is
+
 ## Original Changes to choices file (later changes will be tracked by git)
 - Gen Info
   - changed name of language to bardi
@@ -25,11 +28,18 @@ git pull
 ## Lab 2 Phenomena
 ### Case
 - currently have core cases plus a couple of local cases
-- maybe add rest of local cases and dnominal cases?
+- maybe add rest of local cases and nominal cases?
 
 ### Tense/aspect
 - waiting on responses from canvas on "rl" type
 - would need to update auxiliaries
+
+### Coverage
+- corpus: 0.6%
+  - ambiguity: 3 readings for 1 sentence
+- lab2 testsuite: 18.2%
+  - ambiguity: 7 readings for 2 sentences (6 for 1, 1 for 1)
+
 
 ## Lab 3 Phenomena
 ### Determiners/rest of NP
@@ -49,7 +59,7 @@ git pull
 - we definitely have this
 
 ### Coordination
-- coudld do this
+- could do this
 - has word for and "agal" which is used monosyndetically
   - can be used under scope of negation
   - can conjoin elements in verbless clauses (not much about them)
@@ -57,44 +67,56 @@ git pull
 - has word for also "biila" which is used for "both...and" constructions
 - can chain agal for phrases but not clauses
   - for clauses, use parataxis
+- conjoined nouns
+  - both NPs have case from pp. 651
+    Boonyja may darr inarn bardagayoon agal gaarayoon.
+    Boonya may darr i-n-ar-n bardaga-yoon agal gaara-yoon
+    all food come 3-TR-pierce-CONT tree-SOURCE and ground-SOURCE
+    "All food comes from the trees and from the ground."
+  - first NP has case based on pp. 352
+    Boorrgoorndanim agal Barlarramay ingirriloongan jinala nimanajina.
+    Boorrgoornda-nim agal Barlarramay i-ng-irrr-i-loonga-n jinala nimana=jina
+    Boorrgoornda-ERG and Barlarramay 3-PST-AUG-TR-collect-CONT spear many=3M.POSS
+    "Boorrgoornda and Balarrmay gathered together many of their spears."
+  - second NP has case from pp. 352
+    Irralboonjirr nalaarrad birrii agal gooloonim.
+    I-rr-alboo-n=jirr nalaarrad birrii agal gooloo-nim
+    3-AUG-TR-dig-CONT=3A.IO turtle.eggs mother and father-ERG
+    "Their mother and father dug up turtle eggs."
+- preverb conjunction
+  - from pp. 517
+    Bilirl agal girringg nganarij bardi.
+    Bilirl agal girringg nga-n-ar-ij bardi
+    yawn and cough 1-TR-spear-MID-PFV yesterday
+    "I yawned and coughed all day yesterday."
+  - from pp. 518
+    Bilirl nganarij bardi agal girringgirring nganarij.
+    Bilirl nga-n-ar-ij bardi agal girringgirring nga-n-ar-ij
+    yawn 1-TR-spear-MID.PFV yesterday and cough 1-TR-spear-MID.PFV
+    "I yawned and coughed all day yesterday."
+- multiple clause chaining
+  - from pp. 658
+    Molon goolarrarli agal garaginyarra agal goolarrji agal gambarla.
+    Molon goo-la-rr-arli agal garaginyarra agal goolarrji agal gambarla.
+    giant.trevally 2-IRR-AUG-eat and garaginya and Spanssh.mackerel and surgeon.fish
+    "You must eat molon (giant trevally), garaginya (unidentified fish species), goolarrji (Spanish mackeral) or gambarl (surgeon fish)."
 
 ### Agreement
 - entirety of chapter 10 is about agreement
 - should definitely tackle this
 
-I think we should do determiners, coordination, and agreement
-
 ## Lab 3
+removed troubled words from lexicon
 4 things to do:
-  - phenomena 1
-  - phenomena 2
-  - phenomena 3
+  - phenomena 1 - coordination
+  - phenomena 2 - agreement
+  - phenomena 3 - case
   - morphotactics
-we could split it (one person does 2 phenemona and the other does 1 phenomenon and morphotactics)
-or split phenomena and work on morphotactics together (agreement is probably a more time-consuming phenomena than determiners/coordination)
 
 ### Morphotactics
 #### Nouns
-noun1 -> pc1, pc2, pc3, PER3rd
-noun2 (noun3) -> PER3rd
-noun4 -> pc5, pc6, FLAG-, PER3rd
-noun5 -> pc8, PER3rd
-noun6 -> pc8, pc9, FLAG-, PER3rd
-noun7 (same as noun2 but is sembl so not sure if can be combined)
-noun8 -> pc12, pc13, FLAG-, PER3rd
-noun9 -> pc17, PER3rd
-noun10 -> pc18, PER3rd
-noun11 -> pc20, pc21, pc22, pc23, pc24, PER3rd
-noun12 -> pc26, PER3rd
-noun13 - DNE
-noun14 -> pc32, PER3rd
-noun15 -> pc1, pc18, pc2, pc20, pc21, pc22, pc23, pc24, pc26, pc3, pc32, PRON+
-noun16 (noun17) -> PRON+
-noun18 -> pc5, pc6, PRON+, FLAG-
-noun19 -> pc8, PRON+
-noun20 -> pc8, pc9, PRON+, FLAG-
-noun21 (noun22) -> pc12, pc13, PRON+, FLAG-
-noun23 -> pc17, PRON+
-noun24 -> pc18, PRON+
-noun25 -> pc26, PRON+
-noun26 -> pc32, PRON+
+add noun2-case
+add noun2-loc-all
+remove pc5,pc6 (pc5 adds erg with no affix for some reason and pc6 takes output of pc5 and adds it to the end of noun suffixes which is stupid)
+remove pc8,pc9 (pc9 adds all with no affix for some reason and pc9 either takes output of pc8 and adds it to the end of noun suffixes or it takes nouns and adds them to the end of noun suffixes; also stupid)
+remove pc12,pc13 (same reason as pc5,pc6)
