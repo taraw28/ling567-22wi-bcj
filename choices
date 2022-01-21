@@ -602,7 +602,7 @@ section=lexicon
   adp1_opt=on
   adp1_order=after
     adp1_feat1_name=case
-    adp1_feat1_value=in
+    adp1_feat1_value=ins
 
 section=morphology
   noun-pc1_name=noun-pc1

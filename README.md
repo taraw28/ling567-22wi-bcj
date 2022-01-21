@@ -120,3 +120,9 @@ add noun2-loc-all
 remove pc5,pc6 (pc5 adds erg with no affix for some reason and pc6 takes output of pc5 and adds it to the end of noun suffixes which is stupid)
 remove pc8,pc9 (pc9 adds all with no affix for some reason and pc9 either takes output of pc8 and adds it to the end of noun suffixes or it takes nouns and adds them to the end of noun suffixes; also stupid)
 remove pc12,pc13 (same reason as pc5,pc6)
+
+### Coverage
+- corpus: 0.6%
+  - ambiguity: 26 readings for 1 sentence
+- lab2 testsuite: 18.2% (seems off)
+  - ambiguity: 25 readings for 4 sentences (12 for 1, 6 for 2, 1 for 1)

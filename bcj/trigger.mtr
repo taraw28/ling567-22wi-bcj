@@ -1,24 +1,24 @@
 ;;; -*- Mode: TDL; Coding: utf-8 -*-
 ;;; Semantically Empty Lexical Entries
 
-in-marker_rooban_gr_1 := arg0e_gtr &
+ins-marker_rooban_gr_1 := arg0e_gtr &
   [ CONTEXT.RELS.LIST < [ ARG1 individual & #i ] >,
     FLAGS [ SUBSUME < #i >,
-            TRIGGER "in-marker_rooban" ] ].
+            TRIGGER "ins-marker_rooban" ] ].
 
-in-marker_rooban_gr_2 := arg0e_gtr &
+ins-marker_rooban_gr_2 := arg0e_gtr &
   [ CONTEXT.RELS.LIST < [ ARG2 individual & #i ] >,
     FLAGS [ SUBSUME < #i >,
-            TRIGGER "in-marker_rooban" ] ].
+            TRIGGER "ins-marker_rooban" ] ].
 
-in-marker_rooban_gr_3 := arg0e_gtr &
+ins-marker_rooban_gr_3 := arg0e_gtr &
   [ CONTEXT.RELS.LIST < [ ARG3 individual & #i ] >,
     FLAGS [ SUBSUME < #i >,
-            TRIGGER "in-marker_rooban" ] ].
+            TRIGGER "ins-marker_rooban" ] ].
 
-̀̀arra_gr := arg0e_gtr &
+arra_1_gr := arg0e_gtr &
   [ CONTEXT.RELS.LIST < [ PRED "non_existing_rel" ] >,
-    FLAGS.TRIGGER "̀̀arra" ].
+    FLAGS.TRIGGER "arra_1" ].
 
 amba_gr := arg0e_gtr &
   [ CONTEXT.RELS.LIST < [ PRED "non_existing_rel" ] >,

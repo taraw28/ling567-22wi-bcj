@@ -29,53 +29,9 @@ noun-pc4_lrt1-prefix4 :=
 %prefix (* gaalwa-)
 noun-pc4_lrt1-lex-rule.
 
-noun-pc6_lrt1-prefix1 :=
-%prefix (* ambooriny-)
-noun-pc6_lrt1-lex-rule.
-
-noun-pc6_lrt1-prefix2 :=
-%prefix (* jamoo-)
-noun-pc6_lrt1-lex-rule.
-
-noun-pc6_lrt1-prefix3 :=
-%prefix (* jindibirr-)
-noun-pc6_lrt1-lex-rule.
-
-noun-pc6_lrt1-prefix4 :=
-%prefix (* oorany-)
-noun-pc6_lrt1-lex-rule.
-
-noun-pc8_lrt1-prefix1 :=
-%prefix (* ayin-)
-noun-pc8_lrt1-lex-rule.
-
-noun-pc8_lrt1-prefix2 :=
-%prefix (* boolooman-)
-noun-pc8_lrt1-lex-rule.
-
-noun-pc8_lrt1-prefix3 :=
-%prefix (* garrjarl-)
-noun-pc8_lrt1-lex-rule.
-
-noun-pc8_lrt1-prefix4 :=
-%prefix (* iinalang-)
-noun-pc8_lrt1-lex-rule.
-
-noun-pc8_lrt1-prefix5 :=
-%prefix (* jardal-)
-noun-pc8_lrt1-lex-rule.
-
 noun-pc10_lrt1-prefix :=
 %prefix (* barnanggarr-)
 noun-pc10_lrt1-lex-rule.
-
-noun-pc13_lrt1-prefix1 :=
-%prefix (* bilinybiliny-)
-noun-pc13_lrt1-lex-rule.
-
-noun-pc13_lrt1-prefix2 :=
-%prefix (* joowoon-)
-noun-pc13_lrt1-lex-rule.
 
 noun-pc17_lrt1-prefix1 :=
 %prefix (* goolboo-)
@@ -120,6 +76,130 @@ noun-pc26_lrt1-lex-rule.
 noun-pc32_lrt1-prefix :=
 %prefix (* ool-)
 noun-pc32_lrt1-lex-rule.
+
+erg-ltr-suffix :=
+%suffix (* -nim)
+erg-ltr-lex-rule.
+
+all-ltr-suffix :=
+%suffix (* -ngan)
+all-ltr-lex-rule.
+
+abl-ltr-suffix1 :=
+%suffix (* -go)
+abl-ltr-lex-rule.
+
+abl-ltr-suffix2 :=
+%suffix (* -o)
+abl-ltr-lex-rule.
+
+abl-ltr-suffix3 :=
+%suffix (* -ko)
+abl-ltr-lex-rule.
+
+ins-ltr-suffix1 :=
+%suffix (* -nga)
+ins-ltr-lex-rule.
+
+ins-ltr-suffix2 :=
+%suffix (* -ng)
+ins-ltr-lex-rule.
+
+loc-ltr-suffix1 :=
+%suffix (* -goon)
+loc-ltr-lex-rule.
+
+loc-ltr-suffix2 :=
+%suffix (* -oon)
+loc-ltr-lex-rule.
+
+loc-ltr-suffix3 :=
+%suffix (* -on)
+loc-ltr-lex-rule.
+
+loc-ltr-suffix4 :=
+%suffix (* -i)
+loc-ltr-lex-rule.
+
+caus-ltr-suffix1 :=
+%suffix (* -yi)
+caus-ltr-lex-rule.
+
+caus-ltr-suffix2 :=
+%suffix (* -ji)
+caus-ltr-lex-rule.
+
+caus-ltr-suffix3 :=
+%suffix (* -i)
+caus-ltr-lex-rule.
+
+lat-ltr-suffix1 :=
+%suffix (* -gony)
+lat-ltr-lex-rule.
+
+lat-ltr-suffix2 :=
+%suffix (* -ony)
+lat-ltr-lex-rule.
+
+dir-ltr-suffix1 :=
+%suffix (* -madan)
+dir-ltr-lex-rule.
+
+dir-ltr-suffix2 :=
+%suffix (* -madany)
+dir-ltr-lex-rule.
+
+dir-ltr-suffix3 :=
+%suffix (* -mardan)
+dir-ltr-lex-rule.
+
+dir-ltr-suffix4 :=
+%suffix (* -mardany)
+dir-ltr-lex-rule.
+
+perl-ltr-suffix1 :=
+%suffix (* -jarr)
+perl-ltr-lex-rule.
+
+perl-ltr-suffix2 :=
+%suffix (* -jarra)
+perl-ltr-lex-rule.
+
+com-ltr-suffix :=
+%suffix (* -nyarr)
+com-ltr-lex-rule.
+
+source-ltr-suffix1 :=
+%suffix (* -joon)
+source-ltr-lex-rule.
+
+source-ltr-suffix2 :=
+%suffix (* -yoon)
+source-ltr-lex-rule.
+
+source-ltr-suffix3 :=
+%suffix (* -joonoo)
+source-ltr-lex-rule.
+
+semb-ltr-suffix :=
+%suffix (* -marr)
+semb-ltr-lex-rule.
+
+reason-ltr-suffix1 :=
+%suffix (* -ganinya)
+reason-ltr-lex-rule.
+
+reason-ltr-suffix2 :=
+%suffix (* -aninya)
+reason-ltr-lex-rule.
+
+reason-ltr-suffix3 :=
+%suffix (* -ganiny)
+reason-ltr-lex-rule.
+
+loc-all_lrt-suffix :=
+%suffix (* -darr)
+loc-all_lrt-lex-rule.
 
 verb-pc1_lrt1-prefix1 :=
 %prefix (* jalala-)
@@ -422,5 +502,5 @@ verb-pc76_lrt1-prefix :=
 verb-pc76_lrt1-lex-rule.
 
 verb-pc77_lrt1-prefix :=
-%prefix (* ̀̀a-)
+%prefix (* a-)
 verb-pc77_lrt1-lex-rule.
