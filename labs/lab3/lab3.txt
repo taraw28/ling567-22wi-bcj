@@ -1,0 +1,216 @@
+Lab 3 - Bardi - Tara and Hanieh
+
+TSDB
+  Initial Run
+    1. It parsed 1 sentence from the corpus and 2 sentences from the initial testsuite.
+    2. In the corpus, we got 3 readings for 1 sentences. In our lab2 testsuite, we got 6 readings for 1 sentence and 1 reading for the other sentence.
+    3. Our most ambiguous item received 3 readings.
+    4. The way the verb/verb phrase combined with the NP to form a sentence is the source of ambiguity. In one reading, it used the decl-head-opt-subj rule, in the second it used the basic-head-opt-comp rule, and in the third it used the subj-head rule. We lost access to our parses for the lab2 testsuite so we are not sure what the source of ambiguity is for those 2 sentences.
+    5. For the one sentence that parsed in our corpus, we are missing the semantics for the verb "die". The verb got built up using position classes that didn't start with the root verb. So instead of having semantics for "die", it has the semantics for the tense (remote past).
+
+  Final Run
+    1. Parsed 2 sentences from the corpus and 4 sentences from the lab3 testsuite.
+    2. For the corpus, we have an average of 44 readings per parse (62 readings for 1 sentence and 26 readings for the 2nd sentence). For our testsuite, we have an average of 4.67 readings per parse (12 readings for 1 sentence, 6 readings for 2 sentences, and 1 reading for the last sentence).
+    3. Our most ambiguious item from the corpus received 62 readings and our most ambiguious item from our testsuite received 12 readings. We also have a duplicate entry in our lexicon which created ambiguity.
+    4. For the corpus, some of the ambiguity comes from the noun and verb top and bottom coordination rules. For our testsuite, there seems to be some ambiguity due to inputs into verb position classes. In both the corpus and testsuite there is ambiguity from different methods of forming sentences.
+    5. For the sentence that means "He gave them food from the trees" we only have the semantics for the nouns "food" and "trees." The semantics for the verb was lost also due to the way that verb position classes work (this applies to most of the sentences). For one of the sentences, we do have the semantics for the verb but don't have them for the subject (most likely since it is a affix on the verb).
+  Coverage
+    - Initial Run
+      - Corpus had coverage of 0.6% with 3 readings.
+      - (Lab 2) testsuite had coverage of 18.2% with 7 readings.
+    - Final Run
+      - Corpus had coverage of 1.1% with 88 readings.
+      - (Lab 3) testsuite had coverage of 7.1% with 25 readings.
+    - Comparison
+      - For the corpus, both coverage and ambiguity got worse.
+      - For the testsuite, coverage went down (mostly due to use adding over 30 new test cases) and ambiguity also got worse.
+
+Agreement Morphology
+  Agreement in Bardi is for person and number. There are four agreement positions on Bardi verbs: subject, direct object, oblique, and possessor.
+  - Inflecting verbs agree for the subject of the verb, whether intransitive or transitive.
+  - Transitive verbs also agree for the direct object.
+  - 'Oblique' agreement covers a variety of functions and ranges from oblique/indirect objects to recipients.
+  - Possessors may also be marked on the verb.
+    - Subject agreement is prefixal and is bound with tense marking,
+    - while oblique, possessive, and direct object agreement is cliticized to the end of the verb stem.
+      - A curious (and possibly unique) feature of Bardi object agreement is its marking of personal objects and obliques for their status as 'topic.'
+
+  1. Predicate
+  The agreements can be in predicate hosted on verbs, nouns, adjectives, and adverbs. For example,
+    #29 verbal agreement in predicate
+    Source: a:117
+    Vetted: t
+    Judgement: g
+    Phenomena: agr
+    Arra ngalinyan aarli.
+    arra ng-l-inya-n aarli
+    NEG 1-IRR-catch-CONT fish
+    `I didn't catch a fish.'
+
+    #33 verbal agreement in predicate
+    Source: a:704
+    Vetted: t
+    Judgement: g
+    Phenomena: agreement
+    Daab innyana garrin.
+    daab i-n-nya-na garrin
+    climb.up 3m-tr-get-rem.pst hill
+    `He climbed a hill.'
+
+  2. Subject
+  Subject agreement is also present in Bardi. Prefixes most often display agreement for the subject of the clause. There are no null forms in subject agreement marking; every person and number has an exponent. Even though case marking is ergative/absolutive, agreement follows the more familiar pattern of 'subject' versus 'object.' Subject agreement suffixing can also co-occur with quantificational cliticization to the verb. For example,
+    #26 subject agreement in imperative
+    Source: a:395
+    Vetted: t
+    Judgement: g
+    Phenomena: agr
+    Anjala!
+    a-n-jal-a
+    2-TR-look.at-FUT
+    `Look at it!'
+
+  3. Object
+  Unlike the subject prefixes, the remainder of the verbal agreement types are enclitics, appearing at the end of the verbal word. They do not show the lenition patterns characteristic of suffixes. Sentential clitics also intervene between the verb stem and the direct object markers
+  The markers of both are formally identical Oblique clitics are closely related to the free dative/possessive pronouns, and they have two roles of dative case marking and possessor marking: possessors may be marked on the verb, and may co-occur with oblique agreement. For example,
+    #38 direct object on collective noun
+    Source: a:401
+    Vetted: t
+    Judgement: g
+    Phenomena: agr
+    Nganarlina niimana aarli.
+    nga-n-arli-na niimana aarli
+    1-TR-eat-REM.PST many fish
+    `I ate many fish.'
+
+    #39 direct object extra suffix
+    Source: a:401
+    Vetted: t
+    Judgement: g
+    Phenomena: agr
+    Inkoorrnim ngangimilijarrngay.
+    inkoorr-nim	nga-ngi-mili=jarrngay
+    cold-ERG	1-PST-wake.up=1M.DO
+    `Cold woke me up.'
+
+    #40 Oblique & Possessive
+    Source: a:410
+    Vetted: t
+    Judgement: g
+    Phenomena: agr
+    Ingilirrmigaljarran.
+    i-ngi-lirrmi-gal=jarran
+    3-PST-call.out-REC.PST=1M.IO
+    `He sang out to me.'
+
+    #41 Oblique & Possessive
+    Source: a:410
+    Vetted: t
+    Judgement: g
+    Phenomena: agr
+    Nganjargigaljirrin.
+    nga-n-jargi-gal=jirrin
+    1-TR-fear-REC.PST=3M.IO
+    `I was frightened by him.'
+
+Case Marking
+  Case marking in Bardi is phrasal; the case marker appears after the first element of the phrase in term of position. It can also function as a theoretical term. The core cases of Bardi include ergative, absolutive, dative, and instrumental and some local cases include locative, local allative, allative, directional, pelative and alike. For example,
+    #44 noun-ins trans-appl-verb
+    Source: a:495
+    Vetted: t
+    Judgement: g
+    Phenomena: c
+    Baalnga ingorrondiningirr.
+    baal-nga i-ng-orr-ondi-ni-ng=irr
+    bark-INS 3-PST.AUG-TR-cover-REM.PST-APPL=3A.DO
+    `They covered them with bark.'
+
+    #45 all-verb
+    Source: a:189
+    Vetted: t
+    Judgement: g
+    Phenomena: c
+    Midijinnganja.
+    midijin-ngan-ja
+    medicine-ALL-JA
+    `This is the medicine I asked for.'
+
+    #46 noun imperative-verb noun-all
+    Source: a:225
+    Vetted: t
+    Judgement: g
+    Phenomena: c
+    Aarlimayi arraya nyamingan!
+    aarlimayi a-rr-a-ya nyami-ngan
+    food 2-AUG-TR-take mother's.father-ALL
+    `Take food to grandfather's place!'
+
+    #48 verb noun noun-loc-all
+    Source: author
+    Vetted: f
+    Judgement: g
+    Phenomena: c
+    Irralgalnidi bigibigi ngoorngoolondarr.
+    i-rr-al-gal=nidi bigibigi ngoorrngool-ondarr
+    3-AUG-be-REC.PST=GROUP pigs mangrove-L.ALL
+    `All the pigs were in the mangroves.'
+
+Coordination
+  Bardi has four items which have the function of conjunctions: agal ‘and’,=barda ‘or’, =gorror (and derivatives such as arragorror) ‘or (also if; see above)’, and man ‘but’ with slightly different syntax. In general, the first is a full word which most often occurs between the two elements being conjoined, there is also conjunction by ‘juxtaposition’ at both the phrasal and the clausal level. The two conjoined elements do not have to be adjacent to each other. The word agal is a conjunction which joins phrases or clauses. That is, it can be used to join noun phrases or verbs. For example,
+    #18 coordination noun both have case
+    Source: author
+    Vetted: f
+    Judgement: g
+    Phenomena: crd
+    May darr inarn bardagayoon agal gaarayoon.
+    may darr i-n-ar-n bardaga-yoon agal gaara-yoon
+    food come 3-TR-pierce-CONT tree-SOURCE and ground-SOURCE
+    `Food comes from the trees and from the ground.'
+
+    #19 coordination conflicting case
+    Source: author
+    Vetted: f
+    Judgement: u
+    Phenomena: crd
+    May darr inarn bardagayoon agal gaaranim.
+    may darr i-n-ar-n bardaga-yoon agal gaara-nim
+    food come 3-TR-pierce-CONT tree-SOURCE and ground-ERG
+    `Food comes from the trees and from the ground.'
+
+    #22 coordination noun second has case
+    Source: a:352
+    Vetted: t
+    Judgement: g
+    Phenomena: crd
+    Irralboonjirr nalaarrad birrii agal gooloonim.
+    I-rr-alboo-n=jirr nalaarrad birrii agal gooloo-nim
+    3AUG-TR-dig-CONT=3A.IO turtle.eggs mother and father-ERG
+    `Their mother and father dug up turtle eggs.'
+
+    #23 coordination preverb
+    Source: author
+    Vetted: f
+    Judgement: g
+    Phenomena: crd
+    Bilirl agal girringg nganargal.
+    Bilirl agal girringg nga-n-ar-gal
+    yawn and cough 1-TR-spear-REC.PST
+    `I yawned and coughed.'
+
+Changes to Choices File
+  - We removed or fixed some troubled words from the lexicon. We also added some new nouns and verbs.
+  - Case
+    - We added a bunch of new cases (locative, causal, lative, directional, perlative, commative, source, semblative, and reason).
+  - Aspect
+    - We removed the "rl" aspect because it isn't an aspect.
+  - Morphotactics
+    - We focused only on noun position classes. We added 2 positions classes and removed 6, all pertaining to case. Previously, there was a position class that would take a base verb and add the ergative case (no affix was added, which is strange because the ergatie case adds a suffix). Then, there was another position class that would take the output of that class and add a prefix. This prefix was a noun. This didn't make any sense to use, so we created a position class that takes in a noun and adds the ergative suffix to it. There were also position classes for the allative and ablative cases that did the same thing as ergative. We added these cases, along with some other cases, to this position class (with their respective suffixes). We also created an additional position class that takes the output of our case position class (but only the locative output) and adds the allative case and suffix to it. This was the only example of multiple cases being applied to one noun, which is why we added it.
+    - In this example, our case position class will take "gool" and add the "-nim" ergative suffix to it.
+      Inyjarrmin goolnim.
+      I-ny-jarrmi-n gool-nim
+      3-PST-get.up-REM.PST father-ERG
+      `The father got up.'
+    - In this example, our case position class will take "bardaga" and add the "yoon" source suffix to it.
+      Inan irr aarlimay bardagayoon.
+      i-na-n irr aarlimay bardaga-yoon
+      3m-tr-pres 3a.DO food tree-source
+      `He gave them food from the trees.'
