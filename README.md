@@ -94,7 +94,7 @@ remove pc12,pc13 (same reason as pc5,pc6)
 - different ways of asking questions: 
   - polar interrogatives     
      - use either a free question word _nganyji_ or a clitic. They may also be marked with intonation alone.
-     - Ex(s):   
+       - Ex(s) for a free question word _nganyji_ :   
      ```
     Source: a:618
     Vetted: t
@@ -114,7 +114,10 @@ remove pc12,pc13 (same reason as pc5,pc6)
     Nganyji ngay nga-n-k-iid-a Broome-ngan
     `Will I go to Broome?’
     ```
-     
+    - The clitic =_(g)arda_ has a clear deontic meaning. It is probably related to the adverb _garda_, which means ‘still’ in the sense of ‘X still did something (even though I told him not to)’  
+      - Ex(s) for a 
+
+Ngayarda ngankiida Broomengan, gardi joowarda?
   - content questions
      - interrogative placement and intonation
      - ‘Why’ questions: _goonban(kij)_ and _angan_
