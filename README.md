@@ -121,6 +121,15 @@ remove pc12,pc13 (same reason as pc5,pc6)
     Vetted: t
     Judgement: g
     Phenomena: q
+    Gooyarrarda aarli minnyagal?
+    Gooyarr=arda aarli mi-n-nya-gal
+    two=INT fish 2-TR-[PST]-catch-REC.PST
+    `Was it two fish you caught?
+    
+    Source: a:619
+    Vetted: t
+    Judgement: g
+    Phenomena: q
     Ngayarda ngankiida Broomengan, gardi joowarda?
     Ngay=arda nga-n-k-iid-a Broome-ngan, gardi joo=warda
     1MIN=INT go Broome-ALL “or” 2MIN=INT
