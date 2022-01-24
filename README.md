@@ -135,26 +135,25 @@ NGANYJAL how.much day 3-PST-AUG-live-CONT-REM.PST just
 	
    - using clitic =_(g)arda_ which has a clear deontic meaning. It is probably related to the adverb _garda_, which means ‘still’ in the sense of ‘X still did something (even though I told him not to).’ This clitic interacts with **focus** and is used to question **particular constituents**. The clitic attaches to the item under interrogation. (It seems to have single word scope, e.g. aarlarda in the following would be ‘two FISH, or something else, like octopus?’) 
       - Ex(s) for the clitic _(g)arda_
-     ```
-    Source: a:619
-    Vetted: t
-    Judgement: g
-    Phenomena: q
-    Gooyarrarda aarli minnyagal?
-    Gooyarr=arda aarli mi-n-nya-gal
-    two=INT fish 2-TR-[PST]-catch-REC.PST
-    `Was it **two** fish you caught?
-    
-    Source: a:619
-    Vetted: t
-    Judgement: g
-    Phenomena: q
-    Ngayarda ngankiida Broomengan, gardi joowarda?
-    Ngay=arda nga-n-k-iid-a Broome-ngan, gardi joo=warda
-    1MIN=INT go Broome-ALL “or” 2MIN=INT
-    `Will I go to Broome today or will it be you?’
-    
-    ```
+```   
+Source: a:619    
+Vetted: t
+Judgement: g
+Phenomena: q
+Gooyarrarda aarli minnyagal?
+Gooyarr=arda aarli mi-n-nya-gal
+two=INT fish 2-TR-[PST]-catch-REC.PST
+`Was it **two** fish you caught?
+
+Source: a:619
+Vetted: t
+Judgement: g
+Phenomena: q
+Ngayarda ngankiida Broomengan, gardi joowarda?
+Ngay=arda nga-n-k-iid-a Broome-ngan, gardi joo=warda
+1MIN=INT go Broome-ALL “or” 2MIN=INT
+`Will I go to Broome today or will it be you?’    
+```
     
     - using _=bard(a)_, also a clitic with identical distribution to _=gard_. It appears to have an epistemic function in interrogatives; that is, it questions an **individual constituent** and asks the question ‘was it this or something else?’
 ```
