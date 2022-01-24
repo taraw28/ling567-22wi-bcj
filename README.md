@@ -154,8 +154,11 @@ Ngay=arda nga-n-k-iid-a Broome-ngan, gardi joo=warda
 1MIN=INT go Broome-ALL “or” 2MIN=INT
 `Will I go to Broome today or will it be you?’    
 ```
-    
+  
+  
     - using _=bard(a)_, also a clitic with identical distribution to _=gard_. It appears to have an epistemic function in interrogatives; that is, it questions an **individual constituent** and asks the question ‘was it this or something else?’
+
+
 ```
 Source: a:620
 Vetted: t
@@ -188,6 +191,7 @@ Ngay=arda nga-n-k-iid-a Broome-ngan, gardi joo=warda
 `Will I go to Broome today or will it be you?’
 
 ```
+
 - content questions
   - interrogative placement and intonation: 
      - asked with one of a number of interrogative pronounsinterrogative pronoun, usually first in the clause, receives intonational focus, with a H* tone; interrogative clauses have a sharp rise at the end of the clause, which may occur over a single syllable. Although the pronoun is usually first in the clause, it need not be, and examples of both _nganyji_ and _anggi_ are found which are non-initial, and which still have an interrogative reading.
@@ -284,9 +288,12 @@ Anggabanim anggi inarligal?
 Anggaba-nim anggi i-na-rli-gal
 who-ERG what 3-TR-eat-REC.PST
 `Who ate what?’
-
 ```
+
+
   - When it comes to multiple interrogatives with both arguments and adjuncts, however, the judgments are different. This is one of the few places in the grammar where there are differences between free adjunct and argument phrases. For example, multiple interrogatives involving _janaboor_ ‘where’ are fine when the adjunct is fronted before _anggaba_ ‘who’, but only if the verb is final:
+
+
 ```
 Source: a:627
 Vetted: t
