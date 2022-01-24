@@ -104,8 +104,8 @@ remove pc12,pc13 (same reason as pc5,pc6)
     **Nganyji** mi-n-jala-gal jiy-irr ooldoobal
     NGANYJI 2-TR-see-REC.PST 2M.POSS-3A things
     `Did you see your things?’
-    ```
-    ```
+    
+    
     Source: a:618
     Vetted: t
     Judgement: g
@@ -115,9 +115,16 @@ remove pc12,pc13 (same reason as pc5,pc6)
     `Will I go to Broome?’
     ```
     - The clitic =_(g)arda_ has a clear deontic meaning. It is probably related to the adverb _garda_, which means ‘still’ in the sense of ‘X still did something (even though I told him not to)’  
-      - Ex(s) for a 
-
-Ngayarda ngankiida Broomengan, gardi joowarda?
+      - Ex(s) for the clitic _(g)arda_
+     ```
+     Source: a:618
+    Vetted: t
+    Judgement: g
+    Phenomena: q
+    Ngayarda ngankiida Broomengan, gardi joowarda?
+    
+    
+    ```
   - content questions
      - interrogative placement and intonation
      - ‘Why’ questions: _goonban(kij)_ and _angan_
