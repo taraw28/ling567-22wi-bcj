@@ -120,19 +120,18 @@ remove pc12,pc13 (same reason as pc5,pc6)
     ```
     - There are some derivatives of nganyji, such as _nganyjal_ and _nganyjirrgoordoo_ ‘how many’ (and in the old texts, nganyjarda)._ Nganyjal_ is marked with the indefinite marker -al. 
       - Ex(s):
-      - ```
-	Nganyjal darr oonkara ngoorrij.
-	Nganyjal darr oo-n-k-ar-a ngoorrij
-	hopefully come 3-TR-FUT-pierce-FUT future
-	`Hopefully he will come tomorrow.’
-	
-	
-	Nganyjal irrgoordoo aalga ingarralanana namard.
-	Nganyjal irrgoordoo aalga i-ng-arr-ala-na-na namard
-	NGANYJAL how.much day 3-PST-AUG-live-CONT-REM.PST just
-	`We don’t know how long they lived without fire.’
-	
-	```
+ ```
+Nganyjal darr oonkara ngoorrij.
+Nganyjal darr oo-n-k-ar-a ngoorrij
+hopefully come 3-TR-FUT-pierce-FUT future
+`Hopefully he will come tomorrow.’
+
+Nganyjal irrgoordoo aalga ingarralanana namard.
+Nganyjal irrgoordoo aalga i-ng-arr-ala-na-na namard
+NGANYJAL how.much day 3-PST-AUG-live-CONT-REM.PST just
+`We don’t know how long they lived without fire.’
+
+```
 	
    - using clitic =_(g)arda_ which has a clear deontic meaning. It is probably related to the adverb _garda_, which means ‘still’ in the sense of ‘X still did something (even though I told him not to).’ This clitic interacts with **focus** and is used to question **particular constituents**. The clitic attaches to the item under interrogation. (It seems to have single word scope, e.g. aarlarda in the following would be ‘two FISH, or something else, like octopus?’) 
       - Ex(s) for the clitic _(g)arda_
