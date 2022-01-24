@@ -86,3 +86,10 @@ remove pc12,pc13 (same reason as pc5,pc6)
   - ambiguity: 88 readings for 2 sentences
 - lab2 testsuite: 7.1%
   - ambiguity: 25 readings for 4 sentences (12 for 1, 6 for 2, 1 for 1)
+
+## Lab 4
+
+### Phenomena
+- Questions
+  - There are several different ways of asking questions in the language. Polar interrogatives use either a free question word _nganyji_ or a clitic. They may also
+be marked with intonation alone.
