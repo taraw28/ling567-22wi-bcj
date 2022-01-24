@@ -215,8 +215,12 @@ Janambooroo-ngan arr mi-n-di-n
 where-ALL go 2-TR-do/say-CONT 
 `Where are you going?’
 ```
-     - Interrogative pronouns such as anggaba can modify nouns. That is, they can appear as pronominal modifiers within Noun Phrases.
-     	- Ex:
+
+
+- Interrogative pronouns such as anggaba can modify nouns. That is, they can appear as pronominal modifiers within Noun Phrases.
+    - Ex:
+
+
 ```
 Source: a:623
 Vetted: t
@@ -233,6 +237,8 @@ Anggabanim laanybiid inanggalagaljan ooldoobal?
 	- _anggi_ ‘what’ is used to ask about the **purpos**e of an action. 
 	- both are stance-neutral markers
 	- Ex(s):
+
+
 ```
 Source: a:624
 Vetted: t
@@ -243,9 +249,12 @@ Angan mi-ny-jarrala-gal joornk
 why 2-PST-run-REC.PST fast 
 `Why did you run so fast?'
 ```
+
 	- _goonban(kij)_ signals the speaker’s disapproval of an action and is usually translated as ‘why on earth’. 
 	- This interrogative adverb may be qualified with =_gija_ ‘very’
 	- Ex(s):
+	
+	
 ```
 Source: a:625
 Vetted: t
