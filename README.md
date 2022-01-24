@@ -91,10 +91,10 @@ remove pc12,pc13 (same reason as pc5,pc6)
 
 ### Phenomena
 ### Questions
-- different ways of asking questions: 
-  - polar interrogatives:there are three ways to form polar questions using morphological material. The first is by using the interrogative particle _nganyji_. The particle usually appears first in the clause. This particle questions the proposition in the clause as a whole.     
+- polar interrogatives 
+  - using the interrogative particle _nganyji_. The particle usually appears first in the clause. This particle questions the proposition in the **clause as a whole**.     
        - Ex(s) for a free question word _nganyji_ :   														
-     ```																																												
+     ```																		
     Source: a:618
     Vetted: t
     Judgement: g
@@ -111,12 +111,30 @@ remove pc12,pc13 (same reason as pc5,pc6)
     Nganyji ngay ngankiida Broomengan?
     Nganyji ngay nga-n-k-iid-a Broome-ngan
     `Will I go to Broome?’
+    
+    Nganyji lol inyjiidigal jan mayar?
+    Nganyji lol i-ny-jiidi-gal jan mayar
+    INTERROG burn 3-PST-go-REC.PST 1MIN.POSS house
+    `Did my house burn?’
+    
     ```
-    - There are some derivatives of nganyji, such as _nganyjal_ and _nganyjirrgoordoo_ ‘how many’ (and in the old texts, nganyjarda)._ Nganyjal_ is marked with the indefinite marker -al
+    - There are some derivatives of nganyji, such as _nganyjal_ and _nganyjirrgoordoo_ ‘how many’ (and in the old texts, nganyjarda)._ Nganyjal_ is marked with the indefinite marker -al. 
       - Ex(s):
-	nganyji 
-- 
-    - The clitic =_(g)arda_ has a clear deontic meaning. It is probably related to the adverb _garda_, which means ‘still’ in the sense of ‘X still did something (even though I told him not to)’  
+      - ```
+	Nganyjal darr oonkara ngoorrij.
+	Nganyjal darr oo-n-k-ar-a ngoorrij
+	hopefully come 3-TR-FUT-pierce-FUT future
+	`Hopefully he will come tomorrow.’
+	
+	
+	Nganyjal irrgoordoo aalga ingarralanana namard.
+	Nganyjal irrgoordoo aalga i-ng-arr-ala-na-na namard
+	NGANYJAL how.much day 3-PST-AUG-live-CONT-REM.PST just
+	`We don’t know how long they lived without fire.’
+	
+	```
+	
+   - using clitic =_(g)arda_ which has a clear deontic meaning. It is probably related to the adverb _garda_, which means ‘still’ in the sense of ‘X still did something (even though I told him not to).’ This clitic interacts with **focus** and is used to question **particular constituents**. The clitic attaches to the item under interrogation. (It seems to have single word scope, e.g. aarlarda in the following would be ‘two FISH, or something else, like octopus?’) 
       - Ex(s) for the clitic _(g)arda_
      ```
     Source: a:619
@@ -126,7 +144,7 @@ remove pc12,pc13 (same reason as pc5,pc6)
     Gooyarrarda aarli minnyagal?
     Gooyarr=arda aarli mi-n-nya-gal
     two=INT fish 2-TR-[PST]-catch-REC.PST
-    `Was it two fish you caught?
+    `Was it **two** fish you caught?
     
     Source: a:619
     Vetted: t
@@ -138,9 +156,58 @@ remove pc12,pc13 (same reason as pc5,pc6)
     `Will I go to Broome today or will it be you?’
     
     ```
-  - content questions
-     - interrogative placement and intonation
+    
+    - using _=bard(a)_, also a clitic with identical distribution to _=gard_. It appears to have an epistemic function in interrogatives; that is, it questions an **individual constituent** and asks the question ‘was it this or something else?’
+```
+Source: a:620
+Vetted: t
+Judgement: g
+Phenomena: q 
+Ginyinggi ball garndi inin bardagonbard?
+Ginyinggi ball garndi i-ni-n bardagon=bard
+3MIN ball on.top 3-sit-CONT tree-LOC=INTERROG
+`Is the ball at the top of the TREE?’
+
+Ginyinggarda jina jiiwa minjoogoolij?
+Ginyingg=arda jina jiiwa mi-n-joogool-ij
+3min=interrog 3M.POSS boomerang 2-TR-break-PFV
+`Was it HIS boomerang you broke?’
+
+
+Nyimoonggoon ginyingginim aamba joowarda jiy iila inangajim?
+Nyi-moonggoon ginyinggi-nim aamba joo=warda jiy iila i-na-ngajim
+2-know 3MIN-ERG man 2MIN=INT 2M.POSS dog 3-TR-hit
+`Do you know if it was the man who hit YOUR dog?’
+
+
+Source: a:622
+Vetted: t
+Judgement: g
+Phenomena: q 
+Ngayarda ngankiida Broomengan, gardi joowarda?
+Ngay=arda nga-n-k-iid-a Broome-ngan, gardi joo=warda
+1sg=INT go Broome-ALL “or” 2MIN=INT
+`Will I go to Broome today or will it be you?’
+
+```
+- content questions
+  - interrogative placement and intonation: 
+     - asked with one of a number of interrogative pronounsinterrogative pronoun, usually first in the clause, receives intonational focus, with a H* tone; interrogative clauses have a sharp rise at the end of the clause, which may occur over a single syllable. Although the pronoun is usually first in the clause, it need not be, and examples of both _nganyji_ and _anggi_ are found which are non-initial, and which still have an interrogative reading.
+     - Ex(s):
+ ```
+Source: a:622
+Vetted: t
+Judgement: g
+Phenomena: wh 
+Anggaba nyinga joo?
+Anggaba nyi-nga joo
+who 2MIN-name 2MIN
+`What’s your name?’
+
+<img width="691" alt="Screen Shot 2022-01-24 at 11 05 16 AM" src="https://user-images.githubusercontent.com/49420070/150847542-10a3b771-a6e9-4f08-93d5-ce16899f00b9.png">
+
+
      - ‘Why’ questions: _goonban(kij)_ and _angan_
-     
+    
   - double interrogatives
   
