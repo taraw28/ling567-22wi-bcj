@@ -94,7 +94,7 @@ remove pc12,pc13 (same reason as pc5,pc6)
 - different ways of asking questions: 
   - polar interrogatives     
      - use either a free question word _nganyji_ or a clitic. They may also be marked with intonation alone.
-      Ex:   
+     - Ex:   
         Nganyji minjalagal jiyirr ooldoobal?
         **Nganyji** mi-n-jala-gal jiy-irr ooldoobal?
         NGANYJI 2-TR-see-REC.PST 2M.POSS-3A things
