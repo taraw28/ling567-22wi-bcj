@@ -92,15 +92,13 @@ remove pc12,pc13 (same reason as pc5,pc6)
 ### Phenomena
 ### Questions
 - different ways of asking questions: 
-  - polar interrogatives     
-     - use either a free question word _nganyji_ or a clitic. They may also be marked with intonation alone.
-       - Ex(s) for a free question word _nganyji_ :   
-     ```
+  - polar interrogatives:there are three ways to form polar questions using morphological material. The first is by using the interrogative particle _nganyji_. The particle usually appears first in the clause. This particle questions the proposition in the clause as a whole.     
+       - Ex(s) for a free question word _nganyji_ :   														
+     ```																																												
     Source: a:618
     Vetted: t
     Judgement: g
     Phenomena: q
-    Nganyji minjalagal jiyirr ooldoobal?
     **Nganyji** mi-n-jala-gal jiy-irr ooldoobal
     NGANYJI 2-TR-see-REC.PST 2M.POSS-3A things
     `Did you see your things?’
@@ -114,6 +112,10 @@ remove pc12,pc13 (same reason as pc5,pc6)
     Nganyji ngay nga-n-k-iid-a Broome-ngan
     `Will I go to Broome?’
     ```
+    - There are some derivatives of nganyji, such as _nganyjal_ and _nganyjirrgoordoo_ ‘how many’ (and in the old texts, nganyjarda)._ Nganyjal_ is marked with the indefinite marker -al
+      - Ex(s):
+	nganyji 
+- 
     - The clitic =_(g)arda_ has a clear deontic meaning. It is probably related to the adverb _garda_, which means ‘still’ in the sense of ‘X still did something (even though I told him not to)’  
       - Ex(s) for the clitic _(g)arda_
      ```
