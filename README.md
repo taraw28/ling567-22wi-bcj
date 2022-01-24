@@ -117,12 +117,14 @@ remove pc12,pc13 (same reason as pc5,pc6)
     - The clitic =_(g)arda_ has a clear deontic meaning. It is probably related to the adverb _garda_, which means ‘still’ in the sense of ‘X still did something (even though I told him not to)’  
       - Ex(s) for the clitic _(g)arda_
      ```
-     Source: a:618
+    Source: a:619
     Vetted: t
     Judgement: g
     Phenomena: q
     Ngayarda ngankiida Broomengan, gardi joowarda?
-    
+    Ngay=arda nga-n-k-iid-a Broome-ngan, gardi joo=warda
+    1MIN=INT go Broome-ALL “or” 2MIN=INT
+    `Will I go to Broome today or will it be you?’
     
     ```
   - content questions
