@@ -204,10 +204,118 @@ Anggaba nyi-nga joo
 who 2MIN-name 2MIN
 `What’s your name?’
 
-<img width="691" alt="Screen Shot 2022-01-24 at 11 05 16 AM" src="https://user-images.githubusercontent.com/49420070/150847542-10a3b771-a6e9-4f08-93d5-ce16899f00b9.png">
+Source: a:623
+Vetted: t
+Judgement: g
+Phenomena: wh 
+Janambooroongan arr mindin? 
+Janambooroo-ngan arr mi-n-di-n 
+where-ALL go 2-TR-do/say-CONT 
+`Where are you going?’
+```
+     - Interrogative pronouns such as anggaba can modify nouns. That is, they can appear as pronominal modifiers within Noun Phrases.
+     	- Ex:
+```
+Source: a:623
+Vetted: t
+Judgement: g
+Phenomena: wh
+Anggabanim laanybiid inanggalagaljan ooldoobal?
+[Anggaba-nim laanybiid] i-na-ng-gala-gal=jan ooldoobal
+‘Which thief [lit. ‘who thief’] went off with my stuff?’
+```
 
 
-     - ‘Why’ questions: _goonban(kij)_ and _angan_
-    
-  - double interrogatives
-  
+ - ‘Why’ questions: 
+ 	- _Angan_ ‘why’ asks about the **reason** for an action or event. 
+	- _anggi_ ‘what’ is used to ask about the **purpos**e of an action. 
+	- both are stance-neutral markers
+	- Ex(s):
+```
+Source: a:624
+Vetted: t
+Judgement: g	
+Phenomena: wh
+Angan minyjarralagal joornk?
+Angan mi-ny-jarrala-gal joornk
+why 2-PST-run-REC.PST fast 
+`Why did you run so fast?'
+```
+	- _goonban(kij)_ signals the speaker’s disapproval of an action and is usually translated as ‘why on earth’. 
+	- This interrogative adverb may be qualified with =_gija_ ‘very’
+	- Ex(s):
+```
+Source: a:625
+Vetted: t
+Judgement: g	
+Phenomena: wh
+Goonban barda minagal jan aarli?
+Goonban barda mi-n-a-gal jan aarli
+why.on.earth away 2-TR-give-REC.PST 1M.POSS fish
+`Why on earth did you give my fish away?’
+
+Source: a:625
+Vetted: t
+Judgement: g	
+Phenomena: wh
+Goonbankij minjoolnggaljin?
+Goonban=kij mi-n-joolng-gal=jin
+why.on.earth=VERY 2-TR-tell-REC.PST=3M.IO
+`Why on earth did you tell him?’
+
+Source: a:625
+Vetted: t
+Judgement: g	
+Phenomena: wh
+Goonbankij jarrmin injoongmoord?
+Goonban=kij jarrmin i-n-joo-ng=moord 
+why.on.earth follow 3-TR-do/say-APPL=1A.DO
+`Why on earth does she have to follow us?’
+```
+
+- double interrogatives
+  - More than one interrogative pronoun can appear in a clause. Multiple interrogatives are allowed, and there are few restrictions on the order, at least of argument interrogatives. The difference in meaning appears to depend on which interrogative has greater focus.
+  - Ex(s):
+
+```
+Source: a:625
+Vetted: t
+Judgement: g	
+Phenomena: wh
+Anggabanim anggi inarligal?
+Anggaba-nim anggi i-na-rli-gal
+who-ERG what 3-TR-eat-REC.PST
+`Who ate what?’
+
+```
+  - When it comes to multiple interrogatives with both arguments and adjuncts, however, the judgments are different. This is one of the few places in the grammar where there are differences between free adjunct and argument phrases. For example, multiple interrogatives involving _janaboor_ ‘where’ are fine when the adjunct is fronted before _anggaba_ ‘who’, but only if the verb is final:
+```
+Source: a:627
+Vetted: t
+Judgement: g	
+Phenomena: wh
+Anggaba minjalagal janaboor?
+Anggaba mi-n-jala-gal janaboor
+who 2-TR-see-REC.PST where
+`Who did you see where?’
+
+
+Source: a:627
+Vetted: t
+Judgement: g	
+Phenomena: wh
+Janaboor anggaba minjalagal?
+Janaboor anggaba mi-n-jala-gal
+where who 2-TR-see-REC.PST
+`Who did you see where?’
+
+Source: a:628
+Vetted: t
+Judgement: g	
+Phenomena: wh
+Nyanyjirrgoordoo aarli minjooloonggalirr baanigarr?
+Nyanyjirrgoordoo aarli mi-n-jooloong-gal=irr baanigarr?
+how.many fish 2M-TR-collect-REC.PST=3A.DO when
+`How many fish did you collect when?/When did you collect
+how many fish?’
+```
