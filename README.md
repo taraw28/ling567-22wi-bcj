@@ -92,8 +92,8 @@ remove pc12,pc13 (same reason as pc5,pc6)
 ### Phenomena
 ### Questions
 - different ways of asking questions: 
-  - polar interrogatives 
-   - use either a free question word _nganyji_ or a clitic. They may also be marked with intonation alone.
+  - polar interrogatives     
+     - use either a free question word _nganyji_ or a clitic. They may also be marked with intonation alone.
   - content questions
   -   interrogative placement and intonation
    - ‘Why’ questions: _goonban(kij)_ and _angan_
