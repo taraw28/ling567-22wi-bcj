@@ -90,6 +90,6 @@ remove pc12,pc13 (same reason as pc5,pc6)
 ## Lab 4
 
 ### Phenomena
-- Questions
+### Questions
   - There are several different ways of asking questions in the language. Polar interrogatives use either a free question word _nganyji_ or a clitic. They may also
 be marked with intonation alone.
