@@ -333,3 +333,9 @@ how.many fish 2M-TR-collect-REC.PST=3A.DO when
 `How many fish did you collect when?/When did you collect
 how many fish?’
 ```
+
+
+### Adverbial Clauses
+ Oola b i-n-ar-n wiinya i-n-d-an jamb   
+ rain rel 3m-tr-pierce-cont full 3m-tr-do.say-cont rel // 
+ When it rains it becomes full. 
