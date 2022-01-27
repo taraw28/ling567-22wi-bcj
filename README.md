@@ -103,7 +103,6 @@ remove pc12,pc13 (same reason as pc5,pc6)
     NGANYJI 2-TR-see-REC.PST 2M.POSS-3A things
     `Did you see your things?’
     
-    
     Source: a:618
     Vetted: t
     Judgement: g
@@ -350,23 +349,16 @@ Roowil	i-ng-irr-i-nya-na Ngalngoorarra yoorr 		i-ng-arr-a-ma-n 	 Balalbalalngarr
 walk 	3-PST-AUG-TR-catch-REM.PST Ng. 	come.down	3-PST-AUG-TR-put-REM.PST B.		 climb 3-PST-AUG-TR-catch-REM.PST back 	fig.tree-LOC
 `They walked to Ngalngoorarra and came down at Balalbalalngarr, and climbed up at the big fig tree.’
 
-Source: a:627
+
+Source: author
 Vetted: t
 Judgement: g	
-Phenomena: wh
-`Who did you see where?’
-
-Roowil	ingirrinyana Ngalngoorarra 
+Phenomena: pro-d
+Roowil	ingirrinyana Ngalngoorarra. 
 Roowil	i-ng-irr-i-nya-na Ngalngoorarra
+`They walked to Ngalngoorarra.'
 ```
 Heads of relative clauses, for example, can be omitted. Both speech act participants can be omitted. Subjects and objects of gerunds can be omitted, even though they are not cross-referenced on the verb. 
-Pronouns (or free nouns) which are part of a coordinated phrase cannot be omitted:
-
-p. 294
-Monty, Lionel agal ngayoo angarrjarrarra barda Broomengan.
-Monty, Lionel agal ngayoo a-ng-arr-jarrarra barda Broome-ngan
-M.     L.     and  1MIN   1-PST-AUG-get.up. away  B.-ALL
-`Monty, Lionel and I got up and went off to Broome.’
 
 
 **No omission cases**
@@ -403,7 +395,7 @@ black   3-[PST]-TR-do/say-REC.PST sand   fire-ERG
 `The ground got black from the fire.’
 ```
 
-In some cases the presence or absence of overt nominal material appears to be grammatically constrained. In the following Bardi sentence the noun _oorany_ is not omissible:
+- In some cases the presence or absence of overt nominal material appears to be grammatically constrained. In the following Bardi sentence the noun _oorany_ is not omissible:
 
 ```
 Jaarla 		nganjalagal 	*(oorany)  wiliwilon 	inkalgal.
@@ -413,6 +405,15 @@ beach(ø-loc) 	1M-TR-see-PST	woman	   fishing 	3M-TR-visit-REC.PST
 
 ```
 
+- Pronouns (or free nouns) which are part of a coordinated phrase cannot be omitted:
+
+```
+p. 294
+Monty, Lionel agal ngayoo angarrjarrarra barda Broomengan.
+Monty, Lionel agal ngayoo a-ng-arr-jarrarra barda Broome-ngan
+M.     L.     and  1MIN   1-PST-AUG-get.up. away  B.-ALL
+`Monty, Lionel and I got up and went off to Broome.’
+```
 
 
 ### Adverbial Clauses
