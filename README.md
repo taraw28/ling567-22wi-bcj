@@ -399,7 +399,7 @@ I-ny-jargi=jin ngaarri-ø
 
 Maanka injoogal    		 gaara  noorroonim.
 Maanka i-n-joo-gal 		 gaara  n˙oorroo-nim
-blac   3-[PST]-TR-do/say-REC.PST sand   fire-ERG
+black   3-[PST]-TR-do/say-REC.PST sand   fire-ERG
 `The ground got black from the fire.’
 ```
 
