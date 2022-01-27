@@ -335,6 +335,86 @@ how many fish?’
 ```
 
 
+### Argument Optionality
+
+Bardi has free argument omission (‘pro-drop’). It does allow subjects and objects to be dropped with 
+Pronouns are not syntactically obligatory in the clause. They are not used for reference tracking. 
+
+Even in cases of potentially ambiguous argument tracking, free NPs or pronouns are seldom used. The ambiguity is tolerated, though there is some assumption of argument continuity (that is, that subjects continue subjects and objects continue objects); however, likelihood and real world knowledge are used to infer who is doing what.
+
+In the following example argument continuity is inferred by the absence of free NPs or pronouns and the subject marking on the verb provides information about which participants. Context identifies the referent of the verb agreement. The following example contains no argument NPs or pronouns at all; the only NPs are place names or locations.
+
+```
+Roowil	ingirrinyana Ngalngoorarra 	yoorr 		ingarraman 		 Balalbalalngarr daab  ingirrinyan 		  goona goorriron.
+Roowil	i-ng-irr-i-nya-na Ngalngoorarra yoorr 		i-ng-arr-a-ma-n 	 Balalbalalngarr daab  i-ng-irr-i-nya-n 	  goona goorrir-on
+walk 	3-PST-AUG-TR-catch-REM.PST Ng. 	come.down	3-PST-AUG-TR-put-REM.PST B.		 climb 3-PST-AUG-TR-catch-REM.PST back 	fig.tree-LOC
+`They walked to Ngalngoorarra and came down at Balalbalalngarr, and climbed up at the big fig tree.’
+
+Source: a:627
+Vetted: t
+Judgement: g	
+Phenomena: wh
+`Who did you see where?’
+
+Roowil	ingirrinyana Ngalngoorarra 
+Roowil	i-ng-irr-i-nya-na Ngalngoorarra
+```
+Heads of relative clauses, for example, can be omitted. Both speech act participants can be omitted. Subjects and objects of gerunds can be omitted, even though they are not cross-referenced on the verb. 
+Pronouns (or free nouns) which are part of a coordinated phrase cannot be omitted:
+
+p. 294
+Monty, Lionel agal ngayoo angarrjarrarra barda Broomengan.
+Monty, Lionel agal ngayoo a-ng-arr-jarrarra barda Broome-ngan
+M.     L.     and  1MIN   1-PST-AUG-get.up. away  B.-ALL
+`Monty, Lionel and I got up and went off to Broome.’
+
+
+**No omission cases**
+However, there are contexts under which free noun phrases appear not to be omissible
+
+Other evidence may come from speaker intuitions about arguments which are omitted and understood from context, versus cases where there are no arguments (that is, distinctions between sentences like ‘he’s eating [cake]’ and ‘*we put the table’).
+
+- Pronouns cannot be omitted if the argument is in focus. But if they are in special focus (Kiss 1998), they may also get reinforcement, such as with the exclamative _arra_:
+
+```
+Arra 	ngay bard arr  ngandan.
+Arra 	ngay bard arr  nga-n-da-n
+INTERJ  1MIN away come 1-TRdo/say-CONT
+`Hey look! It’s ME coming.’
+
+Ngayoonim  ngananarri         malarr.
+Ngayoo-nim nga-na-na=rri      malarr
+1MIN-ERG 1-CONT-REM.PST=2M.DO wife
+`I gave you wives.’
+```
+- The following show that the ergative differentiates subject from oblique; it is not omissible even when the semantic roles are clear from context.
+
+```
+p. 465
+Inyjargijin ngaarri.
+I-ny-jargi=jin ngaarri-ø
+3-PST-fear=3MIN.IO devil-ABS
+`He was afraid of the devil.’
+*`The devil was afraid of him.’
+
+Maanka injoogal    		 gaara  noorroonim.
+Maanka i-n-joo-gal 		 gaara  n˙oorroo-nim
+blac   3-[PST]-TR-do/say-REC.PST sand   fire-ERG
+`The ground got black from the fire.’
+```
+
+In some cases the presence or absence of overt nominal material appears to be grammatically constrained. In the following Bardi sentence the noun _oorany_ is not omissible:
+
+```
+Jaarla 		nganjalagal 	*(oorany)  wiliwilon 	inkalgal.
+Jaarla 		nga-n-jala-gal 	*(oorany)  wiliwil-on 	i-n-kal-gal
+beach(ø-loc) 	1M-TR-see-PST	woman	   fishing 	3M-TR-visit-REC.PST
+`I saw a woman on the beach, she was fishing.’ / ‘I saw the woman fishing on the beach.’
+
+```
+
+
+
 ### Adverbial Clauses
  Oola b i-n-ar-n wiinya i-n-d-an jamb   
  rain rel 3m-tr-pierce-cont full 3m-tr-do.say-cont rel // 
