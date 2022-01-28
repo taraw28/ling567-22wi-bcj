@@ -336,7 +336,7 @@ how many fish?’
 
 ### Argument Optionality
 
-Bardi has free argument omission (‘pro-drop’). It does allow subjects and objects to be dropped with 
+Bardi has free argument omission (‘pro-drop’). It does allow subjects and objects to be dropped. 
 Pronouns are not syntactically obligatory in the clause. They are not used for reference tracking. 
 
 Even in cases of potentially ambiguous argument tracking, free NPs or pronouns are seldom used. The ambiguity is tolerated, though there is some assumption of argument continuity (that is, that subjects continue subjects and objects continue objects); however, likelihood and real world knowledge are used to infer who is doing what.
