@@ -459,7 +459,7 @@ M.     L.     and  1MIN   1-PST-AUG-get.up. away  B.-ALL
       - select number of inalienable nouns take possessive prefixes, others take regular possessive pronouns
       pp. 210
       Ngamarlang nganangajimgal.
-      ngamarla-ng nga-na-ngajim-gal
+      nga-marla-ng nga-na-ngajim-gal
       1M.POSS-hand-INS 1-TR-PST-hit-REC.PST
       `I  hit him with my hand.'
 
@@ -482,3 +482,16 @@ M.     L.     and  1MIN   1-PST-AUG-get.up. away  B.-ALL
     5. verb -laba- marks possession
 - possessive pronouns are marked for the number and person of both the possessor and the possessum
   - possessive pronoun can lose aug marking if possessum is non-individuated
+
+### Initial Changes to Choices File
+- made case position class obligatory
+- removed ins case (removed from case pc as well)
+- removed loc-all pc
+- updated lexicon
+- removed many verb pc classes
+  - will list them but will use github to track
+- removed some noun pc classes
+  - will list them but will use github to track
+- added min and aug number
+- added separate word possessor pronouns
+- added nganyji as a yes/no question word

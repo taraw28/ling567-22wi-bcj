@@ -1,8 +1,4 @@
 ;;; -*- Mode: TDL; Coding: utf-8 -*-
 abs-ltr-lex := abs-ltr-lex-rule.
 
-case-pc-synth-adp-lex := case-pc-synth-adp-lex-rule.
-
-loc-all-pc-synth-adp-lex := loc-all-pc-synth-adp-lex-rule.
-
 verb-pc62_lrt1-lex := verb-pc62_lrt1-lex-rule.

@@ -1,6 +1,4 @@
 ;;; -*- Mode: TDL; Coding: utf-8 -*-
-decl-head-opt-subj := decl-head-opt-subj-phrase.
-
 basic-head-opt-comp := basic-head-opt-comp-phrase.
 
 head-comp := head-comp-phrase.
@@ -14,6 +12,8 @@ subj-head := subj-head-phrase.
 head-comp-2 := head-comp-phrase-2.
 
 comp-head-2 := comp-head-phrase-2.
+
+poss-unary-pron-1 := poss-unary-phrase-pron-1.
 
 head-spec := head-spec-phrase.
 

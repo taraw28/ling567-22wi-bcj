@@ -44,6 +44,8 @@ PNG.PER : PNG.PER
   * <> *
 
 PNG.NUM : PNG.NUM
+  aug <> aug
+  min <> min
   * <> *
 
 PNG.GEND : PNG.GEND

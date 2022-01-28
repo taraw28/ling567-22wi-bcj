@@ -411,16 +411,6 @@ nan := noun11-noun-lex &
 
 ;;; Adjectives
 
-;;; Case-marking adpositions
-
-ins-marker_rooban := case-marking-adp-lex &
-  [ STEM < "rooban" >,
-    SYNSEM.LOCAL [ CONT [ HOOK [ ICONS-KEY.IARG1 #clause,
-                                 CLAUSE-KEY #clause ],
-                          ICONS.LIST < > ],
-                   CAT.HEAD [ CASE ins,
-                              CASE-MARKED + ] ] ].
-
 ;;; Verbs
 
 n_1 := verb1-verb-lex &
@@ -627,6 +617,10 @@ alboo := verb24-verb-lex &
   [ STEM < "alboo" >,
     SYNSEM.LKEYS.KEYREL.PRED "_dig_v_rel" ].
 
+boo := verb24-verb-lex &
+  [ STEM < "boo" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_spear_v_rel" ].
+
 ;;; Auxiliaries
 
 irr_2 := aux1-aux-lex &
@@ -666,6 +660,24 @@ barni_2 := det2-determiner-lex &
     SYNSEM.LKEYS.KEYREL.PRED "_exist_q_rel" ].
 
 ;;; Adverbs
+
+nganyji := q-particle1-lex &
+  [ STEM < "nganyji" > ].
+
+ngajana-noun := ngajana-noun-lex &
+  [ STEM < "ngajana" > ].
+
+jiy-noun := jiy-noun-lex &
+  [ STEM < "jiy" > ].
+
+jina-noun := jina-noun-lex &
+  [ STEM < "jina" > ].
+
+jan-noun := jan-noun-lex &
+  [ STEM < "jan" > ].
+
+ajaw-noun := ajaw-noun-lex &
+  [ STEM < "ajaw" > ].
 
 agal2 := conj-lex &
   [ STEM < "agal" >,
