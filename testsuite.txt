@@ -391,8 +391,8 @@ Vetted: t
 Judgement: g
 Phenomena: agr
 Inkoorrnim ngangimilijarrngay.
-inkoorr-nim	nga-ngi-mili=jarrngay
-cold-ERG	1-PST-wake.up=1M.DO
+inkoorr-nim nga-ngi-mili=jarrngay
+cold-ERG 1-PST-wake.up=1M.DO
 `Cold woke me up.'
 
 #40 Oblique & Possessive
@@ -421,8 +421,8 @@ Vetted: t
 Judgement: g
 Phenomena: c
 Inkoorrnim ngangimilijarrngay.
-inkoorr-nim	nga-ngi-mili=jarrngay
-cold-ERG	1-PST-wake.up=1M.DO
+inkoorr-nim nga-ngi-mili=jarrngay
+cold-ERG 1-PST-wake.up=1M.DO
 `Cold woke me up.'
 
 #43 noun-erg trans-verb noun
@@ -505,35 +505,34 @@ Warrga i-n-joo-n morr-jarr
 walk 3-TR-do/say-CONT path-PERL
 `He went along his path.'
 
-
-#51 polar-question free-question-word-nganyji 
+#51 polar-question free-question-word-nganyji
 Source: a:618
 Vetted: t
 Judgement: g
 Phenomena: q
 Nganyji mi-n-jala-gal jiy-irr ooldoobal
 NGANYJI 2-TR-see-REC.PST 2M.POSS-3A things
-`Did you see your things?’
+`Did you see your things?'
 
-#52 polar-question free-question-word-nganyji 
+#52 polar-question free-question-word-nganyji
 Source: author
 Vetted: t
 Judgement: u
 Phenomena: q
 Mi-n-jala-gal Nganyji jiy-irr ooldoobal
 2-TR-see-REC.PST NGANYJI 2M.POSS-3A things
-`Did you see your things?’
+`Did you see your things?'
 
-#53 polar-question free-question-word-nganyji  
+#53 polar-question free-question-word-nganyji
 Source: a:618
 Vetted: t
 Judgement: g
 Phenomena: q
 Nganyji ngay ngankiida Broomengan?
 Nganyji ngay nga-n-k-iid-a Broome-ngan
-`Will I go to Broome?’
+`Will I go to Broome?'
 
-#54 polar-question free-question-word-nganyji  
+#54 polar-question free-question-word-nganyji
 Source: author
 Vetted: t
 Judgement: u
@@ -541,10 +540,9 @@ Phenomena: q
 Nganyji aalganim ngangamarrana.
 Nganyji aalga-nim nga-nga-marra-na
 INTERROG sun-ERG 1-PST-cook-REM.PST
-‘Did I get sun-burnt.’
+‘Did I get sun-burnt.'
 
-
-#55 polar-question free-question-word-nganyji  
+#55 polar-question free-question-word-nganyji
 Source: a:621
 Vetted: t
 Judgement: g
@@ -552,11 +550,10 @@ Phenomena: q
 Nganyji lol inyjiidigal jan mayar?
 Nganyji lol i-ny-jiidi-gal jan mayar
 INTERROG burn 3-PST-go-REC.PST 1MIN.POSS house
-`Did my house burn?’
+`Did my house burn?'
 
-
-#56 polar-question clitic-garda-or-arda  
-Source: a:619    
+#56 polar-question clitic-garda-or-arda
+Source: a:619
 Vetted: t
 Judgement: g
 Phenomena: q
@@ -565,8 +562,7 @@ Gooyarr=arda aarli mi-n-nya-gal
 two=INT fish 2-TR-[PST]-catch-REC.PST
 `Was it two fish you caught?
 
-
-#57 polar-question clitic-garda-or-arda  
+#57 polar-question clitic-garda-or-arda
 Source: a:619
 Vetted: t
 Judgement: g
@@ -574,57 +570,163 @@ Phenomena: q
 Ngayarda ngankiida Broomengan, gardi joowarda?
 Ngay=arda nga-n-k-iid-a Broome-ngan, gardi joo=warda
 1MIN=INT go Broome-ALL “or” 2MIN=INT
-`Will I go to Broome today or will it be you?’ 
+`Will I go to Broome today or will it be you?'
 
-
-#58 double-interrogative   
+#58 double-interrogative
 Source: a:625
 Vetted: t
-Judgement: g	
+Judgement: g
 Phenomena: wh
 Anggabanim anggi inarligal?
 Anggaba-nim anggi i-na-rli-gal
 who-ERG what 3-TR-eat-REC.PST
-`Who ate what?’
+`Who ate what?'
 
-#59 multiple-interrogative   
+#59 multiple-interrogative
 Source: a:627
 Vetted: t
-Judgement: g	
+Judgement: g
 Phenomena: wh
 Anggaba minjalagal janaboor?
 Anggaba mi-n-jala-gal janaboor
 who 2-TR-see-REC.PST where
-`Who did you see where?’
+`Who did you see where?'
 
-#60 argument-optionality subj-pro-drop   
+#60 argument-optionality subj-pro-drop
 Source: author
 Vetted: t
-Judgement: g	
+Judgement: g
 Phenomena: pro-d
-Roowil	ingirrinyana Ngalngoorarra. 
-Roowil	i-ng-irr-i-nya-na Ngalngoorarra
+Roowil ingirrinyana Ngalngoorarra.
+Roowil i-ng-irr-i-nya-na Ngalngoorarra
 `They walked to Ngalngoorarra.'
 
-#61 argument-optionality pro-drop-not-allowed   
-
+#61 argument-optionality pro-drop-not-allowed
 Source: a:294
 Vetted: t
-Judgement: u	
+Judgement: u
 Phenomena: pro-d
 Ngayoonim ngananarri malarr.
 Ngayoo-nim nga-na-na=rri malarr
 1MIN-ERG 1-CONT-REM.PST=2M.DO wife
-`I gave you wives.’
+`I gave you wives.'
 
-#62 argument-optionality pro-drop-not-allowed ergative-differentiates-subject-from-oblique 
-
-Source: a:294
+#62 argument-optionality pro-drop-not-allowed ergative-differentiates-subject-from-oblique
+Source: a:412
 Vetted: t
-Judgement: u	
+Judgement: u
 Phenomena: pro-d
 Inyjargijin ngaarri.
 I-ny-jargi=jin ngaarri
 3-PST-fear=3MIN.IO devil.ABS
-`He was afraid of the devil.’
-`The devil was afraid of him.’
+`The devil was afraid of him.'
+
+#63 free possessive pronoun
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: poss
+Ngajana bo inambijjan goorlil.
+Ngajana bo i-na-m-b-ij=jan goorlil.
+1M.POSS woman's.child 3-TR-PST-poke-PFV=1M.IO turtle
+`My son speared a turtle.'
+
+#64 free possessive pronoun
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: poss
+Ngajana gooloo bard roowil innyana.
+Ngajana gooloo bard roowil i-n-nya-na
+1M.POSS father off walk 3M-TR-catch-REM.PST
+`My father walked off.'
+
+#65 free possessive pronoun
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: poss
+Minjalagal jiyirr ooldoobal.
+mi-n-jala-gal jiy-irr ooldoobal
+2-TR-see-REC.PST 2M.POSS-3A things
+`You see your things.'
+
+#66 free possessive pronoun
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: poss
+Jina jiiwa minjoogoolij.
+jina jiiwa mi-n-joogool-ij
+3M.POSS boomerang 2-TR-break-PFV
+You broke his boomerang.
+
+#67 free possessive pronoun
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: poss
+Lol inyjiidigal jan mayar
+lol i-ny-jiidi-gal jan mayar
+burn 3-PST-go-REC.PST 1MIN.POSS house
+`My house burned.'
+
+#68 free possessive pronoun
+Source: a:468
+Vetted: t
+Judgement: g
+Phenomena: poss
+Ginyingginim injooloonggal ajawirr irrol.
+ginyinggi-nim i-n-jooloong-gal ajaw-irr irrol
+3MIN-ERG 3-TR-PST-pick.up-REC.PST 1+2M.POSS-3AUG spear.ABS
+`He picked up our spears.'
+
+#69 free possessive pronoun
+Source: a:289
+Vetted: t
+Judgement: g
+Phenomena: poss
+Ngayoo jana gandoorrman.
+ngayoo jana gandoorrman
+1MIN 1M.POSS country.man
+`He is my countryman.'
+
+#70 inalienable noun
+Source: a:210
+Vetted: t
+Judgement: g
+Phenomena: poss
+Ngamarlang nganangajimgal.
+ngamarla-ng nga-na-ngajim-gal
+1M.POSS-hand-INS 1-TR-PST-hit-REC.PST
+`I hit him with my hand.'
+
+#71 inalienable noun
+Source: a:305
+Vetted: t
+Judgement: g
+Phenomena: poss
+Aamba ninga Ngoolmoongoolmoo.
+aamba ni-nga Ngoolmoongoolmoo
+man 3.POSS-name Ngoolmoongoolmoo
+`The man's name was Ngoolmoongoolmoo.'
+
+#72 posessive pronoun cliticized to verb
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: poss
+Ginyingginim injoogooloojan daanggoo
+Ginyinggi-nim i-n-joogooloo=jan daanggoo
+3MIN-ERG 3-TR-break=1M.POSS jaw
+`He broke my jaw.'
+
+#73 posessive pronoun cliticized to verb
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: poss
+Joonim jiyarr bo irrjarginjinan bo.
+Joo-nim jiya-rr bo i-rr-jargi-n=jin=an bo
+2MIN-ERG 2M.POSS-3A woman's.child 3-AUG-fear-CONT-3M.IO=1M.POSS woman's.child
+`Your children are frightened of my children.'
