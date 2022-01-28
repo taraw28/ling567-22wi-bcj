@@ -510,8 +510,9 @@ Source: a:618
 Vetted: t
 Judgement: g
 Phenomena: q
+Nganyji minjalagal jiyirr ooldoobal.
 Nganyji mi-n-jala-gal jiy-irr ooldoobal
-NGANYJI 2-TR-see-REC.PST 2M.POSS-3A things
+nganyji 2-TR-see-REC.PST 2M.POSS-3A things
 `Did you see your things?'
 
 #52 polar-question free-question-word-nganyji
@@ -519,6 +520,7 @@ Source: author
 Vetted: t
 Judgement: u
 Phenomena: q
+Minjalagal Nganyji jiyirr ooldoobal.
 Mi-n-jala-gal Nganyji jiy-irr ooldoobal
 2-TR-see-REC.PST NGANYJI 2M.POSS-3A things
 `Did you see your things?'
@@ -530,6 +532,7 @@ Judgement: g
 Phenomena: q
 Nganyji ngay ngankiida Broomengan?
 Nganyji ngay nga-n-k-iid-a Broome-ngan
+nganyji 1MIN 1-TR-FUT-go-FUT Broome-ALL
 `Will I go to Broome?'
 
 #54 polar-question free-question-word-nganyji
@@ -559,7 +562,7 @@ Judgement: g
 Phenomena: q
 Gooyarrarda aarli minnyagal?
 Gooyarr=arda aarli mi-n-nya-gal
-two=INT fish 2-TR-[PST]-catch-REC.PST
+two=INT fish 2-TR.PST-catch-REC.PST
 `Was it two fish you caught?
 
 #57 polar-question clitic-garda-or-arda
@@ -569,7 +572,7 @@ Judgement: g
 Phenomena: q
 Ngayarda ngankiida Broomengan, gardi joowarda?
 Ngay=arda nga-n-k-iid-a Broome-ngan, gardi joo=warda
-1MIN=INT go Broome-ALL “or” 2MIN=INT
+1MIN=INT 1-TR-FUT-go-FUT Broome-ALL or 2MIN=INT
 `Will I go to Broome today or will it be you?'
 
 #58 double-interrogative
@@ -599,6 +602,7 @@ Judgement: g
 Phenomena: pro-d
 Roowil ingirrinyana Ngalngoorarra.
 Roowil i-ng-irr-i-nya-na Ngalngoorarra
+walk 3-PST-AUG-TR-catch-REM.PST Ngalngoorarra
 `They walked to Ngalngoorarra.'
 
 #61 argument-optionality pro-drop-not-allowed
@@ -678,7 +682,7 @@ Judgement: g
 Phenomena: poss
 Ginyingginim injooloonggal ajawirr irrol.
 ginyinggi-nim i-n-jooloong-gal ajaw-irr irrol
-3MIN-ERG 3-TR-PST-pick.up-REC.PST 1+2M.POSS-3AUG spear.ABS
+3MIN-ERG 3-TR.PST-pick.up-REC.PST 1+2M.POSS-3AUG spear.ABS
 `He picked up our spears.'
 
 #69 free possessive pronoun
@@ -698,7 +702,7 @@ Judgement: g
 Phenomena: poss
 Ngamarlang nganangajimgal.
 nga-marla-ng nga-na-ngajim-gal
-1M.POSS-hand-INS 1-TR-PST-hit-REC.PST
+1M.POSS-hand-INS 1-TR.PST-hit-REC.PST
 `I hit him with my hand.'
 
 #71 inalienable noun
@@ -728,5 +732,5 @@ Judgement: g
 Phenomena: poss
 Joonim jiyarr bo irrjarginjinan bo.
 Joo-nim jiya-rr bo i-rr-jargi-n=jin=an bo
-2MIN-ERG 2M.POSS-3A woman's.child 3-AUG-fear-CONT-3M.IO=1M.POSS woman's.child
+2MIN-ERG 2M.POSS-3A woman's.child 3-AUG-fear-CONT=3M.IO=1M.POSS woman's.child
 `Your children are frightened of my children.'
