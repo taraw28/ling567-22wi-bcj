@@ -337,8 +337,9 @@ how many fish?’
 
 ### Argument Optionality
 
-Bardi has free argument omission (‘pro-drop’). It does allow subjects and objects to be dropped.
-Pronouns are not syntactically obligatory in the clause. They are not used for reference tracking.
+Bardi has free argument omission (‘pro-drop’). It does allow subjects and objects to be dropped. Pronouns are not syntactically obligatory in the clause. They are not used for reference tracking. In other words, Subject/object dropping is allowed on all verbs is  independent of what marking occurs on the verb; the verb does its usual subject/verb agreement (which is required) and for the same reason, the verb can give context to understand what subject or object is being talked about.
+And when a subject/object is overt (not dropped), a subject marker on the verb is still required because agreement is required.
+(some) omission is not allowed in all cases: for example, Pronouns (or free nouns) which are part of a coordinated phrase cannot be omitted
 
 Even in cases of potentially ambiguous argument tracking, free NPs or pronouns are seldom used. The ambiguity is tolerated, though there is some assumption of argument continuity (that is, that subjects continue subjects and objects continue objects); however, likelihood and real world knowledge are used to infer who is doing what.
 
@@ -359,13 +360,15 @@ Roowil	ingirrinyana Ngalngoorarra.
 Roowil	i-ng-irr-i-nya-na Ngalngoorarra
 `They walked to Ngalngoorarra.'
 ```
+
+
 Heads of relative clauses, for example, can be omitted. Both speech act participants can be omitted. Subjects and objects of gerunds can be omitted, even though they are not cross-referenced on the verb.
 
 
 **No omission cases**
-However, there are contexts under which free noun phrases appear not to be omissible
+There are contexts under which free noun phrases appear not to be omissible 
 
-Other evidence may come from speaker intuitions about arguments which are omitted and understood from context, versus cases where there are no arguments (that is, distinctions between sentences like ‘he’s eating [cake]’ and ‘*we put the table’).
+- Other evidence may come from speaker intuitions about arguments which are omitted and understood from context, versus cases where there are no arguments (that is, distinctions between sentences like ‘he’s eating [cake]’ and ‘*we put the table’).
 
 - Pronouns cannot be omitted if the argument is in focus. But if they are in special focus (Kiss 1998), they may also get reinforcement, such as with the exclamative _arra_:
 
@@ -390,9 +393,9 @@ I-ny-jargi=jin ngaarri-ø
 `He was afraid of the devil.’
 *`The devil was afraid of him.’
 
-Maanka injoogal    		 gaara  noorroonim.
-Maanka i-n-joo-gal 		 gaara  n˙oorroo-nim
-black   3-[PST]-TR-do/say-REC.PST sand   fire-ERG
+Maanka injoogal gaara noorroonim.
+Maanka i-n-joo-gal gaara n˙oorroo-nim
+black 3-[PST]-TR-do/say-REC.PST sand fire-ERG
 `The ground got black from the fire.’
 ```
 
