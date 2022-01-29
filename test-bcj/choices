@@ -1108,9 +1108,6 @@ section=morphology
   verb-pc80_obligatory=on
   verb-pc80_order=prefix
   verb-pc80_inputs=verb-pc79
-      verb-pc80_lrt1_feat1_name=pernum
-      verb-pc80_lrt1_feat1_value=3rd
-      verb-pc80_lrt1_feat1_head=verb
       verb-pc80_lrt1_lri1_inflecting=yes
       verb-pc80_lrt1_lri1_orth=i-
 

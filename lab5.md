@@ -40,13 +40,26 @@
   - rem pc78 (non-oblig): -n
   - pst pc79 (non-oblig): ny-
   - third-person pc80 (non-oblig): i-
+  - couldn't parse
 - Attempt 2
   - intrans (unspcf) verb25: jarrmi
   - rem pc78 (non-oblig): -n
   - pst pc79 (non-oblig): ny-
   - third-person pc80 (non-oblig): i-
+  - couldn't parse
 - Attempt 3
   - intrans (abs) verb25: jarrmi
   - rem pc78 (oblig): -n
   - pst pc79 (oblig): ny-
   - third-person pc80 (oblig): i-
+  - couldn't parse
+    - no parse chart for full sentence but parse chart if remove i-
+- Attempt 3
+  - intrans (abs) verb25: jarrmi
+  - rem pc78 (oblig): -n
+  - pst pc79 (oblig): ny-
+  - third-person pc80 (oblig): i- (removed pernum feature)
+  - couldn't parse
+    - parse chart for full sentence
+    - unified vp and np and realized it wasn't parsing due to mismatched cases which is CORRECT
+      BECAUSE IT'S AN UNGRAMMATICAL SENTENCE
