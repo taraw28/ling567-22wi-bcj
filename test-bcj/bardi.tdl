@@ -1,0 +1,1033 @@
+;;; -*- Mode: TDL; Coding: utf-8 -*-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Grammar of bardi
+;;; created at:
+;;;     Sat Jan 29 21:26:11 UTC 2022
+;;; based on Matrix customization system version of:
+;;;     Mon Aug  2 23:22:15 UTC 2021
+;;;
+;;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; Type assigning empty mod list. Added to basic types for nouns, verbs and determiners.
+
+non-mod-lex-item := lex-item &
+  [ SYNSEM.LOCAL.CAT.HEAD.MOD < > ].
+
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Matrix Type Addenda
+;;;;;;;;;;;;;;;;;;;;;;;;;
+
+basic-head-comp-phrase :+ [ SYNSEM [ LIGHT #light,
+             LOCAL.CAT [ HC-LIGHT #light,
+                         MC #mc ] ],
+    HEAD-DTR.SYNSEM.LOCAL.CAT.MC #mc ].
+
+head :+ [ PRON bool,
+    POSSESSOR poss,
+    SPEC-INIT bool,
+    FORM form,
+    AUX bool ].
+
+noun :+ [ CASE case ].
+
+inflected :+ [ CASE-PC-FLAG luk,
+    VERB-PC62-FLAG luk ].
+
+infl-satisfied :+ [ CASE-PC-FLAG na-or-+,
+    VERB-PC62-FLAG na-or-+ ].
+
+png :+ [ PERNUM pernum,
+    GEND gender ].
+
+cat :+ [ POSSESSUM poss ].
+
+poss := *top* &
+  [ POSS-AGR png ].
+
+basic-bare-np-phrase :+ [ SYNSEM.LOCAL.CAT [ VAL.SPEC < >,
+                       HEAD #head,
+                       POSSESSUM #possessum ],
+    HEAD-DTR.SYNSEM.LOCAL.CAT [ HEAD #head,
+                                POSSESSUM #possessum & nonpossessive ] ].
+
+basic-head-1st-comp-phrase :+ [ SYNSEM.LOCAL.CAT.POSSESSUM #poss,
+    HEAD-DTR.SYNSEM.LOCAL.CAT.POSSESSUM #poss ].
+
+basic-head-opt-subj-phrase :+ [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS < > ].
+
+; We can't just use the V-final and V-initial word
+; order modules together to get a good free word order
+; module. The root of the problem seems to be that we
+; need the subject to be able to attach inside the
+; object(s) for VSO and OSV, but at the same time, we
+; don't want complete flexibility on order of attachment
+; when the verb is in the middle -- that would give
+; spurious ambiguity.  This solution adopts the xmod
+; hierarchy to enforce right-first attachment.  That is,
+; all arguments appears to the right of the verb must
+; attach before all arguments appearing to the left.  The
+; linguistic prediction of this analysis is that free
+; word order languages do not have a consistent VP
+; consituent, even when the verb and object are adjacent
+; (OV order).  Using a separate feature for tracking
+; argument attachment (as opposed to modifier
+; attachment).  We might be able to collapse these one
+; day, but that's not obvious.
+
+synsem :+ [ ATTACH xmod ].
+
+; We'll need to add identification of ATTACH between
+;     mother and head-daughter for all other kinds of phrases
+;     if we do this.  Just for illustration, I'm putting it
+;     in for head-adjunct phrases here:
+
+head-mod-phrase :+ [ SYNSEM.ATTACH #attach,
+    HEAD-DTR.SYNSEM.ATTACH #attach ].
+
+basic-determiner-lex :+ [ SYNSEM.LOCAL.CAT [ HEAD.POSSESSOR nonpossessive,
+                       POSSESSUM nonpossessive ] ].
+
+poss-case := case.
+
+top-coord-rule :+ [ SYNSEM.LOCAL.CAT [ HEAD.POSSESSOR #possessor,
+                       POSSESSUM #possessum ],
+    RCOORD-DTR.SYNSEM.LOCAL.CAT [ HEAD.POSSESSOR #possessor,
+                                  POSSESSUM #possessum ],
+    LCOORD-DTR.SYNSEM.LOCAL.CAT [ HEAD.POSSESSOR #possessor,
+                                  POSSESSUM #possessum ] ].
+
+bottom-coord-phrase :+ [ SYNSEM.LOCAL.CAT [ HEAD.POSSESSOR #possessor,
+                       POSSESSUM #possessum ],
+    NONCONJ-DTR.SYNSEM.LOCAL.CAT [ HEAD.POSSESSOR #possessor,
+                                   POSSESSUM #possessum ] ].
+
+mid-coord-rule :+ [ SYNSEM.LOCAL.CAT [ HEAD.POSSESSOR #possessor,
+                       POSSESSUM #possessum ],
+    RCOORD-DTR.SYNSEM.LOCAL.CAT [ HEAD.POSSESSOR #possessor,
+                                  POSSESSUM #possessum ],
+    LCOORD-DTR.SYNSEM.LOCAL.CAT [ HEAD.POSSESSOR #possessor,
+                                  POSSESSUM #possessum ] ].
+
+;;;;;;;;;;;;;;
+;;; Features
+;;;;;;;;;;;;;;
+
+;;; Case
+
+case := *top*.
+real-case := case.  ; intermediate case type for all real cases
+erg := real-case.  ; erg
+abs := real-case.  ; abs
+abl := real-case.  ; abl
+all := real-case.  ; all
+loc := real-case.  ; loc
+cau := real-case.  ; caus
+lat := real-case.  ; lat
+dir := real-case.  ; dir
+per := real-case.  ; perl
+com := real-case.  ; com
+sou := real-case.  ; source
+sem := real-case.  ; semb
+rea := real-case.  ; reason
+
+;;; Pernum
+
+pernum := *top*.
+min := pernum.
+aug := pernum.
+1st := pernum.
+2nd := pernum.
+3rd := pernum.
+1min := 1st & min.
+1min_incl := 1min.
+1min_excl := 1min.
+2min := 2nd & min.
+3min := 3rd & min.
+1aug := 1st & aug.
+2aug := 2nd & aug.
+3aug := 3rd & aug.
+
+;;; Gender
+
+gender := *top*.
+m := gender.
+
+;;; Possession
+
+possession := *top*.
+possessive := poss.  ; supertype for possessive features
+nonpossessive := poss.  ; type for nonpossessive
+possessor := possessive.
+possessum := possessive.
+possessive-pron-1 := possessive.  ; supertype for strategy pron-1
+possessor-pron-1 := possessor & possessive-pron-1.
+possessum-pron-1 := possessum & possessive-pron-1.
+
+;;; Possession
+
+possessive-pron-2 := possessive.  ; supertype for strategy pron-2
+possessor-pron-2 := possessor & possessive-pron-2.
+possessum-pron-2 := possessum & possessive-pron-2.
+
+;;; Form
+
+form := *top*.
+nonfinite := form.
+finite := form.
+
+;;; Tense
+
+pst := tense.
+prs := tense.
+fut := tense.
+
+;;; Aspect
+
+cont := aspect.
+rem := aspect.
+rec := aspect.
+pfv := aspect.
+sim := aspect.
+
+;;; Mood
+
+irr := mood.
+
+;;;;;;;;;;;;;;;;;;;
+;;; Lexical Types
+;;;;;;;;;;;;;;;;;;;
+
+;;; Nouns
+
+wh-pronoun-noun-lex := basic-wh-word-lex & norm-hook-lex-item & basic-icons-lex-item & non-mod-lex-item & zero-arg-que &
+  [ SYNSEM [ LOCAL [ CAT [ HEAD noun,
+                           VAL [ SPR < >,
+                                 SUBJ < >,
+                                 COMPS < >,
+                                 SPEC < > ] ],
+                     CONT [ RELS.LIST < [ LBL #larg,
+                                          ARG0 ref-ind & #arg0 ],
+                                        quant-relation &
+                                        [ PRED "which_q_rel",
+                                          ARG0 #arg0,
+                                          RSTR #harg ] >,
+                            HCONS.LIST < [ HARG #harg,
+                                           LARG #larg ] > ] ],
+             NON-LOCAL.QUE.LIST < #arg0 > ] ].
+
+noun-lex := basic-noun-lex & basic-non-wh-word-lex & non-local-none-lex-item & no-hcons-lex-item & non-mod-lex-item &
+  [ ARG-ST < #spr >,
+    SYNSEM.LOCAL.CAT [ VAL [ SPR < #spr &
+                                   [ LOCAL.CAT.HEAD det ] >,
+                             COMPS < >,
+                             SUBJ < >,
+                             SPEC < > ],
+                       HEAD.POSSESSOR nonpossessive,
+                       POSSESSUM nonpossessive ] ].
+
+; Nouns which cannot take specifiers mark their SPR requirement
+; as OPT +.  Making the non-head daughter OPT - in this rule
+; keeps such nouns out.
+; 
+; Rules for building NPs.  Note that the Matrix uses SPR for
+; the specifier of nouns and SUBJ for the subject (specifier) of verbs.
+
+head-spec-phrase := basic-head-spec-phrase & head-final &
+  [ NON-HEAD-DTR.SYNSEM [ OPT -,
+                          LOCAL.CAT.VAL.SPEC < [ LOCAL.CAT.POSSESSUM #poss ] > ],
+    HEAD-DTR.SYNSEM.LOCAL.CAT.POSSESSUM #poss ].
+
+noun1-noun-lex := noun-lex &
+  [ INFLECTED.CASE-PC-FLAG - ].
+
+question-pronoun-noun-lex := wh-pronoun-noun-lex.
+
+poss-pron1-noun-lex := non-local-none-lex-item &
+  [ SYNSEM [ LKEYS.ALTKEYREL #altkeyrel & noun-relation &
+                             [ PRED "pron_rel",
+                               LBL #ltop,
+                               ARG0 #possessor &
+                                    [ COG-ST activ-or-more,
+                                      SPECI + ] ],
+             LOCAL [ CONT [ HOOK [ INDEX #possessor,
+                                   LTOP #ltop ],
+                            RELS.LIST < #altkeyrel >,
+                            HCONS.LIST < > ],
+                     CAT [ VAL [ SPR < [ LOCAL.CAT.HEAD det,
+                                         OPT + ] >,
+                                 COMPS olist,
+                                 SUBJ olist,
+                                 SPEC < > ],
+                           HEAD noun &
+                                [ PRON +,
+                                  POSSESSOR possessor-pron-1,
+                                  CASE poss-case ] ] ] ] ].
+
+ngajana-noun-lex := poss-pron1-noun-lex &
+  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 1min_excl ].
+
+jiy-noun-lex := poss-pron1-noun-lex &
+  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 2min ].
+
+jina-noun-lex := poss-pron1-noun-lex &
+  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3min ].
+
+jan-noun-lex := poss-pron1-noun-lex &
+  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 1min_excl ].
+
+ajaw-noun-lex := poss-pron1-noun-lex &
+  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 1min_incl ].
+
+jarda-noun-lex := poss-pron1-noun-lex &
+  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 1aug ].
+
+joogarra-noun-lex := poss-pron1-noun-lex &
+  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 2aug ].
+
+jirra-noun-lex := poss-pron1-noun-lex &
+  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3aug ].
+
+;;; Verbs
+
+verb-lex := non-mod-lex-item &
+  [ SYNSEM [ LOCAL.CAT.HEAD verb,
+             L-QUE - ] ].
+
+main-verb-lex := verb-lex & basic-verb-lex & basic-non-wh-word-lex &
+  [ SYNSEM [ L-QUE -,
+             LOCAL [ CAT [ HEAD.AUX -,
+                           VAL [ SPEC < >,
+                                 SUBJ < #subj > ] ],
+                     CONT.HOOK.XARG #xarg ] ],
+    ARG-ST.FIRST #subj &
+                 [ LOCAL [ CAT cat-sat &
+                               [ VAL [ SPR < >,
+                                       COMPS < > ] ],
+                           CONT.HOOK.INDEX #xarg ] ] ].
+
+aux-lex := verb-lex & basic-icons-lex-item &
+  [ SYNSEM [ LOCAL.CAT.HEAD.AUX +,
+             L-QUE - ] ].
+
+intransitive-verb-lex := main-verb-lex & intransitive-lex-item &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS < >,
+    ARG-ST < [ LOCAL.CAT.HEAD noun &
+                              [ CASE real-case ] ] > ].
+
+transitive-verb-lex := main-verb-lex & transitive-lex-item &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS < #comps >,
+    ARG-ST < [ LOCAL.CAT.HEAD noun &
+                              [ CASE real-case ] ],
+             #comps &
+             [ LOCAL.CAT cat-sat &
+                         [ VAL [ SPR < >,
+                                 COMPS < > ],
+                           HEAD noun &
+                                [ CASE real-case ] ] ] > ].
+
+abs-intransitive-verb-lex := intransitive-verb-lex &
+  [ ARG-ST.FIRST.LOCAL.CAT.HEAD noun &
+                                [ CASE abs ] ].
+
+erg-abs-transitive-verb-lex := transitive-verb-lex &
+  [ ARG-ST < [ LOCAL.CAT.HEAD noun &
+                              [ CASE erg ] ],
+             [ LOCAL.CAT.HEAD noun &
+                              [ CASE abs ] ] > ].
+
+verb1-verb-lex := transitive-verb-lex & verb-pc1-rule-dtr & verb-pc12-rule-dtr & verb-pc13-rule-dtr & verb-pc15-rule-dtr & verb-pc19-rule-dtr & verb-pc2-rule-dtr & verb-pc22-rule-dtr & verb-pc23-rule-dtr & verb-pc25-rule-dtr & verb-pc28-rule-dtr & verb-pc3-rule-dtr & verb-pc30-rule-dtr & verb-pc38-rule-dtr & verb-pc4-rule-dtr & verb-pc43-rule-dtr & verb-pc46-rule-dtr & verb-pc5-rule-dtr & verb-pc51-rule-dtr & verb-pc53-rule-dtr & verb-pc6-rule-dtr & verb-pc63-rule-dtr & verb-pc69-rule-dtr & verb-pc7-rule-dtr & verb-pc70-rule-dtr & verb-pc77-rule-dtr & verb-pc8-rule-dtr & verb-pc9-rule-dtr &
+  [ SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CAT.HEAD.CASE erg ].
+
+verb2-verb-lex := transitive-verb-lex & verb-pc12-rule-dtr & verb-pc13-rule-dtr & verb-pc15-rule-dtr & verb-pc2-rule-dtr & verb-pc22-rule-dtr & verb-pc23-rule-dtr & verb-pc25-rule-dtr & verb-pc3-rule-dtr & verb-pc4-rule-dtr & verb-pc5-rule-dtr & verb-pc53-rule-dtr & verb-pc70-rule-dtr & verb-pc77-rule-dtr & verb-pc9-rule-dtr &
+  [ SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST.LOCAL.CAT.HEAD.CASE abs,
+                           COMPS.FIRST.LOCAL.CAT.HEAD.CASE all ] ].
+
+verb3-verb-lex := transitive-verb-lex & verb-pc12-rule-dtr & verb-pc13-rule-dtr & verb-pc15-rule-dtr & verb-pc19-rule-dtr & verb-pc2-rule-dtr & verb-pc22-rule-dtr & verb-pc23-rule-dtr & verb-pc25-rule-dtr & verb-pc28-rule-dtr & verb-pc3-rule-dtr & verb-pc30-rule-dtr & verb-pc4-rule-dtr & verb-pc43-rule-dtr & verb-pc46-rule-dtr & verb-pc5-rule-dtr & verb-pc51-rule-dtr & verb-pc53-rule-dtr & verb-pc6-rule-dtr & verb-pc63-rule-dtr & verb-pc69-rule-dtr & verb-pc7-rule-dtr & verb-pc70-rule-dtr & verb-pc77-rule-dtr & verb-pc8-rule-dtr & verb-pc9-rule-dtr.
+
+verb4-verb-lex := transitive-verb-lex & verb-pc12-rule-dtr & verb-pc13-rule-dtr & verb-pc15-rule-dtr & verb-pc2-rule-dtr & verb-pc22-rule-dtr & verb-pc23-rule-dtr & verb-pc25-rule-dtr & verb-pc3-rule-dtr & verb-pc4-rule-dtr & verb-pc43-rule-dtr & verb-pc5-rule-dtr & verb-pc53-rule-dtr & verb-pc63-rule-dtr & verb-pc70-rule-dtr & verb-pc72-rule-dtr & verb-pc77-rule-dtr & verb-pc9-rule-dtr &
+  [ SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CAT.HEAD.CASE abs ].
+
+verb7-verb-lex := transitive-verb-lex &
+  [ SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CAT.HEAD.CASE abs,
+    INFLECTED.VERB-PC62-FLAG - ].
+
+verb8-verb-lex := intransitive-verb-lex &
+  [ SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CAT.HEAD.CASE erg ].
+
+verb9-verb-lex := transitive-verb-lex & verb-pc12-rule-dtr & verb-pc15-rule-dtr & verb-pc2-rule-dtr & verb-pc22-rule-dtr & verb-pc23-rule-dtr & verb-pc25-rule-dtr & verb-pc3-rule-dtr & verb-pc70-rule-dtr & verb-pc77-rule-dtr & verb-pc9-rule-dtr &
+  [ SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CAT.HEAD.CASE abs ].
+
+verb10-verb-lex := transitive-verb-lex & verb-pc12-rule-dtr & verb-pc13-rule-dtr & verb-pc15-rule-dtr & verb-pc2-rule-dtr & verb-pc22-rule-dtr & verb-pc23-rule-dtr & verb-pc25-rule-dtr & verb-pc28-rule-dtr & verb-pc3-rule-dtr & verb-pc30-rule-dtr & verb-pc4-rule-dtr & verb-pc43-rule-dtr & verb-pc5-rule-dtr & verb-pc51-rule-dtr & verb-pc53-rule-dtr & verb-pc6-rule-dtr & verb-pc63-rule-dtr & verb-pc69-rule-dtr & verb-pc7-rule-dtr & verb-pc70-rule-dtr & verb-pc77-rule-dtr & verb-pc8-rule-dtr & verb-pc9-rule-dtr.
+
+verb11-verb-lex := transitive-verb-lex & verb-pc12-rule-dtr & verb-pc13-rule-dtr & verb-pc15-rule-dtr & verb-pc2-rule-dtr & verb-pc22-rule-dtr & verb-pc23-rule-dtr & verb-pc25-rule-dtr & verb-pc28-rule-dtr & verb-pc3-rule-dtr & verb-pc4-rule-dtr & verb-pc5-rule-dtr & verb-pc51-rule-dtr & verb-pc53-rule-dtr & verb-pc7-rule-dtr & verb-pc70-rule-dtr & verb-pc77-rule-dtr & verb-pc8-rule-dtr & verb-pc9-rule-dtr &
+  [ SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CAT.HEAD.CASE abs ].
+
+verb13-verb-lex := transitive-verb-lex & verb-pc1-rule-dtr & verb-pc12-rule-dtr & verb-pc13-rule-dtr & verb-pc15-rule-dtr & verb-pc2-rule-dtr & verb-pc22-rule-dtr & verb-pc23-rule-dtr & verb-pc25-rule-dtr & verb-pc28-rule-dtr & verb-pc3-rule-dtr & verb-pc30-rule-dtr & verb-pc4-rule-dtr & verb-pc43-rule-dtr & verb-pc46-rule-dtr & verb-pc5-rule-dtr & verb-pc51-rule-dtr & verb-pc53-rule-dtr & verb-pc6-rule-dtr & verb-pc63-rule-dtr & verb-pc69-rule-dtr & verb-pc7-rule-dtr & verb-pc70-rule-dtr & verb-pc77-rule-dtr & verb-pc8-rule-dtr & verb-pc9-rule-dtr &
+  [ SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CAT.HEAD.CASE erg ].
+
+verb15-verb-lex := intransitive-verb-lex & verb-pc12-rule-dtr & verb-pc13-rule-dtr & verb-pc15-rule-dtr & verb-pc19-rule-dtr & verb-pc2-rule-dtr & verb-pc22-rule-dtr & verb-pc23-rule-dtr & verb-pc25-rule-dtr & verb-pc28-rule-dtr & verb-pc3-rule-dtr & verb-pc4-rule-dtr & verb-pc46-rule-dtr & verb-pc5-rule-dtr & verb-pc53-rule-dtr & verb-pc69-rule-dtr & verb-pc70-rule-dtr & verb-pc77-rule-dtr & verb-pc9-rule-dtr &
+  [ SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CAT.HEAD.CASE erg ].
+
+verb16-verb-lex := transitive-verb-lex &
+  [ SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CAT.HEAD.CASE abs ].
+
+verb17-verb-lex := transitive-verb-lex & verb-pc63-rule-dtr.
+
+verb18-verb-lex := transitive-verb-lex.
+
+verb20-verb-lex := transitive-verb-lex & verb-pc12-rule-dtr & verb-pc3-rule-dtr & verb-pc70-rule-dtr &
+  [ SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CAT.HEAD.CASE abs ].
+
+verb22-verb-lex := transitive-verb-lex & verb-pc12-rule-dtr & verb-pc13-rule-dtr & verb-pc15-rule-dtr & verb-pc22-rule-dtr & verb-pc23-rule-dtr & verb-pc25-rule-dtr & verb-pc3-rule-dtr & verb-pc38-rule-dtr & verb-pc70-rule-dtr & verb-pc9-rule-dtr &
+  [ SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CAT.HEAD.CASE abs ].
+
+verb23-verb-lex := intransitive-verb-lex.
+
+verb24-verb-lex := transitive-verb-lex &
+  [ SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST.LOCAL.CAT.HEAD.CASE erg,
+                           COMPS.FIRST.LOCAL.CAT.HEAD.CASE abs ] ].
+
+intr-abs-verb-lex := abs-intransitive-verb-lex & pst-rule-dtr & third-person-rule-dtr.
+
+;;; Auxiliaries
+
+subj-raise-aux := aux-lex & trans-first-arg-raising-lex-item &
+  [ SYNSEM.LOCAL [ CAT.VAL [ SPEC < >,
+                             COMPS < #comps >,
+                             SUBJ < #subj &
+                                    [ LOCAL.CAT.HEAD.CASE real-case ] > ],
+                   CONT.HOOK.XARG #xarg ],
+    ARG-ST < #subj &
+             [ LOCAL [ CAT [ HEAD noun &
+                                  [ CASE #case ],
+                             VAL [ SUBJ < >,
+                                   SPR < >,
+                                   SPEC < >,
+                                   COMPS < > ] ],
+                       CONT.HOOK.INDEX #xarg ] ],
+             #comps &
+             [ LOCAL.CAT [ VAL [ SUBJ < unexpressed &
+                                        [ LOCAL.CAT.HEAD.CASE #case ] >,
+                                 COMPS < >,
+                                 SPR < >,
+                                 SPEC < > ],
+                           HEAD verb ] ] > ].
+
+subj-raise-aux-with-pred := subj-raise-aux & norm-sem-lex-item & trans-first-arg-raising-lex-item-1.
+
+aux1-aux-lex := subj-raise-aux-with-pred &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ].
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+subj-raise-aux-no-pred := subj-raise-aux & raise-sem-lex-item &
+  [ ARG-ST < [ ],
+             [ LOCAL.CAT.HEAD.AUX - ] > ].
+
+aux2-aux-lex := subj-raise-aux-no-pred &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ].
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux3-aux-lex := subj-raise-aux-no-pred &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ].
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux4-aux-lex := subj-raise-aux-no-pred &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ].
+
+neg5-aux-lex := subj-raise-aux-with-pred &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ].
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux6-aux-lex := subj-raise-aux-no-pred &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ].
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux7-aux-lex := subj-raise-aux-no-pred &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ].
+
+; To keep the semantically empty ones from spinning on
+; generation, require complement to be [AUX -].  The
+; FORM feature might be enough in the starter grammars,
+; but I don't want to rely on this.  Then again, [ AUX - ]
+; might not be true.
+
+aux8-aux-lex := subj-raise-aux-no-pred &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ].
+
+;;; Complementizers
+
+; We treat question particles as complementizers.
+; Here is the lexical type for complementizers.
+
+complementizer-lex-item := raise-sem-lex-item & non-local-none-lex-item & basic-icons-lex-item &
+  [ SYNSEM.LOCAL.CAT [ HEAD comp &
+                            [ MOD < > ],
+                       VAL [ SPR < >,
+                             SPEC < >,
+                             SUBJ < >,
+                             COMPS < #comp > ] ],
+    ARG-ST < #comp &
+             [ LOCAL.CAT [ HEAD verb,
+                           VAL [ SUBJ < >,
+                                 COMPS < > ] ] ] > ].
+
+; Subtype for question particles. Constrains SF to ques.
+
+qpart-lex-item := complementizer-lex-item &
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.SF ques,
+                   CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM finite ] ].
+
+q-particle1-lex := qpart-lex-item.
+
+;;; Others
+
+;;; Determiners
+;;; SPEC is non-empty, and already specified by basic-determiner-lex.
+
+determiner-lex := basic-determiner-lex & basic-non-wh-word-lex & norm-zero-arg & non-mod-lex-item &
+  [ SYNSEM.LOCAL.CAT.VAL [ SPR < >,
+                           COMPS < >,
+                           SUBJ < > ] ].
+
+det1-determiner-lex := determiner-lex & no-icons-lex-item &
+  [ SYNSEM.L-QUE - ].
+
+det2-determiner-lex := determiner-lex & no-icons-lex-item &
+  [ SYNSEM.L-QUE - ].
+
+;;; Adverbs
+
+;;;;;;;;;;;;;;;;;;;
+;;; Lexical Rules
+;;;;;;;;;;;;;;;;;;;
+
+;;; Intermediate rule types
+
+verb-pc38-rule-dtr := word-or-lexrule.
+verb-pc69-rule-dtr := word-or-lexrule.
+verb-pc23-rule-dtr := word-or-lexrule.
+verb-pc46-rule-dtr := word-or-lexrule.
+verb-pc30-rule-dtr := word-or-lexrule.
+verb-pc72-rule-dtr := word-or-lexrule.
+verb-pc6-rule-dtr := word-or-lexrule.
+verb-pc22-rule-dtr := word-or-lexrule.
+verb-pc19-rule-dtr := word-or-lexrule.
+verb-pc8-rule-dtr := word-or-lexrule.
+pst-rule-dtr := word-or-lexrule.
+verb-pc3-rule-dtr := word-or-lexrule.
+verb-pc77-rule-dtr := word-or-lexrule.
+verb-pc4-rule-dtr := word-or-lexrule.
+verb-pc25-rule-dtr := word-or-lexrule.
+verb-pc70-rule-dtr := word-or-lexrule.
+verb-pc51-rule-dtr := word-or-lexrule.
+third-person-rule-dtr := word-or-lexrule.
+verb-pc5-rule-dtr := word-or-lexrule.
+verb-pc43-rule-dtr := word-or-lexrule.
+verb-pc9-rule-dtr := word-or-lexrule.
+verb-pc7-rule-dtr := word-or-lexrule.
+verb-pc12-rule-dtr := word-or-lexrule.
+verb-pc1-rule-dtr := word-or-lexrule.
+verb-pc13-rule-dtr := word-or-lexrule.
+verb-pc2-rule-dtr := word-or-lexrule.
+verb-pc15-rule-dtr := word-or-lexrule.
+verb-pc63-rule-dtr := word-or-lexrule.
+verb-pc53-rule-dtr := word-or-lexrule.
+verb-pc28-rule-dtr := word-or-lexrule.
+
+;;; Lexical rule types
+
+case-pc-lex-rule-super := add-only-no-ccont-rule &
+  [ INFLECTED [ CASE-PC-FLAG +,
+                VERB-PC62-FLAG #verb-pc62 ],
+    DTR noun1-noun-lex &
+        [ INFLECTED.VERB-PC62-FLAG #verb-pc62 ] ].
+
+erg-lex-rule := case-pc-lex-rule-super & infl-lex-rule &
+  [ SYNSEM.LOCAL.CAT.HEAD.CASE erg ].
+
+all-lex-rule := case-pc-lex-rule-super & infl-lex-rule &
+  [ SYNSEM.LOCAL.CAT.HEAD.CASE all ].
+
+abl-lex-rule := case-pc-lex-rule-super & infl-lex-rule &
+  [ SYNSEM.LOCAL.CAT.HEAD.CASE abl ].
+
+loc-lex-rule := case-pc-lex-rule-super & infl-lex-rule &
+  [ SYNSEM.LOCAL.CAT.HEAD.CASE loc ].
+
+abs-lex-rule := case-pc-lex-rule-super & const-lex-rule &
+  [ SYNSEM.LOCAL.CAT.HEAD.CASE abs ].
+
+caus-lex-rule := case-pc-lex-rule-super & infl-lex-rule &
+  [ SYNSEM.LOCAL.CAT.HEAD.CASE cau ].
+
+lat-lex-rule := case-pc-lex-rule-super & infl-lex-rule &
+  [ SYNSEM.LOCAL.CAT.HEAD.CASE lat ].
+
+dir-lex-rule := case-pc-lex-rule-super & infl-lex-rule &
+  [ SYNSEM.LOCAL.CAT.HEAD.CASE dir ].
+
+perl-lex-rule := case-pc-lex-rule-super & infl-lex-rule &
+  [ SYNSEM.LOCAL.CAT.HEAD.CASE per ].
+
+com-lex-rule := case-pc-lex-rule-super & infl-lex-rule &
+  [ SYNSEM.LOCAL.CAT.HEAD.CASE com ].
+
+source-lex-rule := case-pc-lex-rule-super & infl-lex-rule &
+  [ SYNSEM.LOCAL.CAT.HEAD.CASE sou ].
+
+semb-lex-rule := case-pc-lex-rule-super & infl-lex-rule &
+  [ SYNSEM.LOCAL.CAT.HEAD.CASE sem ].
+
+reason-lex-rule := case-pc-lex-rule-super & infl-lex-rule &
+  [ SYNSEM.LOCAL.CAT.HEAD.CASE rea ].
+
+verb-pc1-lex-rule-super := add-only-no-ccont-rule & infl-lex-rule & verb-pc12-rule-dtr & verb-pc13-rule-dtr & verb-pc15-rule-dtr & verb-pc2-rule-dtr & verb-pc22-rule-dtr & verb-pc23-rule-dtr & verb-pc25-rule-dtr & verb-pc28-rule-dtr & verb-pc3-rule-dtr & verb-pc30-rule-dtr & verb-pc4-rule-dtr & verb-pc43-rule-dtr & verb-pc46-rule-dtr & verb-pc5-rule-dtr & verb-pc51-rule-dtr & verb-pc53-rule-dtr & verb-pc6-rule-dtr & verb-pc63-rule-dtr & verb-pc69-rule-dtr & verb-pc7-rule-dtr & verb-pc70-rule-dtr & verb-pc77-rule-dtr & verb-pc8-rule-dtr & verb-pc9-rule-dtr &
+  [ INFLECTED #infl,
+    DTR verb-pc1-rule-dtr &
+        [ INFLECTED #infl ] ].
+
+verb-pc1_lrt1-lex-rule := verb-pc1-lex-rule-super.
+
+verb-pc2-lex-rule-super := add-only-no-ccont-rule & infl-lex-rule & verb-pc12-rule-dtr & verb-pc15-rule-dtr & verb-pc22-rule-dtr & verb-pc23-rule-dtr & verb-pc25-rule-dtr & verb-pc3-rule-dtr & verb-pc70-rule-dtr & verb-pc77-rule-dtr & verb-pc9-rule-dtr &
+  [ INFLECTED #infl,
+    DTR verb-pc2-rule-dtr &
+        [ INFLECTED #infl ] ].
+
+verb-pc2_lrt1-lex-rule := verb-pc2-lex-rule-super.
+
+verb-pc3-lex-rule-super := add-only-no-ccont-rule & infl-lex-rule &
+  [ INFLECTED #infl,
+    DTR verb-pc3-rule-dtr &
+        [ INFLECTED #infl ] ].
+
+verb-pc3_lrt1-lex-rule := verb-pc3-lex-rule-super &
+  [ SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 1st ].
+
+verb-pc4-lex-rule-super := add-only-no-ccont-rule & infl-lex-rule & verb-pc12-rule-dtr & verb-pc15-rule-dtr & verb-pc2-rule-dtr & verb-pc22-rule-dtr & verb-pc23-rule-dtr & verb-pc25-rule-dtr & verb-pc3-rule-dtr & verb-pc5-rule-dtr & verb-pc53-rule-dtr & verb-pc70-rule-dtr & verb-pc77-rule-dtr & verb-pc9-rule-dtr &
+  [ INFLECTED #infl,
+    DTR verb-pc4-rule-dtr &
+        [ INFLECTED #infl ] ].
+
+verb-pc4_lrt1-lex-rule := verb-pc4-lex-rule-super.
+
+verb-pc5-lex-rule-super := add-only-no-ccont-rule & infl-lex-rule &
+  [ INFLECTED #infl,
+    DTR verb-pc5-rule-dtr &
+        [ INFLECTED #infl ] ].
+
+verb-pc5_lrt1-lex-rule := verb-pc5-lex-rule-super &
+  [ SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PERNUM 2nd,
+                                                                GEND m ] ].
+
+verb-pc5_lrt2-lex-rule := verb-pc5-lex-rule-super &
+  [ SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PERNUM 3rd,
+                                                                GEND m ] ].
+
+verb-pc6-lex-rule-super := add-only-no-ccont-rule & infl-lex-rule & verb-pc12-rule-dtr & verb-pc13-rule-dtr & verb-pc15-rule-dtr & verb-pc2-rule-dtr & verb-pc22-rule-dtr & verb-pc23-rule-dtr & verb-pc25-rule-dtr & verb-pc28-rule-dtr & verb-pc3-rule-dtr & verb-pc30-rule-dtr & verb-pc4-rule-dtr & verb-pc43-rule-dtr & verb-pc5-rule-dtr & verb-pc51-rule-dtr & verb-pc53-rule-dtr & verb-pc63-rule-dtr & verb-pc69-rule-dtr & verb-pc7-rule-dtr & verb-pc70-rule-dtr & verb-pc77-rule-dtr & verb-pc8-rule-dtr & verb-pc9-rule-dtr &
+  [ INFLECTED #infl,
+    DTR verb-pc6-rule-dtr &
+        [ INFLECTED #infl ] ].
+
+verb-pc6_lrt1-lex-rule := verb-pc6-lex-rule-super.
+
+verb-pc7-lex-rule-super := add-only-no-ccont-rule & infl-lex-rule & verb-pc12-rule-dtr & verb-pc13-rule-dtr & verb-pc15-rule-dtr & verb-pc2-rule-dtr & verb-pc22-rule-dtr & verb-pc23-rule-dtr & verb-pc25-rule-dtr & verb-pc28-rule-dtr & verb-pc3-rule-dtr & verb-pc4-rule-dtr & verb-pc5-rule-dtr & verb-pc51-rule-dtr & verb-pc53-rule-dtr & verb-pc70-rule-dtr & verb-pc77-rule-dtr & verb-pc8-rule-dtr & verb-pc9-rule-dtr &
+  [ INFLECTED #infl,
+    DTR verb-pc7-rule-dtr &
+        [ INFLECTED #infl ] ].
+
+verb-pc7_lrt1-lex-rule := verb-pc7-lex-rule-super.
+
+verb-pc8-lex-rule-super := add-only-no-ccont-rule & infl-lex-rule & verb-pc12-rule-dtr & verb-pc13-rule-dtr & verb-pc15-rule-dtr & verb-pc2-rule-dtr & verb-pc22-rule-dtr & verb-pc23-rule-dtr & verb-pc25-rule-dtr & verb-pc3-rule-dtr & verb-pc70-rule-dtr & verb-pc77-rule-dtr & verb-pc9-rule-dtr &
+  [ INFLECTED #infl,
+    DTR verb-pc8-rule-dtr &
+        [ INFLECTED #infl ] ].
+
+verb-pc8_lrt1-lex-rule := verb-pc8-lex-rule-super.
+
+verb-pc9-lex-rule-super := add-only-no-ccont-rule & infl-lex-rule & verb-pc15-rule-dtr & verb-pc25-rule-dtr & verb-pc3-rule-dtr &
+  [ INFLECTED #infl,
+    DTR verb-pc9-rule-dtr &
+        [ INFLECTED #infl ] ].
+
+verb-pc9_lrt1-lex-rule := verb-pc9-lex-rule-super.
+
+verb-pc11-lex-rule-super := add-only-no-ccont-rule & infl-lex-rule & verb-pc12-rule-dtr & verb-pc15-rule-dtr & verb-pc2-rule-dtr & verb-pc22-rule-dtr & verb-pc23-rule-dtr & verb-pc25-rule-dtr & verb-pc3-rule-dtr & verb-pc4-rule-dtr & verb-pc5-rule-dtr & verb-pc53-rule-dtr & verb-pc70-rule-dtr & verb-pc72-rule-dtr & verb-pc77-rule-dtr & verb-pc9-rule-dtr &
+  [ INFLECTED #infl,
+    DTR verb4-verb-lex &
+        [ INFLECTED #infl ] ].
+
+verb-pc11_lrt1-lex-rule := verb-pc11-lex-rule-super.
+
+verb-pc12-lex-rule-super := add-only-no-ccont-rule & infl-lex-rule & verb-pc3-rule-dtr & verb-pc70-rule-dtr &
+  [ INFLECTED #infl,
+    DTR verb-pc12-rule-dtr &
+        [ INFLECTED #infl ] ].
+
+verb-pc12_lrt1-lex-rule := verb-pc12-lex-rule-super.
+
+verb-pc13-lex-rule-super := add-only-no-ccont-rule & infl-lex-rule & verb-pc12-rule-dtr & verb-pc15-rule-dtr & verb-pc22-rule-dtr & verb-pc23-rule-dtr & verb-pc25-rule-dtr & verb-pc3-rule-dtr & verb-pc70-rule-dtr &
+  [ INFLECTED #infl,
+    DTR verb-pc13-rule-dtr &
+        [ INFLECTED #infl ] ].
+
+verb-pc13_lrt1-lex-rule := verb-pc13-lex-rule-super.
+
+verb-pc15-lex-rule-super := add-only-no-ccont-rule & infl-lex-rule & verb-pc25-rule-dtr &
+  [ INFLECTED #infl,
+    DTR verb-pc15-rule-dtr &
+        [ INFLECTED #infl ] ].
+
+verb-pc15_lrt1-lex-rule := verb-pc15-lex-rule-super &
+  [ SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 2nd ].
+
+verb-pc15_lrt2-lex-rule := verb-pc15-lex-rule-super &
+  [ SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 1st ].
+
+verb-pc15_lrt3-lex-rule := verb-pc15-lex-rule-super.
+
+verb-pc19-lex-rule-super := add-only-no-ccont-rule & infl-lex-rule & verb-pc12-rule-dtr & verb-pc13-rule-dtr & verb-pc15-rule-dtr & verb-pc2-rule-dtr & verb-pc22-rule-dtr & verb-pc23-rule-dtr & verb-pc25-rule-dtr & verb-pc28-rule-dtr & verb-pc3-rule-dtr & verb-pc4-rule-dtr & verb-pc46-rule-dtr & verb-pc5-rule-dtr & verb-pc53-rule-dtr & verb-pc69-rule-dtr & verb-pc70-rule-dtr & verb-pc77-rule-dtr & verb-pc9-rule-dtr &
+  [ INFLECTED #infl,
+    DTR verb-pc19-rule-dtr &
+        [ INFLECTED #infl ] ].
+
+verb-pc19_lrt1-lex-rule := verb-pc19-lex-rule-super.
+
+verb-pc20-lex-rule-super := add-only-no-ccont-rule & infl-lex-rule &
+  [ INFLECTED #infl,
+    DTR verb8-verb-lex &
+        [ INFLECTED #infl ] ].
+
+verb-pc20_lrt1-lex-rule := verb-pc20-lex-rule-super &
+  [ SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 1st ].
+
+verb-pc22-lex-rule-super := add-only-no-ccont-rule & infl-lex-rule & verb-pc23-rule-dtr & verb-pc70-rule-dtr &
+  [ INFLECTED #infl,
+    DTR verb-pc22-rule-dtr &
+        [ INFLECTED #infl ] ].
+
+verb-pc22_lrt1-lex-rule := verb-pc22-lex-rule-super.
+
+verb-pc23-lex-rule-super := add-only-no-ccont-rule & infl-lex-rule &
+  [ INFLECTED #infl,
+    DTR verb-pc23-rule-dtr &
+        [ INFLECTED #infl ] ].
+
+verb-pc23_lrt1-lex-rule := verb-pc23-lex-rule-super &
+  [ SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 2nd ].
+
+verb-pc24-lex-rule-super := add-only-no-ccont-rule & infl-lex-rule & verb-pc12-rule-dtr & verb-pc13-rule-dtr & verb-pc15-rule-dtr & verb-pc2-rule-dtr & verb-pc22-rule-dtr & verb-pc23-rule-dtr & verb-pc25-rule-dtr & verb-pc3-rule-dtr & verb-pc70-rule-dtr & verb-pc77-rule-dtr & verb-pc8-rule-dtr & verb-pc9-rule-dtr &
+  [ INFLECTED #infl,
+    DTR verb10-verb-lex &
+        [ INFLECTED #infl ] ].
+
+verb-pc24_lrt1-lex-rule := verb-pc24-lex-rule-super.
+
+verb-pc25-lex-rule-super := add-only-no-ccont-rule & infl-lex-rule &
+  [ INFLECTED #infl,
+    DTR verb-pc25-rule-dtr &
+        [ INFLECTED #infl ] ].
+
+verb-pc25_lrt1-lex-rule := verb-pc25-lex-rule-super &
+  [ SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PERNUM 3rd,
+                                                                GEND m ] ].
+
+verb-pc28-lex-rule-super := add-only-no-ccont-rule & infl-lex-rule & verb-pc12-rule-dtr & verb-pc15-rule-dtr & verb-pc2-rule-dtr & verb-pc22-rule-dtr & verb-pc23-rule-dtr & verb-pc25-rule-dtr & verb-pc3-rule-dtr & verb-pc70-rule-dtr & verb-pc77-rule-dtr & verb-pc9-rule-dtr &
+  [ INFLECTED #infl,
+    DTR verb-pc28-rule-dtr &
+        [ INFLECTED #infl ] ].
+
+verb-pc28_lrt1-lex-rule := verb-pc28-lex-rule-super.
+
+verb-pc30-lex-rule-super := add-only-no-ccont-rule & infl-lex-rule & verb-pc12-rule-dtr & verb-pc15-rule-dtr & verb-pc2-rule-dtr & verb-pc22-rule-dtr & verb-pc23-rule-dtr & verb-pc25-rule-dtr & verb-pc28-rule-dtr & verb-pc3-rule-dtr & verb-pc4-rule-dtr & verb-pc5-rule-dtr & verb-pc51-rule-dtr & verb-pc53-rule-dtr & verb-pc69-rule-dtr & verb-pc70-rule-dtr & verb-pc77-rule-dtr & verb-pc9-rule-dtr &
+  [ INFLECTED #infl,
+    DTR verb-pc30-rule-dtr &
+        [ INFLECTED #infl ] ].
+
+verb-pc30_lrt1-lex-rule := verb-pc30-lex-rule-super.
+
+verb-pc38-lex-rule-super := add-only-no-ccont-rule & infl-lex-rule & verb-pc12-rule-dtr & verb-pc13-rule-dtr & verb-pc15-rule-dtr & verb-pc22-rule-dtr & verb-pc23-rule-dtr & verb-pc25-rule-dtr & verb-pc3-rule-dtr & verb-pc70-rule-dtr & verb-pc9-rule-dtr &
+  [ INFLECTED #infl,
+    DTR verb-pc38-rule-dtr &
+        [ INFLECTED #infl ] ].
+
+verb-pc38_lrt1-lex-rule := verb-pc38-lex-rule-super.
+
+verb-pc43-lex-rule-super := add-only-no-ccont-rule & infl-lex-rule & verb-pc12-rule-dtr & verb-pc13-rule-dtr & verb-pc15-rule-dtr & verb-pc2-rule-dtr & verb-pc22-rule-dtr & verb-pc23-rule-dtr & verb-pc25-rule-dtr & verb-pc3-rule-dtr & verb-pc53-rule-dtr & verb-pc63-rule-dtr & verb-pc70-rule-dtr & verb-pc77-rule-dtr & verb-pc9-rule-dtr &
+  [ INFLECTED #infl,
+    DTR verb-pc43-rule-dtr &
+        [ INFLECTED #infl ] ].
+
+verb-pc43_lrt1-lex-rule := verb-pc43-lex-rule-super.
+
+verb-pc46-lex-rule-super := add-only-no-ccont-rule & infl-lex-rule & verb-pc12-rule-dtr & verb-pc15-rule-dtr & verb-pc2-rule-dtr & verb-pc22-rule-dtr & verb-pc23-rule-dtr & verb-pc25-rule-dtr & verb-pc28-rule-dtr & verb-pc3-rule-dtr & verb-pc70-rule-dtr & verb-pc77-rule-dtr & verb-pc9-rule-dtr &
+  [ INFLECTED #infl,
+    DTR verb-pc46-rule-dtr &
+        [ INFLECTED #infl ] ].
+
+verb-pc46_lrt1-lex-rule := verb-pc46-lex-rule-super.
+
+verb-pc51-lex-rule-super := add-only-no-ccont-rule & infl-lex-rule & verb-pc12-rule-dtr & verb-pc15-rule-dtr & verb-pc2-rule-dtr & verb-pc22-rule-dtr & verb-pc23-rule-dtr & verb-pc25-rule-dtr & verb-pc28-rule-dtr & verb-pc3-rule-dtr & verb-pc70-rule-dtr & verb-pc77-rule-dtr & verb-pc9-rule-dtr &
+  [ INFLECTED #infl,
+    DTR verb-pc51-rule-dtr &
+        [ INFLECTED #infl ] ].
+
+verb-pc51_lrt1-lex-rule := verb-pc51-lex-rule-super.
+
+verb-pc53-lex-rule-super := add-only-no-ccont-rule & infl-lex-rule & verb-pc25-rule-dtr &
+  [ INFLECTED #infl,
+    DTR verb-pc53-rule-dtr &
+        [ INFLECTED #infl ] ].
+
+verb-pc53_lrt1-lex-rule := verb-pc53-lex-rule-super &
+  [ SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PERNUM 1st,
+                                                                GEND m ] ].
+
+verb-pc61-lex-rule-super := add-only-no-ccont-rule & infl-lex-rule &
+  [ INFLECTED #infl,
+    DTR verb16-verb-lex &
+        [ INFLECTED #infl ] ].
+
+verb-pc61_lrt1-lex-rule := verb-pc61-lex-rule-super.
+
+verb-pc62-lex-rule-super := add-only-no-ccont-rule & const-lex-rule &
+  [ INFLECTED [ VERB-PC62-FLAG +,
+                CASE-PC-FLAG #case-pc ],
+    DTR verb7-verb-lex &
+        [ INFLECTED.CASE-PC-FLAG #case-pc ] ].
+
+verb-pc62_lrt1-lex-rule := verb-pc62-lex-rule-super &
+  [ SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3rd ].
+
+verb-pc63-lex-rule-super := add-only-no-ccont-rule & infl-lex-rule &
+  [ INFLECTED #infl,
+    DTR verb-pc63-rule-dtr &
+        [ INFLECTED #infl ] ].
+
+verb-pc63_lrt1-lex-rule := verb-pc63-lex-rule-super &
+  [ SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3rd ].
+
+verb-pc64-lex-rule-super := add-only-no-ccont-rule & infl-lex-rule &
+  [ INFLECTED #infl,
+    DTR verb18-verb-lex &
+        [ INFLECTED #infl ] ].
+
+verb-pc64_lrt1-lex-rule := verb-pc64-lex-rule-super.
+
+verb-pc69-lex-rule-super := add-only-no-ccont-rule & infl-lex-rule & verb-pc70-rule-dtr &
+  [ INFLECTED #infl,
+    DTR verb-pc69-rule-dtr &
+        [ INFLECTED #infl ] ].
+
+verb-pc69_lrt1-lex-rule := verb-pc69-lex-rule-super.
+
+verb-pc70-lex-rule-super := add-only-no-ccont-rule & infl-lex-rule &
+  [ INFLECTED #infl,
+    DTR verb-pc70-rule-dtr &
+        [ INFLECTED #infl ] ].
+
+verb-pc70_lrt1-lex-rule := verb-pc70-lex-rule-super &
+  [ SYNSEM.LOCAL [ CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ PERNUM 3rd,
+                                                                  GEND m ],
+                   CONT.HOOK.INDEX.E.MOOD irr ] ].
+
+verb-pc72-lex-rule-super := add-only-no-ccont-rule & infl-lex-rule & verb-pc12-rule-dtr & verb-pc15-rule-dtr & verb-pc2-rule-dtr & verb-pc22-rule-dtr & verb-pc23-rule-dtr & verb-pc25-rule-dtr & verb-pc3-rule-dtr & verb-pc4-rule-dtr & verb-pc5-rule-dtr & verb-pc53-rule-dtr & verb-pc70-rule-dtr & verb-pc77-rule-dtr & verb-pc9-rule-dtr &
+  [ INFLECTED #infl,
+    DTR verb-pc72-rule-dtr &
+        [ INFLECTED #infl ] ].
+
+verb-pc72_lrt1-lex-rule := verb-pc72-lex-rule-super.
+
+verb-pc76-lex-rule-super := add-only-no-ccont-rule & infl-lex-rule &
+  [ INFLECTED #infl,
+    DTR verb23-verb-lex &
+        [ INFLECTED #infl ] ].
+
+verb-pc76_lrt1-lex-rule := verb-pc76-lex-rule-super.
+
+verb-pc77-lex-rule-super := add-only-no-ccont-rule & infl-lex-rule &
+  [ INFLECTED #infl,
+    DTR verb-pc77-rule-dtr &
+        [ INFLECTED #infl ] ].
+
+verb-pc77_lrt1-lex-rule := verb-pc77-lex-rule-super &
+  [ SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 1st ].
+
+rem-pst-lex-rule := add-only-no-ccont-rule & infl-lex-rule & pst-rule-dtr & third-person-rule-dtr &
+  [ INFLECTED #infl,
+    DTR intr-abs-verb-lex &
+        [ INFLECTED #infl ],
+    SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT rem ].
+
+pst-lex-rule := add-only-no-ccont-rule & infl-lex-rule & third-person-rule-dtr &
+  [ INFLECTED #infl,
+    DTR pst-rule-dtr &
+        [ INFLECTED #infl ],
+    SYNSEM.LOCAL.CONT.HOOK.INDEX.E.TENSE pst ].
+
+third-person-lex-rule := add-only-no-ccont-rule & infl-lex-rule &
+  [ INFLECTED #infl,
+    DTR third-person-rule-dtr &
+        [ INFLECTED #infl ],
+    SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3rd ].
+
+;;;;;;;;;;;;;;;;;;;
+;;; Phrasal Types
+;;;;;;;;;;;;;;;;;;;
+
+;Constraint on MC used to be part of matrix.tdl
+;;it applies to all wo implementations, except for v2
+
+head-initial-head-nexus := head-initial &
+  [ SYNSEM.ATTACH lmod,
+    HEAD-DTR.SYNSEM.ATTACH notmod-or-lmod ].
+
+head-final-head-nexus := head-final &
+  [ SYNSEM.ATTACH rmod ].
+
+head-subj-phrase := decl-head-subj-phrase & head-initial-head-nexus.
+
+subj-head-phrase := decl-head-subj-phrase & head-final-head-nexus.
+
+head-comp-phrase := basic-head-1st-comp-phrase & head-initial-head-nexus &
+  [ SYNSEM.LOCAL.CAT.HEAD.AUX - ].
+
+; The head of comp-head-phrase can't be: ['comp']
+
+comp-head-phrase := basic-head-1st-comp-phrase & head-final-head-nexus &
+  [ SYNSEM.LOCAL.CAT.HEAD +nvjrpdmo ].
+
+head-comp-phrase-2 := basic-head-2nd-comp-phrase & head-initial-head-nexus.
+
+comp-head-phrase-2 := basic-head-2nd-comp-phrase & head-final-head-nexus.
+
+poss-unary-phrase-pron-1 := poss-unary-phrase &
+  [ ARGS < [ SYNSEM.LOCAL.CAT.HEAD.POSSESSOR possessor-pron-1 ] >,
+    SYNSEM.LOCAL.CAT [ HEAD.SPEC-INIT +,
+                       VAL.SPEC.FIRST.LOCAL.CAT.POSSESSUM nonpossessive ] ].
+
+poss-unary-phrase := basic-unary-phrase &
+  [ SYNSEM [ NON-LOCAL #nonloc,
+             LOCAL [ CONT.HOOK #hook,
+                     CAT [ HEAD det &
+                                [ POSSESSOR possessor ],
+                           VAL [ SPR < >,
+                                 COMPS < >,
+                                 SUBJ < >,
+                                 SPEC < [ LOCAL [ CAT [ VAL.COMPS < >,
+                                                        HEAD noun &
+                                                             [ PRON - ] ],
+                                                  CONT.HOOK #hook &
+                                                            [ INDEX #possessum &
+                                                                    [ COG-ST uniq-id ],
+                                                              LTOP #lbl ] ] ] > ] ] ] ],
+    C-CONT [ RELS.LIST < arg12-ev-relation &
+                         [ PRED "poss_rel",
+                           LBL #lbl,
+                           ARG1 #possessum,
+                           ARG2 #possessor ],
+                         quant-relation &
+                         [ PRED "exist_q_rel",
+                           ARG0 #possessum,
+                           RSTR #harg ] >,
+             HCONS.LIST < qeq &
+                          [ HARG #harg,
+                            LARG #lbl ] >,
+             ICONS.LIST < > ],
+    ARGS < [ SYNSEM [ LOCAL [ CAT [ VAL [ SPR < >,
+                                          COMPS < >,
+                                          SUBJ < >,
+                                          SPEC < > ],
+                                    HEAD +np ],
+                              CONT.HOOK.INDEX #possessor ],
+                      NON-LOCAL #nonloc ] ] > ].
+
+;Constraint on MC used to be part of matrix.tdl
+;;it applies to all wo implementations, except for v2
+
+; Bare NP phrase.  Consider modifying the PRED value of the quantifier relation
+; introduced to match the semantic effect of bare NPs in your language.
+
+bare-np-phrase := basic-bare-np-phrase &
+  [ C-CONT.RELS.LIST < [ PRED "exist_q_rel" ] > ].
+
+basic-filler-phrase :+ [ SYNSEM.NON-LOCAL.SLASH.LIST < >,
+    ARGS < [ SYNSEM [ LOCAL #slash,
+                      NON-LOCAL.SLASH.LIST < > ] ],
+           [ SYNSEM.NON-LOCAL.SLASH.LIST < #slash > ] > ].
+
+extracted-subj-phrase := basic-extracted-subj-phrase &
+  [ SYNSEM.LOCAL.CAT.HEAD verb ].
+
+;;; Wh-question-related phrasal types
+
+;;;;;;;;;;;;;;;;;;
+;;; Coordination
+;;;;;;;;;;;;;;;;;;
+
+;;; Coordination Strategy 1
+
+np1-top-coord-rule := basic-np-top-coord-rule & apoly-top-coord-rule &
+  [ SYNSEM.LOCAL.COORD-STRAT "1" ].
+
+np1-bottom-coord-rule := unary-bottom-coord-rule & np-bottom-coord-phrase &
+  [ SYNSEM.LOCAL [ COORD-STRAT "1",
+                   COORD-REL.PRED "_and_coord_rel" ] ].
+
+;;; Coordination Strategy 2
+
+np2-top-coord-rule := basic-np-top-coord-rule & monopoly-top-coord-rule &
+  [ SYNSEM.LOCAL.COORD-STRAT "2" ].
+
+np2-mid-coord-rule := basic-np-mid-coord-rule & monopoly-mid-coord-rule &
+  [ SYNSEM.LOCAL.COORD-STRAT "2" ].
+
+np2-bottom-coord-rule := conj-first-bottom-coord-rule & np-bottom-coord-phrase &
+  [ SYNSEM.LOCAL.COORD-STRAT "2" ].
+
+;;; Coordination Strategy 3
+
+vp3-top-coord-rule := basic-vp-top-coord-rule & apoly-top-coord-rule &
+  [ SYNSEM.LOCAL.COORD-STRAT "3" ].
+
+vp3-bottom-coord-rule := unary-bottom-coord-rule & vp-bottom-coord-phrase &
+  [ SYNSEM.LOCAL [ COORD-STRAT "3",
+                   COORD-REL.PRED "_and_coord_rel" ] ].
+
+;;; Coordination Strategy 4
+
+vp4-top-coord-rule := basic-vp-top-coord-rule & monopoly-top-coord-rule &
+  [ SYNSEM.LOCAL.COORD-STRAT "4" ].
+
+vp4-mid-coord-rule := basic-vp-mid-coord-rule & monopoly-mid-coord-rule &
+  [ SYNSEM.LOCAL.COORD-STRAT "4" ].
+
+vp4-bottom-coord-rule := conj-first-bottom-coord-rule & vp-bottom-coord-phrase &
+  [ SYNSEM.LOCAL.COORD-STRAT "4" ].
+
+clause :+ [ SYNSEM.NON-LOCAL.QUE.LIST < > ].
