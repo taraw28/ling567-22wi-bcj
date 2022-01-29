@@ -72,3 +72,11 @@
   - third-person pc80 (oblig): i- (added pernum feature back)
   - couldn't parse
     - I think it has issues with pernum: 3rd
+- Attempt 6
+  - intrans (abs) verb25: jarrmi
+  - rem pc78 (oblig): -n
+  - pst pc79 (oblig): ny-
+  - third-person pc80 (oblig): i- (changed to pernum 3min,3aug)
+  - couldn't parse
+    - still think the issue has to do with adding the pernum feature
+    - doesn't even show part of the parse chart for the verb
