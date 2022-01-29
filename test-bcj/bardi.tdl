@@ -2,7 +2,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Grammar of bardi
 ;;; created at:
-;;;     Sat Jan 29 21:26:11 UTC 2022
+;;;     Sat Jan 29 21:31:44 UTC 2022
 ;;; based on Matrix customization system version of:
 ;;;     Mon Aug  2 23:22:15 UTC 2021
 ;;;
@@ -388,7 +388,7 @@ verb24-verb-lex := transitive-verb-lex &
   [ SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST.LOCAL.CAT.HEAD.CASE erg,
                            COMPS.FIRST.LOCAL.CAT.HEAD.CASE abs ] ].
 
-intr-abs-verb-lex := abs-intransitive-verb-lex & pst-rule-dtr & third-person-rule-dtr.
+intr-verb-lex := intransitive-verb-lex & pst-rule-dtr & third-person-rule-dtr.
 
 ;;; Auxiliaries
 
@@ -529,36 +529,36 @@ det2-determiner-lex := determiner-lex & no-icons-lex-item &
 
 ;;; Intermediate rule types
 
-verb-pc38-rule-dtr := word-or-lexrule.
-verb-pc69-rule-dtr := word-or-lexrule.
-verb-pc23-rule-dtr := word-or-lexrule.
-verb-pc46-rule-dtr := word-or-lexrule.
-verb-pc30-rule-dtr := word-or-lexrule.
-verb-pc72-rule-dtr := word-or-lexrule.
+verb-pc51-rule-dtr := word-or-lexrule.
+verb-pc9-rule-dtr := word-or-lexrule.
+verb-pc1-rule-dtr := word-or-lexrule.
 verb-pc6-rule-dtr := word-or-lexrule.
+verb-pc63-rule-dtr := word-or-lexrule.
+verb-pc25-rule-dtr := word-or-lexrule.
+verb-pc3-rule-dtr := word-or-lexrule.
+verb-pc28-rule-dtr := word-or-lexrule.
+verb-pc72-rule-dtr := word-or-lexrule.
+verb-pc7-rule-dtr := word-or-lexrule.
 verb-pc22-rule-dtr := word-or-lexrule.
+verb-pc53-rule-dtr := word-or-lexrule.
+verb-pc5-rule-dtr := word-or-lexrule.
+verb-pc46-rule-dtr := word-or-lexrule.
+verb-pc2-rule-dtr := word-or-lexrule.
+verb-pc43-rule-dtr := word-or-lexrule.
+verb-pc13-rule-dtr := word-or-lexrule.
+verb-pc23-rule-dtr := word-or-lexrule.
+verb-pc15-rule-dtr := word-or-lexrule.
+verb-pc30-rule-dtr := word-or-lexrule.
+verb-pc12-rule-dtr := word-or-lexrule.
+pst-rule-dtr := word-or-lexrule.
+verb-pc77-rule-dtr := word-or-lexrule.
 verb-pc19-rule-dtr := word-or-lexrule.
 verb-pc8-rule-dtr := word-or-lexrule.
-pst-rule-dtr := word-or-lexrule.
-verb-pc3-rule-dtr := word-or-lexrule.
-verb-pc77-rule-dtr := word-or-lexrule.
-verb-pc4-rule-dtr := word-or-lexrule.
-verb-pc25-rule-dtr := word-or-lexrule.
-verb-pc70-rule-dtr := word-or-lexrule.
-verb-pc51-rule-dtr := word-or-lexrule.
 third-person-rule-dtr := word-or-lexrule.
-verb-pc5-rule-dtr := word-or-lexrule.
-verb-pc43-rule-dtr := word-or-lexrule.
-verb-pc9-rule-dtr := word-or-lexrule.
-verb-pc7-rule-dtr := word-or-lexrule.
-verb-pc12-rule-dtr := word-or-lexrule.
-verb-pc1-rule-dtr := word-or-lexrule.
-verb-pc13-rule-dtr := word-or-lexrule.
-verb-pc2-rule-dtr := word-or-lexrule.
-verb-pc15-rule-dtr := word-or-lexrule.
-verb-pc63-rule-dtr := word-or-lexrule.
-verb-pc53-rule-dtr := word-or-lexrule.
-verb-pc28-rule-dtr := word-or-lexrule.
+verb-pc38-rule-dtr := word-or-lexrule.
+verb-pc70-rule-dtr := word-or-lexrule.
+verb-pc69-rule-dtr := word-or-lexrule.
+verb-pc4-rule-dtr := word-or-lexrule.
 
 ;;; Lexical rule types
 
@@ -880,7 +880,7 @@ verb-pc77_lrt1-lex-rule := verb-pc77-lex-rule-super &
 
 rem-pst-lex-rule := add-only-no-ccont-rule & infl-lex-rule & pst-rule-dtr & third-person-rule-dtr &
   [ INFLECTED #infl,
-    DTR intr-abs-verb-lex &
+    DTR intr-verb-lex &
         [ INFLECTED #infl ],
     SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT rem ].
 

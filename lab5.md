@@ -40,3 +40,8 @@
   - rem pc78 (non-oblig): -n
   - pst pc79 (non-oblig): ny-
   - third-person pc80 (non-oblig): i-
+- Attempt 2
+  - intrans (unspcf) verb25: jarrmi
+  - rem pc78 (non-oblig): -n
+  - pst pc79 (non-oblig): ny-
+  - third-person pc80 (non-oblig): i-

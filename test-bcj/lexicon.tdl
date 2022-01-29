@@ -625,7 +625,7 @@ boo := verb24-verb-lex &
   [ STEM < "boo" >,
     SYNSEM.LKEYS.KEYREL.PRED "_spear_v_rel" ].
 
-jarrmi := intr-abs-verb-lex &
+jarrmi := intr-verb-lex &
   [ STEM < "jarrmi" >,
     SYNSEM.LKEYS.KEYREL.PRED "_get.up_v_rel" ].
 
