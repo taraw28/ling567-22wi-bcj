@@ -2,7 +2,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Grammar of bardi
 ;;; created at:
-;;;     Sat Jan 29 21:31:44 UTC 2022
+;;;     Sat Jan 29 21:36:45 UTC 2022
 ;;; based on Matrix customization system version of:
 ;;;     Mon Aug  2 23:22:15 UTC 2021
 ;;;
@@ -31,11 +31,17 @@ head :+ [ PRON bool,
 
 noun :+ [ CASE case ].
 
-inflected :+ [ CASE-PC-FLAG luk,
-    VERB-PC62-FLAG luk ].
+inflected :+ [ REM-PST-FLAG luk,
+    THIRD-PERSON-FLAG luk,
+    VERB-PC62-FLAG luk,
+    PST-FLAG luk,
+    CASE-PC-FLAG luk ].
 
-infl-satisfied :+ [ CASE-PC-FLAG na-or-+,
-    VERB-PC62-FLAG na-or-+ ].
+infl-satisfied :+ [ REM-PST-FLAG na-or-+,
+    THIRD-PERSON-FLAG na-or-+,
+    VERB-PC62-FLAG na-or-+,
+    PST-FLAG na-or-+,
+    CASE-PC-FLAG na-or-+ ].
 
 png :+ [ PERNUM pernum,
     GEND gender ].
@@ -388,7 +394,10 @@ verb24-verb-lex := transitive-verb-lex &
   [ SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST.LOCAL.CAT.HEAD.CASE erg,
                            COMPS.FIRST.LOCAL.CAT.HEAD.CASE abs ] ].
 
-intr-verb-lex := intransitive-verb-lex & pst-rule-dtr & third-person-rule-dtr.
+intr-abs-verb-lex := abs-intransitive-verb-lex & pst-rule-dtr & third-person-rule-dtr &
+  [ INFLECTED [ REM-PST-FLAG -,
+                PST-FLAG -,
+                THIRD-PERSON-FLAG - ] ].
 
 ;;; Auxiliaries
 
@@ -529,44 +538,50 @@ det2-determiner-lex := determiner-lex & no-icons-lex-item &
 
 ;;; Intermediate rule types
 
-verb-pc51-rule-dtr := word-or-lexrule.
-verb-pc9-rule-dtr := word-or-lexrule.
-verb-pc1-rule-dtr := word-or-lexrule.
-verb-pc6-rule-dtr := word-or-lexrule.
-verb-pc63-rule-dtr := word-or-lexrule.
-verb-pc25-rule-dtr := word-or-lexrule.
-verb-pc3-rule-dtr := word-or-lexrule.
-verb-pc28-rule-dtr := word-or-lexrule.
-verb-pc72-rule-dtr := word-or-lexrule.
-verb-pc7-rule-dtr := word-or-lexrule.
-verb-pc22-rule-dtr := word-or-lexrule.
-verb-pc53-rule-dtr := word-or-lexrule.
-verb-pc5-rule-dtr := word-or-lexrule.
-verb-pc46-rule-dtr := word-or-lexrule.
-verb-pc2-rule-dtr := word-or-lexrule.
-verb-pc43-rule-dtr := word-or-lexrule.
-verb-pc13-rule-dtr := word-or-lexrule.
-verb-pc23-rule-dtr := word-or-lexrule.
-verb-pc15-rule-dtr := word-or-lexrule.
-verb-pc30-rule-dtr := word-or-lexrule.
 verb-pc12-rule-dtr := word-or-lexrule.
-pst-rule-dtr := word-or-lexrule.
+verb-pc8-rule-dtr := word-or-lexrule.
+verb-pc2-rule-dtr := word-or-lexrule.
+verb-pc63-rule-dtr := word-or-lexrule.
+verb-pc51-rule-dtr := word-or-lexrule.
+verb-pc7-rule-dtr := word-or-lexrule.
+verb-pc46-rule-dtr := word-or-lexrule.
 verb-pc77-rule-dtr := word-or-lexrule.
 verb-pc19-rule-dtr := word-or-lexrule.
-verb-pc8-rule-dtr := word-or-lexrule.
-third-person-rule-dtr := word-or-lexrule.
-verb-pc38-rule-dtr := word-or-lexrule.
-verb-pc70-rule-dtr := word-or-lexrule.
-verb-pc69-rule-dtr := word-or-lexrule.
+verb-pc5-rule-dtr := word-or-lexrule.
+verb-pc72-rule-dtr := word-or-lexrule.
+verb-pc22-rule-dtr := word-or-lexrule.
 verb-pc4-rule-dtr := word-or-lexrule.
+verb-pc15-rule-dtr := word-or-lexrule.
+verb-pc43-rule-dtr := word-or-lexrule.
+verb-pc23-rule-dtr := word-or-lexrule.
+verb-pc30-rule-dtr := word-or-lexrule.
+verb-pc25-rule-dtr := word-or-lexrule.
+verb-pc6-rule-dtr := word-or-lexrule.
+verb-pc9-rule-dtr := word-or-lexrule.
+verb-pc13-rule-dtr := word-or-lexrule.
+verb-pc70-rule-dtr := word-or-lexrule.
+third-person-rule-dtr := word-or-lexrule.
+verb-pc1-rule-dtr := word-or-lexrule.
+verb-pc69-rule-dtr := word-or-lexrule.
+verb-pc3-rule-dtr := word-or-lexrule.
+pst-rule-dtr := word-or-lexrule.
+verb-pc28-rule-dtr := word-or-lexrule.
+verb-pc53-rule-dtr := word-or-lexrule.
+verb-pc38-rule-dtr := word-or-lexrule.
 
 ;;; Lexical rule types
 
 case-pc-lex-rule-super := add-only-no-ccont-rule &
   [ INFLECTED [ CASE-PC-FLAG +,
-                VERB-PC62-FLAG #verb-pc62 ],
+                VERB-PC62-FLAG #verb-pc62,
+                REM-PST-FLAG #rem-pst,
+                PST-FLAG #pst,
+                THIRD-PERSON-FLAG #third-person ],
     DTR noun1-noun-lex &
-        [ INFLECTED.VERB-PC62-FLAG #verb-pc62 ] ].
+        [ INFLECTED [ VERB-PC62-FLAG #verb-pc62,
+                      REM-PST-FLAG #rem-pst,
+                      PST-FLAG #pst,
+                      THIRD-PERSON-FLAG #third-person ] ] ].
 
 erg-lex-rule := case-pc-lex-rule-super & infl-lex-rule &
   [ SYNSEM.LOCAL.CAT.HEAD.CASE erg ].
@@ -817,9 +832,15 @@ verb-pc61_lrt1-lex-rule := verb-pc61-lex-rule-super.
 
 verb-pc62-lex-rule-super := add-only-no-ccont-rule & const-lex-rule &
   [ INFLECTED [ VERB-PC62-FLAG +,
-                CASE-PC-FLAG #case-pc ],
+                REM-PST-FLAG #rem-pst,
+                PST-FLAG #pst,
+                CASE-PC-FLAG #case-pc,
+                THIRD-PERSON-FLAG #third-person ],
     DTR verb7-verb-lex &
-        [ INFLECTED.CASE-PC-FLAG #case-pc ] ].
+        [ INFLECTED [ REM-PST-FLAG #rem-pst,
+                      PST-FLAG #pst,
+                      CASE-PC-FLAG #case-pc,
+                      THIRD-PERSON-FLAG #third-person ] ] ].
 
 verb-pc62_lrt1-lex-rule := verb-pc62-lex-rule-super &
   [ SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3rd ].
@@ -879,21 +900,42 @@ verb-pc77_lrt1-lex-rule := verb-pc77-lex-rule-super &
   [ SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 1st ].
 
 rem-pst-lex-rule := add-only-no-ccont-rule & infl-lex-rule & pst-rule-dtr & third-person-rule-dtr &
-  [ INFLECTED #infl,
-    DTR intr-verb-lex &
-        [ INFLECTED #infl ],
+  [ INFLECTED [ REM-PST-FLAG +,
+                VERB-PC62-FLAG #verb-pc62,
+                THIRD-PERSON-FLAG #third-person,
+                PST-FLAG #pst,
+                CASE-PC-FLAG #case-pc ],
+    DTR intr-abs-verb-lex &
+        [ INFLECTED [ VERB-PC62-FLAG #verb-pc62,
+                      THIRD-PERSON-FLAG #third-person,
+                      PST-FLAG #pst,
+                      CASE-PC-FLAG #case-pc ] ],
     SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT rem ].
 
 pst-lex-rule := add-only-no-ccont-rule & infl-lex-rule & third-person-rule-dtr &
-  [ INFLECTED #infl,
+  [ INFLECTED [ PST-FLAG +,
+                VERB-PC62-FLAG #verb-pc62,
+                REM-PST-FLAG #rem-pst,
+                CASE-PC-FLAG #case-pc,
+                THIRD-PERSON-FLAG #third-person ],
     DTR pst-rule-dtr &
-        [ INFLECTED #infl ],
+        [ INFLECTED [ VERB-PC62-FLAG #verb-pc62,
+                      REM-PST-FLAG #rem-pst,
+                      CASE-PC-FLAG #case-pc,
+                      THIRD-PERSON-FLAG #third-person ] ],
     SYNSEM.LOCAL.CONT.HOOK.INDEX.E.TENSE pst ].
 
 third-person-lex-rule := add-only-no-ccont-rule & infl-lex-rule &
-  [ INFLECTED #infl,
+  [ INFLECTED [ THIRD-PERSON-FLAG +,
+                VERB-PC62-FLAG #verb-pc62,
+                REM-PST-FLAG #rem-pst,
+                PST-FLAG #pst,
+                CASE-PC-FLAG #case-pc ],
     DTR third-person-rule-dtr &
-        [ INFLECTED #infl ],
+        [ INFLECTED [ VERB-PC62-FLAG #verb-pc62,
+                      REM-PST-FLAG #rem-pst,
+                      PST-FLAG #pst,
+                      CASE-PC-FLAG #case-pc ] ],
     SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3rd ].
 
 ;;;;;;;;;;;;;;;;;;;
