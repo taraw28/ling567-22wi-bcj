@@ -1,0 +1,527 @@
+Lab 4 - Bardi - Tara and Hanieh
+
+Note, I renamed the TSDB profiles to hopefully make them easier to find. I included the paths
+with each run.
+
+TSDB
+  Initial Run
+    corpus (tsdb/home/bardi/lab4/lab3grammar/corpus)
+      1. 2 items parsed
+      2. We averaged 44 parses per parsed item. (62 for one sentence, 26 for the other sentence)
+      3. Our most ambiguous item got 62 readings.
+      4. A lot of the ambiguity comes from the noun and verb top and bottom coordination rules.
+        One of our noun position classes is optional but should be required so it tried to apply the
+        position class to sentences, resulting in ambiguity. There is also ambiguity from how the
+        sentences are formed however, I think this is something that will require editing tdl files
+        to fix.
+
+    testsuite (tsdb/home/bardi/lab4/lab3grammar/lab4)
+    1. 4 items parsed
+    2. We averaged 5 parses per parsed item. (12 for one sentence, 6 for 2 sentences, and 1 for 1
+      sentence)
+    3. Our most ambiguous item got 12 readings.
+    4. Most of the ambiguity is from the optional noun position classes mentioned above. The other
+      source is with the way that sentences are formed, same as with the corpus.
+
+  Final Run
+    corpus (tsdb/home/bardi/lab4/lab4grammar/corpus)
+      1. 2 items parsed
+      2. 9 parses per item (14 parses for one sentence, 4 for the other)
+      3. Our most ambiguous item got 14 readings.
+      4. Having eliminated the optional noun position class ambiguity, most of the ambiguity is
+        coming from the top and bottom coordination rules. For the second sentence, it looks
+        like one of our nouns is duplicated in the lexicon so the only other source is using the
+        basic-head-opt-comp rule versus the subj-head rule to form the sentence.
+
+    testsuite (tsdb/home/bardi/lab4/lab4grammar/lab4)
+      1. 2 items parsed
+      2. We average 4 parses per parsed item. (4 for each sentence)
+      3. Our most ambiguous item(s) got 4 readings.
+      4. One source of ambiguity was again the use of the basic-head-opt-comp rule versus the
+        subj-head rule to form the sentence. The other was, once again, duplicate entries in
+        the lexicon. However, this one relates to the ill-formed position classes as it has an
+        affix as the root instead of the word with semantic meaning. Some affixes have the same
+        spelling but have slightly different purposes.
+
+  Coverage
+    - Initial Run
+      - corpus: 1.1% coverage
+      - testsuite: 4.9% coverage
+    - Final Run
+      - corpus: 1.1% coverage
+      - testsuite: 0% coverage
+    - Comparison
+      - corpus: stayed the same
+      - testsuite: decreased :(
+      - Even though coverage did not improve, we did decrease a lot of ambiguity (which, in
+        combination with additional test items, is most likely the reason for the coverage
+        decreasing)
+
+Phenomena/Choices
+  Questions
+    Polar Interrogatives
+      There are two main ways of creating yes/no questions in Bardi. The first is with a separate
+      interrogative particle that usually appears first in the clause. The particle is "nganyji"
+      and it questions the proposition in the clause as a whole. For example,
+
+        #1
+        Nganyji minjalagal jiyirr ooldoobal.
+        Nganyji mi-n-jala-gal jiy-irr ooldoobal
+        INTERROG 2-TR-see-REC.PST 2M.POSS-3A things
+        `Did you see your things?'
+
+        #2
+        Nganyji ngay ngankiida Broomengan?
+        Nganyji ngay nga-n-k-iid-a Broome-ngan
+        INTERROG 1MIN 1-TR-FUT-go-FUT Broome-ALL
+        `Will I go to Broome?'
+
+        #3
+        Nganyji lol inyjiidigal jan mayar?
+        Nganyji lol i-ny-jiidi-gal jan mayar
+        INTERROG burn 3-PST-go-REC.PST 1MIN.POSS house
+        `Did my house burn?'
+
+      We added this to the grammer with the following:
+
+        section=matrix-yes-no
+        q-part=on
+        q-part-order=before
+          q-particle1_orth=nganyji
+          q-particle1_wh=oblig
+
+      However, we were unable to get any of these sentences to parse as our lexicon is still
+      lacking some words. We plan to work this weekend on updating our lexicon to include all or
+      almost all of the words we used in our testsuite.
+
+      The second is with an affix attached to the relevant word (Bowern refers to these as clitics).
+      These clitics - "(g)arda" and "bard(a)" - interract with focus and is used to question
+      particular constituents in a sentence. The clitic attaches to the element under interrogation
+      (i.e. the part of the sentence the focus is on). For example,
+
+        #4
+        Gooyarrarda aarli minnyagal?
+        Gooyarr-arda aarli mi-n-nya-gal
+        two-INTERROG fish 2-TR.PST-catch-REC.PST
+        `Was it TWO fish you caught?
+
+        #5
+        Ngayarda ngankiida Broomengan, gardi joowarda?
+        Ngay-arda nga-n-k-iid-a Broome-ngan, gardi joo-warda
+        1MIN-INTERROG 1-TR-FUT-go-FUT Broome-ALL or 2MIN-INTERROG
+        `Will *I* go to Broome today or will it be YOU?'
+
+        #6
+        Ginyinggi ball garndi inin bardagonbard?
+        Ginyinggi ball garndi i-ni-n bardagon-bard
+        3MIN ball on.top 3-sit-CONT tree-LOC-INTERROG
+        `Is the ball at the top of the TREE?'
+
+        #7
+        Ginyinggarda jina jiiwa minjoogoolij?
+        Ginyingg=arda jina jiiwa mi-n-joogool-ij
+        3min=INTERROG 3M.POSS boomerang 2-TR-break-PFV
+        `Was it HIS boomerang you broke?'
+
+        #8
+        Nyimoonggoon ginyingginim aamba joowarda jiy iila inangajim?
+        Nyi-moonggoon ginyinggi-nim aamba joo=warda jiy iila i-na-ngajim
+        2-know 3MIN-ERG man 2MIN=INTERROG 2M.POSS dog 3-TR-hit
+        `Do you know if it was the man who hit YOUR dog?'
+
+      We were unable to add this to our grammar as it takes the second position on a word which is
+      in direct conflict with "nganyji", which takes the first position in the sentence. We tried
+      to add it with the following:
+
+          section=wh-q
+          focus-marking=on
+
+          section=info-str
+            c-focus-marker1_type=affix
+
+          noun-pc34_name=question-affix
+          noun-pc34_obligatory=on
+          noun-pc34_order=suffix
+          noun-pc34_inputs=noun
+              noun-pc34_lrt1_feat1_name=information-structure meaning
+              noun-pc34_lrt1_feat1_value=contrast-focus
+              noun-pc34_lrt1_feat1_head=itself
+              noun-pc34_lrt1_lri1_inflecting=yes
+              noun-pc34_lrt1_lri1_orth=arda
+              noun-pc34_lrt1_lri2_inflecting=yes
+              noun-pc34_lrt1_lri2_orth=garda
+              noun-pc34_lrt1_lri3_inflecting=yes
+              noun-pc34_lrt1_lri3_orth=bard
+              noun-pc34_lrt1_lri4_inflecting=yes
+              noun-pc34_lrt1_lri4_orth=barda
+
+      However, this prevented any sentence from parsing. We might have to do this in the future by
+      modifying tdl files. Any other input you have on why this might not work would be very helpful.
+
+    Wh- Questions
+      Bardi uses a number of interrogative pronouns that usually appear first in the clause, however
+      it can appear non-initially as well. The pronoun "angabba" is used for "who", "janambooroo for
+      "where", and "angan" for "why". For example,
+
+        #9
+        Anggaba nyinga joo?
+        Anggaba nyi-nga joo
+        who 2MIN-name 2MIN
+        `What’s your name?'
+
+        #10
+        Janambooroongan arr mindin?
+        Janambooroo-ngan arr mi-n-di-n
+        where-ALL go 2-TR-do/say-CONT
+        `Where are you going?'
+
+        #11
+        Angan minyjarralagal joornk?
+        Angan mi-ny-jarrala-gal joornk
+        why 2-PST-run-REC.PST fast
+        `Why did you run so fast?'
+
+        The pronoun "goonban(kij)" is used to indicate a speaker's disapproval of an action and is
+        usually translated as "why on earth." For example,
+
+        #12
+        Goonban barda minagal jan aarli?
+        Goonban barda mi-n-a-gal jan aarli
+        why.on.earth away 2-TR-give-REC.PST 1M.POSS fish
+        `Why on earth did you give my fish away?'
+
+        #13
+        Goonbankij minjoolnggaljin?
+        Goonban=kij mi-n-joolng-gal=jin
+        why.on.earth=VERY 2-TR-tell-REC.PST=3M.IO
+        `Why on earth did you tell him?’
+
+      We added a noun class to contain these pronouns:
+
+        noun27_name=question-pronoun
+        noun27_inter=on
+        noun27_det=opt
+          noun27_stem1_orth=anggaba
+          noun27_stem1_pred=_who_n_rel
+          noun27_stem2_orth=janambooroo
+          noun27_stem2_pred=_where_n_rel
+          noun27_stem3_orth=angan
+          noun27_stem3_pred=_why_n_rel
+          noun27_stem4_orth=goonban
+          noun27_stem4_pred=_why.on.earth_n_rel
+          noun27_stem5_orth=anggi
+          noun27_stem5_pred=_what_n_rel
+          noun27_stem6_orth=baanigarr
+          noun27_stem6_pred=_when_n_rel
+
+      We focused more on yes/no questions for our testsuite so we weren't able to properly test if
+      these parse correctly (and they most likely wouldn't have due to missing words in the
+      lexicon).
+
+    Double Interrogatives
+      More than one interrogative pronoun can appear in a clause. Multiple interrogatives are
+      allowed and there are few restrictions on the order. The difference in meaning appears to
+      depend on which interrogative has greater focus. For example,
+
+        #14
+        Anggabanim anggi inarligal?
+        Anggaba-nim anggi i-na-rli-gal
+        who-ERG what 3-TR-eat-REC.PST
+        `Who ate what?'
+
+      When it comes to multiple interrogatives with both arguments and adjuncts, however, the
+      judgements are different. This is one of the few places in the grammar where there are
+      differences between a free adjunct and an argument phrase. For example, multiple
+      interrogatives involving "janaboor" (where) are fine when the adjunct is fronted before
+      "anggaba" (who), but only if the verb is final. For example,
+
+        #15
+        Anggaba minjalagal janaboor?
+        Anggaba mi-n-jala-gal janaboor
+        who 2-TR-see-REC.PST where
+        `Who did you see where?'
+
+        #16
+        Janaboor anggaba minjalagal?
+        Janaboor anggaba mi-n-jala-gal
+        where who 2-TR-see-REC.PST
+        `Who did you see where?'
+
+        #17 ungrammatical
+        Janaboor minjalagal anggaba
+        Janaboor mi-n-jala-gal anggaba
+        where 2-TR-see-REC.PST who
+        `Intended: Who did you see where?'
+
+        #18
+        Nyanyjirrgoordoo aarli minjooloonggalirr baanigarr?
+        Nyanyjirrgoordoo aarli mi-n-jooloong-gal=irr baanigarr?
+        how.many fish 2M-TR-collect-REC.PST=3A.DO when
+        `How many fish did you collect when?/When did you collect how many fish?’
+
+        #19 ungrammatical
+        Angging nyanyjirrgoordoo aarli minjooloonggalirr?
+        Anggi-ng nyanyjirrgoordoo aarli mi-n-jooloong-gal-irr
+        what-INS how.many fish 2M-TR-collect-REC.PST-3A.DO
+        `Intended: With what did you collect how many fish?'
+
+      Since we didn't quite get to finishing wh-questions, we did not get a chance to implement
+      this. Do you have any pointers on how enforce these constraints via customization? Or is this
+      something we will have to do with tdl files?
+
+  Argument Optionality
+    Bardi has free argument omission (pro-drop). It allows subjsects and objects to be dropped.
+    Pronouns are not syntactically obligatory in the clause and are not used for reference tracking.
+
+    Even in cases of potentially ambiguous argument tracking, free NPs or pronouns are seldom used.
+    The ambiguity is tolerated, though there is some assumption of argument continuity (that is,
+    that subjects continue subjects and objects continue objects); however, likelihood and real
+    world knowledge are used to infer who is doing what.
+
+    In the following example argument continuity is inferred by the absence of free NPs or pronouns
+    and the subject marking on the verb provides information about which participants. Context
+    identifies the referent of the verb agreement. The following example contains no argument NPs
+    or pronouns at all; the only NPs are place names or locations.
+
+      #20 Note, this example is just to show this feature, it was not included in our testsuite as
+        it is far too complex.
+      Roowil ingirrinyana Ngalngoorarra yoorr ingarraman Balalbalalngarr daab ingirrinyan goona
+        goorriron.
+      Roowil i-ng-irr-i-nya-na Ngalngoorarra yoorr i-ng-arr-a-ma-n Balalbalalngarr daab
+        i-ng-irr-i-nya-n goona goorrir-on
+      walk 3-PST-AUG-TR-catch-REM.PST Ng. come.down 3-PST-AUG-TR-put-REM.PST B. climb
+        3-PST-AUG-TR-catch-REM.PST back fig.tree-LOC
+      `They walked to Ngalngoorarra and came down at Balalbalalngarr, and climbed up at the big fig
+        tree.'
+
+      #21
+      Roowil ingirrinyana Ngalngoorarra.
+      Roowil i-ng-irr-i-nya-na Ngalngoorarra
+      walk 3-PST-AUG-TR-catch-REM.PST Ngalngoorarra
+      `They walked to Ngalngoorarra.'
+
+    Heads of relative clauses, for example, can be omitted. Both speech act participants can be
+    omitted. Subjects and objects of gerunds can be omitted, even though they are not cross-
+    referenced on the verb. However, there are contexts under which free noun phrases appear not to
+    be omissible. Pronouns cannot be omitted if the argument is in focus. But, if they are in
+    special focus, they may also get reinforcement such as with the exclamative "arra". For example,
+
+      #22
+      Arra ngay bard arr ngandan.
+      Arra ngay bard arr nga-n-da-n
+      INTERJ 1MIN away come 1-TRdo/say-CONT
+      `Hey look! It’s ME coming.'
+
+      #23
+      Ngayoonim ngananarri malarr.
+      Ngayoo-nim nga-na-na-rri malarr
+      1MIN-ERG 1-CONT-REM.PST-2M.DO wife
+      `I gave you wives.'
+
+    The following show that the ergative differentiates subject from oblique. It is not omissible
+    even when the semantic roles are clear from context.
+
+      #24
+      Inyjargijin ngaarri.
+      I-ny-jargi-jin ngaarri
+      3-PST-fear-3MIN.IO devil.ABS
+      `The devil was afraid of him.'
+
+      #25
+      Maanka injoogal gaara noorroonim.
+      Maanka i-n-joo-gal gaara n˙oorroo-nim
+      black 3-[PST]-TR-do/say-REC.PST sand fire-ERG
+      `The ground got black from the fire.'
+
+    In some cases, the presence or absence of overt nominal material appears to be grammatically
+    constrained. In the following Bardi sentence, the noun "oorany" is not omissible:
+
+      #26
+      Jaarla nganjalagal *(oorany) wiliwilon inkalgal.
+      Jaarla nga-n-jala-gal *(oorany) wiliwil-on i-n-kal-gal
+      beach(ø-loc) 1M-TR-see- 	woman fishing 3M-TR-visit-REC.PST
+      `I saw a woman on the beach, she was fishing. / I saw the woman fishing on the beach.'
+
+    Pronouns (or free nouns) which are part of a coordinated phrase cannot be omitted:
+
+      #27
+      Monty, Lionel agal ngayoo angarrjarrarra barda Broomengan.
+      Monty, Lionel agal ngayoo a-ng-arr-jarrarra barda Broome-ngan
+      M. L. and 1MIN 1-PST-AUG-get.up. away B.-ALL
+      `Monty, Lionel and I got up and went off to Broome.'
+
+    We originally made the following changes to the choices file for argument optionality:
+
+      section=arg-opt
+      subj-drop=subj-drop-all
+      subj-mark-drop=subj-mark-drop-req
+      subj-mark-no-drop=subj-mark-no-drop-req
+      subj-con=subj-con-some
+      obj-drop=obj-drop-all
+      obj-mark-drop=obj-mark-drop-req
+      obj-mark-no-drop=obj-mark-no-drop-req
+
+    However, it made it so our test cases didn't pass. We changed it back to what it was originally
+    (and added that omission occurs in some casees) and our sentences parsed again.
+
+      section=arg-opt
+      subj-drop=subj-drop-all
+      subj-mark-drop=subj-mark-drop-opt
+      subj-mark-no-drop=subj-mark-no-drop-opt
+      subj-con=subj-con-some
+      obj-drop=obj-drop-all
+      obj-mark-drop=obj-mark-drop-opt
+      obj-mark-no-drop=obj-mark-no-drop-opt
+
+  Possession
+    There are five ways in which possession is marked for nouns in Bardi. We focused on three of
+    them for this lab.
+
+    Free Possessive Pronouns
+      When free possessor pronouns are  used as possessives, they take the form of compound
+      pronouns, which specify information for the person and number of both possessor and possessum.
+      Possessive pronouns can lose the aug markin gif the possessum is non-individuated. Possessors
+      and possessums can have different persons and numbers. For example,
+
+        #28
+        Ngajana bo inambijjan goorlil.
+        Ngajana bo i-na-m-b-ij-jan goorlil.
+        1M.POSS woman's.child 3-TR-PST-poke-PFV-1M.IO turtle
+        `My son speared a turtle.'
+
+        #29
+        Ngajana gooloo bard roowil innyana.
+        Ngajana gooloo bard roowil i-n-nya-na
+        1M.POSS father off walk 3M-TR-catch-REM.PST
+        `My father walked off.'
+
+        #30
+        Minjalagal jiyirr ooldoobal.
+        mi-n-jala-gal jiy-irr ooldoobal
+        2-TR-see-REC.PST 2M.POSS-3A things
+        `You see your things.'
+
+        #31
+        Jina jiiwa minjoogoolij.
+        jina jiiwa mi-n-joogool-ij
+        3M.POSS boomerang 2-TR-break-PFV
+        You broke his boomerang.
+
+        #32
+        Lol inyjiidigal jan mayar
+        lol i-ny-jiidi-gal jan mayar
+        burn 3-PST-go-REC.PST 1MIN.POSS house
+        `My house burned.'
+
+        #33
+        Ginyingginim injooloonggal ajawirr irrol.
+        ginyinggi-nim i-n-jooloong-gal ajaw-irr irrol
+        3MIN-ERG 3-TR-PST-pick.up-REC.PST 1+2M.POSS-3AUG spear.ABS
+        `He picked up our spears.'
+
+      The possessive pronouns were added to the choices file as shown below:
+
+        section=adnom-poss
+          poss-pron1_type=non-affix
+          poss-pron1_agr=non-agree
+          poss-pron1_mod-spec=spec
+          poss-pron1_order=head-final
+            poss-pron1_instance1_name=ngajana
+            poss-pron1_instance1_orth=ngajana
+              poss-pron1_instance1_feat1_name=pernum
+              poss-pron1_instance1_feat1_value=1min_excl
+            poss-pron1_instance2_name=jiy
+            poss-pron1_instance2_orth=jiy
+              poss-pron1_instance2_feat1_name=pernum
+              poss-pron1_instance2_feat1_value=2min
+            poss-pron1_instance3_name=jina
+            poss-pron1_instance3_orth=jina
+              poss-pron1_instance3_feat1_name=pernum
+              poss-pron1_instance3_feat1_value=3min
+            poss-pron1_instance4_name=jan
+            poss-pron1_instance4_orth=jan
+              poss-pron1_instance4_feat1_name=pernum
+              poss-pron1_instance4_feat1_value=1min_excl
+            poss-pron1_instance5_name=ajaw
+            poss-pron1_instance5_orth=ajaw
+              poss-pron1_instance5_feat1_name=pernum
+              poss-pron1_instance5_feat1_value=1min_incl
+            poss-pron1_instance6_name=jarda
+            poss-pron1_instance6_orth=jarda
+              poss-pron1_instance6_feat1_name=pernum
+              poss-pron1_instance6_feat1_value=1aug
+            poss-pron1_instance7_name=joogarra
+            poss-pron1_instance7_orth=joogarra
+              poss-pron1_instance7_feat1_name=pernum
+              poss-pron1_instance7_feat1_value=2aug
+            poss-pron1_instance8_name=jirra
+            poss-pron1_instance8_orth=jirra
+              poss-pron1_instance8_feat1_name=pernum
+              poss-pron1_instance8_feat1_value=3aug
+          poss-pron1_possessum-mark=no
+
+        Again, because of issues with the lexicon, we were unable to fully test if our
+        implementation correctly parses any sentences.
+
+    Inalienable Nouns
+      Bardi has a set of inalienable possessed nouns which take prefixes for the person and number
+      of the possessor. A select number of inalienable nouns take possessive prefixes. The others
+      take regular possessive pronouns. Examples of ones with possessive prefixes are shown below:
+
+        #34
+        Ngamarlang nganangajimgal.
+        nga-marla-ng nga-na-ngajim-gal
+        1M.POSS-hand-INS 1-TR-PST-hit-REC.PST
+        `I  hit him with my hand.'
+
+        #35
+        Aamba ninga Ngoolmoongoolmoo.
+        aamba ni-nga Ngoolmoongoolmoo
+        man 3.POSS-name Ngoolmoongoolmoo
+        `The man's name was Ngoolmoongoolmoo.'
+
+      For the possessive affixes, we added the following to the choices file:
+
+        poss-pron1_possessum-mark=no
+        poss-pron2_type=affix
+        poss-pron2_agr=non-agree
+        poss-pron2_mod-spec=spec
+
+      We are not entirely sure this is even implemented as it does not show up in the matrix
+      customization even though it exists in the choices file. Due to this, we did not add the
+      prefixes to the morphology section.
+
+    Possessive Pronouns with Verbs
+      Unlike the other languages in Bardi's language family, sometimes posessive pronouns can
+      migrate from the DP to the verb. The only difference between possessive marking on the verb
+      and oblique pronouns is the position of the affix, since they can co-occur. The marking of
+      possession on the verb is not obligatory and it can alternate with marking within the noun
+      phrase. For example
+
+        #36
+        Ginyingginim injoogooloojan daanggoo
+        Ginyinggi-nim i-n-joogooloo-jan daanggoo
+        3MIN-ERG 3-TR-break-1M.POSS jaw
+        `He broke my jaw.'
+
+        #37
+        Joonim jiyarr bo irrjarginjinan bo.
+        Joo-nim jiya-rr bo i-rr-jargi-n-jin-an bo
+        2MIN-ERG 2M.POSS-3A woman’s.child 3-AUG-fear-CONT-3M.IO=1M.POSS woman’s.child
+        `Your children are frightened of my children.'
+
+      The choices files issues for inalienable nouns also apply here.
+
+Below is a list of other changes made to the choices file that did not fit in with any of the
+phenomena described above:
+  - made the case position class obligatory
+  - removed the ins case (also removed it from the case position class (pc))
+  - removed the loc-all pc (as advised in lab 3 comments)
+  - added min and aug number
+    - added inclusive/exclusive min and updated lexicon/morphology to match
+    - 1min_excl in choices is equivalent to 1min in glosses
+    - 1min_incl in choices is equivalent to 1+2min in glosses
+
+We also attempted to remove a bunch of ill-formed verb and noun position classes. However, since
+we didn't add any new position classes, we were no longer able to parse any sentences so we
+reverted back to including them until we could work on better verb position classes.

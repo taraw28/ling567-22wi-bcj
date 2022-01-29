@@ -97,6 +97,14 @@ abl-ltr-suffix3 :=
 %suffix (* -ko)
 abl-ltr-lex-rule.
 
+ins-ltr-suffix1 :=
+%suffix (* -nga)
+ins-ltr-lex-rule.
+
+ins-ltr-suffix2 :=
+%suffix (* -ng)
+ins-ltr-lex-rule.
+
 loc-ltr-suffix1 :=
 %suffix (* -goon)
 loc-ltr-lex-rule.
@@ -188,6 +196,10 @@ reason-ltr-lex-rule.
 reason-ltr-suffix3 :=
 %suffix (* -ganiny)
 reason-ltr-lex-rule.
+
+loc-all_lrt-suffix :=
+%suffix (* -darr)
+loc-all_lrt-lex-rule.
 
 verb-pc1_lrt1-prefix1 :=
 %prefix (* jalala-)

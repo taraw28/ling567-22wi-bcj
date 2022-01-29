@@ -37,20 +37,13 @@ COG-ST : COG-ST
   * <> *
 
 
-PNG.PERNUM : PNG.PERNUM
-  3aug <> 3aug
-  2aug <> 2aug
-  1aug <> 1aug
-  3min <> 3min
-  2min <> 2min
-  1min_excl <> 1min_excl
-  1min_incl <> 1min_incl
-  1min <> 1min
+PNG.PER : PNG.PER
   3rd <> 3rd
   2nd <> 2nd
   1st <> 1st
-  aug <> aug
-  min <> min
+  * <> *
+
+PNG.NUM : PNG.NUM
   * <> *
 
 PNG.GEND : PNG.GEND

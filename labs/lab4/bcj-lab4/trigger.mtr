@@ -1,0 +1,30 @@
+;;; -*- Mode: TDL; Coding: utf-8 -*-
+;;; Semantically Empty Lexical Entries
+
+arra_1_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ PRED "non_existing_rel" ] >,
+    FLAGS.TRIGGER "arra_1" ].
+
+amba_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ PRED "non_existing_rel" ] >,
+    FLAGS.TRIGGER "amba" ].
+
+amb_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ PRED "non_existing_rel" ] >,
+    FLAGS.TRIGGER "amb" ].
+
+ba_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ PRED "non_existing_rel" ] >,
+    FLAGS.TRIGGER "ba" ].
+
+b_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ PRED "non_existing_rel" ] >,
+    FLAGS.TRIGGER "b" ].
+
+jamb_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ PRED "non_existing_rel" ] >,
+    FLAGS.TRIGGER "jamb" ].
+
+nganyji_gr := generator_rule &
+  [ CONTEXT.RELS.LIST < [ ARG0.SF ques ] >,
+    FLAGS.TRIGGER "nganyji" ].

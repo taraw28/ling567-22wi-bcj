@@ -37,7 +37,7 @@ iwanyoo := noun2-noun-lex &
   [ STEM < "iwanyoo" >,
     SYNSEM.LKEYS.KEYREL.PRED "_sunday.island_n_rel" ].
 
-anggi_1 := noun2-noun-lex &
+anggi := noun2-noun-lex &
   [ STEM < "anggi" >,
     SYNSEM.LKEYS.KEYREL.PRED "_what_n_rel" ].
 
@@ -409,31 +409,17 @@ nan := noun11-noun-lex &
   [ STEM < "nan" >,
     SYNSEM.LKEYS.KEYREL.PRED "_times_n_rel" ].
 
-anggaba := question-pronoun-noun-lex &
-  [ STEM < "anggaba" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_who_n_rel" ].
-
-janambooroo := question-pronoun-noun-lex &
-  [ STEM < "janambooroo" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_where_n_rel" ].
-
-angan := question-pronoun-noun-lex &
-  [ STEM < "angan" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_why_n_rel" ].
-
-goonban := question-pronoun-noun-lex &
-  [ STEM < "goonban" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_why.on.earth_n_rel" ].
-
-anggi_2 := question-pronoun-noun-lex &
-  [ STEM < "anggi" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_what_n_rel" ].
-
-baanigarr := question-pronoun-noun-lex &
-  [ STEM < "baanigarr" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_when_n_rel" ].
-
 ;;; Adjectives
+
+;;; Case-marking adpositions
+
+ins-marker_rooban := case-marking-adp-lex &
+  [ STEM < "rooban" >,
+    SYNSEM.LOCAL [ CONT [ HOOK [ ICONS-KEY.IARG1 #clause,
+                                 CLAUSE-KEY #clause ],
+                          ICONS.LIST < > ],
+                   CAT.HEAD [ CASE ins,
+                              CASE-MARKED + ] ] ].
 
 ;;; Verbs
 
@@ -641,10 +627,6 @@ alboo := verb24-verb-lex &
   [ STEM < "alboo" >,
     SYNSEM.LKEYS.KEYREL.PRED "_dig_v_rel" ].
 
-boo := verb24-verb-lex &
-  [ STEM < "boo" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_spear_v_rel" ].
-
 ;;; Auxiliaries
 
 irr_2 := aux1-aux-lex &
@@ -684,33 +666,6 @@ barni_2 := det2-determiner-lex &
     SYNSEM.LKEYS.KEYREL.PRED "_exist_q_rel" ].
 
 ;;; Adverbs
-
-nganyji := q-particle1-lex &
-  [ STEM < "nganyji" > ].
-
-ngajana-noun := ngajana-noun-lex &
-  [ STEM < "ngajana" > ].
-
-jiy-noun := jiy-noun-lex &
-  [ STEM < "jiy" > ].
-
-jina-noun := jina-noun-lex &
-  [ STEM < "jina" > ].
-
-jan-noun := jan-noun-lex &
-  [ STEM < "jan" > ].
-
-ajaw-noun := ajaw-noun-lex &
-  [ STEM < "ajaw" > ].
-
-jarda-noun := jarda-noun-lex &
-  [ STEM < "jarda" > ].
-
-joogarra-noun := joogarra-noun-lex &
-  [ STEM < "joogarra" > ].
-
-jirra-noun := jirra-noun-lex &
-  [ STEM < "jirra" > ].
 
 agal2 := conj-lex &
   [ STEM < "agal" >,

@@ -1,0 +1,41 @@
+;;; -*- Mode: TDL; Coding: utf-8 -*-
+;;; Semantically Empty Lexical Entries
+
+ins-marker_rooban_gr_1 := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG1 individual & #i ] >,
+    FLAGS [ SUBSUME < #i >,
+            TRIGGER "ins-marker_rooban" ] ].
+
+ins-marker_rooban_gr_2 := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG2 individual & #i ] >,
+    FLAGS [ SUBSUME < #i >,
+            TRIGGER "ins-marker_rooban" ] ].
+
+ins-marker_rooban_gr_3 := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ ARG3 individual & #i ] >,
+    FLAGS [ SUBSUME < #i >,
+            TRIGGER "ins-marker_rooban" ] ].
+
+arra_1_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ PRED "non_existing_rel" ] >,
+    FLAGS.TRIGGER "arra_1" ].
+
+amba_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ PRED "non_existing_rel" ] >,
+    FLAGS.TRIGGER "amba" ].
+
+amb_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ PRED "non_existing_rel" ] >,
+    FLAGS.TRIGGER "amb" ].
+
+ba_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ PRED "non_existing_rel" ] >,
+    FLAGS.TRIGGER "ba" ].
+
+b_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ PRED "non_existing_rel" ] >,
+    FLAGS.TRIGGER "b" ].
+
+jamb_gr := arg0e_gtr &
+  [ CONTEXT.RELS.LIST < [ PRED "non_existing_rel" ] >,
+    FLAGS.TRIGGER "jamb" ].
