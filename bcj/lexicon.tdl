@@ -45,7 +45,7 @@ niyangala := noun2-noun-lex &
   [ STEM < "niyangala" >,
     SYNSEM.LKEYS.KEYREL.PRED "_tongue_n_rel" ].
 
-aamba_1 := noun2-noun-lex &
+aamba := noun2-noun-lex &
   [ STEM < "aamba" >,
     SYNSEM.LKEYS.KEYREL.PRED "_man_n_rel" ].
 
@@ -117,7 +117,7 @@ baawa := noun2-noun-lex &
   [ STEM < "baawa" >,
     SYNSEM.LKEYS.KEYREL.PRED "_child_n_rel" ].
 
-ambooriny_1 := noun2-noun-lex &
+ambooriny := noun2-noun-lex &
   [ STEM < "ambooriny" >,
     SYNSEM.LKEYS.KEYREL.PRED "_people_n_rel" ].
 
@@ -148,10 +148,6 @@ morr := noun2-noun-lex &
 galaloong := noun2-noun-lex &
   [ STEM < "galaloong" >,
     SYNSEM.LKEYS.KEYREL.PRED "_galaloong_n_rel" ].
-
-aamba_2 := noun2-noun-lex &
-  [ STEM < "aamba" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_man_n_rel" ].
 
 aalga := noun2-noun-lex &
   [ STEM < "aalga" >,
@@ -248,10 +244,6 @@ gooloo := noun2-noun-lex &
 goolamana := noun2-noun-lex &
   [ STEM < "goolamana" >,
     SYNSEM.LKEYS.KEYREL.PRED "_goolamana_n_rel" ].
-
-ambooriny_2 := noun2-noun-lex &
-  [ STEM < "ambooriny" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_people_n_rel" ].
 
 gaalwa := noun2-noun-lex &
   [ STEM < "gaalwa" >,
@@ -396,18 +388,6 @@ goolarrji := noun2-noun-lex &
 gambarla := noun2-noun-lex &
   [ STEM < "gambarla" >,
     SYNSEM.LKEYS.KEYREL.PRED "_surgeon.fish_n_rel" ].
-
-nyarr := noun3-noun-lex &
-  [ STEM < "nyarr" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_comit_n_rel" ].
-
-marr := noun7-noun-lex &
-  [ STEM < "marr" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_sembl_n_rel" ].
-
-nan := noun11-noun-lex &
-  [ STEM < "nan" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_times_n_rel" ].
 
 anggaba := question-pronoun-noun-lex &
   [ STEM < "anggaba" >,

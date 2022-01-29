@@ -21,8 +21,10 @@
   - coordination
     - figure out coord strategies
   - agreement
+    - add in morphology?
   - questions
     - wait for feedback from lab4
+    - try making nganyji optional
   - argument optionality
     - wait for feedback from lab4
   - possessives

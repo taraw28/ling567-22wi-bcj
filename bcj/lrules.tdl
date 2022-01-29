@@ -1,4 +1,4 @@
 ;;; -*- Mode: TDL; Coding: utf-8 -*-
-abs-ltr-lex := abs-ltr-lex-rule.
+abs-lex := abs-lex-rule.
 
 verb-pc62_lrt1-lex := verb-pc62_lrt1-lex-rule.
