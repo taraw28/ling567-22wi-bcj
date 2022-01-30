@@ -462,7 +462,7 @@ Judgement: g
 Phenomena: c
 Aarlimayi arraya nyamingan!
 aarlimayi a-rr-a-ya nyami-ngan
-food 2-AUG-TR-take mother's.father-ALL
+food 2-AUG-take-FUT mother's.father-ALL
 `Take food to grandfather's place!'
 
 #47 allative
@@ -472,7 +472,7 @@ Judgement: g
 Phenomena: c
 Bardi barda arr angirrin Goorrbarlgoonngan.
 bardi barda arr a-ng-irr-i-n Goorrbarlgoon-ngan
-bardi away go 1-PST-AUG-do.say-CONT pender.bay-ALL
+yesterday away go 1-PST-AUG-do.say-CONT pender.bay-ALL
 `Yesterday we went to Pender Bay.'
 
 #48 verb noun noun-loc-all
@@ -512,7 +512,7 @@ Judgement: g
 Phenomena: q
 Nganyji minjalagal jiyirr ooldoobal.
 Nganyji mi-n-jala-gal jiy-irr ooldoobal
-nganyji 2-TR-see-REC.PST 2M.POSS-3A things
+INTERROG 2-TR-see-REC.PST 2M.POSS-3A things
 `Did you see your things?'
 
 #52 polar-question free-question-word-nganyji
@@ -522,7 +522,7 @@ Judgement: u
 Phenomena: q
 Minjalagal Nganyji jiyirr ooldoobal.
 Mi-n-jala-gal Nganyji jiy-irr ooldoobal
-2-TR-see-REC.PST NGANYJI 2M.POSS-3A things
+2-TR-see-REC.PST INTERROG 2M.POSS-3A things
 `Did you see your things?'
 
 #53 polar-question free-question-word-nganyji
@@ -532,7 +532,7 @@ Judgement: g
 Phenomena: q
 Nganyji ngay ngankiida Broomengan?
 Nganyji ngay nga-n-k-iid-a Broome-ngan
-nganyji 1MIN 1-TR-FUT-go-FUT Broome-ALL
+INTERROG 1MIN 1-TR-FUT-go-FUT Broome-ALL
 `Will I go to Broome?'
 
 #54 polar-question free-question-word-nganyji
@@ -572,7 +572,7 @@ Judgement: g
 Phenomena: q
 Ngayarda ngankiida Broomengan, gardi joowarda?
 Ngay-arda nga-n-k-iid-a Broome-ngan, gardi joo-warda
-1MIN-INT 1-TR-FUT-go-FUT Broome-ALL or 2MIN-INT
+1MIN-INTERROG 1-TR-FUT-go-FUT Broome-ALL or 2MIN-INT
 `Will I go to Broome today or will it be you?'
 
 #58 double-interrogative
