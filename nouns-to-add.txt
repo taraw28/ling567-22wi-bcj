@@ -1,0 +1,98 @@
+
+- food: may
+- hill: garrin
+- tree: bargada
+- ground: gaara
+- Boorrgoornda: Boorrgoornda
+- Balarrmay: Balarrmay
+- spear: jinala
+- spears: irrol
+- turtle.egg: nalaarrad
+- mother: birrii(double check what the stem is)
+- cold: inkoorr
+- woman: oorany
+- bark: baal
+- medicine: midijin
+- Pender bay: Goorrbarlgoon
+- pigs: bigibigi 
+- mangroves: ngoorrngool
+- Ngoolmoongoolmoo: Ngoolmoongoolmoo
+- old woman: oolooman
+- path: morr
+- things: ooldoobal
+- sun: aalga
+- house: mayar
+- Broome: Broome
+- Ngalngoorarra: Ngalngoorarra
+- wife: malarr
+- devil: ngaarri
+- turtle: goorlil
+- child, children, son: bo
+- boomerang: jiiwa
+- countryman: gandoorrman
+- hand: marla
+- name: nga
+- jaw: daanggoo
+- giant.trevally: Molon
+- garaginyarra: garaginyarra (fish type)
+- goolarrji: surgeon.fish
+
+
+Note: 
+
+For double checking "pigs" and "mangroves":
+Irralgalnidi bigibigi ngoorngoolondarr.
+i-rr-al-gal-nidi bigibigi ngoorrngool-ondarr
+3-AUG-be-REC.PST-GROUP pigs mangrove-L.ALL
+`All the pigs were in the mangroves.'
+
+adverb (not sure if we have the category yet or if we should put in under nouns)
+- yesterday: bardi
+
+adjectives:
+- tall: ngaada (not sure if we have the category yet or if we should put in under nouns)
+
+
+**verbs**
+
+- get up: jarrmi
+- go ashore, go up, climb up: daab
+- catch: nya (or inya in #14)
+- see: jala
+- eat: arl or rl or irli
+- believe: bala
+- come: darr
+- pierce: ar (pierce+ar: means comes in #18)
+- collect: loonga
+- dig: alboo
+- yawn: bilirl
+- cough: girringgirring
+- look: jal
+- hit: boo
+- finish (die): banya
+- wake up: mili
+- call out, sing out: lirrmi
+- fear: jargi
+- cover: ondi
+- go: ardi, jiidi
+- walk: roowil
+- poke: b
+- break: joogool
+- pick up: jooloong
+- hand: marla
+
+
+
+
+Note: 
+- check the combo of 'daab' and 'nya'
+#2 
+
+- check combo of 'spear' with 'yawn and cough'
+#24
+
+- check the root for 'eat'
+#12, #13, #25
+
+
+
