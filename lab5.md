@@ -34,7 +34,9 @@
   - agreement
     - add in morphology?
   - questions
-    - wait for feedback from lab4
+    - made changes 
+     - to lexicon as per feedback from lab 4 to replace what and who w/ thing and person, respectively.  (got snippet)
+     - added y/n questions to matrix q/n (got snippet)
     - try making nganyji optional
   - argument optionality
     - wait for feedback from lab4
@@ -185,3 +187,5 @@
   - tr erg subj all obj
   - it abs subj (most common)
   - it erg subj
+  -
+## verbs added to lexicon
