@@ -79,7 +79,8 @@ adjectives:
 - poke: b
 - break: joogool
 - pick up: jooloong
-- hand: marla
+- hand: marl
+- run: yarral
 
 
 
