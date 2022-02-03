@@ -32,9 +32,12 @@ i-banya
 	3. Y/N Questions 
 
 
-A description of your process for translating the MMT sentences and your documentation about which sentences may be impossible.
+- A description of your process for translating the MMT sentences and your documentation about which sentences may be impossible.
 
-A description what happened when you tried the MT set up. What difficulties did you encounter and how did you resolve them? What output did you get?
+	- The following sentences are impossible to translte:
+		- .... because it involves ... phonomenon that we haven't gotten to yet. 
 
-A description of the performance of your final grammar for this week on the test suite and test corpus, as compared to your starting grammar (see details above).
+- A description what happened when you tried the MT set up. What difficulties did you encounter and how did you resolve them? What output did you get?
+
+- A description of the performance of your final grammar for this week on the test suite and test corpus, as compared to your starting grammar (see details above).
 
