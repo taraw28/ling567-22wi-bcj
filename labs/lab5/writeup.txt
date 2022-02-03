@@ -11,7 +11,10 @@ Tara and Hanieh
 		B. Anaylysis
 		
 
-The specific changes you made to choices (paste in the actual choices)
+		Changes you made to choices (paste in the actual choices) 
+		
+
+
 
 	include copy paste of the specific choices values you changed as well as relevant IGT that I can use to test the effects.
 
