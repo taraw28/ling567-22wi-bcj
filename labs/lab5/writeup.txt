@@ -2,7 +2,7 @@ lab5 writeup
 Tara and Hanieh
 02/04/2022
 
-##Improved phenomena in the choices file##
+- Improved phenomena in the choices file
 
 	1. Agreement in Bardi: 	Subject Agreement in Bardi on 2nd person uses the prefix i-
 				
@@ -28,7 +28,8 @@ i-banya
 `He dies.'
 
 
-	2. Verb Morphology
+	2. Verb Morphology (TAM)
+	3. Y/N Questions 
 
 
 A description of your process for translating the MMT sentences and your documentation about which sentences may be impossible.
