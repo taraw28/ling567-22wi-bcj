@@ -1,1 +1,18 @@
+Your write up should be a plain text file (not .doc, .rtf or .pdf) which includes the following:
+1.A description of the phenomena you improved in the choices file, including:
+
+Prose description of the phenomenon
+Prose description of your analysis
+
+The specific changes you made to choices (paste in the actual choices)
+
+	include copy paste of the specific choices values you changed as well as relevant IGT that I can use to test the effects.
+
+Specific IGT I can use to test the analysis / investigate if something isn't working and you need help.
+
+2.A description of your process for translating the MMT sentences and your documentation about which sentences may be impossible.
+
+3.A description what happened when you tried the MT set up. What difficulties did you encounter and how did you resolve them? What output did you get?
+
+4.A description of the performance of your final grammar for this week on the test suite and test corpus, as compared to your starting grammar (see details above).
 
