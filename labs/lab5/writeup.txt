@@ -13,7 +13,13 @@ Tara and Hanieh
 
 		Changes you made to choices (paste in the actual choices) 
 		
+<img width="561" alt="Screen Shot 2022-02-03 at 11 22 45 AM" src="https://user-images.githubusercontent.com/49420070/152448291-70e16d09-df1a-455a-9f3c-79dd5bf7aa5b.png">
 
+
+<img width="609" alt="Screen Shot 2022-02-03 at 11 23 07 AM" src="https://user-images.githubusercontent.com/49420070/152448303-537f4702-8005-4372-a5f1-8698fc25e062.png">
+
+
+<img width="591" alt="Screen Shot 2022-02-03 at 11 51 22 AM" src="https://user-images.githubusercontent.com/49420070/152448355-0b0ea21b-6f12-4f37-9f17-b76e29dd901d.png">
 
 
 	include copy paste of the specific choices values you changed as well as relevant IGT that I can use to test the effects.
