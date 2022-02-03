@@ -629,6 +629,10 @@ jarrmi := intr-abs-verb-lex &
   [ STEM < "jarrmi" >,
     SYNSEM.LKEYS.KEYREL.PRED "_get.up_v_rel" ].
 
+nya := tr-erg-abs-verb-lex &
+  [ STEM < "nya" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_catch_v_rel" ].
+
 ;;; Auxiliaries
 
 irr_2 := aux1-aux-lex &
