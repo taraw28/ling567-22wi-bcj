@@ -1,0 +1,1179 @@
+Language: Bardi
+Language code: bcj
+Lines: orth orth-seg gloss translat
+Author: Tara Wueger and Hanieh Nezakati
+Date: January 15, 2022
+Source a: A grammar of Bardi by Claire Bowern
+
+#1 intrans-verb noun-abs
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: c
+Inyjarrmin gool.
+I-ny-jarrmi-n gool
+3-PST-get.up-REM.PST father.ABS
+`The father got up.'
+
+#2 noun-ins intrans-verb
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: c
+Niimarlgang daab innyanana.
+Niimarlga-ng daab i-n-nya-na-na
+by.himself-INS go.ashore 3-TR-catch-CONT-REM.PST
+`He went ashore by himself.'
+
+#3 *noun-erg intrans-verb
+Source: author
+Vetted: f
+Judgement: u
+Phenomena: c
+Inyjarrmin goolnim.
+I-ny-jarrmi-n gool-nim
+3-PST-get.up-REM.PST father-ERG
+`The father got up.'
+
+#4 *intrans-verb noun-erg
+Source: author
+Vetted: f
+Judgement: u
+Phenomena: c
+Goolnim Inyjarrmin.
+Gool-nim i-ny-jarrmi-n
+father-ERG 3-PST-get.up-REM.PST
+`The father got up.'
+
+#5 noun-erg noun-abs trans-verb
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: c
+Aambanim aarli inamanyana.
+Aamba-nim aarli i-na-ma-nya-na
+man-ERG fish.ABS 3-TR-PST-catch-REM.PST
+`The man caught the fish.'
+
+#6 trans-verb noun-ins
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: c
+Ingirrinyanajin aarling.
+I-ngi-rr-i-nya-na-jin aarli-ng
+3-PST-AUG-TR-catch-APPL.PST-3M.IO fish-INS
+`They caught fish with him.'
+
+#7 *noun-abs trans-verb noun-abs
+Source: author
+Vetted: f
+Judgement: u
+Phenomena: c
+Aamba aarli inamanyana.
+Aamba aarli i-na-ma-nya-na
+man fish.ABS 3-TR-PST-catch-REM.PST
+`The man caught the fish.'
+
+#8 *noun-abs trans-verb noun-erg
+Source: author
+Vetted: f
+Judgement: u
+Phenomena: c
+Aamba aarlinim inamanyana.
+Aamba aarli-nim i-na-ma-nya-na
+man fish-ERG 3-TR-PST-catch-REM.PST
+`The man caught the fish.'
+
+#9 present
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: tam
+irrjala
+i-rr-jala
+3-AUG-see
+`They see.'
+
+#10 past
+Source: a:127
+Vetted: t
+Judgement: g
+Phenomena: tam
+injalagal
+i-n-jala-gal
+3-TR-see-REC.PST
+`He/she saw it.'
+
+#11 past (bad)
+Source: a:127
+Vetted: t
+Judgement: u
+Phenomena: tam
+inanyjalagal
+i-n-any-jala-gal
+3-TR-PST-see-REC.PST
+`He/she saw it.'
+
+#12 future imperative
+Source: a:396
+Vetted: t
+Judgement: g
+Phenomena: tam
+Anarla kiiba may!
+A-n-arl-a jiiba may
+IMP-TR-eat-FUT this food
+`Eat this food!'
+
+#13 future perfect (bad)
+Source: a:396
+Vetted: t
+Judgement: u
+Phenomena: tam
+Nganarla
+Nga-na-rl-a
+1MIN-TR[PST]-eat-FUT
+`(Intended) I shall have eaten it.'
+
+#14 irrealis
+Source: a:117
+Vetted: t
+Judgement: g
+Phenomena: tam
+Arra ngalinyan aarli.
+Arra ng-l-inya-n aarli
+NEG 1-IRR-catch-CONT fish
+`I didn't catch a fish.'
+
+#15 recent past
+Source: a:227
+Vetted: t
+Judgement: g
+Phenomena: tam
+Garrinngan daab innyagal.
+Garrin-ngan daab i-n-nya-gal
+hill-ALL go.up.to 3-TR-catch-REC.PST
+`He went up the hill.'
+
+#16 remote past
+Source: a:464
+Vetted: t
+Judgement: g
+Phenomena: tam
+Imbalanin.
+I-m-bala-n-in
+3-PST-believe-REM.PST-3MIN.IO
+`He believed him.'
+
+#17 continuative
+Source: a:426
+Vetted: t
+Judgement: g
+Phenomena: tam
+Irrirlin.
+I-rr-irli-n
+3-AUG-eat-CONT
+`They are eating.'
+
+#18 coordination noun both have case
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: crd
+May darr inarn bardagayoon agal gaarayoon.
+may darr i-n-ar-n bardaga-yoon agal gaara-yoon
+food come 3-TR-pierce-CONT tree-SOURCE and ground-SOURCE
+`Food comes from the trees and from the ground.'
+
+#19 coordination conflicting case
+Source: author
+Vetted: f
+Judgement: u
+Phenomena: crd
+May darr inarn bardagayoon agal gaaranim.
+may darr i-n-ar-n bardaga-yoon agal gaara-nim
+food come 3-TR-pierce-CONT tree-SOURCE and ground-ERG
+`Food comes from the trees and from the ground.'
+
+#20 coordination conflicting case
+Source: author
+Vetted: f
+Judgement: u
+Phenomena: crd
+May darr inarn bardaganim agal gaarayoon.
+may darr i-n-ar-n bardaga-nim agal gaara-yoon
+food come 3-TR-pierce-CONT tree-ERG and ground-SOURCE
+`Food comes from the trees and from the ground.'
+
+#21 coordination noun first has case
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: crd
+Boorrgoorndanim agal Barlarramay ingirriloongan jinalajina.
+Boorrgoornda-nim agal Barlarramay i-ng-irr-i-loonga-n jinala-jina
+Boorrgoornda-ERG and Barlarramay 3-PST-AUG-TR-collect-CONT spear-3M.POSS
+`Boorrgoornda and Balarrmay gathered together their spears.'
+
+#22 coordination noun second has case
+Source: a:352
+Vetted: t
+Judgement: g
+Phenomena: crd
+Irralboonjirr nalaarrad birrii agal gooloonim.
+I-rr-alboo-n-jirr nalaarrad birrii agal gooloo-nim
+3AUG-TR-dig-CONT-3A.IO turtle.eggs mother and father-ERG
+`Their mother and father dug up turtle eggs.'
+
+#23 coordination preverb
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: crd
+Bilirl agal girringg nganargal.
+Bilirl agal girringg nga-n-ar-gal
+yawn and cough 1-TR-spear-REC.PST
+`I yawned and coughed.'
+
+#24 coordination preverb
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: crd
+Bilirl nganargal agal girringgirring nganargal.
+Bilirl nga-n-ar-gal agal girringgirring nga-n-ar-gal
+yawn 1-TR-spear-REC.PST and cough 1-TR-spear-REC.PST
+`I yawned and coughed.'
+
+#25 coordination multiple
+Source: a:658
+Vetted: t
+Judgement: g
+Phenomena: crd
+Molon goolarrarli agal garaginyarra agal goolarrji agal gambarla.
+Molon goo-la-rr-arli agal garaginyarra agal goolarrji agal gambarla.
+giant.trevally 2-IRR-AUG-eat and garaginyarra and Spanish.mackerel and surgeon.fish
+`You must eat molon (giant trevally), garaginyarra (unidentified fish species), goolarrji (Spanish mackeral) or gambarl (surgeon fish).'
+
+#26 subject agreement in imperative
+Source: a:395
+Vetted: t
+Judgement: g
+Phenomena: agr
+Anjala!
+a-n-jal-a
+2-TR-look.at-FUT
+`Look at it!'
+
+#27 verbal agreement in predicate
+Source: a:394
+Vetted: t
+Judgement: g
+Phenomena: agr
+Inamboonangay.
+i-na-m-boo-na-ngay
+3-TR-PST-hit-REM.PST-1M.DO
+`He/she/it hit me.'
+
+#28 verbal agreement in predicate
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: agr
+irrjala
+i-rr-jala
+3-AUG-see
+`They see.'
+
+#29 verbal agreement in predicate
+Source: a:117
+Vetted: t
+Judgement: g
+Phenomena: agr
+Arra ngalinyan aarli.
+arra ng-l-inya-n aarli
+NEG 1-IRR-catch-CONT fish
+`I didn't catch a fish.'
+
+#30 verbal agreement in predicate
+Source: a:426
+Vetted: t
+Judgement: g
+Phenomena: agr
+Irrirlin
+i-rr-irli-n
+3-AUG-eat-CONT
+`They are eating.'
+
+#31 adjectival agreement in predicate
+Source: a:394
+Vetted: t
+Judgement: g
+Phenomena: agr
+Joo ngaadajirri.
+joo ngaada-jirri
+2MIN tall-2MIN.IO
+`You're tall.'
+
+#32 verbal agreement in predicate
+Source: a:394
+Vetted: t
+Judgement: g
+Phenomena: agr
+Inamboonangay.
+i-n-jala-gal
+3-TR-see-REC.PST
+`He/she saw it.'
+
+#33 verbal agreement in predicate
+Source: a:704
+Vetted: t
+Judgement: g
+Phenomena: agreement
+Daab innyana garrin.
+daab i-n-nya-na garrin
+climb.up 3m-tr-get-rem.pst hill
+`He climbed a hill.'
+
+#34 verbal agreement in predicate
+Source: a:706
+Vetted: t
+Judgement: g
+Phenomena: agr
+Imbanya
+i-m-banya
+3m-pst-finish
+`He died.'
+
+#35 direct object
+Source: a: 395
+Vetted: t
+Judgement: g
+Phenomena: agr
+Inamboonangay.
+i-na-m-boo-na-ngay
+3-TR-PST-hit-REM.PST-1M.DO
+`He/she/it hit me.'
+
+#36 direct object
+Source: a:127
+Vetted: t
+Judgement: g
+Phenomena: agr
+Arra ngalinyan aarli.
+arra ng-l-inya-n aarli
+NEG 1-IRR-catch-CONT fish
+`I didn't catch a fish.'
+
+#37 agreement as a theme
+Source: a:432
+Vetted: t
+Judgement: g
+Phenomena: agr
+Arra boojoolgoon milingjarrngay.
+arra boojool-goon mi-l-i-ng-jarrngay
+NEG stare-LOC 2-IRR-do-APPL-1M.DO
+`Don't stare at me.'
+
+#38 direct object on collective noun
+Source: a:401
+Vetted: t
+Judgement: g
+Phenomena: agr
+Nganarlina niimana aarli.
+nga-n-arli-na niimana aarli
+1-TR-eat-REM.PST many fish
+`I ate many fish.'
+
+#39 direct object extra suffix
+Source: a:401
+Vetted: t
+Judgement: g
+Phenomena: agr
+Inkoorrnim ngangimilijarrngay.
+inkoorr-nim nga-ngi-mili-jarrngay
+cold-ERG 1-PST-wake.up-1M.DO
+`Cold woke me up.'
+
+#40 Oblique & Possessive
+Source: a:410
+Vetted: t
+Judgement: g
+Phenomena: agr
+Ingilirrmigaljarran.
+i-ngi-lirrmi-gal-jarran
+3-PST-call.out-REC.PST-1M.IO
+`He sang out to me.'
+
+#41 Oblique & Possessive
+Source: a:410
+Vetted: t
+Judgement: g
+Phenomena: agr
+Nganjargigaljirrin.
+nga-n-jargi-gal-jirrin
+1-TR-fear-REC.PST-3M.IO
+`I was frightened by him.'
+
+#42 noun-erg intrans-verb
+Source: a:401
+Vetted: t
+Judgement: g
+Phenomena: c
+Inkoorrnim ngangimilijarrngay.
+inkoorr-nim nga-ngi-mili-jarrngay
+cold-ERG 1-PST-wake.up-1M.DO
+`Cold woke me up.'
+
+#43 noun-erg trans-verb noun
+Source: a:460
+Vetted: t
+Judgement: g
+Phenomena: c
+Ooranynim injalagal aamba.
+oorany-nim i-n-jala-gal aamba
+woman-ERG 3-TR-see-REC.PST man
+`The woman saw the man.'
+
+#44 noun-ins trans-appl-verb
+Source: a:495
+Vetted: t
+Judgement: g
+Phenomena: c
+Baalnga ingorrondiningirr.
+baal-nga i-ng-orr-ondi-ni-ng-irr
+bark-INS 3-PST.AUG-TR-cover-REM.PST-APPL-3A.DO
+`They covered them with bark.'
+
+#45 all-verb
+Source: a:189
+Vetted: t
+Judgement: g
+Phenomena: c
+Midijinnganja.
+midijin-ngan-ja
+medicine-ALL-JA
+`This is the medicine I asked for.'
+
+#46 noun imperative-verb noun-all
+Source: a:225
+Vetted: t
+Judgement: g
+Phenomena: c
+Aarlimayi arraya nyamingan!
+aarlimayi a-rr-a-ya nyami-ngan
+food 2-AUG-TR-take mother's.father-ALL
+`Take food to grandfather's place!'
+
+#47 allative
+Source: a:739
+Vetted: t
+Judgement: g
+Phenomena: c
+Bardi barda arr angirrin Goorrbarlgoonngan.
+bardi barda arr a-ng-irr-i-n Goorrbarlgoon-ngan
+bardi away go 1-PST-AUG-do.say-CONT pender.bay-ALL
+`Yesterday we went to Pender Bay.'
+
+#48 verb noun noun-loc-all
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: c
+Irralgalnidi bigibigi ngoorngoolondarr.
+i-rr-al-gal-nidi bigibigi ngoorrngool-ondarr
+3-AUG-be-REC.PST-GROUP pigs mangrove-L.ALL
+`All the pigs were in the mangroves.'
+
+#49 noun-abl trans-verb
+Source: a:232
+Vetted: t
+Judgement: g
+Phenomena: c
+Ooloomanko jin booroo darr nganargal.
+oolooman-ko jin booroo darr nga-n-ar-gal
+old.woman-ABL 3M.POSS place come 1-TR-pierce-REC.PST
+`I've come from the old lady's place.'
+
+#50 trans-verb noun-perl
+Source: a:240
+Vetted: t
+Judgement: g
+Phenomena: c
+Warrga injoon morrjarr.
+Warrga i-n-joo-n morr-jarr
+walk 3-TR-do/say-CONT path-PERL
+`He went along his path.'
+
+#51 polar-question free-question-word-nganyji
+Source: a:618
+Vetted: t
+Judgement: g
+Phenomena: q
+Nganyji minjalagal jiyirr ooldoobal.
+Nganyji mi-n-jala-gal jiy-irr ooldoobal
+nganyji 2-TR-see-REC.PST 2M.POSS-3A things
+`Did you see your things?'
+
+#52 polar-question free-question-word-nganyji
+Source: author
+Vetted: t
+Judgement: u
+Phenomena: q
+Minjalagal Nganyji jiyirr ooldoobal.
+Mi-n-jala-gal Nganyji jiy-irr ooldoobal
+2-TR-see-REC.PST NGANYJI 2M.POSS-3A things
+`Did you see your things?'
+
+#53 polar-question free-question-word-nganyji
+Source: a:618
+Vetted: t
+Judgement: g
+Phenomena: q
+Nganyji ngay ngankiida Broomengan?
+Nganyji ngay nga-n-k-iid-a Broome-ngan
+nganyji 1MIN 1-TR-FUT-go-FUT Broome-ALL
+`Will I go to Broome?'
+
+#54 polar-question free-question-word-nganyji
+Source: author
+Vetted: t
+Judgement: u
+Phenomena: q
+Nganyji aalganim ngangamarrana.
+Nganyji aalga-nim nga-nga-marra-na
+INTERROG sun-ERG 1-PST-cook-REM.PST
+`Did I get sun-burnt.'
+
+#55 polar-question free-question-word-nganyji
+Source: a:621
+Vetted: t
+Judgement: g
+Phenomena: q
+Nganyji lol inyjiidigal jan mayar?
+Nganyji lol i-ny-jiidi-gal jan mayar
+INTERROG burn 3-PST-go-REC.PST 1MIN.POSS house
+`Did my house burn?'
+
+#56 polar-question clitic-garda-or-arda
+Source: a:619
+Vetted: t
+Judgement: g
+Phenomena: q
+Gooyarrarda aarli minnyagal?
+Gooyarr-arda aarli mi-n-nya-gal
+two-INT fish 2-TR.PST-catch-REC.PST
+`Was it two fish you caught?
+
+#57 polar-question clitic-garda-or-arda
+Source: a:619
+Vetted: t
+Judgement: g
+Phenomena: q
+Ngayarda ngankiida Broomengan, gardi joowarda?
+Ngay-arda nga-n-k-iid-a Broome-ngan, gardi joo-warda
+1MIN-INT 1-TR-FUT-go-FUT Broome-ALL or 2MIN-INT
+`Will I go to Broome today or will it be you?'
+
+#58 double-interrogative
+Source: a:625
+Vetted: t
+Judgement: g
+Phenomena: wh
+Anggabanim anggi inarligal?
+Anggaba-nim anggi i-na-rli-gal
+who-ERG what 3-TR-eat-REC.PST
+`Who ate what?'
+
+#59 multiple-interrogative
+Source: a:627
+Vetted: t
+Judgement: g
+Phenomena: wh
+Anggaba minjalagal janaboor?
+Anggaba mi-n-jala-gal janaboor
+who 2-TR-see-REC.PST where
+`Who did you see where?'
+
+#60 argument-optionality subj-pro-drop
+Source: author
+Vetted: t
+Judgement: g
+Phenomena: pro-d
+Roowil ingirrinyana Ngalngoorarra.
+Roowil i-ng-irr-i-nya-na Ngalngoorarra
+walk 3-PST-AUG-TR-catch-REM.PST Ngalngoorarra
+`They walked to Ngalngoorarra.'
+
+#61 argument-optionality pro-drop-not-allowed
+Source: a:294
+Vetted: t
+Judgement: u
+Phenomena: pro-d
+Ngayoonim ngananarri malarr.
+Ngayoo-nim nga-na-na-rri malarr
+1MIN-ERG 1-CONT-REM.PST-2M.DO wife
+`I gave you wives.'
+
+#62 argument-optionality pro-drop-not-allowed ergative-differentiates-subject-from-oblique
+Source: a:412
+Vetted: t
+Judgement: u
+Phenomena: pro-d
+Inyjargijin ngaarri.
+I-ny-jargi-jin ngaarri
+3-PST-fear-3MIN.IO devil.ABS
+`The devil was afraid of him.'
+
+#63 free possessive pronoun
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: poss
+Ngajana bo inambijjan goorlil.
+Ngajana bo i-na-m-b-ij-jan goorlil.
+1M.POSS woman's.child 3-TR-PST-poke-PFV-1M.IO turtle
+`My son speared a turtle.'
+
+#64 free possessive pronoun
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: poss
+Ngajana gooloo bard roowil innyana.
+Ngajana gooloo bard roowil i-n-nya-na
+1M.POSS father off walk 3M-TR-catch-REM.PST
+`My father walked off.'
+
+#65 free possessive pronoun
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: poss
+Minjalagal jiyirr ooldoobal.
+mi-n-jala-gal jiy-irr ooldoobal
+2-TR-see-REC.PST 2M.POSS-3A things
+`You see your things.'
+
+#66 free possessive pronoun
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: poss
+Jina jiiwa minjoogoolij.
+jina jiiwa mi-n-joogool-ij
+3M.POSS boomerang 2-TR-break-PFV
+You broke his boomerang.
+
+#67 free possessive pronoun
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: poss
+Lol inyjiidigal jan mayar
+lol i-ny-jiidi-gal jan mayar
+burn 3-PST-go-REC.PST 1MIN.POSS house
+`My house burned.'
+
+#68 free possessive pronoun
+Source: a:468
+Vetted: t
+Judgement: g
+Phenomena: poss
+Ginyingginim injooloonggal ajawirr irrol.
+ginyinggi-nim i-n-jooloong-gal ajaw-irr irrol
+3MIN-ERG 3-TR.PST-pick.up-REC.PST 1+2M.POSS-3AUG spear.ABS
+`He picked up our spears.'
+
+#69 free possessive pronoun
+Source: a:289
+Vetted: t
+Judgement: g
+Phenomena: poss
+Ngayoo jana gandoorrman.
+ngayoo jana gandoorrman
+1MIN 1M.POSS country.man
+`He is my countryman.'
+
+#70 inalienable noun
+Source: a:210
+Vetted: t
+Judgement: g
+Phenomena: poss
+Ngamarlang nganangajimgal.
+nga-marla-ng nga-na-ngajim-gal
+1M.POSS-hand-INS 1-TR.PST-hit-REC.PST
+`I hit him with my hand.'
+
+#71 inalienable noun
+Source: a:305
+Vetted: t
+Judgement: g
+Phenomena: poss
+Aamba ninga Ngoolmoongoolmoo.
+aamba ni-nga Ngoolmoongoolmoo
+man 3.POSS-name Ngoolmoongoolmoo
+`The man's name was Ngoolmoongoolmoo.'
+
+#72 posessive pronoun cliticized to verb
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: poss
+Ginyingginim injoogooloojan daanggoo
+Ginyinggi-nim i-n-joogooloo-jan daanggoo
+3MIN-ERG 3-TR-break-1M.POSS jaw
+`He broke my jaw.'
+
+#73 posessive pronoun cliticized to verb
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: poss
+Joonim jiyarr bo irrjarginjinan bo.
+Joo-nim jiya-rr bo i-rr-jargi-n-jin-an bo
+2MIN-ERG 2M.POSS-3A woman's.child 3-AUG-fear-CONT-3M.IO-1M.POSS woman's.child
+`Your children are frightened of my children.'
+
+
+
+Last login: Sat Jan 29 14:24:44 on ttys000
+haniehjoon@Haniehs-MBP ~ % cd Desktop
+haniehjoon@Haniehs-MBP Desktop % ls
+271959992_10102623590535734_6229076402671507310_n.jpeg
+567
+571
+Application and Job Material
+DeskTop
+Job Certificates
+OPT Docs 
+PERM
+Roya's Trip
+Screen Shot 2022-01-21 at 12.44.51 PM.png
+Screen Shot 2022-01-21 at 12.50.54 PM.png
+Screen Shot 2022-01-28 at 7.58.23 AM.png
+Tax Docs
+bcj
+bcj-choices.txt
+bcj.tar.gz
+~$ 7 Solution.docx
+~$ be your best self at the interview.docx
+~$NG566_Final Exam_Hanieh_Nezakati.docx
+~$e Future.docx
+~$ercise.docx
+~$itical Paper Review_Hanieh Nezakati_LING600-700.docx
+~$nica_grad_student_resources.docx
+~$nieh Nezakati_Final Project_LING550.docx
+~$nieh Nezakati_Resume.docx
+~$ntative Schedule.docx
+~$rasal Verbs.docx
+~$s. Luzmary Morales (1).pdf
+~$sitant_HANIEH NEZAKATI.docx
+~$sume_Hanieh Nezakati_Research Coordinator copy.docx
+haniehjoon@Haniehs-MBP Desktop % cd 567
+haniehjoon@Haniehs-MBP 567 % ls
+Assignments
+Commands
+Lectures
+Original item Cleanded Up.rtf
+Pro-Drop and Argumenthood.docx
+Screen Shot 2022-01-27 at 8.16.48 AM.png
+Texts
+bcj
+bcj 2
+bcj original downloads
+bcj.tar.gz
+ling567-22wi-bcj
+haniehjoon@Haniehs-MBP 567 % cd ling567-22wi-bcj 
+haniehjoon@Haniehs-MBP ling567-22wi-bcj % git pull
+Warning: Permanently added the ECDSA host key for IP address '140.82.112.4' to the list of known hosts.
+remote: Enumerating objects: 163, done.
+remote: Counting objects: 100% (162/162), done.
+remote: Compressing objects: 100% (94/94), done.
+remote: Total 145 (delta 104), reused 78 (delta 51), pack-reused 0
+Receiving objects: 100% (145/145), 407.84 KiB | 1.35 MiB/s, done.
+Resolving deltas: 100% (104/104), completed with 13 local objects.
+From github.com:tarawueger/ling567-22wi-bcj
+   28494a5..6769eef  main       -> origin/main
+Updating 28494a5..6769eef
+Fast-forward
+ README.md                                          |  171 +-
+ bcj/Version.lsp                                    |    2 +-
+ bcj/bardi.tdl                                      |  698 ++--
+ bcj/choices                                        |  339 +-
+ bcj/irules.tdl                                     |  200 +-
+ bcj/lexicon.tdl                                    |   83 +-
+ bcj/lrules.tdl                                     |    6 +-
+ bcj/roots.tdl                                      |    2 +-
+ bcj/rules.tdl                                      |    4 +-
+ bcj/semi.vpm                                       |   15 +-
+ bcj/trigger.mtr                                    |   19 +-
+ choices                                            |  727 ++--
+ .../purple-screen-of-death-1.pdf                   |  Bin
+ item                                               |   51 +-
+ lab2.md                                            |   27 +
+ lab3.md                                            |   47 +
+ lab4.md                                            |  398 ++
+ lab5.md                                            |   82 +
+ labs/lab3/bcj-lab3/LICENSE                         |   50 +
+ labs/lab3/bcj-lab3/METADATA                        |  100 +
+ labs/lab3/bcj-lab3/README                          |  482 +++
+ labs/lab3/bcj-lab3/Version.lsp                     |    4 +
+ labs/lab3/bcj-lab3/ace/config.tdl                  |   53 +
+ labs/lab3/bcj-lab3/ace/qc.tdl                      |   10 +
+ labs/lab3/bcj-lab3/bardi-pet.tdl                   |   55 +
+ labs/lab3/bcj-lab3/bardi.tdl                       | 1045 +++++
+ labs/lab3/bcj-lab3/choices                         | 1231 ++++++
+ labs/lab3/bcj-lab3/head-types.tdl                  | 1016 +++++
+ labs/lab3/bcj-lab3/irregs.tab                      |    8 +
+ labs/lab3/bcj-lab3/irules.tdl                      |  506 +++
+ labs/lab3/bcj-lab3/labels.tdl                      |  230 ++
+ labs/lab3/bcj-lab3/lexicon.tdl                     |  678 ++++
+ labs/lab3/bcj-lab3/lkb/globals.lsp                 |  144 +
+ labs/lab3/bcj-lab3/lkb/mrsglobals.lsp              |  105 +
+ labs/lab3/bcj-lab3/lkb/mrsmunge.tdl                |   18 +
+ labs/lab3/bcj-lab3/lkb/mt.lsp                      |   13 +
+ labs/lab3/bcj-lab3/lkb/script                      |  139 +
+ labs/lab3/bcj-lab3/lkb/transfer.tdl                |   90 +
+ labs/lab3/bcj-lab3/lkb/user-fns.lsp                |  112 +
+ labs/lab3/bcj-lab3/lrules.tdl                      |    8 +
+ labs/lab3/bcj-lab3/matrix.tdl                      | 4194 ++++++++++++++++++++
+ labs/lab3/bcj-lab3/matrix.tdl~                     | 3821 ++++++++++++++++++
+ labs/lab3/bcj-lab3/mtr.tdl                         |   91 +
+ labs/lab3/bcj-lab3/pet.tdl                         |   54 +
+ labs/lab3/bcj-lab3/pet/bardi-pet.set               |    3 +
+ labs/lab3/bcj-lab3/pet/flop.set                    |   60 +
+ labs/lab3/bcj-lab3/pet/global.set                  |   41 +
+ labs/lab3/bcj-lab3/pet/mrs.set                     |  112 +
+ labs/lab3/bcj-lab3/pet/pet.set                     |  162 +
+ labs/lab3/bcj-lab3/repp/vanilla.rpp                |    9 +
+ labs/lab3/bcj-lab3/roots.tdl                       |   21 +
+ labs/lab3/bcj-lab3/roots.tdl~                      |   21 +
+ labs/lab3/bcj-lab3/rules.tdl                       |   40 +
+ labs/lab3/bcj-lab3/semi.vpm                        |   69 +
+ labs/lab3/bcj-lab3/test_sentences                  |    0
+ labs/lab3/bcj-lab3/trigger.mtr                     |   41 +
+ labs/lab3/bcj-lab3/tsdb/skeletons/Index.lisp       |   26 +
+ labs/lab3/bcj-lab3/tsdb/skeletons/Relations        |  251 ++
+ labs/lab3/{lab3.txt => lab3-writeup.txt}           |    0
+ labs/lab4/bcj-lab4.tgz                             |  Bin 0 -> 341344 bytes
+ labs/lab4/bcj-lab4/LICENSE                         |   50 +
+ labs/lab4/bcj-lab4/METADATA                        |  100 +
+ labs/lab4/bcj-lab4/README                          |  482 +++
+ labs/lab4/bcj-lab4/Version.lsp                     |    4 +
+ labs/lab4/bcj-lab4/ace/config.tdl                  |   53 +
+ labs/lab4/bcj-lab4/ace/qc.tdl                      |   10 +
+ labs/lab4/bcj-lab4/bardi-pet.tdl                   |   55 +
+ labs/lab4/bcj-lab4/bardi.tdl                       | 1194 ++++++
+ labs/lab4/bcj-lab4/choices                         | 1280 ++++++
+ labs/lab4/bcj-lab4/head-types.tdl                  | 1016 +++++
+ labs/lab4/bcj-lab4/irregs.tab                      |    8 +
+ labs/lab4/bcj-lab4/irules.tdl                      |  494 +++
+ labs/lab4/bcj-lab4/labels.tdl                      |  230 ++
+ labs/lab4/bcj-lab4/lexicon.tdl                     |  723 ++++
+ labs/lab4/bcj-lab4/lkb/globals.lsp                 |  144 +
+ labs/lab4/bcj-lab4/lkb/mrsglobals.lsp              |  105 +
+ labs/lab4/bcj-lab4/lkb/mrsmunge.tdl                |   18 +
+ labs/lab4/bcj-lab4/lkb/mt.lsp                      |   13 +
+ labs/lab4/bcj-lab4/lkb/script                      |  139 +
+ labs/lab4/bcj-lab4/lkb/transfer.tdl                |   90 +
+ labs/lab4/bcj-lab4/lkb/user-fns.lsp                |  112 +
+ labs/lab4/bcj-lab4/lrules.tdl                      |    4 +
+ labs/lab4/bcj-lab4/matrix.tdl                      | 4194 ++++++++++++++++++++
+ labs/lab4/bcj-lab4/matrix.tdl~                     | 3821 ++++++++++++++++++
+ labs/lab4/bcj-lab4/mtr.tdl                         |   91 +
+ labs/lab4/bcj-lab4/pet.tdl                         |   54 +
+ labs/lab4/bcj-lab4/pet/bardi-pet.set               |    3 +
+ labs/lab4/bcj-lab4/pet/flop.set                    |   60 +
+ labs/lab4/bcj-lab4/pet/global.set                  |   41 +
+ labs/lab4/bcj-lab4/pet/mrs.set                     |  112 +
+ labs/lab4/bcj-lab4/pet/pet.set                     |  162 +
+ labs/lab4/bcj-lab4/repp/vanilla.rpp                |    9 +
+ labs/lab4/bcj-lab4/roots.tdl                       |   21 +
+ labs/lab4/bcj-lab4/roots.tdl~                      |   21 +
+ labs/lab4/bcj-lab4/rules.tdl                       |   40 +
+ labs/lab4/bcj-lab4/semi.vpm                        |   76 +
+ labs/lab4/bcj-lab4/test_sentences                  |    0
+ labs/lab4/bcj-lab4/trigger.mtr                     |   30 +
+ labs/lab4/bcj-lab4/tsdb/skeletons/Index.lisp       |   26 +
+ labs/lab4/bcj-lab4/tsdb/skeletons/Relations        |  251 ++
+ labs/lab4/choices                                  | 1280 ++++++
+ labs/lab4/choices-with-removed-verb-pc             | 1077 +++++
+ labs/lab4/item                                     |   73 +
+ labs/lab4/lab4-writeup.txt                         |  527 +++
+ labs/lab4/testsuite.txt                            |  736 ++++
+ nouns-to-add.txt                                   |    0
+ test-bcj/LICENSE                                   |   50 +
+ test-bcj/METADATA                                  |  100 +
+ test-bcj/README                                    |  482 +++
+ test-bcj/Version.lsp                               |    4 +
+ test-bcj/ace/config.tdl                            |   53 +
+ test-bcj/ace/qc.tdl                                |   10 +
+ test-bcj/bardi-pet.tdl                             |   55 +
+ test-bcj/bardi.tdl                                 | 1075 +++++
+ test-bcj/choices                                   | 1123 ++++++
+ test-bcj/head-types.tdl                            | 1016 +++++
+ test-bcj/irregs.tab                                |    8 +
+ test-bcj/irules.tdl                                |  434 ++
+ test-bcj/labels.tdl                                |  230 ++
+ test-bcj/lexicon.tdl                               |  707 ++++
+ test-bcj/lkb/globals.lsp                           |  144 +
+ test-bcj/lkb/mrsglobals.lsp                        |  105 +
+ test-bcj/lkb/mrsmunge.tdl                          |   18 +
+ test-bcj/lkb/mt.lsp                                |   13 +
+ test-bcj/lkb/script                                |  139 +
+ test-bcj/lkb/transfer.tdl                          |   90 +
+ test-bcj/lkb/user-fns.lsp                          |  112 +
+ test-bcj/lrules.tdl                                |    4 +
+ test-bcj/matrix.tdl                                | 4194 ++++++++++++++++++++
+ test-bcj/matrix.tdl~                               | 3821 ++++++++++++++++++
+ test-bcj/mtr.tdl                                   |   91 +
+ test-bcj/pet.tdl                                   |   54 +
+ test-bcj/pet/bardi-pet.set                         |    3 +
+ test-bcj/pet/flop.set                              |   60 +
+ test-bcj/pet/global.set                            |   41 +
+ test-bcj/pet/mrs.set                               |  112 +
+ test-bcj/pet/pet.set                               |  162 +
+ test-bcj/repp/vanilla.rpp                          |    9 +
+ test-bcj/roots.tdl                                 |   21 +
+ test-bcj/roots.tdl~                                |   21 +
+ test-bcj/rules.tdl                                 |   40 +
+ test-bcj/semi.vpm                                  |   76 +
+ test-bcj/test_sentences                            |    0
+ test-bcj/trigger.mtr                               |   30 +
+ test-bcj/tsdb/skeletons/Index.lisp                 |   26 +
+ test-bcj/tsdb/skeletons/Relations                  |  251 ++
+ testsuite.txt                                      |  288 +-
+ words-to-add.txt                                   |   11 -
+ 148 files changed, 50867 insertions(+), 1429 deletions(-)
+ rename problem-customizing-grammar.pdf => issues/purple-screen-of-death-1.pdf (100%)
+ create mode 100644 lab2.md
+ create mode 100644 lab3.md
+ create mode 100644 lab4.md
+ create mode 100644 lab5.md
+ create mode 100644 labs/lab3/bcj-lab3/LICENSE
+ create mode 100644 labs/lab3/bcj-lab3/METADATA
+ create mode 100644 labs/lab3/bcj-lab3/README
+ create mode 100644 labs/lab3/bcj-lab3/Version.lsp
+ create mode 100644 labs/lab3/bcj-lab3/ace/config.tdl
+ create mode 100644 labs/lab3/bcj-lab3/ace/qc.tdl
+ create mode 100644 labs/lab3/bcj-lab3/bardi-pet.tdl
+ create mode 100644 labs/lab3/bcj-lab3/bardi.tdl
+ create mode 100644 labs/lab3/bcj-lab3/choices
+ create mode 100644 labs/lab3/bcj-lab3/head-types.tdl
+ create mode 100644 labs/lab3/bcj-lab3/irregs.tab
+ create mode 100644 labs/lab3/bcj-lab3/irules.tdl
+ create mode 100644 labs/lab3/bcj-lab3/labels.tdl
+ create mode 100644 labs/lab3/bcj-lab3/lexicon.tdl
+ create mode 100644 labs/lab3/bcj-lab3/lkb/globals.lsp
+ create mode 100644 labs/lab3/bcj-lab3/lkb/mrsglobals.lsp
+ create mode 100644 labs/lab3/bcj-lab3/lkb/mrsmunge.tdl
+ create mode 100644 labs/lab3/bcj-lab3/lkb/mt.lsp
+ create mode 100644 labs/lab3/bcj-lab3/lkb/script
+ create mode 100644 labs/lab3/bcj-lab3/lkb/transfer.tdl
+ create mode 100644 labs/lab3/bcj-lab3/lkb/user-fns.lsp
+ create mode 100644 labs/lab3/bcj-lab3/lrules.tdl
+ create mode 100644 labs/lab3/bcj-lab3/matrix.tdl
+ create mode 100644 labs/lab3/bcj-lab3/matrix.tdl~
+ create mode 100644 labs/lab3/bcj-lab3/mtr.tdl
+ create mode 100644 labs/lab3/bcj-lab3/pet.tdl
+ create mode 100644 labs/lab3/bcj-lab3/pet/bardi-pet.set
+ create mode 100644 labs/lab3/bcj-lab3/pet/flop.set
+ create mode 100644 labs/lab3/bcj-lab3/pet/global.set
+ create mode 100644 labs/lab3/bcj-lab3/pet/mrs.set
+ create mode 100644 labs/lab3/bcj-lab3/pet/pet.set
+ create mode 100644 labs/lab3/bcj-lab3/repp/vanilla.rpp
+ create mode 100644 labs/lab3/bcj-lab3/roots.tdl
+ create mode 100644 labs/lab3/bcj-lab3/roots.tdl~
+ create mode 100644 labs/lab3/bcj-lab3/rules.tdl
+ create mode 100644 labs/lab3/bcj-lab3/semi.vpm
+ create mode 100644 labs/lab3/bcj-lab3/test_sentences
+ create mode 100644 labs/lab3/bcj-lab3/trigger.mtr
+ create mode 100644 labs/lab3/bcj-lab3/tsdb/skeletons/Index.lisp
+ create mode 100644 labs/lab3/bcj-lab3/tsdb/skeletons/Relations
+ rename labs/lab3/{lab3.txt => lab3-writeup.txt} (100%)
+ create mode 100644 labs/lab4/bcj-lab4.tgz
+ create mode 100644 labs/lab4/bcj-lab4/LICENSE
+ create mode 100644 labs/lab4/bcj-lab4/METADATA
+ create mode 100644 labs/lab4/bcj-lab4/README
+ create mode 100644 labs/lab4/bcj-lab4/Version.lsp
+ create mode 100644 labs/lab4/bcj-lab4/ace/config.tdl
+ create mode 100644 labs/lab4/bcj-lab4/ace/qc.tdl
+ create mode 100644 labs/lab4/bcj-lab4/bardi-pet.tdl
+ create mode 100644 labs/lab4/bcj-lab4/bardi.tdl
+ create mode 100644 labs/lab4/bcj-lab4/choices
+ create mode 100644 labs/lab4/bcj-lab4/head-types.tdl
+ create mode 100644 labs/lab4/bcj-lab4/irregs.tab
+ create mode 100644 labs/lab4/bcj-lab4/irules.tdl
+ create mode 100644 labs/lab4/bcj-lab4/labels.tdl
+ create mode 100644 labs/lab4/bcj-lab4/lexicon.tdl
+ create mode 100644 labs/lab4/bcj-lab4/lkb/globals.lsp
+ create mode 100644 labs/lab4/bcj-lab4/lkb/mrsglobals.lsp
+ create mode 100644 labs/lab4/bcj-lab4/lkb/mrsmunge.tdl
+ create mode 100644 labs/lab4/bcj-lab4/lkb/mt.lsp
+ create mode 100644 labs/lab4/bcj-lab4/lkb/script
+ create mode 100644 labs/lab4/bcj-lab4/lkb/transfer.tdl
+ create mode 100644 labs/lab4/bcj-lab4/lkb/user-fns.lsp
+ create mode 100644 labs/lab4/bcj-lab4/lrules.tdl
+ create mode 100644 labs/lab4/bcj-lab4/matrix.tdl
+ create mode 100644 labs/lab4/bcj-lab4/matrix.tdl~
+ create mode 100644 labs/lab4/bcj-lab4/mtr.tdl
+ create mode 100644 labs/lab4/bcj-lab4/pet.tdl
+ create mode 100644 labs/lab4/bcj-lab4/pet/bardi-pet.set
+ create mode 100644 labs/lab4/bcj-lab4/pet/flop.set
+ create mode 100644 labs/lab4/bcj-lab4/pet/global.set
+ create mode 100644 labs/lab4/bcj-lab4/pet/mrs.set
+ create mode 100644 labs/lab4/bcj-lab4/pet/pet.set
+ create mode 100644 labs/lab4/bcj-lab4/repp/vanilla.rpp
+ create mode 100644 labs/lab4/bcj-lab4/roots.tdl
+ create mode 100644 labs/lab4/bcj-lab4/roots.tdl~
+ create mode 100644 labs/lab4/bcj-lab4/rules.tdl
+ create mode 100644 labs/lab4/bcj-lab4/semi.vpm
+ create mode 100644 labs/lab4/bcj-lab4/test_sentences
+ create mode 100644 labs/lab4/bcj-lab4/trigger.mtr
+ create mode 100644 labs/lab4/bcj-lab4/tsdb/skeletons/Index.lisp
+ create mode 100644 labs/lab4/bcj-lab4/tsdb/skeletons/Relations
+ create mode 100644 labs/lab4/choices
+ create mode 100644 labs/lab4/choices-with-removed-verb-pc
+ create mode 100644 labs/lab4/item
+ create mode 100644 labs/lab4/lab4-writeup.txt
+ create mode 100644 labs/lab4/testsuite.txt
+ create mode 100644 nouns-to-add.txt
+ create mode 100644 test-bcj/LICENSE
+ create mode 100644 test-bcj/METADATA
+ create mode 100644 test-bcj/README
+ create mode 100644 test-bcj/Version.lsp
+ create mode 100644 test-bcj/ace/config.tdl
+ create mode 100644 test-bcj/ace/qc.tdl
+ create mode 100644 test-bcj/bardi-pet.tdl
+ create mode 100644 test-bcj/bardi.tdl
+ create mode 100644 test-bcj/choices
+ create mode 100644 test-bcj/head-types.tdl
+ create mode 100644 test-bcj/irregs.tab
+ create mode 100644 test-bcj/irules.tdl
+ create mode 100644 test-bcj/labels.tdl
+ create mode 100644 test-bcj/lexicon.tdl
+ create mode 100644 test-bcj/lkb/globals.lsp
+ create mode 100644 test-bcj/lkb/mrsglobals.lsp
+ create mode 100644 test-bcj/lkb/mrsmunge.tdl
+ create mode 100644 test-bcj/lkb/mt.lsp
+ create mode 100644 test-bcj/lkb/script
+ create mode 100644 test-bcj/lkb/transfer.tdl
+ create mode 100644 test-bcj/lkb/user-fns.lsp
+ create mode 100644 test-bcj/lrules.tdl
+ create mode 100644 test-bcj/matrix.tdl
+ create mode 100644 test-bcj/matrix.tdl~
+ create mode 100644 test-bcj/mtr.tdl
+ create mode 100644 test-bcj/pet.tdl
+ create mode 100644 test-bcj/pet/bardi-pet.set
+ create mode 100644 test-bcj/pet/flop.set
+ create mode 100644 test-bcj/pet/global.set
+ create mode 100644 test-bcj/pet/mrs.set
+ create mode 100644 test-bcj/pet/pet.set
+ create mode 100644 test-bcj/repp/vanilla.rpp
+ create mode 100644 test-bcj/roots.tdl
+ create mode 100644 test-bcj/roots.tdl~
+ create mode 100644 test-bcj/rules.tdl
+ create mode 100644 test-bcj/semi.vpm
+ create mode 100644 test-bcj/test_sentences
+ create mode 100644 test-bcj/trigger.mtr
+ create mode 100644 test-bcj/tsdb/skeletons/Index.lisp
+ create mode 100644 test-bcj/tsdb/skeletons/Relations
+ delete mode 100644 words-to-add.txt
+haniehjoon@Haniehs-MBP ling567-22wi-bcj % ls
+README.md			lab5.md
+bcj				labs
+choices				make_item
+issues				nouns-to-add.txt
+item				original files
+lab2.md				problematic-sentences.txt
+lab3.md				test-bcj
+lab4.md				testsuite.txt
+haniehjoon@Haniehs-MBP ling567-22wi-bcj % ls
+README.md			lab5.md
+bcj				labs
+choices				make_item
+issues				nouns-to-add.txt
+item				original files
+lab2.md				problematic-sentences.txt
+lab3.md				test-bcj
+lab4.md				testsuite.txt
+haniehjoon@Haniehs-MBP ling567-22wi-bcj % cd Desktop
+cd: no such file or directory: Desktop
+haniehjoon@Haniehs-MBP ling567-22wi-bcj % cd ..
+haniehjoon@Haniehs-MBP 567 % ls
+Assignments
+Commands
+Lectures
+Original item Cleanded Up.rtf
+Pro-Drop and Argumenthood.docx
+Screen Shot 2022-01-27 at 8.16.48 AM.png
+Texts
+bcj
+bcj 2
+bcj original downloads
+bcj.tar.gz
+ling567-22wi-bcj
+haniehjoon@Haniehs-MBP 567 % cd ling567-22wi-bcj 
+haniehjoon@Haniehs-MBP ling567-22wi-bcj % git pull           
+Already up to date.
+haniehjoon@Haniehs-MBP ling567-22wi-bcj % ls       
+README.md			lab5.md
+bcj				labs
+choices				make_item
+issues				nouns-to-add.txt
+item				original files
+lab2.md				problematic-sentences.txt
+lab3.md				test-bcj
+lab4.md				testsuite.txt
+haniehjoon@Haniehs-MBP ling567-22wi-bcj % nano lab5.md
+haniehjoon@Haniehs-MBP ling567-22wi-bcj % nano nouns-to-add.txt 
+haniehjoon@Haniehs-MBP ling567-22wi-bcj % ls
+README.md			lab3.md				original files
+bcj				lab4.md				problematic-sentences.txt
+choices				lab5.md				test-bcj
+issues				labs				testsuite.txt
+item				make_item
+lab2.md				nouns-to-add.txt
+haniehjoon@Haniehs-MBP ling567-22wi-bcj % git add.
+git: 'add.' is not a git command. See 'git --help'.
+
+The most similar command is
+	add
+haniehjoon@Haniehs-MBP ling567-22wi-bcj % git add . 
+haniehjoon@Haniehs-MBP ling567-22wi-bcj % git commit -m "nouns and verbs extracted from textsuite" 
+[main aa963ea] nouns and verbs extracted from textsuite
+ Committer: Hanieh Nezakati <haniehjoon@Haniehs-MacBook-Pro.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 98 insertions(+)
+haniehjoon@Haniehs-MBP ling567-22wi-bcj % git push
+To github.com:tarawueger/ling567-22wi-bcj.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'git@github.com:tarawueger/ling567-22wi-bcj.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+haniehjoon@Haniehs-MBP ling567-22wi-bcj % git push
+To github.com:tarawueger/ling567-22wi-bcj.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'git@github.com:tarawueger/ling567-22wi-bcj.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+haniehjoon@Haniehs-MBP ling567-22wi-bcj % 
+
