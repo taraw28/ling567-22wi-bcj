@@ -4,7 +4,11 @@
   - lexicon
     - add words
       - added the lexicon from the nouns.to.add.txt file
+      - n
     - remove unnecessary words
+      - According to Bowern's Table 4.1. p.159, removed the possessive prefix (nii, na, noo) off of body parts already existing in the grammar lexicon
+        e.g. Stem: _niimidi_ Predicate: _knee_n_rel
+        
     - organize categories
   - morphology
     - remove ill-formed pcs
