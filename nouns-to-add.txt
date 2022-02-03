@@ -1,5 +1,5 @@
 
-The following were added to the lexicon if they didn't already exist:
+The following nouns were added to the lexicon if they didn't already exist:
 
 - food: may
 - hill: garrin
