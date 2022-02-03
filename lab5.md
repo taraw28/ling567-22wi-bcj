@@ -3,6 +3,7 @@
 - Weekend Fixing Fun!!!
   - lexicon
     - add words
+      - added the lexicon from the nouns.to.add.txt file
     - remove unnecessary words
     - organize categories
   - morphology
