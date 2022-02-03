@@ -1,5 +1,8 @@
-Your write up should be a plain text file (not .doc, .rtf or .pdf) which includes the following:
-Improved phenomena in the choices file
+lab5 writeup
+Tara and Hanieh
+02/04/2022
+
+**Improved phenomena in the choices file**
 
 	1. Agreement in Bardi: 	Subject Agreement in Bardi on 2nd person uses the prefix i-
 				
