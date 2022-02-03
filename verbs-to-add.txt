@@ -27,6 +27,7 @@ jooloong pick.up
 b poke
 ar pierce
 nya catch
+ny catch
 inya catch
 marra cook
 

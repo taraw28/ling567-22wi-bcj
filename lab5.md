@@ -133,6 +133,16 @@
     not an aspect but sometimes takes the same slot as the aspects
     which is why it is included here)
   - still parses old sentences
+- removed bad verb types and verb pc
+  - it: abs subj
+  - it: erg subj
+  - tr: erg subj abs obj
+  - tr: erg subj all obj
+  - it-preverb
+  - tr-preverb
+  - light verb
+- removed gender
+  - bardi doesn't have gender
 
 ## How Verbs Work
 - all verbal predicates: verb inflect for prefixes, suffixes, and clitics
@@ -156,3 +166,8 @@
     - person-tense-augment
 - preverb
   - controls transitivity (pp 514)
+- case
+  - tr erg subj abs obj (most common)
+  - tr erg subj all obj
+  - it abs subj (most common)
+  - it erg subj
