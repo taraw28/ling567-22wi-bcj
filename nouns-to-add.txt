@@ -1,4 +1,6 @@
 
+The following were added to the lexicon if they didn't already exist:
+
 - food: may
 - hill: garrin
 - tree: bargada
@@ -7,7 +9,7 @@
 - Balarrmay: Balarrmay
 - spear: jinala
 - spears: irrol
-- turtle.egg: nalaarrad
+- turtle.eggs: nalaarrad
 - mother: birrii(double check what the stem is)
 - cold: inkoorr
 - woman: oorany
