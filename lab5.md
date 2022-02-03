@@ -134,6 +134,7 @@
     which is why it is included here)
   - still parses old sentences
 - removed bad verb types and verb pc
+- added new verb types
   - it: abs subj
   - it: erg subj
   - tr: erg subj abs obj
@@ -143,6 +144,8 @@
   - light verb
 - removed gender
   - bardi doesn't have gender
+- got rid of auxiliaries
+- need to change person pc to pernum pc
 
 ## How Verbs Work
 - all verbal predicates: verb inflect for prefixes, suffixes, and clitics
