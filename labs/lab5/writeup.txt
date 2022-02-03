@@ -1,8 +1,12 @@
 Your write up should be a plain text file (not .doc, .rtf or .pdf) which includes the following:
-1.A description of the phenomena you improved in the choices file, including:
+Improved phenomena in the choices file
 
-Prose description of the phenomenon
-Prose description of your analysis
+	1. Agreement in Bardi: 	Subject Agreement in Bardi on 2nd person uses the prefix i-
+				
+
+		
+		B. Anaylysis
+		
 
 The specific changes you made to choices (paste in the actual choices)
 
@@ -10,9 +14,23 @@ The specific changes you made to choices (paste in the actual choices)
 
 Specific IGT I can use to test the analysis / investigate if something isn't working and you need help.
 
-2.A description of your process for translating the MMT sentences and your documentation about which sentences may be impossible.
 
-3.A description what happened when you tried the MT set up. What difficulties did you encounter and how did you resolve them? What output did you get?
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: agr
+Ibanya
+i-banya
+3m-finish
+`He dies.'
 
-4.A description of the performance of your final grammar for this week on the test suite and test corpus, as compared to your starting grammar (see details above).
+
+	2. Verb Morphology
+
+
+A description of your process for translating the MMT sentences and your documentation about which sentences may be impossible.
+
+A description what happened when you tried the MT set up. What difficulties did you encounter and how did you resolve them? What output did you get?
+
+A description of the performance of your final grammar for this week on the test suite and test corpus, as compared to your starting grammar (see details above).
 
