@@ -38,3 +38,13 @@ vp4-top-coord := vp4-top-coord-rule.
 vp4-mid-coord := vp4-mid-coord-rule.
 
 vp4-bottom-coord := vp4-bottom-coord-rule.
+
+ex-comp := extracted-comp-phrase.
+
+ex-adj := basic-extracted-adj-phrase.
+
+ex-subj := extracted-subj-phrase.
+
+wh-ques := wh-ques-phrase.
+
+ex-det := extracted-det-phrase.

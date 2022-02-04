@@ -137,9 +137,14 @@ section=matrix-yes-no
 q-part=on
 q-part-order=before
   q-particle1_orth=nganyji
+  q-particle1_main=on
+  q-particle1_embed=on
   q-particle1_wh=oblig
+q-inv-verb=main
 
 section=wh-q
+front-matrix=multi
+matrix-front-opt=all-oblig
 
 section=info-str
 
@@ -397,7 +402,7 @@ section=lexicon
     noun1_stem129_pred=_hunger_n_rel
   noun2_name=question-pronoun
   noun2_inter=on
-  noun2_det=opt
+  noun2_det=imp
     noun2_stem1_orth=anggaba
     noun2_stem1_pred=_person_n_rel
     noun2_stem2_orth=janambooroo

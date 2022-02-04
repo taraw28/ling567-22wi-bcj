@@ -2,7 +2,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Grammar of bardi
 ;;; created at:
-;;;     Fri Feb 04 05:59:23 UTC 2022
+;;;     Fri Feb 04 06:06:07 UTC 2022
 ;;; based on Matrix customization system version of:
 ;;;     Mon Aug  2 23:22:15 UTC 2021
 ;;;
@@ -31,14 +31,14 @@ head :+ [ PRON bool,
 noun :+ [ CASE case ].
 
 inflected :+ [ TENSE-FLAG luk,
-    PERNUM-FLAG luk,
     ASPECT-FLAG luk,
+    PERNUM-FLAG luk,
     AUG-FLAG luk,
     CASE-PC-FLAG luk ].
 
 infl-satisfied :+ [ TENSE-FLAG na-or-+,
-    PERNUM-FLAG na-or-+,
     ASPECT-FLAG na-or-+,
+    PERNUM-FLAG na-or-+,
     AUG-FLAG na-or-+,
     CASE-PC-FLAG na-or-+ ].
 
@@ -225,6 +225,9 @@ noun-lex := basic-noun-lex & basic-non-wh-word-lex & non-local-none-lex-item & n
                              SPEC < > ],
                        HEAD.POSSESSOR nonpossessive,
                        POSSESSUM nonpossessive ] ].
+
+no-spr-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL.CAT.VAL.SPR < [ OPT + ] > ].
 
 ; Nouns which cannot take specifiers mark their SPR requirement
 ; as OPT +.  Making the non-head daughter OPT - in this rule
@@ -415,26 +418,26 @@ det2-determiner-lex := determiner-lex & no-icons-lex-item &
 
 ;;; Intermediate rule types
 
-tr-min-rule-dtr := word-or-lexrule.
-tr-aug-rule-dtr := word-or-lexrule.
-tense-rule-dtr := word-or-lexrule.
-pernum-rule-dtr := word-or-lexrule.
-aspect-rule-dtr := word-or-lexrule.
 aug-rule-dtr := word-or-lexrule.
+tense-rule-dtr := word-or-lexrule.
+aspect-rule-dtr := word-or-lexrule.
+pernum-rule-dtr := word-or-lexrule.
+tr-aug-rule-dtr := word-or-lexrule.
+tr-min-rule-dtr := word-or-lexrule.
 
 ;;; Lexical rule types
 
 case-pc-lex-rule-super := add-only-no-ccont-rule &
   [ INFLECTED [ CASE-PC-FLAG +,
-                TENSE-FLAG #tense,
                 PERNUM-FLAG #pernum,
-                AUG-FLAG #aug,
-                ASPECT-FLAG #aspect ],
+                TENSE-FLAG #tense,
+                ASPECT-FLAG #aspect,
+                AUG-FLAG #aug ],
     DTR noun1-noun-lex &
-        [ INFLECTED [ TENSE-FLAG #tense,
-                      PERNUM-FLAG #pernum,
-                      AUG-FLAG #aug,
-                      ASPECT-FLAG #aspect ] ] ].
+        [ INFLECTED [ PERNUM-FLAG #pernum,
+                      TENSE-FLAG #tense,
+                      ASPECT-FLAG #aspect,
+                      AUG-FLAG #aug ] ] ].
 
 erg-lex-rule := case-pc-lex-rule-super & infl-lex-rule &
   [ SYNSEM.LOCAL.CAT.HEAD.CASE erg ].
@@ -507,13 +510,13 @@ fut-aspect-lex-rule := aspect-lex-rule-super &
 
 tense-lex-rule-super := add-only-no-ccont-rule & aspect-rule-dtr & pernum-rule-dtr & tr-min-rule-dtr &
   [ INFLECTED [ TENSE-FLAG +,
-                ASPECT-FLAG #aspect,
                 PERNUM-FLAG #pernum,
+                ASPECT-FLAG #aspect,
                 AUG-FLAG #aug,
                 CASE-PC-FLAG #case-pc ],
     DTR tense-rule-dtr &
-        [ INFLECTED [ ASPECT-FLAG #aspect,
-                      PERNUM-FLAG #pernum,
+        [ INFLECTED [ PERNUM-FLAG #pernum,
+                      ASPECT-FLAG #aspect,
                       AUG-FLAG #aug,
                       CASE-PC-FLAG #case-pc ] ] ].
 
@@ -564,15 +567,15 @@ pernum-lex-rule-super := add-only-no-ccont-rule & aspect-rule-dtr & infl-lex-rul
 
 aug-lex-rule := add-only-no-ccont-rule & aspect-rule-dtr & infl-lex-rule & pernum-rule-dtr & tense-rule-dtr & tr-min-rule-dtr &
   [ INFLECTED [ AUG-FLAG +,
-                TENSE-FLAG #tense,
                 PERNUM-FLAG #pernum,
-                CASE-PC-FLAG #case-pc,
-                ASPECT-FLAG #aspect ],
+                TENSE-FLAG #tense,
+                ASPECT-FLAG #aspect,
+                CASE-PC-FLAG #case-pc ],
     DTR aug-rule-dtr &
-        [ INFLECTED [ TENSE-FLAG #tense,
-                      PERNUM-FLAG #pernum,
-                      CASE-PC-FLAG #case-pc,
-                      ASPECT-FLAG #aspect ] ],
+        [ INFLECTED [ PERNUM-FLAG #pernum,
+                      TENSE-FLAG #tense,
+                      ASPECT-FLAG #aspect,
+                      CASE-PC-FLAG #case-pc ] ],
     SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM aug ].
 
 tr-min-lex-rule := add-only-no-ccont-rule & aspect-rule-dtr & infl-lex-rule & pernum-rule-dtr &
@@ -666,15 +669,29 @@ poss-unary-phrase := basic-unary-phrase &
 bare-np-phrase := basic-bare-np-phrase &
   [ C-CONT.RELS.LIST < [ PRED "exist_q_rel" ] > ].
 
-basic-filler-phrase :+ [ SYNSEM.NON-LOCAL.SLASH.LIST < >,
-    ARGS < [ SYNSEM [ LOCAL #slash,
-                      NON-LOCAL.SLASH.LIST < > ] ],
-           [ SYNSEM.NON-LOCAL.SLASH.LIST < #slash > ] > ].
-
-extracted-subj-phrase := basic-extracted-subj-phrase &
-  [ SYNSEM.LOCAL.CAT.HEAD verb ].
-
 ;;; Wh-question-related phrasal types
+
+wh-ques-phrase := basic-head-filler-phrase & interrogative-clause & head-final & 1st-head-filler-phrase &
+  [ NON-HEAD-DTR.SYNSEM [ NON-LOCAL [ QUE.LIST < ref-ind >,
+                                      SLASH.LIST < >,
+                                      REL.LIST < > ],
+                          LOCAL.CONT.HOOK.ICONS-KEY focus ],
+    SYNSEM [ LOCAL.CAT [ WH.BOOL +,
+                         MC bool,
+                         VAL #val,
+                         HEAD verb ],
+             NON-LOCAL.QUE #que &
+                           [ LIST < > ] ],
+    HEAD-DTR.SYNSEM [ LOCAL.CAT [ VAL #val &
+                                      [ SUBJ < >,
+                                        COMPS < > ],
+                                  MC na-or-+ ],
+                      NON-LOCAL [ SLASH.LIST.FIRST [ ],
+                                  QUE #que ] ] ].
+
+; Complement extraction
+
+; Adjunct extraction
 
 ;;;;;;;;;;;;;;;;;;
 ;;; Coordination
@@ -720,4 +737,27 @@ vp4-mid-coord-rule := basic-vp-mid-coord-rule & monopoly-mid-coord-rule &
 vp4-bottom-coord-rule := conj-first-bottom-coord-rule & vp-bottom-coord-phrase &
   [ SYNSEM.LOCAL.COORD-STRAT "4" ].
 
-clause :+ [ SYNSEM.NON-LOCAL.QUE.LIST < > ].
+; Do not allow extracting "And Kim"
+
+basic-head-filler-phrase :+ [ ARGS < [ SYNSEM.LOCAL.COORD - ],
+           [ SYNSEM.LOCAL.COORD - ] > ].
+
+extracted-comp-phrase := basic-extracted-comp-phrase &
+  [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ cons ].
+
+extracted-subj-phrase := basic-extracted-subj-phrase &
+  [ SYNSEM.LOCAL.CAT.HEAD verb,
+    HEAD-DTR.SYNSEM [ LOCAL.CAT.VAL.COMPS < >,
+                      L-QUE - ] ].
+
+1st-head-filler-phrase := basic-filler-phrase & head-compositional &
+  [ SYNSEM.NON-LOCAL [ SLASH.LIST #slash,
+                       REL.LIST < >,
+                       QUE.LIST < > ],
+    ARGS < [ SYNSEM.LOCAL #local &
+                          [ CAT.HEAD +nrpd ] ],
+           [ SYNSEM.NON-LOCAL.SLASH.LIST < #local . #slash > ] > ].
+
+adj-head-int-phrase :+ [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ clist ].
+
+head-adj-int-phrase :+ [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ clist ].
