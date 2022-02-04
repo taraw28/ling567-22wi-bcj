@@ -138,6 +138,7 @@
     ```
   - still parses old sentences
   - parses new sentence too!
+  - added min feature to tr-min and aug feature to tr-aug to make sure that pernum prefixes are not in conflict with the different tr markers
   - note, need to add constraint so that if tr-min, can only use min person and if tr-aug, can only use aug person
 - replaced rem pc with more general aspect pc
   - added cont, rem-pst, rec-pst, pfv, and fut aspects (note, fut is
