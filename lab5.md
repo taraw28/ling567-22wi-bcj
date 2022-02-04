@@ -40,7 +40,6 @@
 - try first translation
 
 ## Morphology
-### Verbs
 - sentence to parse : i-ny-jarrmi-n gool-nim
 - Attempt 1
   - intrans (abs) verb25: jarrmi
@@ -155,7 +154,6 @@
 - added personal pronouns
   - 1 more sentence in our testsuite parses!!!
 
-
 ## How Verbs Work
 - all verbal predicates: verb inflect for prefixes, suffixes, and clitics
 - complex predicates: uninflecting preverb that precedes the root
@@ -184,4 +182,12 @@
   - it abs subj (most common)
   - it erg subj
 
-## verbs added to lexicon
+## MMT
+### First Translation
+2. First sentence parsed with 1 reading; it generated 1 sentence and the transfer did 4 successful unifies and 2 failed ones
+3. Some of them didn't generate a sentence, some of them did. Some showed transfer or parser output. The last one was really interesting. It translated from eng to sje and then back to eng and actually got the sentence it started with.
+4. Had to remove ex-det := extracted-det-phrase. line from rules.tdl to get it to compile.
+6. Compiled with no issue
+8. First translation attempts:
+  Attempt 1: Did not work because, since we use aarli "fish" instead of "car", we needed to change the pred from _fish_n_rel to _car_n_rel.
+  Attempt 2: Getting "this does not appear to be a grammar image." error. Posted to Canvas
