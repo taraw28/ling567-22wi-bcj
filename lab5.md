@@ -4,16 +4,16 @@
   - lexicon
     - add words
       - added the lexicon from the nouns.to.add.txt file
-      
+
     - remove unnecessary words
       - According to Bowern's Table 4.1. p.159, removed the possessive prefix (ni, na, noo) off of body parts already existing in the grammar lexicon
         e.g. Stem: _niimidi_ Predicate: _knee_n_rel
       - duplicates and unnecessary (e.g. sand.soakage)
-      - _anggi_ as a noun stem as well as its pred _what_n_rel to move to question-pronouns and to change to _thing_n_rel 
+      - _anggi_ as a noun stem as well as its pred _what_n_rel to move to question-pronouns and to change to _thing_n_rel
 
-      - Made corrections/changes 
-        - baawa a noun stem with predicate _child_n_rel to _little.male.child_n_rel as the word bo meaning child-or-children-or-son is there too. 
-        
+      - Made corrections/changes
+        - baawa a noun stem with predicate _child_n_rel to _little.male.child_n_rel as the word bo meaning child-or-children-or-son is there too.
+
     - organize categories
   - morphology
     - remove ill-formed pcs
@@ -33,7 +33,7 @@
   - agreement
     - add in morphology?
   - questions
-    - made changes 
+    - made changes
      - to lexicon as per feedback from lab 4 to replace what and who w/ thing and person, respectively.  (got snippet)
      - added y/n questions to matrix q/n (got snippet)
     - try making nganyji optional
@@ -112,7 +112,7 @@
       1-FUT-AUG-TR-cook
       `We will cook it.'
       ```
-- replaced third-person pc with more general person pc
+- replaced third-person pc with more general pernum pc
   - added 1min, 2min, 3min, 1+2min prefixes
     - still parses i-ny-jarrmi-n gool
     - still correctly doesn't parse i-ny-jarrmi-n gool-nim
@@ -126,7 +126,7 @@
       `The fathers got up.'
       ```
     - still parses old sentences
-  - note, need to add constraint so that if aug pc, can't use min
+  - added aug feature to aug pc
     person
 - added 2 transitive (tr) pc (tr-min and tr-aug)
   - test sentence
@@ -138,8 +138,7 @@
     ```
   - still parses old sentences
   - parses new sentence too!
-  - note, need to add constraint so that if tr-min, can only use min
-    person and if tr-aug, can only use aug person
+  - note, need to add constraint so that if tr-min, can only use min person and if tr-aug, can only use aug person
 - replaced rem pc with more general aspect pc
   - added cont, rem-pst, rec-pst, pfv, and fut aspects (note, fut is
     not an aspect but sometimes takes the same slot as the aspects
@@ -155,9 +154,8 @@
   - tr-preverb
   - light verb
 - removed gender
-  - bardi doesn't have gender
+  - bardi doesn't have gender; MIN is often glosses as M
 - got rid of auxiliaries
-- need to change person pc to pernum pc
 
 ## How Verbs Work
 - all verbal predicates: verb inflect for prefixes, suffixes, and clitics
