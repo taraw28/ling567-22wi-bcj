@@ -9,8 +9,8 @@ larda := noun1-noun-lex &
   [ STEM < "larda" >,
     SYNSEM.LKEYS.KEYREL.PRED "_bottom_n_rel" ].
 
-iil := noun1-noun-lex &
-  [ STEM < "iil" >,
+iila := noun1-noun-lex &
+  [ STEM < "iila" >,
     SYNSEM.LKEYS.KEYREL.PRED "_dog_n_rel" ].
 
 booroo_1 := noun1-noun-lex &

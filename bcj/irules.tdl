@@ -260,3 +260,7 @@ tr-aug-lex-rule.
 tr-aug-prefix2 :=
 %prefix (* i-)
 tr-aug-lex-rule.
+
+tr-aug-prefix3 :=
+%prefix (* oo-)
+tr-aug-lex-rule.

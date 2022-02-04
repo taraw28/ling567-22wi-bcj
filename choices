@@ -170,7 +170,7 @@ section=lexicon
     noun1_stem1_pred=_father_n_rel
     noun1_stem2_orth=larda
     noun1_stem2_pred=_bottom_n_rel
-    noun1_stem3_orth=iil
+    noun1_stem3_orth=iila
     noun1_stem3_pred=_dog_n_rel
     noun1_stem4_orth=booroo
     noun1_stem4_pred=_place_n_rel
@@ -788,7 +788,6 @@ section=morphology
       noun-pc33_lrt15_lri2_inflecting=yes
       noun-pc33_lrt15_lri2_orth=-ng
   verb-pc1_name=aspect
-  verb-pc1_obligatory=on
   verb-pc1_order=suffix
   verb-pc1_inputs=verb-pc3
     verb-pc1_lrt1_name=cont
@@ -951,6 +950,8 @@ section=morphology
       verb-pc6_lrt1_lri1_orth=a-
       verb-pc6_lrt1_lri2_inflecting=yes
       verb-pc6_lrt1_lri2_orth=i-
+      verb-pc6_lrt1_lri3_inflecting=yes
+      verb-pc6_lrt1_lri3_orth=oo-
 
 section=toolbox-import
 

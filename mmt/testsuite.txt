@@ -1,0 +1,9 @@
+#2
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: {corpus}
+Iilanim aarli irroongoorribi.
+iila-nim aarli i-rr-oo-ngoorribi
+dog-ERG fish 3-AUG-TR-chase
+`Dogs chase fish.'
