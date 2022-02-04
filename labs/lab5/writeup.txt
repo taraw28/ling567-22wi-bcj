@@ -68,6 +68,15 @@ Specific IGT I can use to test the analysis / investigate if something isn't wor
 	2. Verb Morphology (TAM)
 	3. Y/N Questions 
 
+    Polar Interrogatives
+    
+    In her book, Bowern points out two main ways of creating yes/no questions in Bardi:
+    
+- with a separate interrogative particle "nganyji" that usually appears first in the clause. 
+    - questions the proposition in the clause as a whole. For example,
+-  with an affix "(g)arda" and "bard(a)" attached to the relevant word (Bowern refers to these as clitics).
+    - interract with focus and is used to question particular constituents in a sentence. 
+    - The clitic attaches to the element under interrogation (i.e. the part of the sentence the focus is on). For example,
 
 - A description of your process for translating the MMT sentences and your documentation about which sentences may be impossible.
 
