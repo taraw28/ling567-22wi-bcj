@@ -469,6 +469,10 @@ manyjal := noun1-noun-lex &
   [ STEM < "manyjal" >,
     SYNSEM.LKEYS.KEYREL.PRED "_hunger_n_rel" ].
 
+iil := noun1-noun-lex &
+  [ STEM < "iil" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_dog_n_rel" ].
+
 anggaba := q-pronoun-noun-lex &
   [ STEM < "anggaba" >,
     SYNSEM.LKEYS.KEYREL.PRED "_person_n_rel" ].

@@ -2,7 +2,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Grammar of bardi
 ;;; created at:
-;;;     Fri Feb 04 07:09:11 UTC 2022
+;;;     Fri Feb 04 07:14:48 UTC 2022
 ;;; based on Matrix customization system version of:
 ;;;     Mon Aug  2 23:22:15 UTC 2021
 ;;;
@@ -30,14 +30,14 @@ head :+ [ PRON bool,
 
 noun :+ [ CASE case ].
 
-inflected :+ [ PERNUM-FLAG luk,
-    CASE-PC-FLAG luk,
+inflected :+ [ CASE-PC-FLAG luk,
     TENSE-FLAG luk,
+    PERNUM-FLAG luk,
     AUG-FLAG luk ].
 
-infl-satisfied :+ [ PERNUM-FLAG na-or-+,
-    CASE-PC-FLAG na-or-+,
+infl-satisfied :+ [ CASE-PC-FLAG na-or-+,
     TENSE-FLAG na-or-+,
+    PERNUM-FLAG na-or-+,
     AUG-FLAG na-or-+ ].
 
 png :+ [ PERNUM pernum ].
@@ -437,12 +437,12 @@ det2-determiner-lex := determiner-lex & no-icons-lex-item &
 
 ;;; Intermediate rule types
 
+aspect-rule-dtr := word-or-lexrule.
+tr-min-rule-dtr := word-or-lexrule.
+tr-aug-rule-dtr := word-or-lexrule.
 pernum-rule-dtr := word-or-lexrule.
 tense-rule-dtr := word-or-lexrule.
 aug-rule-dtr := word-or-lexrule.
-tr-min-rule-dtr := word-or-lexrule.
-aspect-rule-dtr := word-or-lexrule.
-tr-aug-rule-dtr := word-or-lexrule.
 
 ;;; Lexical rule types
 
@@ -520,13 +520,13 @@ fut-aspect-lex-rule := aspect-lex-rule-super &
 
 tense-lex-rule-super := add-only-no-ccont-rule & aspect-rule-dtr & pernum-rule-dtr & tr-min-rule-dtr &
   [ INFLECTED [ TENSE-FLAG +,
-                AUG-FLAG #aug,
                 PERNUM-FLAG #pernum,
-                CASE-PC-FLAG #case-pc ],
+                CASE-PC-FLAG #case-pc,
+                AUG-FLAG #aug ],
     DTR tense-rule-dtr &
-        [ INFLECTED [ AUG-FLAG #aug,
-                      PERNUM-FLAG #pernum,
-                      CASE-PC-FLAG #case-pc ] ] ].
+        [ INFLECTED [ PERNUM-FLAG #pernum,
+                      CASE-PC-FLAG #case-pc,
+                      AUG-FLAG #aug ] ] ].
 
 pst-lex-rule := infl-lex-rule & tense-lex-rule-super &
   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.E.TENSE pst ].
@@ -539,13 +539,13 @@ prs-lex-rule := const-lex-rule & tense-lex-rule-super &
 
 pernum-lex-rule-super := add-only-no-ccont-rule & aspect-rule-dtr & infl-lex-rule &
   [ INFLECTED [ PERNUM-FLAG +,
-                AUG-FLAG #aug,
                 TENSE-FLAG #tense,
-                CASE-PC-FLAG #case-pc ],
+                CASE-PC-FLAG #case-pc,
+                AUG-FLAG #aug ],
     DTR pernum-rule-dtr &
-        [ INFLECTED [ AUG-FLAG #aug,
-                      TENSE-FLAG #tense,
-                      CASE-PC-FLAG #case-pc ] ] ].
+        [ INFLECTED [ TENSE-FLAG #tense,
+                      CASE-PC-FLAG #case-pc,
+                      AUG-FLAG #aug ] ] ].
 
 1aug-lex-rule := pernum-lex-rule-super &
   [ DTR.INFLECTED.AUG-FLAG +,
