@@ -54,7 +54,8 @@ Prefixes mostly display agreement for the subject of the clause
 
 
 
-B. Anaylysis
+ Anaylysis of Subject Agreement Phonomena 
+
 		
 
 		Changes you made to choices (paste in the actual choices)
@@ -68,24 +69,101 @@ Specific IGT I can use to test the analysis / investigate if something isn't wor
 
 
 
+2. Verb Morphology (TAM)
 
-	2. Verb Morphology (TAM)
-	3. Y/N Questions 
 
-    Polar Interrogatives
-    
-    In her book, Bowern points out two main ways of creating yes/no questions in Bardi:
-    
-- with a separate interrogative particle "nganyji" that usually appears first in the clause. 
-    - questions the proposition in the clause as a whole. For example,
--  with an affix "(g)arda" and "bard(a)" attached to the relevant word (Bowern refers to these as clitics).
-    - interract with focus and is used to question particular constituents in a sentence. 
-    - The clitic attaches to the element under interrogation (i.e. the part of the sentence the focus is on). For example,
+3. 
+
+Wh-Questions
+
+Description of the Phonomena: 
+	
+Bardi uses a number of interrogative pronouns that usually appear clause initially, however,it can appear non-initially as well. The pronoun "angabba" is used for "who", "janambooroo for
+      "where", and "angan" for "why". For example,	 
+
+Analysis
+
+- The predicates where replaced with thing,place,person, etc., and this led to successful parsing of the follwoing sentences including 'what' and 'who'which are now predicated as _thing_n_rel and _person_n_rel, respectively. Changes were made to all the predicates, but only the two were tested for parsing. 
+
+Below are the updated choice values:
+
+
+noun2_name=question-pronoun
+  noun2_inter=on
+  noun2_det=imp
+    noun2_stem1_orth=anggaba
+    noun2_stem1_pred=_person_n_rel
+    noun2_stem2_orth=janambooroo
+    noun2_stem2_pred=_place_n_rel
+    noun2_stem3_orth=angan
+    noun2_stem3_pred=_reason_n_rel
+    noun2_stem4_orth=goonban
+    noun2_stem4_pred=_reason.on.earth_n_rel
+    noun2_stem5_orth=anggi
+    noun2_stem5_pred=_thing_n_rel
+    noun2_stem6_orth=baanigarr
+    noun2_stem6_pred=_time_n_rel
+    noun2_stem7_orth=nyanyjirrgoordoo
+    noun2_stem7_pred=_number_n_rel
+
+IGTs for the parsed wh-questions:
+
+source: author
+vetted: f
+judgment: g
+Anggaba I-ny-jarrmi-n
+who-ERG 3-PST-get.up-REM.PST
+`Who got up?'
+
+source: author  
+vetted: f
+judgment: g
+Anggi Inyjarrmin
+Anggi I-ny-jarrmi-n
+what 3-PST-get.up-REM.PST
+`What got up?'
+
+
+Translation Process
+
 
 - A description of your process for translating the MMT sentences and your documentation about which sentences may be impossible.
 
-	- The following sentences are impossible to translte:
-		- .... because it involves ... phonomenon that we haven't gotten to yet. 
+We added some lexicon (for example "dog" and "chase") to be able to have more to translate; however, we will need to replace the word "sleep" with a different verb as "sleep" in Bardi is a light verb leading to complex verb combinations, and needs to be differently.
+
+I chase you.
+Dogs in the park eat.
+
+
+
+
+- Any sentence including the word "dog" is impossible to translate because The following sentences are impossible to translte:
+
+Dogs sleep -> "Sleep" is a light verb in Bardi and changes meaning. We don't know what the actual Bardi equivalent of "sleep" is.
+Dogs chase cars -> We don't know the word for "cars" in Bardi
+The dogs dont chase cars -> involves Negation that we haven't worked on yet.
+I think that you know that dogs chase cars
+I ask whether you know that dogs chase cars
+Cats and dogs chase cars -> We don't know the word for "cats" in Bardi.
+Dogs chase cars and cats chase dogs -> We don't know the word for "cats" in Bardi.
+Cats chase dogs and sleep -> ditto on "cats" and "sleep" is a complex verb/
+Do cats chase dogs -> ditto on "cats"
+Hungry dogs eat -> We haven't worked on "adjectives" but it should be easy to add (hungry in Bardi is manyjal) 
+Dogs in the park eat -> We don't know the word for "park" in Bardi. 
+Dogs eat in the park -> ditto on park
+The dogs are hungry
+The dogs are in the park
+The dogs are the cats
+The dog s car sleeps
+My dogs sleep
+Who sleeps
+What do the dogs chase
+What do you think the dogs chase
+Who asked what the dogs chase
+I asked what the dogs chased
+The dog sleeps because the cat sleeps
+The dog sleeps after the cat sleeps
+	- .... because it involves ... phonomenon that we haven't gotten to yet. 
 
 - A description what happened when you tried the MT set up. What difficulties did you encounter and how did you resolve them? What output did you get?
 

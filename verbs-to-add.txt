@@ -58,6 +58,7 @@ warrga walk
 roowil walk
 lol burn
 
+<<<<<<< HEAD
 regular verbs (all added)
 jarrmi get.up (it-abs)
 banya finish (it-abs)
@@ -80,3 +81,9 @@ nya/inya catch (tr-erg-abs tr-erg-ins tr-erg-all)
 jala see (it-abs/tr-erg-abs)
 arl/rl/irli/rr/rli eat (tr-erg-abs/it-abs)
 jargi fear (tr-erg-abs/it-abs)
+
+Added by Hanieh based on translation sentences of lab 5:
+
+know: moonggoon
+=======
+>>>>>>> 88959063fcf417fec45227c407fc55d8476cfc70
