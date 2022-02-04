@@ -421,7 +421,59 @@ jarrmi := it-abs-verb-lex &
   [ STEM < "jarrmi" >,
     SYNSEM.LKEYS.KEYREL.PRED "_get.up_v_rel" ].
 
-nya := tr-erg-abs-verb-lex &
+banya := it-abs-verb-lex &
+  [ STEM < "banya" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_finish_v_rel" ].
+
+lirrmi := it-abs-verb-lex &
+  [ STEM < "lirrmi" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_call.out_v_rel" ].
+
+ondi := it-abs-verb-lex &
+  [ STEM < "ondi" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_cover_v_rel" ].
+
+a := it-abs-verb-lex &
+  [ STEM < "a" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_take_v_rel" ].
+
+al := it-abs-verb-lex &
+  [ STEM < "al" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_be_v_rel" ].
+
+jala_1 := it-abs-verb-lex &
+  [ STEM < "jala" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_see_v_rel" ].
+
+jargi := it-abs-verb-lex &
+  [ STEM < "jargi" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_fear_v_rel" ].
+
+arli_1 := it-abs-verb-lex &
+  [ STEM < "arli" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_eat_v_rel" ].
+
+arl_1 := it-abs-verb-lex &
+  [ STEM < "arl" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_eat_v_rel" ].
+
+rl_1 := it-abs-verb-lex &
+  [ STEM < "rl" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_eat_v_rel" ].
+
+rli_1 := it-abs-verb-lex &
+  [ STEM < "rli" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_eat_v_rel" ].
+
+irli_1 := it-abs-verb-lex &
+  [ STEM < "irli" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_eat_v_rel" ].
+
+rr := it-abs-verb-lex &
+  [ STEM < "rr" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_eat_v_rel" ].
+
+nya_1 := tr-erg-abs-verb-lex &
   [ STEM < "nya" >,
     SYNSEM.LKEYS.KEYREL.PRED "_catch_v_rel" ].
 
@@ -429,11 +481,11 @@ ny_1 := tr-erg-abs-verb-lex &
   [ STEM < "ny" >,
     SYNSEM.LKEYS.KEYREL.PRED "_catch_v_rel" ].
 
-inya := tr-erg-abs-verb-lex &
+inya_1 := tr-erg-abs-verb-lex &
   [ STEM < "inya" >,
     SYNSEM.LKEYS.KEYREL.PRED "_catch_v_rel" ].
 
-jala_1 := tr-erg-abs-verb-lex &
+jala_2 := tr-erg-abs-verb-lex &
   [ STEM < "jala" >,
     SYNSEM.LKEYS.KEYREL.PRED "_see_v_rel" ].
 
@@ -441,23 +493,23 @@ loonga := tr-erg-abs-verb-lex &
   [ STEM < "loonga" >,
     SYNSEM.LKEYS.KEYREL.PRED "_collect_v_rel" ].
 
-arli := tr-erg-abs-verb-lex &
+arli_2 := tr-erg-abs-verb-lex &
   [ STEM < "arli" >,
     SYNSEM.LKEYS.KEYREL.PRED "_eat_v_rel" ].
 
-arl := tr-erg-abs-verb-lex &
+arl_2 := tr-erg-abs-verb-lex &
   [ STEM < "arl" >,
     SYNSEM.LKEYS.KEYREL.PRED "_eat_v_rel" ].
 
-rl := tr-erg-abs-verb-lex &
+rl_2 := tr-erg-abs-verb-lex &
   [ STEM < "rl" >,
     SYNSEM.LKEYS.KEYREL.PRED "_eat_v_rel" ].
 
-rli := tr-erg-abs-verb-lex &
+rli_2 := tr-erg-abs-verb-lex &
   [ STEM < "rli" >,
     SYNSEM.LKEYS.KEYREL.PRED "_eat_v_rel" ].
 
-irli := tr-erg-abs-verb-lex &
+irli_2 := tr-erg-abs-verb-lex &
   [ STEM < "irli" >,
     SYNSEM.LKEYS.KEYREL.PRED "_eat_v_rel" ].
 
@@ -465,13 +517,41 @@ alboo := tr-erg-abs-verb-lex &
   [ STEM < "alboo" >,
     SYNSEM.LKEYS.KEYREL.PRED "_dig_v_rel" ].
 
-boo := tr-erg-abs-verb-lex &
+boo_1 := tr-erg-abs-verb-lex &
   [ STEM < "boo" >,
     SYNSEM.LKEYS.KEYREL.PRED "_spear_v_rel" ].
+
+jal := tr-erg-abs-verb-lex &
+  [ STEM < "jal" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_look.at_v_rel" ].
+
+b := tr-erg-abs-verb-lex &
+  [ STEM < "b" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_poke_v_rel" ].
+
+joogool := tr-erg-abs-verb-lex &
+  [ STEM < "joogool" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_break_v_rel" ].
+
+joogooloo := tr-erg-abs-verb-lex &
+  [ STEM < "joogooloo" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_break_v_rel" ].
+
+jooloong := tr-erg-abs-verb-lex &
+  [ STEM < "jooloong" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_pick.up_v_rel" ].
+
+boo_2 := tr-erg-abs-verb-lex &
+  [ STEM < "boo" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_hit_v_rel" ].
 
 moonggoon := it-erg-verb-lex &
   [ STEM < "moonggoon" >,
     SYNSEM.LKEYS.KEYREL.PRED "_know_v_rel" ].
+
+mili := it-erg-verb-lex &
+  [ STEM < "mili" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_wake.up_v_rel" ].
 
 roowil_1 := it-preverb-verb-lex &
   [ STEM < "roowil" >,
@@ -505,6 +585,26 @@ goondoorr := it-preverb-verb-lex &
   [ STEM < "goondoorr" >,
     SYNSEM.LKEYS.KEYREL.PRED "_get.giddy.and.die_v_rel" ].
 
+ju := light-verb-verb-lex &
+  [ STEM < "ju" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_do.or.say_v_rel" ].
+
+ma := light-verb-verb-lex &
+  [ STEM < "ma" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_put_v_rel" ].
+
+inya_2 := light-verb-verb-lex &
+  [ STEM < "inya" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_catch_v_rel" ].
+
+nya_2 := light-verb-verb-lex &
+  [ STEM < "nya" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_catch_v_rel" ].
+
+ar := light-verb-verb-lex &
+  [ STEM < "ar" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_spear.or.pierce_v_rel" ].
+
 goondoorroo := tr-erg-all-verb-lex &
   [ STEM < "goondoorroo" >,
     SYNSEM.LKEYS.KEYREL.PRED "_cross.over_v_rel" ].
@@ -517,12 +617,24 @@ minjal := tr-erg-all-verb-lex &
   [ STEM < "minjal" >,
     SYNSEM.LKEYS.KEYREL.PRED "_wait.for_v_rel" ].
 
-jala_2 := tr-erg-all-verb-lex &
+jala_3 := tr-erg-all-verb-lex &
   [ STEM < "jala" >,
     SYNSEM.LKEYS.KEYREL.PRED "_see_v_rel" ].
 
 ny_2 := tr-erg-all-verb-lex &
   [ STEM < "ny" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_catch_v_rel" ].
+
+iid := tr-erg-all-verb-lex &
+  [ STEM < "iid" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_go_v_rel" ].
+
+nya_3 := tr-erg-all-verb-lex &
+  [ STEM < "nya" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_catch_v_rel" ].
+
+inya_3 := tr-erg-all-verb-lex &
+  [ STEM < "inya" >,
     SYNSEM.LKEYS.KEYREL.PRED "_catch_v_rel" ].
 
 roowil_2 := tv-preverb-verb-lex &
@@ -539,7 +651,7 @@ daab_2 := tv-preverb-verb-lex &
 
 arr_2 := tv-preverb-verb-lex &
   [ STEM < "arr" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_arr_v_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_go_v_rel" ].
 
 bilirl_2 := tv-preverb-verb-lex &
   [ STEM < "bilirl" >,
@@ -564,6 +676,34 @@ milimil := tv-preverb-verb-lex &
 yoorr := tv-preverb-verb-lex &
   [ STEM < "yoorr" >,
     SYNSEM.LKEYS.KEYREL.PRED "_come.down_v_rel" ].
+
+agal := tv-preverb-verb-lex &
+  [ STEM < "agal" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_cough_v_rel" ].
+
+boojool := tv-preverb-verb-lex &
+  [ STEM < "boojool" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_stare_v_rel" ].
+
+warrga := tv-preverb-verb-lex &
+  [ STEM < "warrga" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_walk_v_rel" ].
+
+boo_3 := tr-erg-ins-verb-lex &
+  [ STEM < "boo" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_hit_v_rel" ].
+
+ny_3 := tr-erg-ins-verb-lex &
+  [ STEM < "ny" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_catch_v_rel" ].
+
+nya_4 := tr-erg-ins-verb-lex &
+  [ STEM < "nya" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_catch_v_rel" ].
+
+inya_4 := tr-erg-ins-verb-lex &
+  [ STEM < "inya" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_catch_v_rel" ].
 
 ;;; Determiners
 

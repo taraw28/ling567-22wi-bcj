@@ -113,6 +113,14 @@ reason-suffix3 :=
 %suffix (* -ganiny)
 reason-lex-rule.
 
+ins-suffix1 :=
+%suffix (* -nga)
+ins-lex-rule.
+
+ins-suffix2 :=
+%suffix (* -ng)
+ins-lex-rule.
+
 cont-suffix1 :=
 %suffix (* -n)
 cont-lex-rule.
