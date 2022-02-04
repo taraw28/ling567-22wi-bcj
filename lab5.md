@@ -152,6 +152,8 @@
 - removed gender
   - bardi doesn't have gender; MIN is often glosses as M
 - got rid of auxiliaries
+- added personal pronouns
+  - 1 more sentence in our testsuite parses!!!
 
 
 ## How Verbs Work

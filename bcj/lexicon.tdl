@@ -469,37 +469,73 @@ manyjal := noun1-noun-lex &
   [ STEM < "manyjal" >,
     SYNSEM.LKEYS.KEYREL.PRED "_hunger_n_rel" ].
 
-anggaba := question-pronoun-noun-lex &
+anggaba := q-pronoun-noun-lex &
   [ STEM < "anggaba" >,
     SYNSEM.LKEYS.KEYREL.PRED "_person_n_rel" ].
 
-janambooroo := question-pronoun-noun-lex &
+janambooroo := q-pronoun-noun-lex &
   [ STEM < "janambooroo" >,
     SYNSEM.LKEYS.KEYREL.PRED "_place_n_rel" ].
 
-angan := question-pronoun-noun-lex &
+angan := q-pronoun-noun-lex &
   [ STEM < "angan" >,
     SYNSEM.LKEYS.KEYREL.PRED "_reason_n_rel" ].
 
-goonban := question-pronoun-noun-lex &
+goonban := q-pronoun-noun-lex &
   [ STEM < "goonban" >,
     SYNSEM.LKEYS.KEYREL.PRED "_reason.on.earth_n_rel" ].
 
-anggi := question-pronoun-noun-lex &
+anggi := q-pronoun-noun-lex &
   [ STEM < "anggi" >,
     SYNSEM.LKEYS.KEYREL.PRED "_thing_n_rel" ].
 
-baanigarr := question-pronoun-noun-lex &
+baanigarr := q-pronoun-noun-lex &
   [ STEM < "baanigarr" >,
     SYNSEM.LKEYS.KEYREL.PRED "_time_n_rel" ].
 
-nyanyjirrgoordoo := question-pronoun-noun-lex &
+nyanyjirrgoordoo := q-pronoun-noun-lex &
   [ STEM < "nyanyjirrgoordoo" >,
     SYNSEM.LKEYS.KEYREL.PRED "_number_n_rel" ].
 
-jana- := question-pronoun-noun-lex &
+jana- := q-pronoun-noun-lex &
   [ STEM < "jana-" >,
     SYNSEM.LKEYS.KEYREL.PRED "_place-_n_rel" ].
+
+ngay := 1min-pronoun-noun-lex &
+  [ STEM < "ngay" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_pronoun_n_rel" ].
+
+ngayoo := 1min-pronoun-noun-lex &
+  [ STEM < "ngayoo" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_pronoun_n_rel" ].
+
+ayoo := 1plus2min-pronoun-noun-lex &
+  [ STEM < "ayoo" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_pronoun_n_rel" ].
+
+joo := 2min-pronoun-noun-lex &
+  [ STEM < "joo" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_pronoun_n_rel" ].
+
+ginyingg := 3min-pronoun-noun-lex &
+  [ STEM < "ginyingg" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_pronoun_n_rel" ].
+
+ginyinggi := 3min-pronoun-noun-lex &
+  [ STEM < "ginyinggi" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_pronoun_n_rel" ].
+
+arroodoo := 1aug-pronoun-noun-lex &
+  [ STEM < "arroodoo" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_pronoun_n_rel" ].
+
+goorr := 2aug-pronoun-noun-lex &
+  [ STEM < "goorr" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_pronoun_n_rel" ].
+
+irr := 3aug-pronoun-noun-lex &
+  [ STEM < "irr" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_pronoun_n_rel" ].
 
 ;;; Adjectives
 
