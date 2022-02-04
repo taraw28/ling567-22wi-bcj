@@ -18,6 +18,10 @@ Prefixes mostly display agreement for the subject of the clause
   Subject Agreement on 2nd person uses the prefix i-
 
 
+	Inyjarrmin baawa
+	I-ny-jarrmi-n baawa
+	3M-PST-rise-CONT child
+	
 	Source: author
 	Vetted: t
 	Judgement: g
