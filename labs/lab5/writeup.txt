@@ -2,13 +2,55 @@ lab5 writeup
 Tara and Hanieh
 02/04/2022
 
-- Improved phenomena in the choices file
+- Improved phenomena in the choices file: 
 
-	1. Agreement in Bardi: 	Subject Agreement in Bardi on 2nd person uses the prefix i-
-				
 
-		
-		B. Anaylysis
+Subject Agreement Morphology
+
+Prefixes mostly display agreement for the subject of the clause 
+
+- Inflecting verbs agree for the subject of the verb, whether intransitive or transitive.
+- Subject agreement is prefixal and is bound with tense marking,    
+- while oblique, possessive, and direct object agreement is cliticized to the end of the verb stem.
+- subject agreements of predicate (non-constituent according to Bowern) can be hosted on verbs, nouns, adjectives, and adverbs
+   
+  # examples of agreement with verb as host
+  Subject Agreement on 2nd person uses the prefix i-
+
+
+	Source: author
+	Vetted: t
+	Judgement: g
+	Phenomena: agr
+	ijala    
+	i-jala
+	3MIN-see       
+	`He/she sees.'
+
+	Source: author
+	Vetted: f
+	Judgement: g
+	Phenomena: agr
+	Ibanya
+	i-banya
+	3MIN-finish
+	`He dies.'
+	
+  # example of subject agreement in imperative (still on verb)
+    Subject Agreement on imperative uses the prefix nga- 
+    
+  	Source: a:395
+	Vetted: g
+	Judgement: g
+	Phenomena: agr
+	Ngayarrala!
+	Nga-yarral-a
+	2-run-FUT
+	`Run!'
+
+
+
+B. Anaylysis
 		
 
 		Changes you made to choices (paste in the actual choices)
@@ -20,14 +62,7 @@ Tara and Hanieh
 Specific IGT I can use to test the analysis / investigate if something isn't working and you need help.
 
 
-Source: author
-Vetted: f
-Judgement: g
-Phenomena: agr
-Ibanya
-i-banya
-3m-finish
-`He dies.'
+
 
 
 	2. Verb Morphology (TAM)
