@@ -26,12 +26,12 @@
 - phenomena we've worked on
   - case
     - should be good
-  - TAM
+  - **TAM**
     - add in morphology
   - coordination
     - figure out coord strategies
   - agreement
-    - add in morphology?
+    - **add in morphology**
   - questions
     - made changes
      - to lexicon as per feedback from lab 4 to replace what and who w/ thing and person, respectively.  (got snippet)
@@ -112,12 +112,15 @@
       1-FUT-AUG-TR-cook
       `We will cook it.'
       ```
+  - added present tense (null marked)
 - replaced third-person pc with more general pernum pc
   - added 1min, 2min, 3min, 1+2min prefixes
     - still parses i-ny-jarrmi-n gool
     - still correctly doesn't parse i-ny-jarrmi-n gool-nim
   - added 1aug, 2aug, 3aug
     - added aug pc
+    - added aug feature to aug pc
+    - added constraint to aug pernums that aug pc is required
     - added sentence to testsuite
       ```
       Inyarrjarrmin gool.
@@ -126,9 +129,8 @@
       `The fathers got up.'
       ```
     - still parses old sentences
-  - added aug feature to aug pc
-    person
 - added 2 transitive (tr) pc (tr-min and tr-aug)
+  - added min feature to tr-min and aug feature to tr-aug to make sure that pernum prefixes are not in conflict with the different tr markers
   - test sentence
     ```
     Aambanim aarli inamanyana.
@@ -138,8 +140,6 @@
     ```
   - still parses old sentences
   - parses new sentence too!
-  - added min feature to tr-min and aug feature to tr-aug to make sure that pernum prefixes are not in conflict with the different tr markers
-  - note, need to add constraint so that if tr-min, can only use min person and if tr-aug, can only use aug person
 - replaced rem pc with more general aspect pc
   - added cont, rem-pst, rec-pst, pfv, and fut aspects (note, fut is
     not an aspect but sometimes takes the same slot as the aspects
@@ -157,6 +157,7 @@
 - removed gender
   - bardi doesn't have gender; MIN is often glosses as M
 - got rid of auxiliaries
+
 
 ## How Verbs Work
 - all verbal predicates: verb inflect for prefixes, suffixes, and clitics
@@ -185,5 +186,5 @@
   - tr erg subj all obj
   - it abs subj (most common)
   - it erg subj
-  -
+
 ## verbs added to lexicon
