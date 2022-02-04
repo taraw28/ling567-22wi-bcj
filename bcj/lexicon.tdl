@@ -9,9 +9,9 @@ larda := noun1-noun-lex &
   [ STEM < "larda" >,
     SYNSEM.LKEYS.KEYREL.PRED "_bottom_n_rel" ].
 
-niiminiimi := noun1-noun-lex &
-  [ STEM < "niiminiimi" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_sand.soakage_n_rel" ].
+iil := noun1-noun-lex &
+  [ STEM < "iil" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_dog_n_rel" ].
 
 booroo_1 := noun1-noun-lex &
   [ STEM < "booroo" >,
@@ -37,13 +37,13 @@ iwanyoo := noun1-noun-lex &
   [ STEM < "iwanyoo" >,
     SYNSEM.LKEYS.KEYREL.PRED "_sunday.island_n_rel" ].
 
-anggi_1 := noun1-noun-lex &
-  [ STEM < "anggi" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_what_n_rel" ].
+yandilybar := noun1-noun-lex &
+  [ STEM < "yandilybar" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_boat_n_rel" ].
 
-niyangala := noun1-noun-lex &
-  [ STEM < "niyangala" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_tongue_n_rel" ].
+jaala := noun1-noun-lex &
+  [ STEM < "jaala" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_beach_n_rel" ].
 
 aamba := noun1-noun-lex &
   [ STEM < "aamba" >,
@@ -93,13 +93,9 @@ goowidi_1 := noun1-noun-lex &
   [ STEM < "goowidi" >,
     SYNSEM.LKEYS.KEYREL.PRED "_month_n_rel" ].
 
-ninga := noun1-noun-lex &
-  [ STEM < "ninga" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_name_n_rel" ].
-
-nankarr := noun1-noun-lex &
-  [ STEM < "nankarr" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_point.the.shore_n_rel" ].
+gardin := noun1-noun-lex &
+  [ STEM < "gardin" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_cave_n_rel" ].
 
 nyoolnyool := noun1-noun-lex &
   [ STEM < "nyoolnyool" >,
@@ -108,10 +104,6 @@ nyoolnyool := noun1-noun-lex &
 ngarrigoon := noun1-noun-lex &
   [ STEM < "ngarrigoon" >,
     SYNSEM.LKEYS.KEYREL.PRED "_ngarrigoon_n_rel" ].
-
-jawanan := noun1-noun-lex &
-  [ STEM < "jawanan" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_jawanan_n_rel" ].
 
 baawa := noun1-noun-lex &
   [ STEM < "baawa" >,
@@ -141,7 +133,7 @@ alalgoord := noun1-noun-lex &
   [ STEM < "alalgoord" >,
     SYNSEM.LKEYS.KEYREL.PRED "_wave_n_rel" ].
 
-morr := noun1-noun-lex &
+morr_1 := noun1-noun-lex &
   [ STEM < "morr" >,
     SYNSEM.LKEYS.KEYREL.PRED "_way_n_rel" ].
 
@@ -333,13 +325,9 @@ ngaanka := noun1-noun-lex &
   [ STEM < "ngaanka" >,
     SYNSEM.LKEYS.KEYREL.PRED "_language_n_rel" ].
 
-jamarda := noun1-noun-lex &
-  [ STEM < "jamarda" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_coming.this.way_n_rel" ].
-
 miroorroo := noun1-noun-lex &
   [ STEM < "miroorroo" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_powerful.place_n_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_powerful.place.or.shadow.men_n_rel" ].
 
 may := noun1-noun-lex &
   [ STEM < "may" >,
@@ -389,29 +377,129 @@ gambarla := noun1-noun-lex &
   [ STEM < "gambarla" >,
     SYNSEM.LKEYS.KEYREL.PRED "_surgeon.fish_n_rel" ].
 
+baal := noun1-noun-lex &
+  [ STEM < "baal" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_bark_n_rel" ].
+
+midijin := noun1-noun-lex &
+  [ STEM < "midijin" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_medicine_n_rel" ].
+
+Goorrbarlgoon := noun1-noun-lex &
+  [ STEM < "Goorrbarlgoon" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_pender.bay_n_rel" ].
+
+bigibigi := noun1-noun-lex &
+  [ STEM < "bigibigi" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_pigs_n_rel" ].
+
+ngoorrngool := noun1-noun-lex &
+  [ STEM < "ngoorrngool" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_mangroves_n_rel" ].
+
+Ngoolmoongoolmoo := noun1-noun-lex &
+  [ STEM < "Ngoolmoongoolmoo" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_Ngoolmoongoolmoo_n_rel" ].
+
+oolooman := noun1-noun-lex &
+  [ STEM < "oolooman" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_old.woman_n_rel" ].
+
+morr_2 := noun1-noun-lex &
+  [ STEM < "morr" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_path_n_rel" ].
+
+ooldoobal := noun1-noun-lex &
+  [ STEM < "ooldoobal" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_things_n_rel" ].
+
+mayar := noun1-noun-lex &
+  [ STEM < "mayar" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_house_n_rel" ].
+
+Broome := noun1-noun-lex &
+  [ STEM < "Broome" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_Broome_n_rel" ].
+
+malarr := noun1-noun-lex &
+  [ STEM < "malarr" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_wife-or-wives_n_rel" ].
+
+ngaarri := noun1-noun-lex &
+  [ STEM < "ngaarri" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_devil_n_rel" ].
+
+bo := noun1-noun-lex &
+  [ STEM < "bo" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_womans.child_n_rel" ].
+
+jiiwa := noun1-noun-lex &
+  [ STEM < "jiiwa" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_boomerang_n_rel" ].
+
+gandoorrman := noun1-noun-lex &
+  [ STEM < "gandoorrman" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_countryrman_n_rel" ].
+
+marl := noun1-noun-lex &
+  [ STEM < "marl" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_hand_n_rel" ].
+
+morl := noun1-noun-lex &
+  [ STEM < "morl" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_his.hand_n_rel" ].
+
+nga := noun1-noun-lex &
+  [ STEM < "nga" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_name_n_rel" ].
+
+morr_3 := noun1-noun-lex &
+  [ STEM < "morr" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_street_n_rel" ].
+
+boolgar := noun1-noun-lex &
+  [ STEM < "boolgar" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_white_n_rel" ].
+
+liyan := noun1-noun-lex &
+  [ STEM < "liyan" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_heart_n_rel" ].
+
+manyjal := noun1-noun-lex &
+  [ STEM < "manyjal" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_hunger_n_rel" ].
+
 anggaba := question-pronoun-noun-lex &
   [ STEM < "anggaba" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_who_n_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_person_n_rel" ].
 
 janambooroo := question-pronoun-noun-lex &
   [ STEM < "janambooroo" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_where_n_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_place_n_rel" ].
 
 angan := question-pronoun-noun-lex &
   [ STEM < "angan" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_why_n_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_reason_n_rel" ].
 
 goonban := question-pronoun-noun-lex &
   [ STEM < "goonban" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_why.on.earth_n_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_reason.on.earth_n_rel" ].
 
-anggi_2 := question-pronoun-noun-lex &
+anggi := question-pronoun-noun-lex &
   [ STEM < "anggi" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_what_n_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_thing_n_rel" ].
 
 baanigarr := question-pronoun-noun-lex &
   [ STEM < "baanigarr" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_when_n_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_time_n_rel" ].
+
+nyanyjirrgoordoo := question-pronoun-noun-lex &
+  [ STEM < "nyanyjirrgoordoo" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_number_n_rel" ].
+
+jana- := question-pronoun-noun-lex &
+  [ STEM < "jana-" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_place-_n_rel" ].
 
 ;;; Adjectives
 
@@ -545,6 +633,18 @@ boo_2 := tr-erg-abs-verb-lex &
   [ STEM < "boo" >,
     SYNSEM.LKEYS.KEYREL.PRED "_hit_v_rel" ].
 
+ngoorribi := tr-erg-abs-verb-lex &
+  [ STEM < "ngoorribi" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_chase_v_rel" ].
+
+jangarrga := tr-erg-abs-verb-lex &
+  [ STEM < "jangarrga" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_ask_v_rel" ].
+
+yarral := tr-erg-abs-verb-lex &
+  [ STEM < "yarral" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_run_v_rel" ].
+
 moonggoon := it-erg-verb-lex &
   [ STEM < "moonggoon" >,
     SYNSEM.LKEYS.KEYREL.PRED "_know_v_rel" ].
@@ -584,6 +684,14 @@ girringg_1 := it-preverb-verb-lex &
 goondoorr := it-preverb-verb-lex &
   [ STEM < "goondoorr" >,
     SYNSEM.LKEYS.KEYREL.PRED "_get.giddy.and.die_v_rel" ].
+
+rinyi := it-preverb-verb-lex &
+  [ STEM < "rinyi" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_think_v_rel" ].
+
+boojool := it-preverb-verb-lex &
+  [ STEM < "boojool" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_stare_v_rel" ].
 
 ju := light-verb-verb-lex &
   [ STEM < "ju" >,
@@ -676,14 +784,6 @@ milimil := tv-preverb-verb-lex &
 yoorr := tv-preverb-verb-lex &
   [ STEM < "yoorr" >,
     SYNSEM.LKEYS.KEYREL.PRED "_come.down_v_rel" ].
-
-agal := tv-preverb-verb-lex &
-  [ STEM < "agal" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_cough_v_rel" ].
-
-boojool := tv-preverb-verb-lex &
-  [ STEM < "boojool" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_stare_v_rel" ].
 
 warrga := tv-preverb-verb-lex &
   [ STEM < "warrga" >,

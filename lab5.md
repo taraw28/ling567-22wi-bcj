@@ -6,13 +6,8 @@
       - added the lexicon from the nouns.to.add.txt file
 
     - remove unnecessary words
-      - According to Bowern's Table 4.1. p.159, removed the possessive prefix (ni, na, noo) off of body parts already existing in the grammar lexicon
-        e.g. Stem: _niimidi_ Predicate: _knee_n_rel
       - duplicates and unnecessary (e.g. sand.soakage)
       - _anggi_ as a noun stem as well as its pred _what_n_rel to move to question-pronouns and to change to _thing_n_rel
-
-      - Made corrections/changes
-        - baawa a noun stem with predicate _child_n_rel to _little.male.child_n_rel as the word bo meaning child-or-children-or-son is there too.
 
     - organize categories
   - morphology
