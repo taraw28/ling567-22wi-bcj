@@ -121,6 +121,34 @@ ins-suffix2 :=
 %suffix (* -ng)
 ins-lex-rule.
 
+1min-poss-prefix :=
+%prefix (* nga-)
+1min-poss-lex-rule.
+
+2min-poss-prefix :=
+%prefix (* nyi-)
+2min-poss-lex-rule.
+
+3min-poss-prefix :=
+%prefix (* ni-)
+3min-poss-lex-rule.
+
+1plus2min-poss-prefix :=
+%prefix (* a-)
+1plus2min-poss-lex-rule.
+
+1aug-poss-prefix :=
+%prefix (* arr-)
+1aug-poss-lex-rule.
+
+2aug-poss-prefix :=
+%prefix (* goorr-)
+2aug-poss-lex-rule.
+
+3aug-poss-prefix :=
+%prefix (* irr-)
+3aug-poss-lex-rule.
+
 cont-suffix1 :=
 %suffix (* -n)
 cont-lex-rule.

@@ -153,6 +153,8 @@
 - got rid of auxiliaries
 - added personal pronouns
   - 1 more sentence in our testsuite parses!!!
+- added possessive pronouns
+  - 1 more sentence in our testsuite parses!!!
 
 ## How Verbs Work
 - all verbal predicates: verb inflect for prefixes, suffixes, and clitics

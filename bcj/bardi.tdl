@@ -2,7 +2,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Grammar of bardi
 ;;; created at:
-;;;     Fri Feb 04 07:14:48 UTC 2022
+;;;     Fri Feb 04 22:01:21 UTC 2022
 ;;; based on Matrix customization system version of:
 ;;;     Mon Aug  2 23:22:15 UTC 2021
 ;;;
@@ -31,14 +31,16 @@ head :+ [ PRON bool,
 noun :+ [ CASE case ].
 
 inflected :+ [ CASE-PC-FLAG luk,
+    INALIEN-POSS-FLAG luk,
+    AUG-FLAG luk,
     TENSE-FLAG luk,
-    PERNUM-FLAG luk,
-    AUG-FLAG luk ].
+    PERNUM-FLAG luk ].
 
 infl-satisfied :+ [ CASE-PC-FLAG na-or-+,
+    INALIEN-POSS-FLAG na-or-+,
+    AUG-FLAG na-or-+,
     TENSE-FLAG na-or-+,
-    PERNUM-FLAG na-or-+,
-    AUG-FLAG na-or-+ ].
+    PERNUM-FLAG na-or-+ ].
 
 png :+ [ PERNUM pernum ].
 
@@ -99,17 +101,17 @@ top-coord-rule :+ [ SYNSEM.LOCAL.CAT [ HEAD.POSSESSOR #possessor,
     LCOORD-DTR.SYNSEM.LOCAL.CAT [ HEAD.POSSESSOR #possessor,
                                   POSSESSUM #possessum ] ].
 
-bottom-coord-phrase :+ [ SYNSEM.LOCAL.CAT [ HEAD.POSSESSOR #possessor,
-                       POSSESSUM #possessum ],
-    NONCONJ-DTR.SYNSEM.LOCAL.CAT [ HEAD.POSSESSOR #possessor,
-                                   POSSESSUM #possessum ] ].
-
 mid-coord-rule :+ [ SYNSEM.LOCAL.CAT [ HEAD.POSSESSOR #possessor,
                        POSSESSUM #possessum ],
     RCOORD-DTR.SYNSEM.LOCAL.CAT [ HEAD.POSSESSOR #possessor,
                                   POSSESSUM #possessum ],
     LCOORD-DTR.SYNSEM.LOCAL.CAT [ HEAD.POSSESSOR #possessor,
                                   POSSESSUM #possessum ] ].
+
+bottom-coord-phrase :+ [ SYNSEM.LOCAL.CAT [ HEAD.POSSESSOR #possessor,
+                       POSSESSUM #possessum ],
+    NONCONJ-DTR.SYNSEM.LOCAL.CAT [ HEAD.POSSESSOR #possessor,
+                                   POSSESSUM #possessum ] ].
 
 ;;;;;;;;;;;;;;
 ;;; Features
@@ -239,7 +241,7 @@ head-spec-phrase := basic-head-spec-phrase & head-final &
                           LOCAL.CAT.VAL.SPEC < [ LOCAL.CAT.POSSESSUM #poss ] > ],
     HEAD-DTR.SYNSEM.LOCAL.CAT.POSSESSUM #poss ].
 
-noun1-noun-lex := noun-lex &
+noun1-noun-lex := noun-lex & case-pc-rule-dtr &
   [ INFLECTED.CASE-PC-FLAG - ].
 
 q-pronoun-noun-lex := wh-pronoun-noun-lex.
@@ -269,6 +271,10 @@ q-pronoun-noun-lex := wh-pronoun-noun-lex.
 
 3aug-pronoun-noun-lex := no-spr-noun-lex &
   [ SYNSEM.LOCAL.CAT.HEAD.PRON + ].
+
+inalien-stem-noun-lex := noun-lex & case-pc-rule-dtr &
+  [ INFLECTED [ INALIEN-POSS-FLAG -,
+                CASE-PC-FLAG - ] ].
 
 poss-pron1-noun-lex := non-local-none-lex-item &
   [ SYNSEM [ LKEYS.ALTKEYREL #altkeyrel & noun-relation &
@@ -437,12 +443,13 @@ det2-determiner-lex := determiner-lex & no-icons-lex-item &
 
 ;;; Intermediate rule types
 
-aspect-rule-dtr := word-or-lexrule.
 tr-min-rule-dtr := word-or-lexrule.
+case-pc-rule-dtr := word-or-lexrule.
+aug-rule-dtr := word-or-lexrule.
 tr-aug-rule-dtr := word-or-lexrule.
+aspect-rule-dtr := word-or-lexrule.
 pernum-rule-dtr := word-or-lexrule.
 tense-rule-dtr := word-or-lexrule.
-aug-rule-dtr := word-or-lexrule.
 
 ;;; Lexical rule types
 
@@ -450,10 +457,12 @@ case-pc-lex-rule-super := add-only-no-ccont-rule &
   [ INFLECTED [ CASE-PC-FLAG +,
                 TENSE-FLAG #tense,
                 PERNUM-FLAG #pernum,
+                INALIEN-POSS-FLAG #inalien-poss,
                 AUG-FLAG #aug ],
-    DTR noun1-noun-lex &
+    DTR case-pc-rule-dtr &
         [ INFLECTED [ TENSE-FLAG #tense,
                       PERNUM-FLAG #pernum,
+                      INALIEN-POSS-FLAG #inalien-poss,
                       AUG-FLAG #aug ] ] ].
 
 erg-lex-rule := case-pc-lex-rule-super & infl-lex-rule &
@@ -498,6 +507,319 @@ reason-lex-rule := case-pc-lex-rule-super & infl-lex-rule &
 ins-lex-rule := case-pc-lex-rule-super & infl-lex-rule &
   [ SYNSEM.LOCAL.CAT.HEAD.CASE ins ].
 
+inalien-poss-lex-rule-super := case-pc-rule-dtr & infl-lex-rule &
+  [ INFLECTED [ INALIEN-POSS-FLAG +,
+                PERNUM-FLAG #pernum,
+                CASE-PC-FLAG #case-pc,
+                TENSE-FLAG #tense,
+                AUG-FLAG #aug ],
+    DTR inalien-stem-noun-lex &
+        [ INFLECTED [ PERNUM-FLAG #pernum,
+                      CASE-PC-FLAG #case-pc,
+                      TENSE-FLAG #tense,
+                      AUG-FLAG #aug ] ] ].
+
+1min-poss-lex-rule := inalien-poss-lex-rule-super &
+  [ SYNSEM.LOCAL.CAT [ HEAD #head,
+                       VAL [ SPR < >,
+                             SPEC #spec,
+                             SUBJ #subj,
+                             COMPS #comps ] ],
+    C-CONT [ HOOK #hook,
+             RELS.LIST < noun-relation &
+                         [ PRED "pron_rel",
+                           LBL #lbl2,
+                           ARG0 #possessor &
+                                [ PNG.PERNUM 1min_excl,
+                                  COG-ST activ-or-more,
+                                  SPECI + ] ],
+                         quant-relation &
+                         [ PRED "exist_q_rel",
+                           ARG0 #possessum,
+                           RSTR #harg ],
+                         arg12-ev-relation &
+                         [ PRED "poss_rel",
+                           LBL #lbl,
+                           ARG1 #possessum,
+                           ARG2 #possessor ],
+                         quant-relation &
+                         [ PRED "exist_q_rel",
+                           ARG0 #possessor,
+                           RSTR #harg2 ] >,
+             HCONS.LIST < qeq &
+                          [ HARG #harg,
+                            LARG #lbl ],
+                          qeq &
+                          [ HARG #harg2,
+                            LARG #lbl2 ] > ],
+    DTR.SYNSEM.LOCAL [ CONT.HOOK #hook &
+                                 [ INDEX #possessum &
+                                         [ COG-ST activ-or-more ],
+                                   LTOP #lbl ],
+                       CAT [ HEAD #head &
+                                  [ PRON - ],
+                             VAL [ SPEC #spec,
+                                   SUBJ #subj,
+                                   COMPS #comps ] ] ] ].
+
+2min-poss-lex-rule := inalien-poss-lex-rule-super &
+  [ SYNSEM.LOCAL.CAT [ HEAD #head,
+                       VAL [ SPR < >,
+                             SPEC #spec,
+                             SUBJ #subj,
+                             COMPS #comps ] ],
+    C-CONT [ HOOK #hook,
+             RELS.LIST < noun-relation &
+                         [ PRED "pron_rel",
+                           LBL #lbl2,
+                           ARG0 #possessor &
+                                [ PNG.PERNUM 2min,
+                                  COG-ST activ-or-more,
+                                  SPECI + ] ],
+                         quant-relation &
+                         [ PRED "exist_q_rel",
+                           ARG0 #possessum,
+                           RSTR #harg ],
+                         arg12-ev-relation &
+                         [ PRED "poss_rel",
+                           LBL #lbl,
+                           ARG1 #possessum,
+                           ARG2 #possessor ],
+                         quant-relation &
+                         [ PRED "exist_q_rel",
+                           ARG0 #possessor,
+                           RSTR #harg2 ] >,
+             HCONS.LIST < qeq &
+                          [ HARG #harg,
+                            LARG #lbl ],
+                          qeq &
+                          [ HARG #harg2,
+                            LARG #lbl2 ] > ],
+    DTR.SYNSEM.LOCAL [ CONT.HOOK #hook &
+                                 [ INDEX #possessum &
+                                         [ COG-ST activ-or-more ],
+                                   LTOP #lbl ],
+                       CAT [ HEAD #head &
+                                  [ PRON - ],
+                             VAL [ SPEC #spec,
+                                   SUBJ #subj,
+                                   COMPS #comps ] ] ] ].
+
+3min-poss-lex-rule := inalien-poss-lex-rule-super &
+  [ SYNSEM.LOCAL.CAT [ HEAD #head,
+                       VAL [ SPR < >,
+                             SPEC #spec,
+                             SUBJ #subj,
+                             COMPS #comps ] ],
+    C-CONT [ HOOK #hook,
+             RELS.LIST < noun-relation &
+                         [ PRED "pron_rel",
+                           LBL #lbl2,
+                           ARG0 #possessor &
+                                [ PNG.PERNUM 3min,
+                                  COG-ST activ-or-more,
+                                  SPECI + ] ],
+                         quant-relation &
+                         [ PRED "exist_q_rel",
+                           ARG0 #possessum,
+                           RSTR #harg ],
+                         arg12-ev-relation &
+                         [ PRED "poss_rel",
+                           LBL #lbl,
+                           ARG1 #possessum,
+                           ARG2 #possessor ],
+                         quant-relation &
+                         [ PRED "exist_q_rel",
+                           ARG0 #possessor,
+                           RSTR #harg2 ] >,
+             HCONS.LIST < qeq &
+                          [ HARG #harg,
+                            LARG #lbl ],
+                          qeq &
+                          [ HARG #harg2,
+                            LARG #lbl2 ] > ],
+    DTR.SYNSEM.LOCAL [ CONT.HOOK #hook &
+                                 [ INDEX #possessum &
+                                         [ COG-ST activ-or-more ],
+                                   LTOP #lbl ],
+                       CAT [ HEAD #head &
+                                  [ PRON - ],
+                             VAL [ SPEC #spec,
+                                   SUBJ #subj,
+                                   COMPS #comps ] ] ] ].
+
+1plus2min-poss-lex-rule := inalien-poss-lex-rule-super &
+  [ SYNSEM.LOCAL.CAT [ HEAD #head,
+                       VAL [ SPR < >,
+                             SPEC #spec,
+                             SUBJ #subj,
+                             COMPS #comps ] ],
+    C-CONT [ HOOK #hook,
+             RELS.LIST < noun-relation &
+                         [ PRED "pron_rel",
+                           LBL #lbl2,
+                           ARG0 #possessor &
+                                [ PNG.PERNUM 1min_incl,
+                                  COG-ST activ-or-more,
+                                  SPECI + ] ],
+                         quant-relation &
+                         [ PRED "exist_q_rel",
+                           ARG0 #possessum,
+                           RSTR #harg ],
+                         arg12-ev-relation &
+                         [ PRED "poss_rel",
+                           LBL #lbl,
+                           ARG1 #possessum,
+                           ARG2 #possessor ],
+                         quant-relation &
+                         [ PRED "exist_q_rel",
+                           ARG0 #possessor,
+                           RSTR #harg2 ] >,
+             HCONS.LIST < qeq &
+                          [ HARG #harg,
+                            LARG #lbl ],
+                          qeq &
+                          [ HARG #harg2,
+                            LARG #lbl2 ] > ],
+    DTR.SYNSEM.LOCAL [ CONT.HOOK #hook &
+                                 [ INDEX #possessum &
+                                         [ COG-ST activ-or-more ],
+                                   LTOP #lbl ],
+                       CAT [ HEAD #head &
+                                  [ PRON - ],
+                             VAL [ SPEC #spec,
+                                   SUBJ #subj,
+                                   COMPS #comps ] ] ] ].
+
+1aug-poss-lex-rule := inalien-poss-lex-rule-super &
+  [ SYNSEM.LOCAL.CAT [ HEAD #head,
+                       VAL [ SPR < >,
+                             SPEC #spec,
+                             SUBJ #subj,
+                             COMPS #comps ] ],
+    C-CONT [ HOOK #hook,
+             RELS.LIST < noun-relation &
+                         [ PRED "pron_rel",
+                           LBL #lbl2,
+                           ARG0 #possessor &
+                                [ PNG.PERNUM 1aug,
+                                  COG-ST activ-or-more,
+                                  SPECI + ] ],
+                         quant-relation &
+                         [ PRED "exist_q_rel",
+                           ARG0 #possessum,
+                           RSTR #harg ],
+                         arg12-ev-relation &
+                         [ PRED "poss_rel",
+                           LBL #lbl,
+                           ARG1 #possessum,
+                           ARG2 #possessor ],
+                         quant-relation &
+                         [ PRED "exist_q_rel",
+                           ARG0 #possessor,
+                           RSTR #harg2 ] >,
+             HCONS.LIST < qeq &
+                          [ HARG #harg,
+                            LARG #lbl ],
+                          qeq &
+                          [ HARG #harg2,
+                            LARG #lbl2 ] > ],
+    DTR.SYNSEM.LOCAL [ CONT.HOOK #hook &
+                                 [ INDEX #possessum &
+                                         [ COG-ST activ-or-more ],
+                                   LTOP #lbl ],
+                       CAT [ HEAD #head &
+                                  [ PRON - ],
+                             VAL [ SPEC #spec,
+                                   SUBJ #subj,
+                                   COMPS #comps ] ] ] ].
+
+2aug-poss-lex-rule := inalien-poss-lex-rule-super &
+  [ SYNSEM.LOCAL.CAT [ HEAD #head,
+                       VAL [ SPR < >,
+                             SPEC #spec,
+                             SUBJ #subj,
+                             COMPS #comps ] ],
+    C-CONT [ HOOK #hook,
+             RELS.LIST < noun-relation &
+                         [ PRED "pron_rel",
+                           LBL #lbl2,
+                           ARG0 #possessor &
+                                [ PNG.PERNUM 2aug,
+                                  COG-ST activ-or-more,
+                                  SPECI + ] ],
+                         quant-relation &
+                         [ PRED "exist_q_rel",
+                           ARG0 #possessum,
+                           RSTR #harg ],
+                         arg12-ev-relation &
+                         [ PRED "poss_rel",
+                           LBL #lbl,
+                           ARG1 #possessum,
+                           ARG2 #possessor ],
+                         quant-relation &
+                         [ PRED "exist_q_rel",
+                           ARG0 #possessor,
+                           RSTR #harg2 ] >,
+             HCONS.LIST < qeq &
+                          [ HARG #harg,
+                            LARG #lbl ],
+                          qeq &
+                          [ HARG #harg2,
+                            LARG #lbl2 ] > ],
+    DTR.SYNSEM.LOCAL [ CONT.HOOK #hook &
+                                 [ INDEX #possessum &
+                                         [ COG-ST activ-or-more ],
+                                   LTOP #lbl ],
+                       CAT [ HEAD #head &
+                                  [ PRON - ],
+                             VAL [ SPEC #spec,
+                                   SUBJ #subj,
+                                   COMPS #comps ] ] ] ].
+
+3aug-poss-lex-rule := inalien-poss-lex-rule-super &
+  [ SYNSEM.LOCAL.CAT [ HEAD #head,
+                       VAL [ SPR < >,
+                             SPEC #spec,
+                             SUBJ #subj,
+                             COMPS #comps ] ],
+    C-CONT [ HOOK #hook,
+             RELS.LIST < noun-relation &
+                         [ PRED "pron_rel",
+                           LBL #lbl2,
+                           ARG0 #possessor &
+                                [ PNG.PERNUM 3aug,
+                                  COG-ST activ-or-more,
+                                  SPECI + ] ],
+                         quant-relation &
+                         [ PRED "exist_q_rel",
+                           ARG0 #possessum,
+                           RSTR #harg ],
+                         arg12-ev-relation &
+                         [ PRED "poss_rel",
+                           LBL #lbl,
+                           ARG1 #possessum,
+                           ARG2 #possessor ],
+                         quant-relation &
+                         [ PRED "exist_q_rel",
+                           ARG0 #possessor,
+                           RSTR #harg2 ] >,
+             HCONS.LIST < qeq &
+                          [ HARG #harg,
+                            LARG #lbl ],
+                          qeq &
+                          [ HARG #harg2,
+                            LARG #lbl2 ] > ],
+    DTR.SYNSEM.LOCAL [ CONT.HOOK #hook &
+                                 [ INDEX #possessum &
+                                         [ COG-ST activ-or-more ],
+                                   LTOP #lbl ],
+                       CAT [ HEAD #head &
+                                  [ PRON - ],
+                             VAL [ SPEC #spec,
+                                   SUBJ #subj,
+                                   COMPS #comps ] ] ] ].
+
 aspect-lex-rule-super := add-only-no-ccont-rule & infl-lex-rule &
   [ INFLECTED #infl,
     DTR aspect-rule-dtr &
@@ -522,10 +844,12 @@ tense-lex-rule-super := add-only-no-ccont-rule & aspect-rule-dtr & pernum-rule-d
   [ INFLECTED [ TENSE-FLAG +,
                 PERNUM-FLAG #pernum,
                 CASE-PC-FLAG #case-pc,
+                INALIEN-POSS-FLAG #inalien-poss,
                 AUG-FLAG #aug ],
     DTR tense-rule-dtr &
         [ INFLECTED [ PERNUM-FLAG #pernum,
                       CASE-PC-FLAG #case-pc,
+                      INALIEN-POSS-FLAG #inalien-poss,
                       AUG-FLAG #aug ] ] ].
 
 pst-lex-rule := infl-lex-rule & tense-lex-rule-super &
@@ -541,10 +865,12 @@ pernum-lex-rule-super := add-only-no-ccont-rule & aspect-rule-dtr & infl-lex-rul
   [ INFLECTED [ PERNUM-FLAG +,
                 TENSE-FLAG #tense,
                 CASE-PC-FLAG #case-pc,
+                INALIEN-POSS-FLAG #inalien-poss,
                 AUG-FLAG #aug ],
     DTR pernum-rule-dtr &
         [ INFLECTED [ TENSE-FLAG #tense,
                       CASE-PC-FLAG #case-pc,
+                      INALIEN-POSS-FLAG #inalien-poss,
                       AUG-FLAG #aug ] ] ].
 
 1aug-lex-rule := pernum-lex-rule-super &
@@ -574,12 +900,14 @@ pernum-lex-rule-super := add-only-no-ccont-rule & aspect-rule-dtr & infl-lex-rul
 aug-lex-rule := add-only-no-ccont-rule & aspect-rule-dtr & infl-lex-rule & pernum-rule-dtr & tense-rule-dtr & tr-min-rule-dtr &
   [ INFLECTED [ AUG-FLAG +,
                 TENSE-FLAG #tense,
-                PERNUM-FLAG #pernum,
-                CASE-PC-FLAG #case-pc ],
+                CASE-PC-FLAG #case-pc,
+                INALIEN-POSS-FLAG #inalien-poss,
+                PERNUM-FLAG #pernum ],
     DTR aug-rule-dtr &
         [ INFLECTED [ TENSE-FLAG #tense,
-                      PERNUM-FLAG #pernum,
-                      CASE-PC-FLAG #case-pc ] ],
+                      CASE-PC-FLAG #case-pc,
+                      INALIEN-POSS-FLAG #inalien-poss,
+                      PERNUM-FLAG #pernum ] ],
     SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM aug ].
 
 tr-min-lex-rule := add-only-no-ccont-rule & aspect-rule-dtr & infl-lex-rule & pernum-rule-dtr &
@@ -701,15 +1029,6 @@ wh-ques-phrase := basic-head-filler-phrase & interrogative-clause & head-final &
 ;;; Coordination
 ;;;;;;;;;;;;;;;;;;
 
-;;; Coordination Strategy 1
-
-np1-top-coord-rule := basic-np-top-coord-rule & apoly-top-coord-rule &
-  [ SYNSEM.LOCAL.COORD-STRAT "1" ].
-
-np1-bottom-coord-rule := unary-bottom-coord-rule & np-bottom-coord-phrase &
-  [ SYNSEM.LOCAL [ COORD-STRAT "1",
-                   COORD-REL.PRED "_and_coord_rel" ] ].
-
 ;;; Coordination Strategy 2
 
 np2-top-coord-rule := basic-np-top-coord-rule & monopoly-top-coord-rule &
@@ -720,15 +1039,6 @@ np2-mid-coord-rule := basic-np-mid-coord-rule & monopoly-mid-coord-rule &
 
 np2-bottom-coord-rule := conj-first-bottom-coord-rule & np-bottom-coord-phrase &
   [ SYNSEM.LOCAL.COORD-STRAT "2" ].
-
-;;; Coordination Strategy 3
-
-vp3-top-coord-rule := basic-vp-top-coord-rule & apoly-top-coord-rule &
-  [ SYNSEM.LOCAL.COORD-STRAT "3" ].
-
-vp3-bottom-coord-rule := unary-bottom-coord-rule & vp-bottom-coord-phrase &
-  [ SYNSEM.LOCAL [ COORD-STRAT "3",
-                   COORD-REL.PRED "_and_coord_rel" ] ].
 
 ;;; Coordination Strategy 4
 

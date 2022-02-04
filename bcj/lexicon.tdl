@@ -13,7 +13,7 @@ iila := noun1-noun-lex &
   [ STEM < "iila" >,
     SYNSEM.LKEYS.KEYREL.PRED "_dog_n_rel" ].
 
-booroo_1 := noun1-noun-lex &
+booroo := noun1-noun-lex &
   [ STEM < "booroo" >,
     SYNSEM.LKEYS.KEYREL.PRED "_place_n_rel" ].
 
@@ -56,10 +56,6 @@ joolganmolon := noun1-noun-lex &
 barni_1 := noun1-noun-lex &
   [ STEM < "barni" >,
     SYNSEM.LKEYS.KEYREL.PRED "_this.way_n_rel" ].
-
-booroo_2 := noun1-noun-lex &
-  [ STEM < "booroo" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_country-or-place_n_rel" ].
 
 oola_1 := noun1-noun-lex &
   [ STEM < "oola" >,
@@ -125,10 +121,6 @@ riiwa := noun1-noun-lex &
   [ STEM < "riiwa" >,
     SYNSEM.LKEYS.KEYREL.PRED "_hole_n_rel" ].
 
-niimarl := noun1-noun-lex &
-  [ STEM < "niimarl" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_hand_n_rel" ].
-
 alalgoord := noun1-noun-lex &
   [ STEM < "alalgoord" >,
     SYNSEM.LKEYS.KEYREL.PRED "_wave_n_rel" ].
@@ -152,10 +144,6 @@ garrin := noun1-noun-lex &
 ngamari := noun1-noun-lex &
   [ STEM < "ngamari" >,
     SYNSEM.LKEYS.KEYREL.PRED "_tobacco_n_rel" ].
-
-niimidi := noun1-noun-lex &
-  [ STEM < "niimidi" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_knee_n_rel" ].
 
 ardiyooloon := noun1-noun-lex &
   [ STEM < "ardiyooloon" >,
@@ -188,10 +176,6 @@ wiliwili := noun1-noun-lex &
 aarli := noun1-noun-lex &
   [ STEM < "aarli" >,
     SYNSEM.LKEYS.KEYREL.PRED "_fish_n_rel" ].
-
-niimarlga := noun1-noun-lex &
-  [ STEM < "niimarlga" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_by.himself_n_rel" ].
 
 oomban := noun1-noun-lex &
   [ STEM < "oomban" >,
@@ -264,10 +248,6 @@ goolboo := noun1-noun-lex &
 gaarra := noun1-noun-lex &
   [ STEM < "gaarra" >,
     SYNSEM.LKEYS.KEYREL.PRED "_tide-or-sea-or-salt.water_n_rel" ].
-
-niinga := noun1-noun-lex &
-  [ STEM < "niinga" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_name_n_rel" ].
 
 irrngirrngi := noun1-noun-lex &
   [ STEM < "irrngirrngi" >,
@@ -441,18 +421,6 @@ gandoorrman := noun1-noun-lex &
   [ STEM < "gandoorrman" >,
     SYNSEM.LKEYS.KEYREL.PRED "_countryrman_n_rel" ].
 
-marl := noun1-noun-lex &
-  [ STEM < "marl" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_hand_n_rel" ].
-
-morl := noun1-noun-lex &
-  [ STEM < "morl" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_his.hand_n_rel" ].
-
-nga := noun1-noun-lex &
-  [ STEM < "nga" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_name_n_rel" ].
-
 morr_3 := noun1-noun-lex &
   [ STEM < "morr" >,
     SYNSEM.LKEYS.KEYREL.PRED "_street_n_rel" ].
@@ -540,6 +508,162 @@ goorr := 2aug-pronoun-noun-lex &
 irr := 3aug-pronoun-noun-lex &
   [ STEM < "irr" >,
     SYNSEM.LKEYS.KEYREL.PRED "_pronoun_n_rel" ].
+
+alma := inalien-stem-noun-lex &
+  [ STEM < "alma" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_head_n_rel" ].
+
+ankarr := inalien-stem-noun-lex &
+  [ STEM < "ankarr" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_forehead_n_rel" ].
+
+ankarra := inalien-stem-noun-lex &
+  [ STEM < "ankarra" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_forehead_n_rel" ].
+
+anmoorr := inalien-stem-noun-lex &
+  [ STEM < "anmoorr" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_thigh.or.lap_n_rel" ].
+
+anmoorroo := inalien-stem-noun-lex &
+  [ STEM < "anmoorroo" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_thigh.or.lap_n_rel" ].
+
+imal := inalien-stem-noun-lex &
+  [ STEM < "imal" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_nose_n_rel" ].
+
+imar := inalien-stem-noun-lex &
+  [ STEM < "imar" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_chest_n_rel" ].
+
+marl := inalien-stem-noun-lex &
+  [ STEM < "marl" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_hand.or.lower.arm_n_rel" ].
+
+marla := inalien-stem-noun-lex &
+  [ STEM < "marla" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_hand.or.lower.arm_n_rel" ].
+
+jambal := inalien-stem-noun-lex &
+  [ STEM < "jambal" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_foot_n_rel" ].
+
+jambala := inalien-stem-noun-lex &
+  [ STEM < "jambala" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_foot_n_rel" ].
+
+mi := inalien-stem-noun-lex &
+  [ STEM < "mi" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_eye_n_rel" ].
+
+imid := inalien-stem-noun-lex &
+  [ STEM < "imid" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_knee_n_rel" ].
+
+imidi := inalien-stem-noun-lex &
+  [ STEM < "imidi" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_knee_n_rel" ].
+
+imoonggool := inalien-stem-noun-lex &
+  [ STEM < "imoonggool" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_lower.back_n_rel" ].
+
+janbal := inalien-stem-noun-lex &
+  [ STEM < "janbal" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_appearance.or.color_n_rel" ].
+
+lamarr := inalien-stem-noun-lex &
+  [ STEM < "lamarr" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_ear_n_rel" ].
+
+lar := inalien-stem-noun-lex &
+  [ STEM < "lar" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_lower.leg_n_rel" ].
+
+lirr := inalien-stem-noun-lex &
+  [ STEM < "lirr" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_mouth.or.lip_n_rel" ].
+
+many := inalien-stem-noun-lex &
+  [ STEM < "many" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_throat_n_rel" ].
+
+manyi := inalien-stem-noun-lex &
+  [ STEM < "manyi" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_throat_n_rel" ].
+
+marryi := inalien-stem-noun-lex &
+  [ STEM < "marryi" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_gill_n_rel" ].
+
+minggarr := inalien-stem-noun-lex &
+  [ STEM < "minggarr" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_shadow.or.spirit.of.dead.person_n_rel" ].
+
+moonggoon_1 := inalien-stem-noun-lex &
+  [ STEM < "moonggoon" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_knowledge_n_rel" ].
+
+moonoorr := inalien-stem-noun-lex &
+  [ STEM < "moonoorr" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_smell_n_rel" ].
+
+nga := inalien-stem-noun-lex &
+  [ STEM < "nga" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_name_n_rel" ].
+
+ngarrarda := inalien-stem-noun-lex &
+  [ STEM < "ngarrarda" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_spirit_n_rel" ].
+
+nganyboo := inalien-stem-noun-lex &
+  [ STEM < "nganyboo" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_armpit_n_rel" ].
+
+ga := inalien-stem-noun-lex &
+  [ STEM < "ga" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_back.or.spine_n_rel" ].
+
+jalanggoon := inalien-stem-noun-lex &
+  [ STEM < "jalanggoon" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_elbow_n_rel" ].
+
+jangala := inalien-stem-noun-lex &
+  [ STEM < "jangala" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_tongue_n_rel" ].
+
+garda := inalien-stem-noun-lex &
+  [ STEM < "garda" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_body.or.size_n_rel" ].
+
+jorda := inalien-stem-noun-lex &
+  [ STEM < "jorda" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_chin_n_rel" ].
+
+nggan := inalien-stem-noun-lex &
+  [ STEM < "nggan" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_nape_n_rel" ].
+
+nggoon := inalien-stem-noun-lex &
+  [ STEM < "nggoon" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_nape_n_rel" ].
+
+ngoo := inalien-stem-noun-lex &
+  [ STEM < "ngoo" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_stomach_n_rel" ].
+
+ngoong := inalien-stem-noun-lex &
+  [ STEM < "ngoong" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_like_n_rel" ].
+
+ooroo := inalien-stem-noun-lex &
+  [ STEM < "ooroo" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_anus_n_rel" ].
+
+roonggooroongg := inalien-stem-noun-lex &
+  [ STEM < "roonggooroongg" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_navel_n_rel" ].
 
 ;;; Adjectives
 
@@ -685,7 +809,11 @@ yarral := tr-erg-abs-verb-lex &
   [ STEM < "yarral" >,
     SYNSEM.LKEYS.KEYREL.PRED "_run_v_rel" ].
 
-moonggoon := it-erg-verb-lex &
+ngajim := tr-erg-abs-verb-lex &
+  [ STEM < "ngajim" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_hit_v_rel" ].
+
+moonggoon_2 := it-erg-verb-lex &
   [ STEM < "moonggoon" >,
     SYNSEM.LKEYS.KEYREL.PRED "_know_v_rel" ].
 
