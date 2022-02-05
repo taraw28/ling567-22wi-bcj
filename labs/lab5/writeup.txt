@@ -1,4 +1,4 @@
-lab5 writeup
+lab5 
 Tara and Hanieh
 02/04/2022
 
@@ -9,7 +9,9 @@ Tara and Hanieh
 
 - Description of Phenomenon 
 
-- Analysis
+
+
+- Analysis and updated choice values:
 
 
 2. Verb Morphology (TAM)
@@ -17,7 +19,8 @@ Tara and Hanieh
 - Description of Phenomenon
 
 
-- Analysis
+- Analysis and updated choice values:
+
 
 
 3. Wh-Questions
@@ -36,11 +39,12 @@ To make constituent (wh-) questions, Bardi uses a number of interrogative pronou
         why 2-PST-run-REC.PST fast
         `Why did you run so fast?'
 
-- Analysis
+- Analysis and updated choice values:
 
-To fix the grammar for wh-questions to parse, we changed the predicates to meanings of the wh-word (who -> person, what -> thing, etc.).  
+The wh-pronouns were added to nouns (noun_2) in the matrix using the literal meanings of the pronoun to define the predicate; for example, the _anggi_ meaning word was _what_n_rel. We changed the predicates to meanings of the wh-word (who -> person, what -> thing, etc.) as per feedback from the previous labs.  
 
-Below are the updated choice values:
+
+- Below are the updated choice values:
 
 
 noun2_name=question-pronoun
