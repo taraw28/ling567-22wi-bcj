@@ -1,0 +1,83 @@
+dog: iil (pp 106)
+cat: not found
+   fish: aarli
+car: not found
+   boat: yandilybar
+park: not found
+   beach: jaala (at the beach uses null locative marking)
+   cave: gardin (in the cave uses locative suffix)
+
+sleep: daag (preverb) -i- (l.v. do/say) or daag (preverb) -joo- (l.v. for do/say)
+chase: -ngoorribi-
+eat: -arli-
+think: rinyi (preverb) -i- (l.v. do/say) (not 100% sure; pp. 434)
+know: -moonggoon- (often erg subj and noun "know")
+ask: -jangarrga-
+are (be): for "are hungry", manyjal (preverb) -j- (l.v. do/say)
+doesn't really have a "be"
+"There are many rocks on the beach": many rock there beach
+
+
+I: ngayoo-nim (1min-erg)
+you: =rri (2min.DO) or goor (2aug) or nyi- (2min) or mi- (2) or joo (2min)
+my (dogs): (nga)jana  (1min.poss) or =ngay (1min.poss)
+
+don't (chase): arra (neg)
+and: agal
+that: i don't think bardi has this
+whether: =ilba (pp. 582) (no examples of this actually being used except pp. 562 but diff. use)
+do?: nganyji (interrog)
+
+hungry: manyjal=jirr-al (i think the -al makes it adjective) (pp. 177 for hungry dogs)
+"To say that one is hungry or thirsty for something, two clauses are used (that
+is, ‘I’m thirsty, I want water’, or ‘I’m hungry, give me something to eat’)." (pp. 268)
+
+in: no specific word; use locative case -goon (or allomorph)
+
+who: anggaba
+what: anggi
+
+because: no specific word; use reason case -ganiny(a) but not sure if this is the same use
+"was
+always given ‘don’t do X, Y might happen’; that is, speakers rephrased the
+prompts to give biclausal answers." (pp. 253)
+maybe =(j)amb 'thus' - "used to denote a causal relation between one sentence and the next. Most
+commonly, it is used to explain why a state of affairs obtains" (pp. 641)
+after: maybe ajimorrony but we have no examples of it being used
+otherwise i'm not sure if we have it
+
+
+#1
+Iil daag irri.
+iil daag i-rr-i
+dog sleep 3-AUG-do/say
+`Dogs sleep.'
+
+#2
+Iilanim irroongoorribi aarli.
+iila-nim i-rr-oo-ngoorribi aarli
+dog-ERG 3-AUG-TR-chase fish
+`Dogs chase fish.'
+
+#3
+Nganangoorribirri.
+nga-na-ngoorribi=rri
+1-TR-chase=2MIN.DO
+`I chase you.'
+
+#4
+Iil irrarli.
+iil i-rr-arli.
+dog 3-AUG-eat
+`Dogs eat.'
+
+#5
+Arra iila-nim i-rr-oo-ngoorribi yandilybar.
+arra iila-nim i-rr-oo-ngoorribi yandilybar
+NEG dog-ERG 3-AUG-TR-chase boat
+`The dogs don't chase boats.'
+
+1.
+   dog has abs case since subj of it.v so no ending
+3.
+   maybe ngoorrboo

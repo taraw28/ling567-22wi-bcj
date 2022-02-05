@@ -1,0 +1,592 @@
+lab5
+Tara and Hanieh
+02/04/2022
+
+TSDB
+Initial Run
+  corpus (tsdb/home/bardi/lab4/lab4grammar/corpus)
+    1. 2 items parsed (#410, #1480)
+    2. 9 parses per item (14 parses for one sentence, 4 for the other)
+    3. Our most ambiguous item got 14 readings.
+    4. Most of the ambiguity is coming from the top and bottom coordination rules. For the second
+       sentence, one of our nouns was duplicated so the only other source is using the
+       BASIC-HEAD-OPT-COMP rule versus the HEAD-SUBJ/SUBJ-HEAD rule to form the sentence.
+
+  - testsuite (tsdb/home/bardi/lab5/lab4grammar/lab5)
+    1. 4 items parsed (#3, #4, #66, #68)
+    2. We averaged 4 parses per parsed item. (4 for each sentence)
+    3. Our most ambiguous item got 4 readings.
+    4. There isn't much ambiguity. One source is that our initial grammar had a duplicate entry in
+       the lexicon. Another is that one sentence is formed using HEAD-COMP and the other uses
+       BASIC-HEAD-OPT-COMP. There is also some ambiguity from coordination rules that combined the
+       possessive pronoun with it's possessor (a noun).
+
+Final Run
+  corpus (tsdb/home/bardi/lab5/lab5grammar/corpus)
+      1. 0 items parsed
+      2. We averaged 0 parses per parsed item.
+      3. Our most ambiguous item got 0 readings.
+      4. The reason we lost both of the sentences we previously parsed was because, in our lab 5
+        grammar, we re-did the verb morphology. Previously, verb roots were added as prefixes,
+        which meant that there were no semantics attached. We switched to having the verb roots
+        exist in the lexicon instead. However, we focused on adding the verbs that exist in our
+        testsuite and not on adding verbs that exist in the corpus.
+
+  testsuite (tsdb/home/bardi/lab5/lab5grammar/lab5)
+      1. 11 items parsed
+      2. We average ~2 parses per parsed item. (One sentence got 5, the rest got either 1 or 2)
+      3. Our most ambiguous item(s) got 6 readings.
+      4. One source of ambiguity is that the remote past and continuative tense/aspects share
+        suffixes. This type of ambiguity can't really be fixed (at least not at this stage) as
+        figuring out which one should be applied is based on context. The other source of ambiguity
+        is coming from the sentence "nga-marla-ng nga-na-boo-gal". (Note, this sentence is parsing
+        but most likely for the wrong reasons. We never added subjects like "I" that are affixed to
+        the verb to the grammar.)
+          # Doesn't parse
+          Ngamarlang nganangajimgal.
+          nga-marla-ng nga-na-ngajim-gal
+          1MIN.POSS-hand-INS 1-TR.PST-hit-REC.PST
+          `I hit him with my hand.'
+          # Does parse
+          Ngamarlang nganangajimgal.
+          nga-marla-ng nga-na-boo-gal
+          1MIN.POSS-hand-INS 1-TR.PST-hit-REC.PST
+          `I hit him with my hand.'
+          I posted about this issue on canvas and ran out of time to get it resolved. The first issue
+        that we found was that since this sentence combines the transitive and past markers, it added
+        the null present marker as it thought the "-na-" marker was for transitivity. We fixed this
+        by adding forbid constraints to the rem-pst and rec-pst lexical rules that prevents the
+        present tense null marker with the rem-pst or rec-pst markers. However, there is also an
+        issue with agreement. The possessive marker has pernum 1MIN which must agree with the first
+        person marker on the verb. However, we are getting 2MIN markers on the verb when currently
+        parsing. We tried to inspect different parts of the tree but were unable to figure out why
+        this is happening. I will be following up on canvas about this but wanted to explain a bit
+        about the issue since it is our greatest source of ambiguity at the moment.
+      5. The semantics look pretty reasonable for our parsing sentences (except for the sentence
+        discussed in length above). The parsing sentences are all fairly simple and have semantics
+        for the subject, object (if there is one), and an exist_q_rel. We also go some yes/no
+        questions to parse and the semantics were the same as for non-question sentences except. The
+        sentences with adnominal possession that parsed also had pron_rel in the semantics.
+Coverage
+  Initial Run
+    - corpus: 1.1% coverage
+    - testsuite: 3% coverage
+  Final Run
+    - corpus: 0% coverage
+    - testsuite: 14.1% coverage
+  - Comparison
+    - corpus: decreased (explained above)
+    - testsuite: increased :D and our ambiguity decreased a lot with most sentences only having 1
+      or 2 parses
+
+* Improved phenomena in the choices file:
+
+
+1. Possessive Agreement Morphology
+
+- We focused on getting possessive pronouns to parse as we only got free pronouns to parse last
+  week. We added the possesive pronouns to the lexicon:
+
+  noun-pc2_name=inalien-poss
+  noun-pc2_obligatory=on
+  noun-pc2_order=prefix
+  noun-pc2_inputs=noun10
+    noun-pc2_lrt1_name=1min-poss
+      noun-pc2_lrt1_feat1_name=poss-pron2
+      noun-pc2_lrt1_feat1_value=plus
+      noun-pc2_lrt1_feat1_head=itself
+      noun-pc2_lrt1_feat2_name=pernum
+      noun-pc2_lrt1_feat2_value=1min_excl
+      noun-pc2_lrt1_feat2_head=possessor
+      noun-pc2_lrt1_lri1_inflecting=yes
+      noun-pc2_lrt1_lri1_orth=nga-
+    noun-pc2_lrt2_name=2min-poss
+      noun-pc2_lrt2_feat1_name=poss-pron2
+      noun-pc2_lrt2_feat1_value=plus
+      noun-pc2_lrt2_feat1_head=itself
+      noun-pc2_lrt2_feat2_name=pernum
+      noun-pc2_lrt2_feat2_value=2min
+      noun-pc2_lrt2_feat2_head=possessor
+      noun-pc2_lrt2_lri1_inflecting=yes
+      noun-pc2_lrt2_lri1_orth=nyi-
+    noun-pc2_lrt3_name=3min-poss
+      noun-pc2_lrt3_feat1_name=poss-pron2
+      noun-pc2_lrt3_feat1_value=plus
+      noun-pc2_lrt3_feat1_head=itself
+      noun-pc2_lrt3_feat2_name=pernum
+      noun-pc2_lrt3_feat2_value=3min
+      noun-pc2_lrt3_feat2_head=possessor
+      noun-pc2_lrt3_lri1_inflecting=yes
+      noun-pc2_lrt3_lri1_orth=ni-
+    noun-pc2_lrt4_name=1plus2min-poss
+      noun-pc2_lrt4_feat1_name=poss-pron2
+      noun-pc2_lrt4_feat1_value=plus
+      noun-pc2_lrt4_feat1_head=itself
+      noun-pc2_lrt4_feat2_name=pernum
+      noun-pc2_lrt4_feat2_value=1min_incl
+      noun-pc2_lrt4_feat2_head=possessor
+      noun-pc2_lrt4_lri1_inflecting=yes
+      noun-pc2_lrt4_lri1_orth=a-
+    noun-pc2_lrt5_name=1aug-poss
+      noun-pc2_lrt5_feat1_name=poss-pron2
+      noun-pc2_lrt5_feat1_value=plus
+      noun-pc2_lrt5_feat1_head=itself
+      noun-pc2_lrt5_feat2_name=pernum
+      noun-pc2_lrt5_feat2_value=1aug
+      noun-pc2_lrt5_feat2_head=possessor
+      noun-pc2_lrt5_lri1_inflecting=yes
+      noun-pc2_lrt5_lri1_orth=arr-
+    noun-pc2_lrt6_name=2aug-poss
+      noun-pc2_lrt6_feat1_name=poss-pron2
+      noun-pc2_lrt6_feat1_value=plus
+      noun-pc2_lrt6_feat1_head=itself
+      noun-pc2_lrt6_feat2_name=pernum
+      noun-pc2_lrt6_feat2_value=2aug
+      noun-pc2_lrt6_feat2_head=possessor
+      noun-pc2_lrt6_lri1_inflecting=yes
+      noun-pc2_lrt6_lri1_orth=goorr-
+    noun-pc2_lrt7_name=3aug-poss
+      noun-pc2_lrt7_feat1_name=poss-pron2
+      noun-pc2_lrt7_feat1_value=plus
+      noun-pc2_lrt7_feat1_head=itself
+      noun-pc2_lrt7_feat2_name=pernum
+      noun-pc2_lrt7_feat2_value=3aug
+      noun-pc2_lrt7_feat2_head=possessor
+      noun-pc2_lrt7_lri1_inflecting=yes
+      noun-pc2_lrt7_lri1_orth=irr-
+
+  Since possessive affixes can only be applied to inalienable nouns, we added a new noun class for
+  them. We were able to parse the following sentence
+
+        Ngamarlang nganangajimgal.
+        nga-marla-ng nga-na-ngajim-gal
+        1MIN.POSS-hand-INS 1-TR.PST-hit-REC.PST
+        `I hit him with my hand.'
+
+  but soon ran into issues. These are described above in the TSDB section.
+
+2. Verb Morphology (TAM)
+
+- We focused heavily on improving verb morphology this week. Previously, verb roots were added as
+  prefixes, which meant that there were no semantics attached. Additionally, many tense and aspect
+  prefixes/suffixes were added to the lexicon as verbs. We switched to having the verb roots exist
+  in the lexicon instead, added TAM affixes to lexical rules inside of position classes, and
+  removed the bad TAM affixes from the lexicon. Our approach to implementing the position classes
+  was to start with a single sentence and add the morphology for that one sentence, tweaking the
+  grammar until it parsed. Once we did that (which took many tries and input from canvas, for
+  example on making sure the pernum feature is specified on the subject), we expanded the position
+  classes to include lexical rules for the other features.
+
+  We added the following verb types to the lexicon:
+  - it: abs subj
+  - it: erg subj
+  - tr: erg subj abs obj
+  - tr: erg subj all obj
+  - it-preverb
+  - tr-preverb
+  - light-verb
+  Note, the preverb and light verb types are placeholders for if we manage to implement complex
+  predicates.
+
+
+  In Bardi, There are two main types of affix structure on verbs, which vary depending on if the
+  subject is min or aug. The order, simplified to only include elements we implemented, is as
+  follows:
+        Min: pernum-(tr)-tense-ROOT-aspect
+        Aug: pernum-tense-aug-(tr)-ROOT-aspect
+
+  Tense
+  We created a tense position class which has lexical rules for the past, present, future. There is
+  also a lexical rule for a transitive verbs that combine the tense and transitivity markers.
+
+  verb-pc2_name=tense
+  verb-pc2_obligatory=on
+  verb-pc2_order=prefix
+  verb-pc2_inputs=verb1, verb2, verb3, verb6, verb8, verb-pc4
+    verb-pc2_lrt1_name=pst
+      verb-pc2_lrt1_feat1_name=tense
+      verb-pc2_lrt1_feat1_value=pst
+      verb-pc2_lrt1_feat1_head=verb
+      verb-pc2_lrt1_lri1_inflecting=yes
+      verb-pc2_lrt1_lri1_orth=ng-
+      verb-pc2_lrt1_lri2_inflecting=yes
+      verb-pc2_lrt1_lri2_orth=nga-
+      verb-pc2_lrt1_lri3_inflecting=yes
+      verb-pc2_lrt1_lri3_orth=ngi-
+      verb-pc2_lrt1_lri4_inflecting=yes
+      verb-pc2_lrt1_lri4_orth=ny-
+      verb-pc2_lrt1_lri5_inflecting=yes
+      verb-pc2_lrt1_lri5_orth=nya-
+      verb-pc2_lrt1_lri6_inflecting=yes
+      verb-pc2_lrt1_lri6_orth=m-
+      verb-pc2_lrt1_lri7_inflecting=yes
+      verb-pc2_lrt1_lri7_orth=ma-
+    verb-pc2_lrt2_name=fut-tense
+      verb-pc2_lrt2_feat1_name=tense
+      verb-pc2_lrt2_feat1_value=fut
+      verb-pc2_lrt2_feat1_head=verb
+      verb-pc2_lrt2_lri1_inflecting=yes
+      verb-pc2_lrt2_lri1_orth=ngg-
+      verb-pc2_lrt2_lri2_inflecting=yes
+      verb-pc2_lrt2_lri2_orth=k-
+    verb-pc2_lrt3_name=prs
+      verb-pc2_lrt3_feat1_name=tense
+      verb-pc2_lrt3_feat1_value=prs
+      verb-pc2_lrt3_feat1_head=verb
+      verb-pc2_lrt3_lri1_inflecting=no
+    verb-pc2_lrt4_name=pst-tr-min
+      verb-pc2_lrt4_feat1_name=tense
+      verb-pc2_lrt4_feat1_value=pst
+      verb-pc2_lrt4_feat1_head=verb
+      verb-pc2_lrt4_feat2_name=pernum
+      verb-pc2_lrt4_feat2_value=min
+      verb-pc2_lrt4_feat2_head=subj
+      verb-pc2_lrt4_lri1_inflecting=yes
+      verb-pc2_lrt4_lri1_orth=na-
+
+  This allowed us to parse the following sentence:
+        Inyjarrmin gool.
+        i-ny-jarrmi-n gool
+        3-PST-get.up-REM.PST father.ABS
+        `The father got up.'
+
+  Pernum
+  We also added a pernum position class that has lexical rules for each of the possible pernum
+  prefixes. For aug prefixes, an additional aug marker is required so we added a position class
+  for that.
+
+  verb-pc3_name=pernum
+  verb-pc3_obligatory=on
+  verb-pc3_order=prefix
+  verb-pc3_inputs=verb-pc2, verb-pc5
+    verb-pc3_lrt1_name=1min
+      verb-pc3_lrt1_feat1_name=pernum
+      verb-pc3_lrt1_feat1_value=1min_excl
+      verb-pc3_lrt1_feat1_head=subj
+      verb-pc3_lrt1_lri1_inflecting=yes
+      verb-pc3_lrt1_lri1_orth=nga-
+      verb-pc3_lrt1_lri2_inflecting=yes
+      verb-pc3_lrt1_lri2_orth=ng-
+    verb-pc3_lrt2_name=2min
+      verb-pc3_lrt2_feat1_name=pernum
+      verb-pc3_lrt2_feat1_value=2min
+      verb-pc3_lrt2_feat1_head=subj
+      verb-pc3_lrt2_lri1_inflecting=yes
+      verb-pc3_lrt2_lri1_orth=mi-
+      verb-pc3_lrt2_lri2_inflecting=yes
+      verb-pc3_lrt2_lri2_orth=a-
+      verb-pc3_lrt2_lri3_inflecting=yes
+      verb-pc3_lrt2_lri3_orth=nga-
+    verb-pc3_lrt3_name=3min
+      verb-pc3_lrt3_feat1_name=pernum
+      verb-pc3_lrt3_feat1_value=3min
+      verb-pc3_lrt3_feat1_head=subj
+      verb-pc3_lrt3_lri1_inflecting=yes
+      verb-pc3_lrt3_lri1_orth=i-
+      verb-pc3_lrt3_lri2_inflecting=yes
+      verb-pc3_lrt3_lri2_orth=oo-
+    verb-pc3_lrt4_name=1plus2min
+      verb-pc3_lrt4_feat1_name=pernum
+      verb-pc3_lrt4_feat1_value=1min_incl
+      verb-pc3_lrt4_feat1_head=subj
+      verb-pc3_lrt4_lri1_inflecting=yes
+      verb-pc3_lrt4_lri1_orth=a-
+    verb-pc3_lrt5_name=1aug
+      verb-pc3_lrt5_feat1_name=pernum
+      verb-pc3_lrt5_feat1_value=1aug
+      verb-pc3_lrt5_feat1_head=subj
+      verb-pc3_lrt5_require1_others=verb-pc4
+      verb-pc3_lrt5_lri1_inflecting=yes
+      verb-pc3_lrt5_lri1_orth=a-
+    verb-pc3_lrt6_name=2aug
+      verb-pc3_lrt6_feat1_name=pernum
+      verb-pc3_lrt6_feat1_value=2aug
+      verb-pc3_lrt6_feat1_head=subj
+      verb-pc3_lrt6_require1_others=verb-pc4
+      verb-pc3_lrt6_lri1_inflecting=yes
+      verb-pc3_lrt6_lri1_orth=goo-
+      verb-pc3_lrt6_lri2_inflecting=yes
+      verb-pc3_lrt6_lri2_orth=a-
+    verb-pc3_lrt7_name=3aug
+      verb-pc3_lrt7_feat1_name=pernum
+      verb-pc3_lrt7_feat1_value=3aug
+      verb-pc3_lrt7_feat1_head=subj
+      verb-pc3_lrt7_require1_others=verb-pc4
+      verb-pc3_lrt7_lri1_inflecting=yes
+      verb-pc3_lrt7_lri1_orth=i-
+      verb-pc3_lrt7_lri2_inflecting=yes
+      verb-pc3_lrt7_lri2_orth=oo-
+  verb-pc4_name=aug
+  verb-pc4_order=prefix
+  verb-pc4_inputs=verb1, verb2, verb3, verb6, verb8, verb-pc6
+      verb-pc4_lrt1_feat1_name=pernum
+      verb-pc4_lrt1_feat1_value=aug
+      verb-pc4_lrt1_feat1_head=subj
+      verb-pc4_lrt1_lri1_inflecting=yes
+      verb-pc4_lrt1_lri1_orth=arr-
+      verb-pc4_lrt1_lri2_inflecting=yes
+      verb-pc4_lrt1_lri2_orth=rr-
+
+  This allowed us to parse the following sentence:
+        Inyarrjarrmin gool.
+        i-ny-arr-jarrmi-n gool
+        3-PST-AUG-get.up-REM.PST father.ABS
+        `The fathers got up.'
+
+  Transitivity
+  Next, we worked on transitivity. This was a bit more complex as the position of the transitivity
+  marker depends on the number feature. We added two position classes, one for min transitives and
+  one for aug transitives. To make sure that we didn't get the wrong prefixes with the wrong
+  transitivity marker, we added a min feature to the lexical rules in the tr-min position class and
+  an aug feature lexical rules in the tr-aug position class.
+
+  verb-pc5_name=tr-min
+  verb-pc5_order=prefix
+  verb-pc5_inputs=verb-pc2
+      verb-pc5_lrt1_feat1_name=pernum
+      verb-pc5_lrt1_feat1_value=min
+      verb-pc5_lrt1_feat1_head=subj
+      verb-pc5_lrt1_lri1_inflecting=yes
+      verb-pc5_lrt1_lri1_orth=n-
+      verb-pc5_lrt1_lri2_inflecting=yes
+      verb-pc5_lrt1_lri2_orth=na-
+  verb-pc6_name=tr-aug
+  verb-pc6_order=prefix
+  verb-pc6_inputs=verb2, verb6, verb8
+      verb-pc6_lrt1_feat1_name=pernum
+      verb-pc6_lrt1_feat1_value=aug
+      verb-pc6_lrt1_feat1_head=subj
+      verb-pc6_lrt1_lri1_inflecting=yes
+      verb-pc6_lrt1_lri1_orth=a-
+      verb-pc6_lrt1_lri2_inflecting=yes
+      verb-pc6_lrt1_lri2_orth=i-
+      verb-pc6_lrt1_lri3_inflecting=yes
+      verb-pc6_lrt1_lri3_orth=oo-
+
+  This allowed us to parse transitive sentences!
+        Aambanim aarli inamanyana.
+        Aamba-nim aarli i-na-ma-nya-na
+        man-ERG fish.ABS 3-TR-PST-catch-REM.PST
+        `The man caught the fish.'
+
+  Aspect
+  We also added a position class for the different aspects, which include cont, rem-pst, rec-pst,
+  pff, and fut. Future is not an aspect but sometimes takes the same slot as the aspects, which is
+  why it is included here.
+
+  verb-pc1_name=aspect
+  verb-pc1_order=suffix
+  verb-pc1_inputs=verb-pc3
+    verb-pc1_lrt1_name=cont
+      verb-pc1_lrt1_feat1_name=aspect
+      verb-pc1_lrt1_feat1_value=cont
+      verb-pc1_lrt1_feat1_head=verb
+      verb-pc1_lrt1_lri1_inflecting=yes
+      verb-pc1_lrt1_lri1_orth=-n
+      verb-pc1_lrt1_lri2_inflecting=yes
+      verb-pc1_lrt1_lri2_orth=-na
+    verb-pc1_lrt2_name=rem-pst
+      verb-pc1_lrt2_feat1_name=aspect
+      verb-pc1_lrt2_feat1_value=rem
+      verb-pc1_lrt2_feat1_head=verb
+      verb-pc1_lrt2_forbid1_others=verb-pc2_lrt3
+      verb-pc1_lrt2_lri1_inflecting=yes
+      verb-pc1_lrt2_lri1_orth=-n
+      verb-pc1_lrt2_lri2_inflecting=yes
+      verb-pc1_lrt2_lri2_orth=-na
+    verb-pc1_lrt3_name=rec-pst
+      verb-pc1_lrt3_feat1_name=aspect
+      verb-pc1_lrt3_feat1_value=rec
+      verb-pc1_lrt3_feat1_head=verb
+      verb-pc1_lrt3_forbid1_others=verb-pc2_lrt3
+      verb-pc1_lrt3_lri1_inflecting=yes
+      verb-pc1_lrt3_lri1_orth=-gal
+    verb-pc1_lrt4_name=pfv
+      verb-pc1_lrt4_feat1_name=aspect
+      verb-pc1_lrt4_feat1_value=pfv
+      verb-pc1_lrt4_feat1_head=verb
+      verb-pc1_lrt4_lri1_inflecting=yes
+      verb-pc1_lrt4_lri1_orth=-ij
+    verb-pc1_lrt5_name=fut-aspect
+      verb-pc1_lrt5_feat1_name=tense
+      verb-pc1_lrt5_feat1_value=fut
+      verb-pc1_lrt5_feat1_head=verb
+      verb-pc1_lrt5_lri1_inflecting=yes
+      verb-pc1_lrt5_lri1_orth=-a
+
+  This allowed us to parse the sentences shown above (as they all had aspect markers on them that
+  we omitted until implementing this position class).
+
+
+3. Wh-Questions
+
+- Description of the Phenomenon
+
+To make constituent (wh-) questions, Bardi uses a number of interrogative pronouns that usually
+  appear clause initially. Below are some examples to show how they are used:
+
+        Anggaba nyinga joo?
+        Anggaba nyi-nga joo
+        who 2MIN-name 2MIN
+        `What’s your name?'
+
+        Angan minyjarralagal joornk?
+        Angan mi-ny-jarrala-gal joornk
+        why 2-PST-run-REC.PST fast
+        `Why did you run so fast?'
+
+- Analysis and updated choice values:
+
+The wh-pronouns were added to nouns (noun_2) in the matrix using the literal meanings of the
+  pronoun to define the predicate; for example, the _anggi_ meaning word was _what_n_rel. We
+  changed the predicates to meanings of the wh-word (who -> person, what -> thing, etc.) as per
+  feedback from the previous labs.
+
+- Below are the updated choice values:
+
+noun2_name=question-pronoun
+  noun2_inter=on
+  noun2_det=imp
+    noun2_stem1_orth=anggaba
+    noun2_stem1_pred=_person_n_rel
+    noun2_stem2_orth=janambooroo
+    noun2_stem2_pred=_place_n_rel
+    noun2_stem3_orth=angan
+    noun2_stem3_pred=_reason_n_rel
+    noun2_stem4_orth=goonban
+    noun2_stem4_pred=_reason.on.earth_n_rel
+    noun2_stem5_orth=anggi
+    noun2_stem5_pred=_thing_n_rel
+    noun2_stem6_orth=baanigarr
+    noun2_stem6_pred=_time_n_rel
+    noun2_stem7_orth=nyanyjirrgoordoo
+    noun2_stem7_pred=_number_n_rel
+
+This led to successful parsing of the follwoing sentences including 'what' and 'who'which are now
+        predicated as _thing_n_rel and _person_n_rel, respectively.
+Changes were made to all the predicates, and the two below were tested for parsing.
+
+IGTs for the parsed wh-questions:
+
+        source: author
+        vetted: f
+        judgment: g
+        Anggaba I-ny-jarrmi-n
+        who 3-PST-get.up-REM.PST
+        `Who got up?'
+
+        source: author
+        vetted: f
+        judgment: g
+        Anggi Inyjarrmin
+        Anggi I-ny-jarrmi-n
+        what 3-PST-get.up-REM.PST
+        `What got up?'
+
+List of Other Changes to the choices file that did not fit with the phenomena above:
+ - removed gender (Bardi doesn't have gender, MIN is often glossed as M and the grammar assumed it
+   was masculine gender)
+ - added personal pronouns
+
+* Translation Process
+
+- A description of your process for translating the MMT sentences and your documentation about
+which sentences may be impossible.
+
+We added some lexicon (for example "dog" and "chase") to be able to have more to translate;
+however, we will need to replace the word "sleep" with a different verb as "sleep" in Bardi is a
+complex predicate involving a preverb and a light verb leading to complex verb combinations, and
+needs to be differently.
+
+Dogs sleep -> Cannot currently parse compelex predicates involving a preverb and a light verb
+  (this applies to any verb that uses "sleep").
+        Iil daag irri.
+        iil daag i-rr-i
+        dog.ABS sleep 3-AUG-do.say
+        `Dogs sleep.'
+Dogs chase cars -> Can parse
+        Iilanim irroongoorribi aarli.
+        iila-nim i-rr-oo-ngoorribi aarli
+        dog-ERG 3-AUG-TR-chase fish
+        `Dogs chase fish.'
+I chase you -> Cannot parse subject/objects that affix to verb.
+        Nganangoorribirri.
+        nga-na-ngoorribi-rri
+        1-TR-chase-2MIN.DO
+        `I chase you.'
+Dogs eat -> Can parse
+        Iil irrarli.
+        iil i-rr-arli
+        dog.ABS 3-AUG-eat
+        `Dogs eat.'
+The dogs dont chase cars -> Cannot currently parse due to negation not being implemented.
+        Arra iila-nim i-rr-oo-ngoorribi yandilybar.
+        arra iila-nim i-rr-oo-ngoorribi yandilybar
+        NEG dog-ERG 3-AUG-TR-chase boat
+        `The dogs don't chase boats.'
+I think that you know that dogs chase cars -> Cannot translate/parse complex sentences yet
+I ask whether you know that dogs chase cars -> Cannot translate/parse complex sentences yet
+Cats and dogs chase cars -> Could (probably) translate and parse (might have to make a few tweaks
+  to the grammar though).
+Dogs chase cars and cats chase dogs -> Could (probably) translate and parse (might have to make a
+  few tweaks to the grammar though).
+Cats chase dogs and sleep -> Could (probably) translate and parse (might have to make a few tweaks
+  to the grammar though).
+Do cats chase dogs -> Could (probably) translate and parse (might have to make a few tweaks to the
+  grammar though).
+Hungry dogs eat -> Could (probably) translate but would not be able to parse with our current
+  grammar since we haven't implemented adjectives.
+Dogs in the park eat -> Could (probably) translate and parse. Would be the same as "Dogs eat in
+  the park"
+Dogs eat in the park -> Could (probably) translate and parse. Would be the same as "Dogs in the
+  park eat"
+The dogs are hungry -> Cannot currently parse compelex predicates involving a preverb and a
+  light verb. Also, to say things like "I am hungry" or "I am thirsty" you need an additional
+  phrase that gives more context.
+The dogs are in the park -> Could (probably) translate and parse (might have to make a few tweaks
+  to the grammar though).
+The dogs are the cats -> Not sure if we could translate this. "Be" does not exist in Bardi in the
+  same way that it exists in English.
+The dog s car sleeps -> Could (probably) translate and parse (might have to make a few tweaks to
+  the grammar though).
+My dogs sleep -> Could (probably) translate and parse (might have to make a few tweaks to the
+  grammar though).
+Who sleeps -> Could (probably) translate and parse (might have to make a few tweaks to the grammar
+  though).
+What do the dogs chase -> Might be able to translate but probably too complex to parse.
+What do you think the dogs chase -> Might be able to translate but probably too complex to parse.
+Who asked what the dogs chase -> Too complex to translate or parse.
+I asked what the dogs chased -> Too complex to translate or parse.
+The dog sleeps because the cat sleeps -> This would probably involve either reason or causative
+  case which we have not fully implemented.
+The dog sleeps after the cat sleeps -> The word after "ajimorrony" does exist, but we haven't
+  found any examples on how it would be used so we would not be able to translate or parse this
+  sentence.
+
+(A rough sketch of lexical entries can be found in the lexical-entries.txt file).
+
+- When translating from eng to sje, the first sentence parsed with 1 reading; it generated 1
+  sentence and the transfer did 4 successful unifies and 2 failed ones.
+- We also had to remove ex-det := extracted-det-phrase. line from rules.tdl to get it to compile
+  which led to a successful compilation.
+
+eng to bardi:
+
+The first attempt to translate "Dogs chase cars" was unsucessful because our lexicon didn't have
+  "cars" which we manually fixed by changing "fish" in Bardi to _car_n_rel in our lexicon.tdl.
+
+- A description what happened when you tried the MT set up. What difficulties did you encounter
+  and how did you resolve them? What output did you get?
+
+The MT set up was pretty straight forward except the following few issues that we ran into:
+
+- had to remove ex-det := extracted-det-phrase. line from rules.tdl to get it to compile.
+- We understand that the different commands in translate-line.sh give different amounts and types
+  of information about the translation. However, we don't yet understand what it all means.
+- We didn't quite understand what .sh manipulation did except
+- Running into "does not appear to be a grammar image." error. which Tara posted to Canvas, but
+  since Hanieh didn't run into it, Tara deleted everything, and redid the whole process, and it
+  got fixed.
+- Ran into RAM issue (Hanieh) which killed translations of both second and forth sentences to at
+  the almost the 1600 translations, but increase of VM RAM allowed more than 16000 and 18000,
+  respectively.
