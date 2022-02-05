@@ -2,7 +2,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Grammar of bardi
 ;;; created at:
-;;;     Fri Feb 04 22:01:21 UTC 2022
+;;;     Sat Feb 05 03:27:43 UTC 2022
 ;;; based on Matrix customization system version of:
 ;;;     Mon Aug  2 23:22:15 UTC 2021
 ;;;
@@ -30,17 +30,19 @@ head :+ [ PRON bool,
 
 noun :+ [ CASE case ].
 
-inflected :+ [ CASE-PC-FLAG luk,
+inflected :+ [ TENSE-FLAG luk,
+    PERNUM-FLAG luk,
+    PRS-FLAG luk,
+    CASE-PC-FLAG luk,
     INALIEN-POSS-FLAG luk,
-    AUG-FLAG luk,
-    TENSE-FLAG luk,
-    PERNUM-FLAG luk ].
+    AUG-FLAG luk ].
 
-infl-satisfied :+ [ CASE-PC-FLAG na-or-+,
+infl-satisfied :+ [ TENSE-FLAG na-or-+,
+    PERNUM-FLAG na-or-+,
+    PRS-FLAG na-or-+,
+    CASE-PC-FLAG na-or-+,
     INALIEN-POSS-FLAG na-or-+,
-    AUG-FLAG na-or-+,
-    TENSE-FLAG na-or-+,
-    PERNUM-FLAG na-or-+ ].
+    AUG-FLAG na-or-+ ].
 
 png :+ [ PERNUM pernum ].
 
@@ -255,7 +257,8 @@ q-pronoun-noun-lex := wh-pronoun-noun-lex.
                    CONT.HOOK.INDEX.PNG.PERNUM 1min_incl ] ].
 
 2min-pronoun-noun-lex := no-spr-noun-lex &
-  [ SYNSEM.LOCAL.CAT.HEAD.PRON + ].
+  [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
+                   CONT.HOOK.INDEX.PNG.PERNUM 2min ] ].
 
 3min-pronoun-noun-lex := no-spr-noun-lex &
   [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
@@ -443,27 +446,29 @@ det2-determiner-lex := determiner-lex & no-icons-lex-item &
 
 ;;; Intermediate rule types
 
+pernum-rule-dtr := word-or-lexrule.
+aug-rule-dtr := word-or-lexrule.
+aspect-rule-dtr := word-or-lexrule.
+tr-aug-rule-dtr := word-or-lexrule.
 tr-min-rule-dtr := word-or-lexrule.
 case-pc-rule-dtr := word-or-lexrule.
-aug-rule-dtr := word-or-lexrule.
-tr-aug-rule-dtr := word-or-lexrule.
-aspect-rule-dtr := word-or-lexrule.
-pernum-rule-dtr := word-or-lexrule.
 tense-rule-dtr := word-or-lexrule.
 
 ;;; Lexical rule types
 
 case-pc-lex-rule-super := add-only-no-ccont-rule &
   [ INFLECTED [ CASE-PC-FLAG +,
+                AUG-FLAG #aug,
                 TENSE-FLAG #tense,
                 PERNUM-FLAG #pernum,
                 INALIEN-POSS-FLAG #inalien-poss,
-                AUG-FLAG #aug ],
+                PRS-FLAG #prs ],
     DTR case-pc-rule-dtr &
-        [ INFLECTED [ TENSE-FLAG #tense,
+        [ INFLECTED [ AUG-FLAG #aug,
+                      TENSE-FLAG #tense,
                       PERNUM-FLAG #pernum,
                       INALIEN-POSS-FLAG #inalien-poss,
-                      AUG-FLAG #aug ] ] ].
+                      PRS-FLAG #prs ] ] ].
 
 erg-lex-rule := case-pc-lex-rule-super & infl-lex-rule &
   [ SYNSEM.LOCAL.CAT.HEAD.CASE erg ].
@@ -509,15 +514,17 @@ ins-lex-rule := case-pc-lex-rule-super & infl-lex-rule &
 
 inalien-poss-lex-rule-super := case-pc-rule-dtr & infl-lex-rule &
   [ INFLECTED [ INALIEN-POSS-FLAG +,
-                PERNUM-FLAG #pernum,
                 CASE-PC-FLAG #case-pc,
+                AUG-FLAG #aug,
                 TENSE-FLAG #tense,
-                AUG-FLAG #aug ],
+                PERNUM-FLAG #pernum,
+                PRS-FLAG #prs ],
     DTR inalien-stem-noun-lex &
-        [ INFLECTED [ PERNUM-FLAG #pernum,
-                      CASE-PC-FLAG #case-pc,
+        [ INFLECTED [ CASE-PC-FLAG #case-pc,
+                      AUG-FLAG #aug,
                       TENSE-FLAG #tense,
-                      AUG-FLAG #aug ] ] ].
+                      PERNUM-FLAG #pernum,
+                      PRS-FLAG #prs ] ] ].
 
 1min-poss-lex-rule := inalien-poss-lex-rule-super &
   [ SYNSEM.LOCAL.CAT [ HEAD #head,
@@ -825,14 +832,16 @@ aspect-lex-rule-super := add-only-no-ccont-rule & infl-lex-rule &
     DTR aspect-rule-dtr &
         [ INFLECTED #infl ] ].
 
-cont-lex-rule := aspect-lex-rule-super &
-  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT cont ].
-
 rem-pst-lex-rule := aspect-lex-rule-super &
-  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT rem ].
+  [ DTR.INFLECTED.PRS-FLAG na,
+    SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT rem ].
 
 rec-pst-lex-rule := aspect-lex-rule-super &
-  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT rec ].
+  [ DTR.INFLECTED.PRS-FLAG na,
+    SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT rec ].
+
+cont-lex-rule := aspect-lex-rule-super &
+  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT cont ].
 
 pfv-lex-rule := aspect-lex-rule-super &
   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.E.ASPECT pfv ].
@@ -842,36 +851,49 @@ fut-aspect-lex-rule := aspect-lex-rule-super &
 
 tense-lex-rule-super := add-only-no-ccont-rule & aspect-rule-dtr & pernum-rule-dtr & tr-min-rule-dtr &
   [ INFLECTED [ TENSE-FLAG +,
-                PERNUM-FLAG #pernum,
                 CASE-PC-FLAG #case-pc,
                 INALIEN-POSS-FLAG #inalien-poss,
+                PERNUM-FLAG #pernum,
                 AUG-FLAG #aug ],
     DTR tense-rule-dtr &
-        [ INFLECTED [ PERNUM-FLAG #pernum,
-                      CASE-PC-FLAG #case-pc,
+        [ INFLECTED [ CASE-PC-FLAG #case-pc,
                       INALIEN-POSS-FLAG #inalien-poss,
+                      PERNUM-FLAG #pernum,
                       AUG-FLAG #aug ] ] ].
 
+prs-lex-rule := const-lex-rule & tense-lex-rule-super &
+  [ INFLECTED.PRS-FLAG +,
+    SYNSEM.LOCAL.CONT.HOOK.INDEX.E.TENSE prs ].
+
 pst-lex-rule := infl-lex-rule & tense-lex-rule-super &
-  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.E.TENSE pst ].
+  [ INFLECTED.PRS-FLAG #prs,
+    DTR.INFLECTED.PRS-FLAG #prs,
+    SYNSEM.LOCAL.CONT.HOOK.INDEX.E.TENSE pst ].
 
 fut-tense-lex-rule := infl-lex-rule & tense-lex-rule-super &
-  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.E.TENSE fut ].
+  [ INFLECTED.PRS-FLAG #prs,
+    DTR.INFLECTED.PRS-FLAG #prs,
+    SYNSEM.LOCAL.CONT.HOOK.INDEX.E.TENSE fut ].
 
-prs-lex-rule := const-lex-rule & tense-lex-rule-super &
-  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.E.TENSE prs ].
+pst-tr-min-lex-rule := infl-lex-rule & tense-lex-rule-super &
+  [ INFLECTED.PRS-FLAG #prs,
+    DTR.INFLECTED.PRS-FLAG #prs,
+    SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.TENSE pst,
+                   CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM min ] ].
 
 pernum-lex-rule-super := add-only-no-ccont-rule & aspect-rule-dtr & infl-lex-rule &
   [ INFLECTED [ PERNUM-FLAG +,
-                TENSE-FLAG #tense,
                 CASE-PC-FLAG #case-pc,
+                AUG-FLAG #aug,
+                TENSE-FLAG #tense,
                 INALIEN-POSS-FLAG #inalien-poss,
-                AUG-FLAG #aug ],
+                PRS-FLAG #prs ],
     DTR pernum-rule-dtr &
-        [ INFLECTED [ TENSE-FLAG #tense,
-                      CASE-PC-FLAG #case-pc,
+        [ INFLECTED [ CASE-PC-FLAG #case-pc,
+                      AUG-FLAG #aug,
+                      TENSE-FLAG #tense,
                       INALIEN-POSS-FLAG #inalien-poss,
-                      AUG-FLAG #aug ] ] ].
+                      PRS-FLAG #prs ] ] ].
 
 1aug-lex-rule := pernum-lex-rule-super &
   [ DTR.INFLECTED.AUG-FLAG +,
@@ -899,15 +921,17 @@ pernum-lex-rule-super := add-only-no-ccont-rule & aspect-rule-dtr & infl-lex-rul
 
 aug-lex-rule := add-only-no-ccont-rule & aspect-rule-dtr & infl-lex-rule & pernum-rule-dtr & tense-rule-dtr & tr-min-rule-dtr &
   [ INFLECTED [ AUG-FLAG +,
-                TENSE-FLAG #tense,
                 CASE-PC-FLAG #case-pc,
+                TENSE-FLAG #tense,
+                PERNUM-FLAG #pernum,
                 INALIEN-POSS-FLAG #inalien-poss,
-                PERNUM-FLAG #pernum ],
+                PRS-FLAG #prs ],
     DTR aug-rule-dtr &
-        [ INFLECTED [ TENSE-FLAG #tense,
-                      CASE-PC-FLAG #case-pc,
+        [ INFLECTED [ CASE-PC-FLAG #case-pc,
+                      TENSE-FLAG #tense,
+                      PERNUM-FLAG #pernum,
                       INALIEN-POSS-FLAG #inalien-poss,
-                      PERNUM-FLAG #pernum ] ],
+                      PRS-FLAG #prs ] ],
     SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM aug ].
 
 tr-min-lex-rule := add-only-no-ccont-rule & aspect-rule-dtr & infl-lex-rule & pernum-rule-dtr &

@@ -154,7 +154,10 @@
 - added personal pronouns
   - 1 more sentence in our testsuite parses!!!
 - added possessive pronouns
-  - 1 more sentence in our testsuite parses!!!
+  - 1 more sentence in our testsuite parses (but it shouldn't)
+  - we don't have subjects/objects that are affixed to the verb implemented so it shouldn't parse
+  - originally, this was generating sentences with the present tense affix (which is null) but it shouldn't have because this sentence has the rec-pst suffix
+    - added forbid constraints to rem-pst and rec-pst on present tense and we no longer generate those sentences
 
 ## How Verbs Work
 - all verbal predicates: verb inflect for prefixes, suffixes, and clitics
@@ -193,3 +196,45 @@
 8. First translation attempts:
   Attempt 1: Did not work because, since we use aarli "fish" instead of "car", we needed to change the pred from _fish_n_rel to _car_n_rel.
   Attempt 2: Getting "this does not appear to be a grammar image." error. Posted to Canvas
+
+## TSDB
+### Initial Run
+  - corpus (tsdb/home/bardi/lab4/lab4grammar/corpus)
+    1. 2 items parsed (#410, #1480)
+    2. 9 parses per item (14 parses for one sentence, 4 for the other)
+    3. Our most ambiguous item got 14 readings.
+    4. Most of the ambiguity is coming from the top and bottom coordination rules. For the second sentence, one of our nouns was duplicated so the only other source is using the BASIC-HEAD-OPT-COMP rule versus the HEAD-SUBJ/SUBJ-HEAD rule to form the sentence.
+
+  - testsuite (tsdb/home/bardi/lab5/lab4grammar/lab5)
+    1. 4 items parsed (#3, #4, #66, #68)
+    2. We averaged 4 parses per parsed item. (4 for each sentence)
+    3. Our most ambiguous item got 4 readings.
+    4. There isn't much ambiguity. One source is that our initial grammar had a duplicate entry in the lexicon. Another is that one sentence is formed using HEAD-COMP and the other uses BASIC-HEAD-OPT-COMP. There is also some ambiguity from coordination rules that combined the possessive pronoun with it's possessor (a noun).
+
+### Final Run
+  - corpus (tsdb/home/bardi/lab5/lab5grammar/corpus)
+      1. 0 items parsed
+      2. We averaged 0 parses per parsed item.
+      3. Our most ambiguous item got 0 readings.
+      4. The reason we lost both of the sentences we previously parsed was because, in our lab 5 grammar, we re-did the verb morphology. Previously, verb roots were added as prefixes, which meant that there were no semantics attached. We switched to having the verb roots exist in the lexicon instead. However, we focused on adding the verbs that exist in our testsuite and not on adding verbs that exist in the corpus.
+
+  - testsuite (tsdb/home/bardi/lab5/lab5grammar/lab5)
+      1. 11 items parsed
+      2. We average ~2 parses per parsed item. (One sentence got 5, the rest got either 1 or 2)
+      3. Our most ambiguous item(s) got 6 readings.
+      4. One source of ambiguity is that the remote past and continuative tense/aspects share suffixes. This type of ambiguity can't really be fixed (at least not at this stage) as figuring out which one should be applied is based on context. The other source of ambiguity is coming from the sentence "nga-marla-ng nga-na-boo-gal". (Note, this sentence is parsing but most likely for the wrong reasons. We never added subjects like "I" that are affixed to the verb to the grammar.)
+        Ngamarlang nganangajimgal.
+        nga-marla-ng nga-na-ngajim-gal
+        1MIN.POSS-hand-INS 1-TR.PST-hit-REC.PST
+        `I hit him with my hand.'
+      I posted about this issue on canvas and ran out of time to get it resolved. The first issue that we found was that since this sentence combines the transitive and past markers, it added the null present marker as it thought the "-na-" marker was for transitivity. We fixed this by adding forbid constraints to the rem-pst and rec-pst lexical rules that prevents the present tense null marker with the rem-pst or rec-pst markers. However, there is also an issue with agreement. The possessive marker has pernum 1MIN which must agree with the first person marker on the verb. However, we are getting 2MIN markers on the verb when currently parsing. We tried to inspect different parts of the tree but were unable to figure out why this is happening. I will be following up on canvas about this but wanted to explain a bit about the issue since it is our greatest source of ambiguity at the moment.
+### Coverage
+  - Initial Run
+    - corpus: 1.1% coverage
+    - testsuite: 3% coverage
+  - Final Run
+    - corpus: 0% coverage
+    - testsuite: 14.1% coverage
+  - Comparison
+    - corpus: decreased (explained above)
+    - testsuite: increased :D and our ambiguity decreased a lot with most sentences only having 1 or 2 parses

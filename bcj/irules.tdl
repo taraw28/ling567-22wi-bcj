@@ -213,6 +213,10 @@ fut-tense-prefix2 :=
 %prefix (* k-)
 fut-tense-lex-rule.
 
+pst-tr-min-prefix :=
+%prefix (* na-)
+pst-tr-min-lex-rule.
+
 1min-prefix1 :=
 %prefix (* nga-)
 1min-lex-rule.
