@@ -11,8 +11,8 @@ git pull
 ```
 
 ## Labs
-- [Lab 2](lab2.md)
-- [Lab 3](lab3.md)
-- [Lab 4](lab4.md)
-- [Lab 5](lab5.md)
-- [Lab 6](lab6.md)
+- [Lab 2](mds/lab2.md)
+- [Lab 3](mds/lab3.md)
+- [Lab 4](mds/lab4.md)
+- [Lab 5](mds/lab5.md)
+- [Lab 6](mds/lab6.md)
