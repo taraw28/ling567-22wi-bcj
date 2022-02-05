@@ -1,0 +1,31 @@
+
+
+#1
+Iil daag irri.
+iil daag i-rr-i
+dog sleep 3-AUG-do/say
+`Dogs sleep.'
+
+#2
+Iilanim irroongoorribi aarli.
+iila-nim i-rr-oo-ngoorribi aarli
+dog-ERG 3-AUG-TR-chase fish
+`Dogs chase fish.'
+
+#3
+Nganangoorribirri.
+nga-na-ngoorribi=rri
+1-TR-chase=2MIN.DO
+`I chase you.'
+
+#4
+Iil irrarli.
+iil i-rr-arli.
+dog 3-AUG-eat
+`Dogs eat.'
+
+#5
+Arra iila-nim i-rr-oo-ngoorribi yandilybar.
+arra iila-nim i-rr-oo-ngoorribi yandilybar
+NEG dog-ERG 3-AUG-TR-chase boat
+`The dogs don't chase boats.'
