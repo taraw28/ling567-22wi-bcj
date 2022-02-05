@@ -2,88 +2,43 @@ lab5 writeup
 Tara and Hanieh
 02/04/2022
 
-- Improved phenomena in the choices file: 
+* Improved phenomena in the choices file: 
 
 
-Subject Agreement Morphology
+1. Possessive Agreement Morphology
 
-Prefixes mostly display agreement for the subject of the clause 
+- Description of Phenomenon 
 
-- Inflecting verbs agree for the subject of the verb, whether intransitive or transitive.
-- Subject agreement is prefixal and is bound with tense marking,    
-- while oblique, possessive, and direct object agreement is cliticized to the end of the verb stem.
-- subject agreements of predicate (non-constituent according to Bowern) can be hosted on verbs, nouns, adjectives, and adverbs
-   
-  # examples of agreement with verb as host
-  Subject Agreement on 2nd person uses the prefix i-
-
-
-	Inyjarrmin baawa
-	I-ny-jarrmi-n baawa
-	3M-PST-rise-CONT child
-	
-	Source: author
-	Vetted: t
-	Judgement: g
-	Phenomena: agr
-	ijala    
-	i-jala
-	3MIN-see       
-	`He/she sees.'
-
-	Source: author
-	Vetted: f
-	Judgement: g
-	Phenomena: agr
-	Ibanya
-	i-banya
-	3MIN-finish
-	`He dies.'
-	
-  # example of subject agreement in imperative (still on verb)
-    Subject Agreement on imperative uses the prefix nga- 
-    
-  	Source: a:395
-	Vetted: g
-	Judgement: g
-	Phenomena: agr
-	Ngayarrala!
-	Nga-yarral-a
-	2-run-FUT
-	`Run!'
-
-
-
- Anaylysis of Subject Agreement Phonomena 
-
-		
-
-		Changes you made to choices (paste in the actual choices)
-
-
-
-	include copy paste of the specific choices values you changed as well as relevant IGT that I can use to test the effects.
-
-Specific IGT I can use to test the analysis / investigate if something isn't working and you need help.
-
-
+- Analysis
 
 
 2. Verb Morphology (TAM)
 
+- Description of Phenomenon
 
-3. 
 
-Wh-Questions
+- Analysis
 
-Description of the Phonomena: 
+
+3. Wh-Questions
+
+- Description of the Phenomenon 
 	
-Bardi uses a number of interrogative pronouns that usually appear clause initially, however,it can appear non-initially as well. The pronoun "angabba" is used for "who", "janambooroo for
-      "where", and "angan" for "why". For example,	 
+To make constituent (wh-) questions, Bardi uses a number of interrogative pronouns that usually appear clause initially. Below are some examples to show how they are used:
 
-Analysis
+ 	Anggaba nyinga joo?
+        Anggaba nyi-nga joo
+        who 2MIN-name 2MIN
+        `What’s your name?'	 
 
-- The predicates where replaced with thing,place,person, etc., and this led to successful parsing of the follwoing sentences including 'what' and 'who'which are now predicated as _thing_n_rel and _person_n_rel, respectively. Changes were made to all the predicates, but only the two were tested for parsing. 
+	Angan minyjarralagal joornk?
+        Angan mi-ny-jarrala-gal joornk
+        why 2-PST-run-REC.PST fast
+        `Why did you run so fast?'
+
+- Analysis
+
+To fix the grammar for wh-questions to parse, we changed the predicates to meanings of the wh-word (who -> person, what -> thing, etc.).  
 
 Below are the updated choice values:
 
@@ -106,6 +61,11 @@ noun2_name=question-pronoun
     noun2_stem7_orth=nyanyjirrgoordoo
     noun2_stem7_pred=_number_n_rel
 
+
+This led to successful parsing of the follwoing sentences including 'what' and 'who'which are now predicated as _thing_n_rel and _person_n_rel, respectively. 
+Changes were made to all the predicates, and the two below were tested for parsing. 
+
+
 IGTs for the parsed wh-questions:
 
 source: author
@@ -124,7 +84,7 @@ what 3-PST-get.up-REM.PST
 `What got up?'
 
 
-Translation Process
+* Translation Process
 
 
 - A description of your process for translating the MMT sentences and your documentation about which sentences may be impossible.
@@ -133,17 +93,15 @@ We added some lexicon (for example "dog" and "chase") to be able to have more to
 
 I chase you.
 Dogs in the park eat.
+What do the dogs chase?
 
 
-
-
-- Any sentence including the word "dog" is impossible to translate because The following sentences are impossible to translte:
 
 Dogs sleep -> "Sleep" is a light verb in Bardi and changes meaning. We don't know what the actual Bardi equivalent of "sleep" is.
 Dogs chase cars -> We don't know the word for "cars" in Bardi
 The dogs dont chase cars -> involves Negation that we haven't worked on yet.
-I think that you know that dogs chase cars
-I ask whether you know that dogs chase cars
+I think that you know that dogs chase cars -> haven't worked on complex sentences
+I ask whether you know that dogs chase cars -> haven't worked on complex sentences
 Cats and dogs chase cars -> We don't know the word for "cats" in Bardi.
 Dogs chase cars and cats chase dogs -> We don't know the word for "cats" in Bardi.
 Cats chase dogs and sleep -> ditto on "cats" and "sleep" is a complex verb/
@@ -151,67 +109,25 @@ Do cats chase dogs -> ditto on "cats"
 Hungry dogs eat -> We haven't worked on "adjectives" but it should be easy to add (hungry in Bardi is manyjal) 
 Dogs in the park eat -> We don't know the word for "park" in Bardi. 
 Dogs eat in the park -> ditto on park
-The dogs are hungry
-The dogs are in the park
-The dogs are the cats
-The dog s car sleeps
-My dogs sleep
-Who sleeps
-What do the dogs chase
-What do you think the dogs chase
-Who asked what the dogs chase
-I asked what the dogs chased
-The dog sleeps because the cat sleeps
-The dog sleeps after the cat sleeps
-	- .... because it involves ... phonomenon that we haven't gotten to yet. 
+The dogs are hungry -> We haven't worked on auxiliary verbs and adjectives.
+The dogs are in the park -> ditto on auxiliary verbs
+The dogs are the cats -> ditto on auxiliary
+The dog s car sleeps -> ditto on "sleep" 
+My dogs sleep -> ditto on "sleep"
+Who sleeps -> ditto on "sleep" 
+What do you think the dogs chase -> we haven't worked on complex sentences
+Who asked what the dogs chase -> we haven't worked with complex sentences; we might be able to translate this one using wh-words
+I asked what the dogs chased -> ditto 
+The dog sleeps because the cat sleeps -> ditto on sleep; we haven't done adverbial clauses (our reason class)
+The dog sleeps after the cat sleeps -> ditto on sleep;the word ajimorrony does exists, but we haven't found anything to see how "after" is used in Bardi.  
 	
-	dog: iil (pp 106)
-cat: not found
-   fish: aarli
-car: not found
-   boat: yandilybar
-park: not found
-   beach: jaala (at the beach uses null locative marking)
-   cave: gardin (in the cave uses locative suffix)
 
-sleep: daag (preverb) -i- (l.v. do/say) or daag (preverb) -joo- (l.v. for do/say)
-chase: -ngoorribi-
-eat: -arli-
-think: rinyi (preverb) -i- (l.v. do/say) (not 100% sure; pp. 434)
-know: -moonggoon- (often erg subj and noun "know")
-ask: -jangarrga-
-are (be): for "are hungry", manyjal (preverb) -j- (l.v. do/say)
-doesn't really have a "be"
-"There are many rocks on the beach": many rock there beach
+After adding the word "dog" and replacing the Bardi "fish" with "car," in our lexicon for this lab, we could translate the following:
+
+"Dogs chase cars."
+"Dogs eat."
 
 
-I: ngayoo-nim (1min-erg)
-you: =rri (2min.DO) or goor (2aug) or nyi- (2min) or mi- (2) or joo (2min)
-my (dogs): (nga)jana  (1min.poss) or =ngay (1min.poss)
-
-don't (chase): arra (neg)
-and: agal
-that: i don't think bardi has this
-whether: =ilba (pp. 582) (no examples of this actually being used except pp. 562 but diff. use)
-do?: nganyji (interrog)
-
-hungry: manyjal=jirr-al (i think the -al makes it adjective) (pp. 177 for hungry dogs)
-"To say that one is hungry or thirsty for something, two clauses are used (that
-is, ‘I’m thirsty, I want water’, or ‘I’m hungry, give me something to eat’)." (pp. 268)
-
-in: no specific word; use locative case -goon (or allomorph)
-
-who: anggaba
-what: anggi
-
-because: no specific word; use reason case -ganiny(a) but not sure if this is the same use
-"was
-always given ‘don’t do X, Y might happen’; that is, speakers rephrased the
-prompts to give biclausal answers." (pp. 253)
-maybe =(j)amb 'thus' - "used to denote a causal relation between one sentence and the next. Most
-commonly, it is used to explain why a state of affairs obtains" (pp. 641)
-after: maybe ajimorrony but we have no examples of it being used
-otherwise i'm not sure if we have it
 
 
 #1
@@ -244,16 +160,39 @@ arra iila-nim i-rr-oo-ngoorribi yandilybar
 NEG dog-ERG 3-AUG-TR-chase boat
 `The dogs don't chase boats.'
 
-1.
-   dog has abs case since subj of it.v so no ending
-3.
-   maybe ngoorrboo
 
-need to add dog to lexicon!!!!
+Lexicon wise, after we replace the verb "sleep" with an existing intrastive one, and "cat" with a different noun since we don't know it in Bardi, whe should be able to translate all the following:
+
+Dogs sleep. 
+I chase you.
+Dogs in the park eat.
+What do the dogs chase?
+Cats chase dogs and sleep
+The dog s car sleeps
+My dogs sleep
+Who sleeps
+
+
+
+
+
+When translating from eng to sje, the first sentence parsed with 1 reading; it generated 1 sentence and the transfer did 4 successful unifies and 2 failed ones. 
+We also had to remove ex-det := extracted-det-phrase. line from rules.tdl to get it to compile which led to a successful compilation.
+
+eng to bardi:
+
+The first attempt to translate "Dogs chase cars" was unsucessful because our lexicon didn't have "cars" which we manually fixed by changing "fish" in Bardi to _car_n_rel in our lexicon.tdl.
+
+
 
 - A description what happened when you tried the MT set up. What difficulties did you encounter and how did you resolve them? What output did you get?
 
-the .sh 
+The MT set up was pretty straight forward except the following few issues that we ran into:
+
+	- had to remove ex-det := extracted-det-phrase. line from rules.tdl to get it to compile.
+	-  We didn't quite understand what .sh manipulation did except  
+	- Running into "does not appear to be a grammar image." error. which Tara posted to Canvas, but since Hanieh didn't run into it, Tara deleted everything, and redid the whole process, and it got fixed. 
+	- Ran into RAM issue (Hanieh) which killed translations of both second and forth sentences to at the almost the 1600 translations, but increase of VM RAM allowed more than 16000 and 18000, respectively. 
 
 - A description of the performance of your final grammar for this week on the test suite and test corpus, as compared to your starting grammar (see details above).
 
