@@ -106,6 +106,8 @@ tense-definition=build
     aspect4_supertype1_name=aspect
   aspect5_name=sim
     aspect5_supertype1_name=aspect
+  aspect6_name=no-aspect
+    aspect6_supertype1_name=aspect
   mood1_name=irr
     mood1_supertype1_name=mood
 

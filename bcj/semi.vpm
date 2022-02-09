@@ -68,6 +68,7 @@ E.ASPECT : E.ASPECT
   rec <> rec
   pfv <> pfv
   sim <> sim
+  no-aspect <> no-aspect
   * <> *
 
 E.MOOD : E.MOOD
