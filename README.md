@@ -16,3 +16,10 @@ git pull
 - [Lab 4](mds/lab4.md)
 - [Lab 5](mds/lab5.md)
 - [Lab 6](mds/lab6.md)
+
+## Changes to Choices for Translation Purposes
+- changed fish_n_rel to cat_n_rel
+- changed boat_n_rel to car_n_rel
+- changed cave_n_rel to par_n_rel
+- changed sleep_v_rel (for daag) to sleeps_v_rel
+- changed finish_v_rel to sleep_v_rel

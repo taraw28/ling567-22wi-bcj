@@ -39,7 +39,7 @@ iwanyoo := noun1-noun-lex &
 
 yandilybar := noun1-noun-lex &
   [ STEM < "yandilybar" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_boat_n_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_car_n_rel" ].
 
 jaala := noun1-noun-lex &
   [ STEM < "jaala" >,
@@ -91,7 +91,7 @@ goowidi_1 := noun1-noun-lex &
 
 gardin := noun1-noun-lex &
   [ STEM < "gardin" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_cave_n_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_park_n_rel" ].
 
 nyoolnyool := noun1-noun-lex &
   [ STEM < "nyoolnyool" >,
@@ -175,7 +175,7 @@ wiliwili := noun1-noun-lex &
 
 aarli := noun1-noun-lex &
   [ STEM < "aarli" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_fish_n_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_cat_n_rel" ].
 
 oomban := noun1-noun-lex &
   [ STEM < "oomban" >,
@@ -437,10 +437,6 @@ manyjal := noun1-noun-lex &
   [ STEM < "manyjal" >,
     SYNSEM.LKEYS.KEYREL.PRED "_hunger_n_rel" ].
 
-iil := noun1-noun-lex &
-  [ STEM < "iil" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_dog_n_rel" ].
-
 anggaba := q-pronoun-noun-lex &
   [ STEM < "anggaba" >,
     SYNSEM.LKEYS.KEYREL.PRED "_person_n_rel" ].
@@ -675,7 +671,7 @@ jarrmi := it-abs-verb-lex &
 
 banya := it-abs-verb-lex &
   [ STEM < "banya" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_finish_v_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_sleep_v_rel" ].
 
 lirrmi := it-abs-verb-lex &
   [ STEM < "lirrmi" >,
@@ -835,7 +831,7 @@ daab_1 := it-preverb-verb-lex &
 
 daag := it-preverb-verb-lex &
   [ STEM < "daag" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_sleep_v_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_sleeps_v_rel" ].
 
 arr_1 := it-preverb-verb-lex &
   [ STEM < "arr" >,
