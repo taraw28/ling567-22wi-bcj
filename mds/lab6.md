@@ -20,7 +20,19 @@
 
 ## Possessives
 - The dog s car sleeps:
+  ```
+  Iila jina yandilybar irrjarrmi.
+  iila jina yandilybar i-rr-jarrmi
+  dog 3MIN.POSS car 3-AUG-get.up
+  `The dog's car gets up. (lit. dog his car gets up)'
+  ```
 - My dogs sleep:
+  ```
+  Jarda iila irrjarrmi.
+  jarda iila i-rr-jarrmi
+  1AUG.POSS dog 3-AUG-get.up
+  `My dogs get up.'
+  ```
 
 ## Object Agreement
 - pp. 402 direct object clitic forms
