@@ -791,9 +791,9 @@ Vetted: f
 Judgement: g
 Phenomena: c
 Iilanim irroongoorribi aarli.
-iila-nim i-rr-oo-ngoorribi aarli
-dog-ERG 3-AUG-TR-chase fish
-`Dogs chase fish.'
+iila-nim i-rr-oo-ngoorribi yandilybar
+dog-ERG 3-AUG-TR-chase car
+`Dogs chase cars.'
 
 #90 MMT 3
 Source: author

@@ -701,26 +701,6 @@ arli_1 := it-abs-verb-lex &
   [ STEM < "arli" >,
     SYNSEM.LKEYS.KEYREL.PRED "_eat_v_rel" ].
 
-arl_1 := it-abs-verb-lex &
-  [ STEM < "arl" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_eat_v_rel" ].
-
-rl_1 := it-abs-verb-lex &
-  [ STEM < "rl" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_eat_v_rel" ].
-
-rli_1 := it-abs-verb-lex &
-  [ STEM < "rli" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_eat_v_rel" ].
-
-irli_1 := it-abs-verb-lex &
-  [ STEM < "irli" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_eat_v_rel" ].
-
-rr := it-abs-verb-lex &
-  [ STEM < "rr" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_eat_v_rel" ].
-
 nya_1 := tr-erg-abs-verb-lex &
   [ STEM < "nya" >,
     SYNSEM.LKEYS.KEYREL.PRED "_catch_v_rel" ].
@@ -743,22 +723,6 @@ loonga := tr-erg-abs-verb-lex &
 
 arli_2 := tr-erg-abs-verb-lex &
   [ STEM < "arli" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_eat_v_rel" ].
-
-arl_2 := tr-erg-abs-verb-lex &
-  [ STEM < "arl" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_eat_v_rel" ].
-
-rl_2 := tr-erg-abs-verb-lex &
-  [ STEM < "rl" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_eat_v_rel" ].
-
-rli_2 := tr-erg-abs-verb-lex &
-  [ STEM < "rli" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_eat_v_rel" ].
-
-irli_2 := tr-erg-abs-verb-lex &
-  [ STEM < "irli" >,
     SYNSEM.LKEYS.KEYREL.PRED "_eat_v_rel" ].
 
 alboo := tr-erg-abs-verb-lex &
