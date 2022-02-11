@@ -10,27 +10,75 @@ all-suffix :=
 all-lex-rule.
 
 abl-suffix1 :=
-%suffix (* -go) (* -o) (* -ko)
+%suffix (* -go)
+abl-lex-rule.
+
+abl-suffix2 :=
+%suffix (* -o)
+abl-lex-rule.
+
+abl-suffix3 :=
+%suffix (* -ko)
 abl-lex-rule.
 
 loc-suffix1 :=
-%suffix (* -goon) (* -oon) (* -on) (* -i)
+%suffix (* -goon)
+loc-lex-rule.
+
+loc-suffix2 :=
+%suffix (* -oon)
+loc-lex-rule.
+
+loc-suffix3 :=
+%suffix (* -on)
+loc-lex-rule.
+
+loc-suffix4 :=
+%suffix (* -i)
 loc-lex-rule.
 
 caus-suffix1 :=
-%suffix (* -yi) (* -ji) (* -i)
+%suffix (* -yi)
+caus-lex-rule.
+
+caus-suffix2 :=
+%suffix (* -ji)
+caus-lex-rule.
+
+caus-suffix3 :=
+%suffix (* -i)
 caus-lex-rule.
 
 lat-suffix1 :=
-%suffix (* -gony) (* -ony)
+%suffix (* -gony)
+lat-lex-rule.
+
+lat-suffix2 :=
+%suffix (* -ony)
 lat-lex-rule.
 
 dir-suffix1 :=
-%suffix (* -madan) (* -madany) (* -mardan) (* -mardany)
+%suffix (* -madan)
+dir-lex-rule.
+
+dir-suffix2 :=
+%suffix (* -madany)
+dir-lex-rule.
+
+dir-suffix3 :=
+%suffix (* -mardan)
+dir-lex-rule.
+
+dir-suffix4 :=
+%suffix (* -mardany)
 dir-lex-rule.
 
 perl-suffix1 :=
-%suffix (* -jarr) (* -jarra)
+%suffix (* -jarr)
+perl-lex-rule.
+
+perl-suffix2 :=
+%suffix (* -jarra)
 perl-lex-rule.
 
 com-suffix :=
@@ -38,7 +86,15 @@ com-suffix :=
 com-lex-rule.
 
 source-suffix1 :=
-%suffix (* -joon) (* -yoon) (* -joonoo)
+%suffix (* -joon)
+source-lex-rule.
+
+source-suffix2 :=
+%suffix (* -yoon)
+source-lex-rule.
+
+source-suffix3 :=
+%suffix (* -joonoo)
 source-lex-rule.
 
 semb-suffix :=
@@ -46,11 +102,23 @@ semb-suffix :=
 semb-lex-rule.
 
 reason-suffix1 :=
-%suffix (* -ganinya) (* -aninya) (* -ganiny)
+%suffix (* -ganinya)
+reason-lex-rule.
+
+reason-suffix2 :=
+%suffix (* -aninya)
+reason-lex-rule.
+
+reason-suffix3 :=
+%suffix (* -ganiny)
 reason-lex-rule.
 
 ins-suffix1 :=
-%suffix (* -nga) (* -ng)
+%suffix (* -nga)
+ins-lex-rule.
+
+ins-suffix2 :=
+%suffix (* -ng)
 ins-lex-rule.
 
 1min-poss-prefix :=
@@ -82,11 +150,19 @@ ins-lex-rule.
 3aug-poss-lex-rule.
 
 cont-suffix1 :=
-%suffix (* -n) (* -na)
+%suffix (* -n)
+cont-lex-rule.
+
+cont-suffix2 :=
+%suffix (* -na)
 cont-lex-rule.
 
 rem-pst-suffix1 :=
-%suffix (* -n) (* -na)
+%suffix (* -n)
+rem-pst-lex-rule.
+
+rem-pst-suffix2 :=
+%suffix (* -na)
 rem-pst-lex-rule.
 
 rec-pst-suffix :=
@@ -102,11 +178,39 @@ fut-aspect-suffix :=
 fut-aspect-lex-rule.
 
 pst-prefix1 :=
-%prefix (* ng-) (* nga-) (* ngi-) (* ny-) (* nya-) (* m-) (* ma-)
+%prefix (* ng-)
+pst-lex-rule.
+
+pst-prefix2 :=
+%prefix (* nga-)
+pst-lex-rule.
+
+pst-prefix3 :=
+%prefix (* ngi-)
+pst-lex-rule.
+
+pst-prefix4 :=
+%prefix (* ny-)
+pst-lex-rule.
+
+pst-prefix5 :=
+%prefix (* nya-)
+pst-lex-rule.
+
+pst-prefix6 :=
+%prefix (* m-)
+pst-lex-rule.
+
+pst-prefix7 :=
+%prefix (* ma-)
 pst-lex-rule.
 
 fut-tense-prefix1 :=
-%prefix (* ngg-) (* k-)
+%prefix (* ngg-)
+fut-tense-lex-rule.
+
+fut-tense-prefix2 :=
+%prefix (* k-)
 fut-tense-lex-rule.
 
 pst-tr-min-prefix :=
@@ -114,15 +218,31 @@ pst-tr-min-prefix :=
 pst-tr-min-lex-rule.
 
 1min-prefix1 :=
-%prefix (* nga-) (* ng-)
+%prefix (* nga-)
+1min-lex-rule.
+
+1min-prefix2 :=
+%prefix (* ng-)
 1min-lex-rule.
 
 2min-prefix1 :=
-%prefix (* mi-) (* a-) (* nga-)
+%prefix (* mi-)
+2min-lex-rule.
+
+2min-prefix2 :=
+%prefix (* a-)
+2min-lex-rule.
+
+2min-prefix3 :=
+%prefix (* nga-)
 2min-lex-rule.
 
 3min-prefix1 :=
-%prefix (* i-) (* oo-)
+%prefix (* i-)
+3min-lex-rule.
+
+3min-prefix2 :=
+%prefix (* oo-)
 3min-lex-rule.
 
 1plus2min-prefix :=
@@ -134,21 +254,69 @@ pst-tr-min-lex-rule.
 1aug-lex-rule.
 
 2aug-prefix1 :=
-%prefix (* goo-) (* a-)
+%prefix (* goo-)
+2aug-lex-rule.
+
+2aug-prefix2 :=
+%prefix (* a-)
 2aug-lex-rule.
 
 3aug-prefix1 :=
-%prefix (* i-) (* oo-)
+%prefix (* i-)
+3aug-lex-rule.
+
+3aug-prefix2 :=
+%prefix (* oo-)
 3aug-lex-rule.
 
 aug-prefix1 :=
-%prefix (* arr-) (* rr-)
+%prefix (* arr-)
+aug-lex-rule.
+
+aug-prefix2 :=
+%prefix (* rr-)
 aug-lex-rule.
 
 tr-min-prefix1 :=
-%prefix (* n-) (* na-)
+%prefix (* n-)
+tr-min-lex-rule.
+
+tr-min-prefix2 :=
+%prefix (* na-)
 tr-min-lex-rule.
 
 tr-aug-prefix1 :=
-%prefix (* a-) (* i-) (* oo-)
+%prefix (* a-)
 tr-aug-lex-rule.
+
+tr-aug-prefix2 :=
+%prefix (* i-)
+tr-aug-lex-rule.
+
+tr-aug-prefix3 :=
+%prefix (* oo-)
+tr-aug-lex-rule.
+
+1min-dir-obj-suffix :=
+%suffix (* -ngay)
+1min-dir-obj-lex-rule.
+
+2min-dir-obj-suffix :=
+%suffix (* -rri)
+2min-dir-obj-lex-rule.
+
+1plus2min-dir-obj-suffix :=
+%suffix (* -way)
+1plus2min-dir-obj-lex-rule.
+
+1aug-dir-obj-suffix :=
+%suffix (* moord)
+1aug-dir-obj-lex-rule.
+
+2aug-dir-obj-suffix :=
+%suffix (* goorr)
+2aug-dir-obj-lex-rule.
+
+3aug-dir-obj-suffix :=
+%suffix (* irr)
+3aug-dir-obj-lex-rule.

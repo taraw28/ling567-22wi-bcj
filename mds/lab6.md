@@ -50,9 +50,9 @@
 the first person singular object marker is =jarrngay."
 - test sentence:
   ```
-  Iilanim irroongoorribi aarli.
-  iila-nim i-rr-oo-ngoorribi yandilybar
-  dog-ERG 3-AUG-TR-chase car
+  Iilanim irroongoorribiirr aarli.
+  iila-nim i-rr-oo-ngoorribi-irr yandilybar
+  dog-ERG 3-AUG-TR-chase-3AUG.DO car
   `Dogs chase cars.'
   ```
 
