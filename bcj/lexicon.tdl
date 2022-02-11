@@ -667,11 +667,11 @@ roonggooroongg := inalien-stem-noun-lex &
 
 jarrmi := it-abs-verb-lex &
   [ STEM < "jarrmi" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_get.up_v_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_sleep_v_rel" ].
 
 banya := it-abs-verb-lex &
   [ STEM < "banya" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_sleep_v_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_finish_v_rel" ].
 
 lirrmi := it-abs-verb-lex &
   [ STEM < "lirrmi" >,
@@ -947,6 +947,12 @@ barni_2 := det2-determiner-lex &
 
 nganyji := q-particle1-lex &
   [ STEM < "nganyji" > ].
+
+possessor-adp-1 := possessor-adp-lex-1 &
+  [ STEM < "jina" > ].
+
+possessor-adp-2 := possessor-adp-lex-2 &
+  [ STEM < "jirra" > ].
 
 ngajana-noun := ngajana-noun-lex &
   [ STEM < "ngajana" > ].

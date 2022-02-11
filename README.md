@@ -22,4 +22,4 @@ git pull
 - changed boat_n_rel to car_n_rel
 - changed cave_n_rel to par_n_rel
 - changed sleep_v_rel (for daag) to sleeps_v_rel
-- changed finish_v_rel to sleep_v_rel
+- changed it-abs get.up_v_rel to sleep_v_rel

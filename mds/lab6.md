@@ -17,21 +17,30 @@
     - initial: 52 results
     - removed all variations of eat_v_rel: 10 results
       - arli => arli, arl, rl, rli, irli, rr
+  - add require/forbid constrains to it/tr verb classes
+    - #2: 6 results
+    - #4: 6 results
+  - at this point test #19: 4 results
+  - work on 's possession
+    - added possession strategies and it does parse but also parses with wh-ques for some reason
+    - does not translate (maybe because of the dog vs dog)
+  - work on direct object agreement
+    -
 
 ## Possessives
 - The dog s car sleeps:
   ```
   Iila jina yandilybar irrjarrmi.
   iila jina yandilybar i-rr-jarrmi
-  dog 3MIN.POSS car 3-AUG-get.up
-  `The dog's car gets up. (lit. dog his car gets up)'
+  dog 3MIN.POSS car 3-AUG-sleep
+  `The dog's car sleeps. (lit. dog his car sleeps)'
   ```
 - My dogs sleep:
   ```
-  Jarda iila irrjarrmi.
-  jarda iila i-rr-jarrmi
-  1AUG.POSS dog 3-AUG-get.up
-  `My dogs get up.'
+  Ngajana iila irrjarrmi.
+  ngajana iila i-rr-jarrmi
+  1MIN.POSS dog 3-AUG-get.up
+  `My dogs sleep.'
   ```
 
 ## Object Agreement
@@ -39,6 +48,13 @@
 - pp. 468 "generic third person objects are not overtly marked in the verb."
 - pp. 469 "An example showing overt object agreement is given below. The form of
 the first person singular object marker is =jarrngay."
+- test sentence:
+  ```
+  Iilanim irroongoorribi aarli.
+  iila-nim i-rr-oo-ngoorribi yandilybar
+  dog-ERG 3-AUG-TR-chase car
+  `Dogs chase cars.'
+  ```
 
 ## Argument Optionality
 - if time permits

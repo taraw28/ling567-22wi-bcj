@@ -2,7 +2,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Grammar of bardi
 ;;; created at:
-;;;     Thu Feb 10 21:40:56 UTC 2022
+;;;     Fri Feb 11 02:02:21 UTC 2022
 ;;; based on Matrix customization system version of:
 ;;;     Mon Aug  2 23:22:15 UTC 2021
 ;;;
@@ -25,24 +25,29 @@ basic-head-comp-phrase :+ [ SYNSEM [ LIGHT #light,
 
 head :+ [ PRON bool,
     POSSESSOR poss,
+    INIT bool,
     SPEC-INIT bool,
     FORM form ].
 
 noun :+ [ CASE case ].
 
-inflected :+ [ PERNUM-FLAG luk,
-    TENSE-FLAG luk,
+inflected :+ [ IT-ABS-VERB-OR-IT-ERG-VERB-FLAG luk,
     PRS-FLAG luk,
+    AUG-FLAG luk,
+    TENSE-FLAG luk,
     INALIEN-POSS-FLAG luk,
     CASE-PC-FLAG luk,
-    AUG-FLAG luk ].
+    TR-AUG-OR-TR-MIN-FLAG luk,
+    PERNUM-FLAG luk ].
 
-infl-satisfied :+ [ PERNUM-FLAG na-or-+,
-    TENSE-FLAG na-or-+,
+infl-satisfied :+ [ IT-ABS-VERB-OR-IT-ERG-VERB-FLAG na-or-+,
     PRS-FLAG na-or-+,
+    AUG-FLAG na-or-+,
+    TENSE-FLAG na-or-+,
     INALIEN-POSS-FLAG na-or-+,
     CASE-PC-FLAG na-or-+,
-    AUG-FLAG na-or-+ ].
+    TR-AUG-OR-TR-MIN-FLAG na-or-+,
+    PERNUM-FLAG na-or-+ ].
 
 png :+ [ PERNUM pernum ].
 
@@ -93,6 +98,8 @@ head-mod-phrase :+ [ SYNSEM.ATTACH #attach,
 
 basic-determiner-lex :+ [ SYNSEM.LOCAL.CAT [ HEAD.POSSESSOR nonpossessive,
                        POSSESSUM nonpossessive ] ].
+
++np :+ [ CASE case ].
 
 poss-case := case.
 
@@ -162,6 +169,18 @@ possessive := poss.  ; supertype for possessive features
 nonpossessive := poss.  ; type for nonpossessive
 possessor := possessive.
 possessum := possessive.
+possessive-1 := possessive.  ; supertype for strategy 1
+possessor-1 := possessor & possessive-1.
+possessum-1 := possessum & possessive-1.
+
+;;; Possession
+
+possessive-2 := possessive.  ; supertype for strategy 2
+possessor-2 := possessor & possessive-2.
+possessum-2 := possessum & possessive-2.
+
+;;; Possession
+
 possessive-pron-1 := possessive.  ; supertype for strategy pron-1
 possessor-pron-1 := possessor & possessive-pron-1.
 possessum-pron-1 := possessum & possessive-pron-1.
@@ -367,18 +386,21 @@ erg-abs-transitive-verb-lex := transitive-verb-lex &
 it-abs-verb-lex := intransitive-verb-lex & aspect-rule-dtr & aug-rule-dtr & pernum-rule-dtr & tense-rule-dtr & tr-min-rule-dtr &
   [ SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CAT.HEAD.CASE abs,
     INFLECTED [ TENSE-FLAG -,
-                PERNUM-FLAG - ] ].
+                PERNUM-FLAG -,
+                IT-ABS-VERB-OR-IT-ERG-VERB-FLAG + ] ].
 
 tr-erg-abs-verb-lex := transitive-verb-lex & aspect-rule-dtr & aug-rule-dtr & pernum-rule-dtr & tense-rule-dtr & tr-aug-rule-dtr & tr-min-rule-dtr &
   [ SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST.LOCAL.CAT.HEAD.CASE erg,
                            COMPS.FIRST.LOCAL.CAT.HEAD.CASE abs ],
-    INFLECTED [ TENSE-FLAG -,
+    INFLECTED [ TR-AUG-OR-TR-MIN-FLAG -,
+                TENSE-FLAG -,
                 PERNUM-FLAG - ] ].
 
 it-erg-verb-lex := intransitive-verb-lex & aspect-rule-dtr & aug-rule-dtr & pernum-rule-dtr & tense-rule-dtr & tr-min-rule-dtr &
   [ SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CAT.HEAD.CASE erg,
     INFLECTED [ TENSE-FLAG -,
-                PERNUM-FLAG - ] ].
+                PERNUM-FLAG -,
+                IT-ABS-VERB-OR-IT-ERG-VERB-FLAG + ] ].
 
 it-preverb-verb-lex := intransitive-verb-lex.
 
@@ -387,7 +409,8 @@ light-verb-verb-lex := transitive-verb-lex.
 tr-erg-all-verb-lex := transitive-verb-lex & aspect-rule-dtr & aug-rule-dtr & pernum-rule-dtr & tense-rule-dtr & tr-aug-rule-dtr & tr-min-rule-dtr &
   [ SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST.LOCAL.CAT.HEAD.CASE erg,
                            COMPS.FIRST.LOCAL.CAT.HEAD.CASE all ],
-    INFLECTED [ TENSE-FLAG -,
+    INFLECTED [ TR-AUG-OR-TR-MIN-FLAG -,
+                TENSE-FLAG -,
                 PERNUM-FLAG - ] ].
 
 tv-preverb-verb-lex := transitive-verb-lex.
@@ -395,7 +418,8 @@ tv-preverb-verb-lex := transitive-verb-lex.
 tr-erg-ins-verb-lex := transitive-verb-lex & aspect-rule-dtr & aug-rule-dtr & pernum-rule-dtr & tense-rule-dtr & tr-aug-rule-dtr & tr-min-rule-dtr &
   [ SYNSEM.LOCAL.CAT.VAL [ SUBJ.FIRST.LOCAL.CAT.HEAD.CASE erg,
                            COMPS.FIRST.LOCAL.CAT.HEAD.CASE ins ],
-    INFLECTED [ TENSE-FLAG -,
+    INFLECTED [ TR-AUG-OR-TR-MIN-FLAG -,
+                TENSE-FLAG -,
                 PERNUM-FLAG - ] ].
 
 ;;; Complementizers
@@ -441,35 +465,93 @@ det2-determiner-lex := determiner-lex & no-icons-lex-item &
 
 ;;; Adverbs
 
+two-rel-adposition-lex := basic-icons-lex-item &
+  [ SYNSEM [ LOCAL [ CAT [ HEAD adp,
+                           VAL.COMPS < [ LOCAL [ CAT cat-sat,
+                                                 CONT.HOOK #hook &
+                                                           [ INDEX #ind,
+                                                             ICONS-KEY.IARG1 #clause ] ] ] > ],
+                     CONT.HOOK #hook &
+                               [ CLAUSE-KEY #clause ] ],
+             LKEYS.KEYREL arg12-ev-relation &
+                          [ ARG2 #ind ] ] ].
+
+possessor-adp-lex-1 := two-rel-adposition-lex &
+  [ SYNSEM.LOCAL [ CONT [ ICONS.LIST < >,
+                          RELS.LIST < >,
+                          HCONS.LIST < > ],
+                   CAT [ POSSESSUM nonpossessive,
+                         HEAD [ INIT -,
+                                POSSESSOR possessor-1,
+                                CASE poss-case ],
+                         VAL [ SPEC < >,
+                               SUBJ < >,
+                               SPR < >,
+                               COMPS.FIRST [ OPT -,
+                                             LOCAL [ CAT [ VAL.SPR < >,
+                                                           HEAD noun &
+                                                                [ PRON - ] ],
+                                                     CONT.HOOK.INDEX.PNG.PERNUM min ] ] ] ] ] ].
+
+basic-adposition-lex :+ [ SYNSEM.LOCAL.CAT [ HEAD.POSSESSOR nonpossessive,
+                       POSSESSUM nonpossessive ] ].
+
+;Constraint on MC used to be part of matrix.tdl
+;;it applies to all wo implementations, except for v2
+
+possessor-adp-lex-2 := two-rel-adposition-lex &
+  [ SYNSEM.LOCAL [ CONT [ ICONS.LIST < >,
+                          RELS.LIST < >,
+                          HCONS.LIST < > ],
+                   CAT [ POSSESSUM nonpossessive,
+                         HEAD [ INIT -,
+                                POSSESSOR possessor-2,
+                                CASE poss-case ],
+                         VAL [ SPEC < >,
+                               SUBJ < >,
+                               SPR < >,
+                               COMPS.FIRST [ OPT -,
+                                             LOCAL [ CAT [ VAL.SPR < >,
+                                                           HEAD noun &
+                                                                [ PRON - ] ],
+                                                     CONT.HOOK.INDEX.PNG.PERNUM aug ] ] ] ] ] ].
+
+;Constraint on MC used to be part of matrix.tdl
+;;it applies to all wo implementations, except for v2
+
 ;;;;;;;;;;;;;;;;;;;
 ;;; Lexical Rules
 ;;;;;;;;;;;;;;;;;;;
 
 ;;; Intermediate rule types
 
+tr-aug-rule-dtr := word-or-lexrule.
 aug-rule-dtr := word-or-lexrule.
-case-pc-rule-dtr := word-or-lexrule.
 tr-min-rule-dtr := word-or-lexrule.
 aspect-rule-dtr := word-or-lexrule.
 pernum-rule-dtr := word-or-lexrule.
-tr-aug-rule-dtr := word-or-lexrule.
+case-pc-rule-dtr := word-or-lexrule.
 tense-rule-dtr := word-or-lexrule.
 
 ;;; Lexical rule types
 
 case-pc-lex-rule-super := add-only-no-ccont-rule &
   [ INFLECTED [ CASE-PC-FLAG +,
+                IT-ABS-VERB-OR-IT-ERG-VERB-FLAG #it-abs-verb-or-it-erg-verb,
+                PRS-FLAG #prs,
+                AUG-FLAG #aug,
                 TENSE-FLAG #tense,
                 INALIEN-POSS-FLAG #inalien-poss,
-                PRS-FLAG #prs,
-                PERNUM-FLAG #pernum,
-                AUG-FLAG #aug ],
+                TR-AUG-OR-TR-MIN-FLAG #tr-aug-or-tr-min,
+                PERNUM-FLAG #pernum ],
     DTR case-pc-rule-dtr &
-        [ INFLECTED [ TENSE-FLAG #tense,
-                      INALIEN-POSS-FLAG #inalien-poss,
+        [ INFLECTED [ IT-ABS-VERB-OR-IT-ERG-VERB-FLAG #it-abs-verb-or-it-erg-verb,
                       PRS-FLAG #prs,
-                      PERNUM-FLAG #pernum,
-                      AUG-FLAG #aug ] ] ].
+                      AUG-FLAG #aug,
+                      TENSE-FLAG #tense,
+                      INALIEN-POSS-FLAG #inalien-poss,
+                      TR-AUG-OR-TR-MIN-FLAG #tr-aug-or-tr-min,
+                      PERNUM-FLAG #pernum ] ] ].
 
 erg-lex-rule := case-pc-lex-rule-super & infl-lex-rule &
   [ SYNSEM.LOCAL.CAT.HEAD.CASE erg ].
@@ -515,17 +597,21 @@ ins-lex-rule := case-pc-lex-rule-super & infl-lex-rule &
 
 inalien-poss-lex-rule-super := case-pc-rule-dtr & infl-lex-rule &
   [ INFLECTED [ INALIEN-POSS-FLAG +,
-                TENSE-FLAG #tense,
+                IT-ABS-VERB-OR-IT-ERG-VERB-FLAG #it-abs-verb-or-it-erg-verb,
                 PRS-FLAG #prs,
-                PERNUM-FLAG #pernum,
+                AUG-FLAG #aug,
+                TENSE-FLAG #tense,
                 CASE-PC-FLAG #case-pc,
-                AUG-FLAG #aug ],
+                TR-AUG-OR-TR-MIN-FLAG #tr-aug-or-tr-min,
+                PERNUM-FLAG #pernum ],
     DTR inalien-stem-noun-lex &
-        [ INFLECTED [ TENSE-FLAG #tense,
+        [ INFLECTED [ IT-ABS-VERB-OR-IT-ERG-VERB-FLAG #it-abs-verb-or-it-erg-verb,
                       PRS-FLAG #prs,
-                      PERNUM-FLAG #pernum,
+                      AUG-FLAG #aug,
+                      TENSE-FLAG #tense,
                       CASE-PC-FLAG #case-pc,
-                      AUG-FLAG #aug ] ] ].
+                      TR-AUG-OR-TR-MIN-FLAG #tr-aug-or-tr-min,
+                      PERNUM-FLAG #pernum ] ] ].
 
 1min-poss-lex-rule := inalien-poss-lex-rule-super &
   [ SYNSEM.LOCAL.CAT [ HEAD #head,
@@ -852,15 +938,19 @@ fut-aspect-lex-rule := aspect-lex-rule-super &
 
 tense-lex-rule-super := add-only-no-ccont-rule & aspect-rule-dtr & pernum-rule-dtr & tr-min-rule-dtr &
   [ INFLECTED [ TENSE-FLAG +,
+                IT-ABS-VERB-OR-IT-ERG-VERB-FLAG #it-abs-verb-or-it-erg-verb,
+                AUG-FLAG #aug,
                 INALIEN-POSS-FLAG #inalien-poss,
-                PERNUM-FLAG #pernum,
                 CASE-PC-FLAG #case-pc,
-                AUG-FLAG #aug ],
+                TR-AUG-OR-TR-MIN-FLAG #tr-aug-or-tr-min,
+                PERNUM-FLAG #pernum ],
     DTR tense-rule-dtr &
-        [ INFLECTED [ INALIEN-POSS-FLAG #inalien-poss,
-                      PERNUM-FLAG #pernum,
+        [ INFLECTED [ IT-ABS-VERB-OR-IT-ERG-VERB-FLAG #it-abs-verb-or-it-erg-verb,
+                      AUG-FLAG #aug,
+                      INALIEN-POSS-FLAG #inalien-poss,
                       CASE-PC-FLAG #case-pc,
-                      AUG-FLAG #aug ] ] ].
+                      TR-AUG-OR-TR-MIN-FLAG #tr-aug-or-tr-min,
+                      PERNUM-FLAG #pernum ] ] ].
 
 prs-lex-rule := const-lex-rule & tense-lex-rule-super &
   [ INFLECTED.PRS-FLAG +,
@@ -884,17 +974,21 @@ pst-tr-min-lex-rule := infl-lex-rule & tense-lex-rule-super &
 
 pernum-lex-rule-super := add-only-no-ccont-rule & aspect-rule-dtr & infl-lex-rule &
   [ INFLECTED [ PERNUM-FLAG +,
+                IT-ABS-VERB-OR-IT-ERG-VERB-FLAG #it-abs-verb-or-it-erg-verb,
+                PRS-FLAG #prs,
+                AUG-FLAG #aug,
                 TENSE-FLAG #tense,
                 INALIEN-POSS-FLAG #inalien-poss,
-                PRS-FLAG #prs,
                 CASE-PC-FLAG #case-pc,
-                AUG-FLAG #aug ],
+                TR-AUG-OR-TR-MIN-FLAG #tr-aug-or-tr-min ],
     DTR pernum-rule-dtr &
-        [ INFLECTED [ TENSE-FLAG #tense,
-                      INALIEN-POSS-FLAG #inalien-poss,
+        [ INFLECTED [ IT-ABS-VERB-OR-IT-ERG-VERB-FLAG #it-abs-verb-or-it-erg-verb,
                       PRS-FLAG #prs,
+                      AUG-FLAG #aug,
+                      TENSE-FLAG #tense,
+                      INALIEN-POSS-FLAG #inalien-poss,
                       CASE-PC-FLAG #case-pc,
-                      AUG-FLAG #aug ] ] ].
+                      TR-AUG-OR-TR-MIN-FLAG #tr-aug-or-tr-min ] ] ].
 
 1aug-lex-rule := pernum-lex-rule-super &
   [ DTR.INFLECTED.AUG-FLAG +,
@@ -922,29 +1016,59 @@ pernum-lex-rule-super := add-only-no-ccont-rule & aspect-rule-dtr & infl-lex-rul
 
 aug-lex-rule := add-only-no-ccont-rule & aspect-rule-dtr & infl-lex-rule & pernum-rule-dtr & tense-rule-dtr & tr-min-rule-dtr &
   [ INFLECTED [ AUG-FLAG +,
+                IT-ABS-VERB-OR-IT-ERG-VERB-FLAG #it-abs-verb-or-it-erg-verb,
+                PRS-FLAG #prs,
                 TENSE-FLAG #tense,
                 INALIEN-POSS-FLAG #inalien-poss,
-                PRS-FLAG #prs,
-                PERNUM-FLAG #pernum,
-                CASE-PC-FLAG #case-pc ],
+                CASE-PC-FLAG #case-pc,
+                TR-AUG-OR-TR-MIN-FLAG #tr-aug-or-tr-min,
+                PERNUM-FLAG #pernum ],
     DTR aug-rule-dtr &
-        [ INFLECTED [ TENSE-FLAG #tense,
-                      INALIEN-POSS-FLAG #inalien-poss,
+        [ INFLECTED [ IT-ABS-VERB-OR-IT-ERG-VERB-FLAG #it-abs-verb-or-it-erg-verb,
                       PRS-FLAG #prs,
-                      PERNUM-FLAG #pernum,
-                      CASE-PC-FLAG #case-pc ] ],
+                      TENSE-FLAG #tense,
+                      INALIEN-POSS-FLAG #inalien-poss,
+                      CASE-PC-FLAG #case-pc,
+                      TR-AUG-OR-TR-MIN-FLAG #tr-aug-or-tr-min,
+                      PERNUM-FLAG #pernum ] ],
     SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM aug ].
 
 tr-min-lex-rule := add-only-no-ccont-rule & aspect-rule-dtr & infl-lex-rule & pernum-rule-dtr &
-  [ INFLECTED #infl,
+  [ INFLECTED [ TR-AUG-OR-TR-MIN-FLAG +,
+                IT-ABS-VERB-OR-IT-ERG-VERB-FLAG #it-abs-verb-or-it-erg-verb,
+                PRS-FLAG #prs,
+                AUG-FLAG #aug,
+                TENSE-FLAG #tense,
+                INALIEN-POSS-FLAG #inalien-poss,
+                CASE-PC-FLAG #case-pc,
+                PERNUM-FLAG #pernum ],
     DTR tr-min-rule-dtr &
-        [ INFLECTED #infl ],
+        [ INFLECTED [ IT-ABS-VERB-OR-IT-ERG-VERB-FLAG #it-abs-verb-or-it-erg-verb & na,
+                      PRS-FLAG #prs,
+                      AUG-FLAG #aug,
+                      TENSE-FLAG #tense,
+                      INALIEN-POSS-FLAG #inalien-poss,
+                      CASE-PC-FLAG #case-pc,
+                      PERNUM-FLAG #pernum ] ],
     SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM min ].
 
 tr-aug-lex-rule := add-only-no-ccont-rule & aspect-rule-dtr & aug-rule-dtr & infl-lex-rule & pernum-rule-dtr & tense-rule-dtr & tr-min-rule-dtr &
-  [ INFLECTED #infl,
+  [ INFLECTED [ TR-AUG-OR-TR-MIN-FLAG +,
+                IT-ABS-VERB-OR-IT-ERG-VERB-FLAG #it-abs-verb-or-it-erg-verb,
+                PRS-FLAG #prs,
+                AUG-FLAG #aug,
+                TENSE-FLAG #tense,
+                INALIEN-POSS-FLAG #inalien-poss,
+                CASE-PC-FLAG #case-pc,
+                PERNUM-FLAG #pernum ],
     DTR tr-aug-rule-dtr &
-        [ INFLECTED #infl ],
+        [ INFLECTED [ IT-ABS-VERB-OR-IT-ERG-VERB-FLAG #it-abs-verb-or-it-erg-verb & na,
+                      PRS-FLAG #prs,
+                      AUG-FLAG #aug,
+                      TENSE-FLAG #tense,
+                      INALIEN-POSS-FLAG #inalien-poss,
+                      CASE-PC-FLAG #case-pc,
+                      PERNUM-FLAG #pernum ] ],
     SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM aug ].
 
 ;;;;;;;;;;;;;;;;;;;
@@ -976,8 +1100,8 @@ head-comp-phrase-2 := basic-head-2nd-comp-phrase & head-initial-head-nexus.
 
 comp-head-phrase-2 := basic-head-2nd-comp-phrase & head-final-head-nexus.
 
-poss-unary-phrase-pron-1 := poss-unary-phrase &
-  [ ARGS < [ SYNSEM.LOCAL.CAT.HEAD.POSSESSOR possessor-pron-1 ] >,
+poss-unary-phrase-1 := poss-unary-phrase &
+  [ ARGS < [ SYNSEM.LOCAL.CAT.HEAD.POSSESSOR possessor-1 ] >,
     SYNSEM.LOCAL.CAT [ HEAD.SPEC-INIT +,
                        VAL.SPEC.FIRST.LOCAL.CAT.POSSESSUM nonpossessive ] ].
 
@@ -1016,6 +1140,22 @@ poss-unary-phrase := basic-unary-phrase &
                                     HEAD +np ],
                               CONT.HOOK.INDEX #possessor ],
                       NON-LOCAL #nonloc ] ] > ].
+
+;Constraint on MC used to be part of matrix.tdl
+;;it applies to all wo implementations, except for v2
+
+poss-unary-phrase-2 := poss-unary-phrase &
+  [ ARGS < [ SYNSEM.LOCAL.CAT.HEAD.POSSESSOR possessor-2 ] >,
+    SYNSEM.LOCAL.CAT [ HEAD.SPEC-INIT +,
+                       VAL.SPEC.FIRST.LOCAL.CAT.POSSESSUM nonpossessive ] ].
+
+;Constraint on MC used to be part of matrix.tdl
+;;it applies to all wo implementations, except for v2
+
+poss-unary-phrase-pron-1 := poss-unary-phrase &
+  [ ARGS < [ SYNSEM.LOCAL.CAT.HEAD.POSSESSOR possessor-pron-1 ] >,
+    SYNSEM.LOCAL.CAT [ HEAD.SPEC-INIT +,
+                       VAL.SPEC.FIRST.LOCAL.CAT.POSSESSUM nonpossessive ] ].
 
 ;Constraint on MC used to be part of matrix.tdl
 ;;it applies to all wo implementations, except for v2
