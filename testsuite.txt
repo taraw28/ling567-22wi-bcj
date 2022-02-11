@@ -780,9 +780,9 @@ Source: author
 Vetted: f
 Judgement: g
 Phenomena: c
-Iil daag irri.
-iil daag i-rr-i
-dog.ABS sleep 3-AUG-do.say
+Iila irrjarrmi.
+iila i-rr-jarrmi
+dog.ABS 3-AUG-sleep
 `Dogs sleep.'
 
 #89 MMT 2
@@ -790,12 +790,12 @@ Source: author
 Vetted: f
 Judgement: g
 Phenomena: c
-Iilanim irroongoorribi aarli.
-iila-nim i-rr-oo-ngoorribi yandilybar
-dog-ERG 3-AUG-TR-chase car
+Iilanim yandilybar oorroongoorribi.
+iila-nim yandilybar oo-rr-oo-ngoorribi
+dog-ERG car 3-AUG-TR-chase
 `Dogs chase cars.'
 
-#90 MMT 3
+#90 MMT 3 doesn't parse yet
 Source: author
 Vetted: f
 Judgement: g

@@ -25,7 +25,6 @@
     - added possession strategies and it does parse but also parses with wh-ques for some reason
     - does not translate (maybe because of the dog vs dog)
   - work on direct object agreement
-    -
 
 ## Possessives
 - The dog s car sleeps:

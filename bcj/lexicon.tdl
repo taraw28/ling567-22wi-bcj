@@ -954,20 +954,17 @@ possessor-adp-1 := possessor-adp-lex-1 &
 possessor-adp-2 := possessor-adp-lex-2 &
   [ STEM < "jirra" > ].
 
-ngajana-noun := ngajana-noun-lex &
-  [ STEM < "ngajana" > ].
+jana-noun := jana-noun-lex &
+  [ STEM < "jana" > ].
 
-jiy-noun := jiy-noun-lex &
-  [ STEM < "jiy" > ].
+jiya-noun := jiya-noun-lex &
+  [ STEM < "jiya" > ].
 
 jina-noun := jina-noun-lex &
   [ STEM < "jina" > ].
 
-jan-noun := jan-noun-lex &
-  [ STEM < "jan" > ].
-
-ajaw-noun := ajaw-noun-lex &
-  [ STEM < "ajaw" > ].
+jowa-noun := jowa-noun-lex &
+  [ STEM < "jowa" > ].
 
 jarda-noun := jarda-noun-lex &
   [ STEM < "jarda" > ].
