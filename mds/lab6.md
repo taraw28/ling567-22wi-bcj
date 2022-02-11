@@ -38,22 +38,28 @@
   ```
   Ngajana iila irrjarrmi.
   ngajana iila i-rr-jarrmi
-  1MIN.POSS dog 3-AUG-get.up
+  1MIN.POSS dog 3-AUG-sleep
   `My dogs sleep.'
   ```
 
-## Object Agreement
+## Argument Optionality
 - pp. 402 direct object clitic forms
 - pp. 468 "generic third person objects are not overtly marked in the verb."
 - pp. 469 "An example showing overt object agreement is given below. The form of
 the first person singular object marker is =jarrngay."
 - test sentence:
   ```
-  Iilanim irroongoorribiirr aarli.
-  iila-nim i-rr-oo-ngoorribi-irr yandilybar
-  dog-ERG 3-AUG-TR-chase-3AUG.DO car
-  `Dogs chase cars.'
+  Iilanim irroongoorribiirr.
+  iila-nim i-rr-oo-ngoorribi-irr
+  dog-ERG 3-AUG-TR-chase-3AUG.DO
+  `Dogs chase them.'
   ```
 
-## Argument Optionality
-- if time permits
+## Negation
+- negatiion marker arra
+  ```
+  Arra iilanim irroongoorribi yandilybar.
+  arra iila-nim i-la-rr-oo-ngoorribi yandilybar
+  NEG dog-ERG 3-IRR-AUG-TR-chase boat
+  `The dogs don't chase boats.'
+  ```

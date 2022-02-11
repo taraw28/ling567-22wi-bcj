@@ -134,6 +134,10 @@ form-fin-nf=on
 
 section=sentential-negation
 neg-exp=1
+comp-neg=on
+comp-neg-head=v
+comp-neg-order=before
+comp-neg-orth=arra
 
 section=coordination
   cs2_np=on
@@ -1009,6 +1013,12 @@ section=morphology
       verb-pc2_lrt4_feat2_head=subj
       verb-pc2_lrt4_lri1_inflecting=yes
       verb-pc2_lrt4_lri1_orth=na-
+    verb-pc2_lrt5_name=irr
+      verb-pc2_lrt5_feat1_name=mood
+      verb-pc2_lrt5_feat1_value=irr
+      verb-pc2_lrt5_feat1_head=verb
+      verb-pc2_lrt5_lri1_inflecting=yes
+      verb-pc2_lrt5_lri1_orth=la-
   verb-pc3_name=pernum
   verb-pc3_obligatory=on
   verb-pc3_order=prefix

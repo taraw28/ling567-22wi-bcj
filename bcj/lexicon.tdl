@@ -948,6 +948,10 @@ barni_2 := det2-determiner-lex &
 nganyji := q-particle1-lex &
   [ STEM < "nganyji" > ].
 
+arra := neg-adv-lex &
+  [ STEM < "arra" >,
+    SYNSEM.LKEYS.KEYREL.PRED "neg_rel" ].
+
 possessor-adp-1 := possessor-adp-lex-1 &
   [ STEM < "jina" > ].
 

@@ -217,6 +217,10 @@ pst-tr-min-prefix :=
 %prefix (* na-)
 pst-tr-min-lex-rule.
 
+irr-prefix :=
+%prefix (* la-)
+irr-lex-rule.
+
 1min-prefix1 :=
 %prefix (* nga-)
 1min-lex-rule.

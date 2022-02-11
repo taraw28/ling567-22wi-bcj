@@ -1,4 +1,6 @@
 ;;; -*- Mode: TDL; Coding: utf-8 -*-
+neg-lex-rule := neg-comp-add-lex-rule.
+
 abs-lex := abs-lex-rule.
 
 prs-lex := prs-lex-rule.

@@ -141,98 +141,185 @@ Translation
 
 Phenomena
   Possession
-    - explain possessive system (words, not prefixes) and how we implemented it for:
-      - "my dog" type sentences
-        - give IGT
-        - give choices or tdl snippet
-      - "dog's car" = "dog his car" type sentences (give IGT)
-        - give IGT
-        - give choices or tdl snippet
-  We worked on getting both possessive sentences in eng.txt to translate. We
-  started with #19 (My dogs sleep) as we already had the sentence parsing in the
-  lkb:
-    Ngajana iila irrjarrmi.
-    ngajana iila i-rr-jarrmi
-    1MIN.POSS dog 3-AUG-get.up
-    `My dogs sleep.'
-  Bardi has free possessor pronouns that are marked for
-  both person and number. We implemented this during week 4 using a class of
-  possessor pronouns:
-    poss-pron1_type=non-affix
-    poss-pron1_agr=non-agree
-    poss-pron1_mod-spec=spec
-    poss-pron1_order=head-final
-      poss-pron1_instance1_name=jana
-      poss-pron1_instance1_orth=jana
-        poss-pron1_instance1_feat1_name=pernum
-        poss-pron1_instance1_feat1_value=1min_excl
-      poss-pron1_instance2_name=jiya
-      poss-pron1_instance2_orth=jiya
-        poss-pron1_instance2_feat1_name=pernum
-        poss-pron1_instance2_feat1_value=2min
-      poss-pron1_instance3_name=jina
-      poss-pron1_instance3_orth=jina
-        poss-pron1_instance3_feat1_name=pernum
-        poss-pron1_instance3_feat1_value=3min
-      poss-pron1_instance5_name=jowa
-      poss-pron1_instance5_orth=jowa
-        poss-pron1_instance5_feat1_name=pernum
-        poss-pron1_instance5_feat1_value=1min_incl
-      poss-pron1_instance6_name=jarda
-      poss-pron1_instance6_orth=jarda
-        poss-pron1_instance6_feat1_name=pernum
-        poss-pron1_instance6_feat1_value=1aug
-      poss-pron1_instance7_name=joogarra
-      poss-pron1_instance7_orth=joogarra
-        poss-pron1_instance7_feat1_name=pernum
-        poss-pron1_instance7_feat1_value=2aug
-      poss-pron1_instance8_name=jirra
-      poss-pron1_instance8_orth=jirra
-        poss-pron1_instance8_feat1_name=pernum
-        poss-pron1_instance8_feat1_value=3aug
-    poss-pron1_possessum-mark=no
-  We were able to get 2 results when doing eng to bcj translation on #19 (since
-  Bardi has free word-order). Sentence #18 (The dog's car sleeps) was more
-  difficult to get parsing, let alone translating. We first tried to get the
-  following sentence to parse:
-    Iila jina yandilybar irrjarrmi.
-    iila jina yandilybar i-rr-jarrmi
-    dog 3MIN.POSS car 3-AUG-sleep
-    `The dog's car sleeps. (lit. dog his car sleeps)'
-  We were able to get it to parse by adding a two new possessive strategies
-  (one for min and one for aug):
-    poss-strat1_order=head-final
-    poss-strat1_mod-spec=spec
-    poss-strat1_mark-loc=possessor
-    poss-strat1_pronoun-allow=no
-    poss-strat1_possessor-type=non-affix
-    poss-strat1_possessor-mark-order=head-final
-      poss-strat1_dep-comp-feat1_name=pernum
-      poss-strat1_dep-comp-feat1_value=min
-    poss-strat1_possessor-agr=non-agree
-    poss-strat1_possessor-orth=jina
-    poss-strat2_order=head-final
-    poss-strat2_mod-spec=spec
-    poss-strat2_mark-loc=possessor
-    poss-strat2_pronoun-allow=no
-    poss-strat2_possessor-type=non-affix
-    poss-strat2_possessor-mark-order=head-final
-      poss-strat2_dep-comp-feat1_name=pernum
-      poss-strat2_dep-comp-feat1_value=aug
-    poss-strat2_possessor-agr=non-agree
-    poss-strat2_possessor-orth=jirra
-  This allowed #18 to parse however, only 1 of the 3 parses was correct. 2 of
-  the parses built the sentence using the wh-ques grammar rule. We posted on
-  Canvas and are currently awaiting feedback.
+    We worked on getting both possessive sentences in eng.txt to translate. We
+    started with #19 (My dogs sleep) as we already had the sentence parsing in the
+    lkb:
+      Ngajana iila irrjarrmi.
+      ngajana iila i-rr-jarrmi
+      1MIN.POSS dog 3-AUG-get.up
+      `My dogs sleep.'
+    Bardi has free possessor pronouns that are marked for
+    both person and number. We implemented this during week 4 using a class of
+    possessor pronouns:
+      poss-pron1_type=non-affix
+      poss-pron1_agr=non-agree
+      poss-pron1_mod-spec=spec
+      poss-pron1_order=head-final
+        poss-pron1_instance1_name=jana
+        poss-pron1_instance1_orth=jana
+          poss-pron1_instance1_feat1_name=pernum
+          poss-pron1_instance1_feat1_value=1min_excl
+        poss-pron1_instance2_name=jiya
+        poss-pron1_instance2_orth=jiya
+          poss-pron1_instance2_feat1_name=pernum
+          poss-pron1_instance2_feat1_value=2min
+        poss-pron1_instance3_name=jina
+        poss-pron1_instance3_orth=jina
+          poss-pron1_instance3_feat1_name=pernum
+          poss-pron1_instance3_feat1_value=3min
+        poss-pron1_instance5_name=jowa
+        poss-pron1_instance5_orth=jowa
+          poss-pron1_instance5_feat1_name=pernum
+          poss-pron1_instance5_feat1_value=1min_incl
+        poss-pron1_instance6_name=jarda
+        poss-pron1_instance6_orth=jarda
+          poss-pron1_instance6_feat1_name=pernum
+          poss-pron1_instance6_feat1_value=1aug
+        poss-pron1_instance7_name=joogarra
+        poss-pron1_instance7_orth=joogarra
+          poss-pron1_instance7_feat1_name=pernum
+          poss-pron1_instance7_feat1_value=2aug
+        poss-pron1_instance8_name=jirra
+        poss-pron1_instance8_orth=jirra
+          poss-pron1_instance8_feat1_name=pernum
+          poss-pron1_instance8_feat1_value=3aug
+      poss-pron1_possessum-mark=no
+    We were able to get 2 results when doing eng to bcj translation on #19 (since
+    Bardi has free word-order). Sentence #18 (The dog's car sleeps) was more
+    difficult to get parsing, let alone translating. We first tried to get the
+    following sentence to parse:
+      Iila jina yandilybar irrjarrmi.
+      iila jina yandilybar i-rr-jarrmi
+      dog 3MIN.POSS car 3-AUG-sleep
+      `The dog's car sleeps. (lit. dog his car sleeps)'
+    We were able to get it to parse by adding a two new possessive strategies
+    (one for min and one for aug):
+      poss-strat1_order=head-final
+      poss-strat1_mod-spec=spec
+      poss-strat1_mark-loc=possessor
+      poss-strat1_pronoun-allow=no
+      poss-strat1_possessor-type=non-affix
+      poss-strat1_possessor-mark-order=head-final
+        poss-strat1_dep-comp-feat1_name=pernum
+        poss-strat1_dep-comp-feat1_value=min
+      poss-strat1_possessor-agr=non-agree
+      poss-strat1_possessor-orth=jina
+      poss-strat2_order=head-final
+      poss-strat2_mod-spec=spec
+      poss-strat2_mark-loc=possessor
+      poss-strat2_pronoun-allow=no
+      poss-strat2_possessor-type=non-affix
+      poss-strat2_possessor-mark-order=head-final
+        poss-strat2_dep-comp-feat1_name=pernum
+        poss-strat2_dep-comp-feat1_value=aug
+      poss-strat2_possessor-agr=non-agree
+      poss-strat2_possessor-orth=jirra
+    This allowed #18 to parse however, only 1 of the 3 parses was correct. 2 of
+    the parses built the sentence using the wh-ques grammar rule. We posted on
+    Canvas and are currently awaiting feedback.
 
-  Also, this sentence does not currently translate. I think it is because Bardi
-  doesn't have determiners like "the" for nouns. Will post to Canvas about this
-  after getting the parsing fixed.
+    Also, this sentence does not currently translate. I think it is because Bardi
+    doesn't have determiners like "the" for nouns. Will post to Canvas about this
+    after getting the parsing fixed.
 
-  Object Agreement
-    - explain object agreement system in bardi and how we implemented it
-    - give IGT examples
-    - give choices or tdl snippets
+  Object Dropping
+    In Bardi, personal pronoun objects are marked on the verb. Bowern refers to
+    these as direct object clitics (pp 402) however we have implemented them as
+    affixes. They always take the last position in the verb. For example,
+      Iilanim irroongoorribiirr.
+      iila-nim i-rr-oo-ngoorribi-irr
+      dog-ERG 3-AUG-TR-chase-3AUG.DO
+      `Dogs chase them.'
+    We added a verb position class for all of the different pernum combination
+    lexical rules:
+      verb-pc7_name=dir-obj
+      verb-pc7_order=suffix
+      verb-pc7_inputs=verb-pc1, verb-pc3
+        verb-pc7_require1_others=verb2, verb6, verb8
+        verb-pc7_lrt1_name=1min-dir-obj
+          verb-pc7_lrt1_feat1_name=pernum
+          verb-pc7_lrt1_feat1_value=1min_excl
+          verb-pc7_lrt1_feat1_head=obj
+          verb-pc7_lrt1_lri1_inflecting=yes
+          verb-pc7_lrt1_lri1_orth=-ngay
+        verb-pc7_lrt2_name=2min-dir-obj
+          verb-pc7_lrt2_feat1_name=pernum
+          verb-pc7_lrt2_feat1_value=2min
+          verb-pc7_lrt2_feat1_head=obj
+          verb-pc7_lrt2_lri1_inflecting=yes
+          verb-pc7_lrt2_lri1_orth=-rri
+        verb-pc7_lrt3_name=3min-dir-obj
+          verb-pc7_lrt3_feat1_name=pernum
+          verb-pc7_lrt3_feat1_value=3min
+          verb-pc7_lrt3_feat1_head=obj
+          verb-pc7_lrt3_lri1_inflecting=no
+        verb-pc7_lrt4_name=1plus2min-dir-obj
+          verb-pc7_lrt4_feat1_name=pernum
+          verb-pc7_lrt4_feat1_value=1min_incl
+          verb-pc7_lrt4_feat1_head=obj
+          verb-pc7_lrt4_lri1_inflecting=yes
+          verb-pc7_lrt4_lri1_orth=-way
+        verb-pc7_lrt5_name=1aug-dir-obj
+          verb-pc7_lrt5_feat1_name=pernum
+          verb-pc7_lrt5_feat1_value=1aug
+          verb-pc7_lrt5_feat1_head=obj
+          verb-pc7_lrt5_lri1_inflecting=yes
+          verb-pc7_lrt5_lri1_orth=moord
+        verb-pc7_lrt6_name=2aug-dir-obj
+          verb-pc7_lrt6_feat1_name=pernum
+          verb-pc7_lrt6_feat1_value=2aug
+          verb-pc7_lrt6_feat1_head=obj
+          verb-pc7_lrt6_lri1_inflecting=yes
+          verb-pc7_lrt6_lri1_orth=goorr
+        verb-pc7_lrt7_name=3aug-dir-obj
+          verb-pc7_lrt7_feat1_name=pernum
+          verb-pc7_lrt7_feat1_value=3aug
+          verb-pc7_lrt7_feat1_head=obj
+          verb-pc7_lrt7_feat2_name=overt-arg
+          verb-pc7_lrt7_feat2_value=permitted
+          verb-pc7_lrt7_feat2_head=obj
+          verb-pc7_lrt7_lri1_inflecting=yes
+          verb-pc7_lrt7_lri1_orth=irr
+    We also changed the arg-opt options to:
+      obj-drop=obj-drop-all
+      obj-mark-drop=obj-mark-drop-req
+      obj-mark-no-drop=obj-mark-no-drop-opt
+    We attempted to parse the sentence above but were unable to get it to work.
+    We posted to Canvas and currently awaiting feedback.
+
+  Negation
+    In Bardi, there is a negation marker "arra" that precedes the verb. In
+    addition to the marker, the verb is marked for irrealis, which takes the
+    same position as tense does. Free word-order still applies so elements can
+    appear between the negation marker and the verb however, it is more common
+    to find the negation marker at the beginning of the sentence, followed by
+    the verb (either a simple verb or a preverb + verb complex predicate),
+    followed by the rest of the sentence. The example given by Bowern on pp 509,
+    with all being acceptable but the first being preferred:
+      1. Arra joodarrarr o-l-ala-na.
+         NEG with.the.tide 3-IRR-visit-REM.PST
+         `He didn’t go with the tide.'
+      2. Joodarrarr arra o-l-ala-na.
+         with.the.tide NEG 3-IRR-visit-REM.PST
+      3. Arra o-l-ala-na joodarrarr
+         NEG 3-IRR-visit-REM.PST with.the.tide
+    We used sentence #5 to test our implementation:
+      Arra iilanim irroongoorribi yandilybar.
+      arra iila-nim i-la-rr-oo-ngoorribi yandilybar
+      NEG dog-ERG 3-IRR-AUG-TR-chase boat
+      `The dogs don't chase boats.'
+    We implemented the negation marker using the customization system. We added
+    it as an adverb like particle because that matched the closest to how
+    Bowern described its use:
+      section=sentential-negation
+      neg-exp=1
+      comp-neg=on
+      comp-neg-head=v
+      comp-neg-order=before
+      comp-neg-orth=arra
+    We also added the irrealis mood to the tense position class, since it takes
+    the same spot in the verb marking. We were able to get #5 to parse however,
+    were not able to figure out how to constrict negation to require irrealis.
 
 TSDB
   Initial Run
