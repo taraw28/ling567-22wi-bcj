@@ -825,7 +825,7 @@ arra iila-nim i-la-rr-oo-ngoorribi yandilybar
 NEG dog-ERG 3-IRR-AUG-TR-chase boat
 `The dogs don't chase boats.'
 
-#93 MMT 18 doesn't parse yet
+#93 MMT 18
 Source: author
 Vetted: f
 Judgement: g

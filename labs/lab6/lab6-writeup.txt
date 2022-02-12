@@ -58,7 +58,7 @@ Translation
     aug-lex-rule.
   We did this with all of the inflectional rules and produced 12 results. At
   this point we tested sentence #4 (Dogs eat) which resulted in 52 results. We
-  removed all variations of irli (eat_v_rel) from the lexicon and yielded 10
+  removed all variations of arli (eat_v_rel) from the lexicon and yielded 10
   results. Now, the only factors producing this number of results was the fact
   that Bardi has free word-order (6 different possibilities) and that the
   transitive marker was optional (2 possibilities). Based off of what was shown
@@ -218,7 +218,18 @@ Phenomena
     the parses built the sentence using the wh-ques grammar rule. To fix this,
     we constrained the possessive adpositions to have empty NON-LOCAL values
     (as advised on Canvas):
-
+      two-rel-adposition-lex := basic-icons-lex-item &
+        [ SYNSEM [ NON-LOCAL non-local-none,
+                  LOCAL [ CAT [ HEAD adp,
+                                VAL.COMPS < [ LOCAL [ CAT cat-sat,
+                                                      CONT.HOOK #hook &
+                                                                [ INDEX #ind,
+                                                                  ICONS-KEY.IARG1 #clause ] ] ] > ],
+                          CONT.HOOK #hook &
+                                    [ CLAUSE-KEY #clause ] ],
+                  LKEYS.KEYREL arg12-ev-relation &
+                                [ ARG2 #ind ] ] ].
+    After fixing this, #18 resulted in one parse.
 
   Object Dropping
     In Bardi, personal pronoun objects are marked on the verb. Bowern refers to
