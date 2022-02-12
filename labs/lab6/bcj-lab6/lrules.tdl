@@ -1,0 +1,6 @@
+;;; -*- Mode: TDL; Coding: utf-8 -*-
+abs-lex := abs-lex-rule.
+
+prs-lex := prs-lex-rule.
+
+3min-dir-obj-lex := 3min-dir-obj-lex-rule.

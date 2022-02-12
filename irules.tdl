@@ -113,6 +113,10 @@ pst-tr-min-prefix :=
 %prefix (* na-)
 pst-tr-min-lex-rule.
 
+irr-prefix :=
+%prefix (* la-)
+irr-lex-rule.
+
 1min-prefix1 :=
 %prefix (* nga-) (* ng-)
 1min-lex-rule.
@@ -152,3 +156,27 @@ tr-min-lex-rule.
 tr-aug-prefix1 :=
 %prefix (* a-) (* i-) (* oo-)
 tr-aug-lex-rule.
+
+1min-dir-obj-suffix :=
+%suffix (* -ngay)
+1min-dir-obj-lex-rule.
+
+2min-dir-obj-suffix :=
+%suffix (* -rri)
+2min-dir-obj-lex-rule.
+
+1plus2min-dir-obj-suffix :=
+%suffix (* -way)
+1plus2min-dir-obj-lex-rule.
+
+1aug-dir-obj-suffix :=
+%suffix (* -moord)
+1aug-dir-obj-lex-rule.
+
+2aug-dir-obj-suffix :=
+%suffix (* -goorr)
+2aug-dir-obj-lex-rule.
+
+3aug-dir-obj-suffix :=
+%suffix (* -irr)
+3aug-dir-obj-lex-rule.

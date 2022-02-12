@@ -9,11 +9,11 @@
 9@author@@@1@tam,agr@i-rr-jala@@@@1@1@3-AUG-see`They see.'@tara wueger and hanieh nezakati@january 15, 2022
 10@a:127@@@1@tam,agr@i-n-jala-gal@@@@1@1@3-TR-see-REC.PST`He/she saw it.'@tara wueger and hanieh nezakati@january 15, 2022
 11@a:127@@@1@tam@i-n-any-jala-gal@@@@0@1@3-TR-PST-see-REC.PST`He/she saw it.'@tara wueger and hanieh nezakati@january 15, 2022
-12@a:396@@@1@tam@a-n-arl-a jiiba may@@@@1@3@IMP-TR-eat-FUT this food`Eat this food!'@tara wueger and hanieh nezakati@january 15, 2022
+12@a:396@@@1@tam@a-n-arli-a jiiba may@@@@1@3@IMP-TR-eat-FUT this food`Eat this food!'@tara wueger and hanieh nezakati@january 15, 2022
 13@a:117@@@1@tam,agr@arra ng-l-inya-n aarli@@@@1@3@NEG 1-IRR-catch-CONT fish`I didn't catch a fish.'@tara wueger and hanieh nezakati@january 15, 2022
 14@a:227@@@1@tam@grrin-ngan daab i-n-nya-gal@@@@1@3@hill-ALL go.up.to 3-TR-catch-REC.PST`He went up the hill.'@tara wueger and hanieh nezakati@january 15, 2022
 15@a:464@@@1@tam@i-m-bala-n-in@@@@1@1@3-PST-believe-REM.PST-3MIN.IO`He believed him.'@tara wueger and hanieh nezakati@january 15, 2022
-16@a:426@@@1@tam,agr@i-rr-irli-n@@@@1@1@3-AUG-eat-CONT`They are eating.'@tara wueger and hanieh nezakati@january 15, 2022
+16@a:426@@@1@tam,agr@i-rr-arli-n@@@@1@1@3-AUG-eat-CONT`They are eating.'@tara wueger and hanieh nezakati@january 15, 2022
 17@author@@@1@crd@may darr i-n-ar-n bardaga-yoon agal gaara-yoon@@@@1@6@food come 3-TR-pierce-CONT tree-SOURCE and ground-SOURCE`Food comes from the trees and from the ground.'@tara wueger and hanieh nezakati@january 15, 2022
 18@author@@@1@crd@may darr i-n-ar-n bardaga-yoon agal gaara-nim@@@@0@6@food come 3-TR-pierce-CONT tree-SOURCE and ground-ERG`Food comes from the trees and from the ground.'@tara wueger and hanieh nezakati@january 15, 2022
 19@author@@@1@crd@may darr i-n-ar-n bardaga-nim agal gaara-yoon@@@@0@6@food come 3-TR-pierce-CONT tree-ERG and ground-SOURCE`Food comes from the trees and from the ground.'@tara wueger and hanieh nezakati@january 15, 2022
@@ -45,7 +45,7 @@
 45@author@@@1@q@nganyji aalga-nim nga-nga-marra-na@@@@0@3@INTERROG sun-ERG 1-PST-cook-REM.PST`Did I get sun-burnt?'@tara wueger and hanieh nezakati@january 15, 2022
 46@a:621@@@1@q@nganyji lol i-ny-jiidi-gal mayar@@@@1@4@INTERROG burn 3-PST-go-REC.PST house`Did the house burn?'@tara wueger and hanieh nezakati@january 15, 2022
 47@author@@@1@q@aarli-arda mi-n-nya-gal@@@@1@2@fish-INT 2-TR.PST-catch-REC.PST`Was it fish you caught?'@tara wueger and hanieh nezakati@january 15, 2022
-48@a:625@@@1@wh@anggaba-nim anggi i-na-rli-gal@@@@1@3@who-ERG what 3-TR-eat-REC.PST`Who ate what?'@tara wueger and hanieh nezakati@january 15, 2022
+48@a:625@@@1@wh@anggaba-nim anggi i-na-arli-gal@@@@1@3@who-ERG what 3-TR-eat-REC.PST`Who ate what?'@tara wueger and hanieh nezakati@january 15, 2022
 49@a:627@@@1@wh@anggaba mi-n-jala-gal janaboor@@@@1@3@who 2-TR-see-REC.PST where`Who did you see where?'@tara wueger and hanieh nezakati@january 15, 2022
 50@author@@@1@pro-d@roowil i-ng-irr-i-nya-na Ngalngoorarra@@@@1@3@walk 3-PST-AUG-TR-catch-REM.PST Ngalngoorarra`They walked to Ngalngoorarra.'@tara wueger and hanieh nezakati@january 15, 2022
 51@a:294@@@1@pro-d@ngayoo-nim nga-na-na-rri malarr@@@@0@3@1MIN-ERG 1-CONT-REM.PST-2MIN.DO wife`I gave you wives.'@tara wueger and hanieh nezakati@january 15, 2022
@@ -75,8 +75,12 @@
 75@author@@@1@tam@aarla i-banya@@@@1@2@fish 3MIN-die`The fish dies.'@tara wueger and hanieh nezakati@january 15, 2022
 76@author@@@1@tam@a-ngg-arr-a-marra@@@@1@1@1-FUT-AUG-TR-cook`We will cook it.'@tara wueger and hanieh nezakati@january 15, 2022
 77@author@@@1@c@i-ny-arr-jarrmi-n gool@@@@1@2@3-PST-AUG-get.up-REM.PST father.ABS`The fathers got up.'@tara wueger and hanieh nezakati@january 15, 2022
-78@author@@@1@c@iil daag i-rr-i@@@@1@3@dog.ABS sleep 3-AUG-do.say`Dogs sleep.'@tara wueger and hanieh nezakati@january 15, 2022
-79@author@@@1@c@iila-nim i-rr-oo-ngoorribi aarli@@@@1@3@dog-ERG 3-AUG-TR-chase fish`Dogs chase fish.'@tara wueger and hanieh nezakati@january 15, 2022
+78@author@@@1@c@iila i-rr-jarrmi@@@@1@2@dog.ABS 3-AUG-sleep`Dogs sleep.'@tara wueger and hanieh nezakati@january 15, 2022
+79@author@@@1@c@iila-nim yandilybar oo-rr-oo-ngoorribi@@@@1@3@dog-ERG car 3-AUG-TR-chase`Dogs chase cars.'@tara wueger and hanieh nezakati@january 15, 2022
 80@author@@@1@pn@nga-na-ngoorribi-rri@@@@1@1@1-TR-chase-2MIN.DO`I chase you.'@tara wueger and hanieh nezakati@january 15, 2022
-81@author@@@1@c@iil i-rr-arli@@@@1@2@dog.ABS 3-AUG-eat`Dogs eat.'@tara wueger and hanieh nezakati@january 15, 2022
-82@author@@@1@neg@arra iila-nim i-rr-oo-ngoorribi yandilybar@@@@1@4@NEG dog-ERG 3-AUG-TR-chase boat`The dogs don't chase boats.'@tara wueger and hanieh nezakati@january 15, 2022
+81@author@@@1@c@iila oo-rr-arli@@@@1@2@dog.ABS 3-AUG-eat`Dogs eat.'@tara wueger and hanieh nezakati@january 15, 2022
+82@author@@@1@neg@arra iila-nim i-la-rr-oo-ngoorribi yandilybar@@@@1@4@NEG dog-ERG 3-IRR-AUG-TR-chase boat`The dogs don't chase boats.'@tara wueger and hanieh nezakati@january 15, 2022
+83@author@@@1@poss@iila jina yandilybar i-rr-jarrmi@@@@1@4@dog 3MIN.POSS car 3-AUG-sleep`The dog's car sleeps. (lit. dog his car sleeps)'@tara wueger and hanieh nezakati@january 15, 2022
+84@author@@@1@poss@ngajana iila i-rr-jarrmi@@@@1@3@1MIN.POSS dog 3-AUG-sleep`My dogs sleep.'@tara wueger and hanieh nezakati@january 15, 2022
+85@author@@@1@pro-d@iila-nim i-rr-oo-ngoorribi-irr@@@@1@2@dog-ERG 3-AUG-TR-chase-3AUG.DO`Dogs chase them.'@tara wueger and hanieh nezakati@january 15, 2022
+86@author@@@1@neg@arra iila-nim i-rr-oo-ngoorribi yandilybar@@@@0@4@NEG dog-ERG 3-AUG-TR-chase boat`*The dogs don't chase boats.@tara wueger and hanieh nezakati@january 15, 2022

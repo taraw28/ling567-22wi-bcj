@@ -16,7 +16,7 @@
   - at this point test #4
     - initial: 52 results
     - removed all variations of eat_v_rel: 10 results
-      - arli => arli, arl, rl, rli, irli, rr
+      - arli => arli, arl, rl, rli, irli
   - add require/forbid constrains to it/tr verb classes
     - #2: 6 results
     - #4: 6 results

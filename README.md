@@ -23,3 +23,7 @@ git pull
 - changed cave_n_rel to par_n_rel
 - changed sleep_v_rel (for daag) to sleeps_v_rel
 - changed it-abs get.up_v_rel to sleep_v_rel
+
+## To Do
+- figure out why #70 stopped parsing
+- change #79, #80, #94 from ngajana to just jana
