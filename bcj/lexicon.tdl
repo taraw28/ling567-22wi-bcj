@@ -697,7 +697,7 @@ jargi := it-abs-verb-lex &
   [ STEM < "jargi" >,
     SYNSEM.LKEYS.KEYREL.PRED "_fear_v_rel" ].
 
-arli_1 := it-abs-verb-lex &
+arli := it-abs-verb-lex &
   [ STEM < "arli" >,
     SYNSEM.LKEYS.KEYREL.PRED "_eat_v_rel" ].
 
@@ -720,10 +720,6 @@ jala_2 := tr-erg-abs-verb-lex &
 loonga := tr-erg-abs-verb-lex &
   [ STEM < "loonga" >,
     SYNSEM.LKEYS.KEYREL.PRED "_collect_v_rel" ].
-
-arli_2 := tr-erg-abs-verb-lex &
-  [ STEM < "arli" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_eat_v_rel" ].
 
 alboo := tr-erg-abs-verb-lex &
   [ STEM < "alboo" >,

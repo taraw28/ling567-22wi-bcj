@@ -264,28 +264,32 @@ Phenomena
           verb-pc7_lrt5_feat1_value=1aug
           verb-pc7_lrt5_feat1_head=obj
           verb-pc7_lrt5_lri1_inflecting=yes
-          verb-pc7_lrt5_lri1_orth=moord
+          verb-pc7_lrt5_lri1_orth=-moord
         verb-pc7_lrt6_name=2aug-dir-obj
           verb-pc7_lrt6_feat1_name=pernum
           verb-pc7_lrt6_feat1_value=2aug
           verb-pc7_lrt6_feat1_head=obj
           verb-pc7_lrt6_lri1_inflecting=yes
-          verb-pc7_lrt6_lri1_orth=goorr
+          verb-pc7_lrt6_lri1_orth=-goorr
         verb-pc7_lrt7_name=3aug-dir-obj
           verb-pc7_lrt7_feat1_name=pernum
           verb-pc7_lrt7_feat1_value=3aug
           verb-pc7_lrt7_feat1_head=obj
-          verb-pc7_lrt7_feat2_name=overt-arg
-          verb-pc7_lrt7_feat2_value=permitted
-          verb-pc7_lrt7_feat2_head=obj
           verb-pc7_lrt7_lri1_inflecting=yes
-          verb-pc7_lrt7_lri1_orth=irr
+          verb-pc7_lrt7_lri1_orth=-irr
     We also changed the arg-opt options to:
       obj-drop=obj-drop-all
-      obj-mark-drop=obj-mark-drop-req
+      obj-mark-drop=obj-mark-drop-opt
       obj-mark-no-drop=obj-mark-no-drop-opt
     We attempted to parse the sentence above but were unable to get it to work.
-    We posted to Canvas and currently awaiting feedback.
+    This was because we were initially missing the dashes in some of the
+    suffixes. After fixing this, we were able to get both pronoun objects that
+    are marked on the verb as well as object dropping sentences like:
+      Iil oorrarli.
+      iila oo-rr-arli
+      dog.ABS 3-AUG-eat
+      `Dogs eat.'
+    to parse.
 
   Negation
     In Bardi, there is a negation marker "arra" that precedes the verb. In
