@@ -121,7 +121,7 @@ Vetted: t
 Judgement: g
 Phenomena: tam
 Anarla kiiba may!
-a-n-arl-a jiiba may
+a-n-arli-a jiiba may
 IMP-TR-eat-FUT this food
 `Eat this food!'
 
@@ -161,7 +161,7 @@ Vetted: t
 Judgement: g
 Phenomena: {tam, agr}
 Irrirlin.
-i-rr-irli-n
+i-rr-arli-n
 3-AUG-eat-CONT
 `They are eating.'
 
@@ -481,7 +481,7 @@ Vetted: t
 Judgement: g
 Phenomena: wh
 Anggabanim anggi inarligal?
-anggaba-nim anggi i-na-rli-gal
+anggaba-nim anggi i-na-arli-gal
 who-ERG what 3-TR-eat-REC.PST
 `Who ate what?'
 
@@ -862,5 +862,5 @@ Judgement: u
 Phenomena: neg
 Arra iilanim irroongoorribi yandilybar.
 arra iila-nim i-rr-oo-ngoorribi yandilybar
-NEG dog-ERG 3-IRR-AUG-TR-chase boat
+NEG dog-ERG 3-AUG-TR-chase boat
 `*The dogs don't chase boats.
