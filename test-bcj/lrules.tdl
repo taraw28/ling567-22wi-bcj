@@ -1,4 +1,0 @@
-;;; -*- Mode: TDL; Coding: utf-8 -*-
-abs-lex := abs-lex-rule.
-
-prs-lex := prs-lex-rule.

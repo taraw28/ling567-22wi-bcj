@@ -16,6 +16,7 @@ git pull
 - [Lab 4](mds/lab4.md)
 - [Lab 5](mds/lab5.md)
 - [Lab 6](mds/lab6.md)
+- [Lab 7](mds/lab7.md)
 
 ## Changes to Choices for Translation Purposes
 - changed fish_n_rel to cat_n_rel
