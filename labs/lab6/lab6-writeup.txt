@@ -215,12 +215,10 @@ Phenomena
       poss-strat2_possessor-agr=non-agree
       poss-strat2_possessor-orth=jirra
     This allowed #18 to parse however, only 1 of the 3 parses was correct. 2 of
-    the parses built the sentence using the wh-ques grammar rule. We posted on
-    Canvas and are currently awaiting feedback.
+    the parses built the sentence using the wh-ques grammar rule. To fix this,
+    we constrained the possessive adpositions to have empty NON-LOCAL values
+    (as advised on Canvas):
 
-    Also, this sentence does not currently translate. I think it is because Bardi
-    doesn't have determiners like "the" for nouns. Will post to Canvas about this
-    after getting the parsing fixed.
 
   Object Dropping
     In Bardi, personal pronoun objects are marked on the verb. Bowern refers to
@@ -324,6 +322,42 @@ Phenomena
     We also added the irrealis mood to the tense position class, since it takes
     the same spot in the verb marking. We were able to get #5 to parse however,
     were not able to figure out how to constrict negation to require irrealis.
+    After getting some feedback on Canvas, we switched to bipartite negation,
+    with the first part being a free, syntactic complement (arra) and the second
+    part being a bound morpheme:
+      section=sentential-negation
+      neg-exp=2
+      infl-neg=on
+      adv-neg=on
+      comp-neg=on
+      comp-neg-head=v
+      comp-neg-order=before
+      comp-neg-orth=arra
+      bineg-type=infl-comp
+      neg1-type=fc
+      neg2-type=b
+      comp-neg-head-infl-comp-neg=v
+      comp-neg-order-infl-head=before
+    For the irrealis restriction, we added an irrealis marker to the tense
+    position class and gave it the negation plus feature:
+      verb-pc2_lrt5_name=irr
+        verb-pc2_lrt5_feat1_name=mood
+        verb-pc2_lrt5_feat1_value=irr
+        verb-pc2_lrt5_feat1_head=verb
+        verb-pc2_lrt5_feat2_name=negation
+        verb-pc2_lrt5_feat2_value=plus
+        verb-pc2_lrt5_feat2_head=verb
+        verb-pc2_lrt5_lri1_inflecting=yes
+        verb-pc2_lrt5_lri1_orth=la-
+    This allowed for sentence #5 to parse and sentences like:
+      Arra iilanim irroongoorribi yandilybar.
+      arra iila-nim i-rr-oo-ngoorribi yandilybar
+      NEG dog-ERG 3-IRR-AUG-TR-chase boat
+      `*The dogs don't chase boats.
+    which does not have the irrealis marker, to not parse.
+    (Note from Tara: I know we weren't supposed to work on negation this week
+    but I accidentally fell down a bit of a rabbit hole and ended up working on
+    it.)
 
 TSDB
   Initial Run

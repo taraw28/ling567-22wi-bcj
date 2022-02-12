@@ -815,12 +815,12 @@ iila oo-rr-arli
 dog.ABS 3-AUG-eat
 `Dogs eat.'
 
-#92 MMT 5 doesn't parse yet
+#92 MMT 5
 Source: author
 Vetted: f
 Judgement: g
 Phenomena: neg
-Arra iilanim irroongoorribi yandilybar.
+Arra iilanim ilarroongoorribi yandilybar.
 arra iila-nim i-la-rr-oo-ngoorribi yandilybar
 NEG dog-ERG 3-IRR-AUG-TR-chase boat
 `The dogs don't chase boats.'
@@ -854,3 +854,13 @@ Iilanim irroongoorribiirr.
 iila-nim i-rr-oo-ngoorribi-irr
 dog-ERG 3-AUG-TR-chase-3AUG.DO
 `Dogs chase them.'
+
+#96 negation without irrealis (bad)
+Source: author
+Vetted: f
+Judgement: u
+Phenomena: neg
+Arra iilanim irroongoorribi yandilybar.
+arra iila-nim i-rr-oo-ngoorribi yandilybar
+NEG dog-ERG 3-IRR-AUG-TR-chase boat
+`*The dogs don't chase boats.

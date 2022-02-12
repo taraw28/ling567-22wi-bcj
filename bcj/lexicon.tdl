@@ -944,7 +944,7 @@ barni_2 := det2-determiner-lex &
 nganyji := q-particle1-lex &
   [ STEM < "nganyji" > ].
 
-arra := neg-adv-lex &
+arra := neg-comp-lex &
   [ STEM < "arra" >,
     SYNSEM.LKEYS.KEYREL.PRED "neg_rel" ].
 
