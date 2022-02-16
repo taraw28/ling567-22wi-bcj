@@ -1,0 +1,70 @@
+Lab 7 - Bardi - Tara and Hanieh
+
+Translation
+ 
+Phenomenon
+  Non-Verbal Predicates
+    
+ 
+ More Translation
+    After further implementing some of the phenomena above, we went through and
+    translated any sentences that we could. Below is a summary:
+      #1: 2 results
+      #2: 12 results (possibly the result of implementation of object dropping
+        this is explained more as a new ambiguity source below)
+      #3: 0 results (expected at this point)
+      #4: 2 results
+      #5: 24 results (first test after adding negation)
+      #18: 0 results (it parses in lkb but won't generate most likely because
+        Bardi doesn't have determiners for nouns like "the" or "a"; it goes from
+        "the dog" in English to "dog" in Bardi)
+      #19: 2 results
+
+TSDB
+  Initial Run
+    corpus (tsdb/home/bardi/lab6/lab5grammar/corpus)
+      1. 0 items parsed
+      2. We averaged 0 parses per parsed item.
+      3. Our most ambiguous item got 0 readings.
+
+    testsuite (tsdb/home/bardi/lab6/lab5grammar/lab6)
+      1. 13 items parsed
+      2. We averaged ~2 parses per parsed item.
+      3. Our most ambiguous item got 6 parses.
+      4. Our most ambiguous item has 6 parses due to different combinations of
+        the EX-ADJ and EX-SUBJ rules applying to the VP formed by the COMP-HEAD
+        rule in this sentence:
+          Ngamarlang nganangajimgal.
+          nga-marla-ng nga-na-ngajim-gal
+          1MIN.POSS-hand-INS 1-TR.PST-hit-REC.PST
+          `I hit him with my hand.'
+        This is an example of the possessive marker on an inalienable noun. We
+        are not entirely sure why this is happening or really what those 2 rules
+        are doing.
+
+  Final Run
+    corpus (tsdb/home/bardi/lab6/lab6grammar/corpus)
+      1. 0 items parsed
+      2. We averaged 0 parses per parsed item.
+      3. Our most ambiguous item got 0 readings.
+
+    testsuite (tsdb/home/bardi/lab6/lab6grammar/lab6)
+      1. 12 items parsed
+      2. We averaged ~2 parses per parsed item.
+      3. Our most ambiguous item(s) got 4 parses.
+      4. A new source of ambiguity is with the new direct object lexical rules.
+        Since the 3min direct object marker is null, it is getting applied to
+        a lot of sentences that shouldn't have it. In many cases, when there is
+        an overt direct object, no marker is needed. However, there are also
+        cases where a marker is allowed. I'm not entirely sure how to fix this.
+
+  Coverage
+    - Initial Run
+      - corpus: 0% coverage
+      - testsuite: 16.2% coverage
+    - Final Run
+      - corpus: 0% coverage
+      - testsuite: 14.9% coverage
+    - Comparison
+      - corpus: 
+      - testsuite: 
