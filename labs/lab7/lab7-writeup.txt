@@ -1,15 +1,133 @@
 Lab 7 - Bardi - Tara and Hanieh
-
-Translation
  
 Phenomenon
-  Non-Verbal Predicates
+ Non-Verbal Predicates
     
+Bardi has nominal and adjectival predicates, and the copula is normally null (pp.601-610). 
+
+
+Null Predicates:
+ The presence of copula is independent of tense and can remain null for all tenses  
+ Order of subject and predicate is flexible 
+ Oblique pronouns (in the predicate) used along with a location case-marked noun in the subject can make copula predicates too.
+
+  Example [doesn’t parse] (p.601):
+   Ginyinggi aamba galgarr.
+   This man widower
+   `This man is a widower.’
+
+
+Clauses with -ni- ‘sit’
+ Combining the verb -ni- ‘sit’ in dfferent ways with predicative adjectives can be used as copula. 
+
+Examples [don't parse]
+
+garrja -ni- ‘be sharp’:
+
+garrja i-ni-n ginyinggi jamooyoon.
+sharp 3-sit-CONT 3MIN knife
+`The knife is sharp'
+
+  Location
+   providing “spatial” information
+   translated to ‘there was + noun + location/place (over there, in his camp)’
+
+	 Assertion of existence
+		 informing of the presence/existence (as opposed to absence) of the subject 
+		 translated to ‘there is’ or ‘here is + noun’
+
+	 Pointing out
+		 both locational and existential; uses deictic marker jiiba ‘this’ 
+   before the place to emphasize the location of something
+		 translated to ‘this is it’ or ‘here it is’ 
+
+	 Aspectual modification of adjectives
+		 -ni- as a light verb used with an adjective creating syntactic minimal pairs 
+   between sentences w/ complex predicate and those w/ null copula
+		 translated to copula as in ‘be + adjective’
+   
+Elided verbs
+ Verbs can only be seen elided in answers to questions having 
+ a single noun phrase standing alone as the answer.
+  Example [doesn’t parse] (p.609):
+    Angginim goorr?
+    Anggi-nim goorr
+    what-ERG 2AUG
+    ‘What’s wrong with you? What happened to you?’
+
+
+ Wh-Questions and Copula 
+  To make constituent (wh-) questions, Bardi uses a number of interrogative pronouns that usually
+  appear clause initially. This analysis should work together with 
+  The null-copula analysis of nominal non-verbal predicates. 
+  
+  Below is an example, which doesn't parse:
+
+        Anggaba nyinga joo?
+        Anggaba nyi-nga joo
+        who 2MIN-name 2MIN
+        `What’s your name?'
+  
+  
+Translation
+ According to Bowern words such as ‘hungry’ and ‘thirsty’ are primarily nouns in Bardi, not
+ adjectives. The noun in the ergative and the experiencer as the subject is used 
+ to construct a causal relation to express that one is hungry or thirsty,. (pp. 268)
  
- More Translation
-    After further implementing some of the phenomena above, we went through and
-    translated any sentences that we could. Below is a summary:
-      #1: 2 results
+ The other major use of the ergative is to mark low-animacy causers. In this 
+ case the subject is the high-animacy patient and it takes the subject agreement 
+ marker on the verb. (pp. 198)
+ 
+ Here are the potential translations based on the analysis above and similar evidence in Bowern's descriptive text:
+
+#15 involves preverb do.say
+manyjal-nim alig iila i-rr-oo-j-ij
+hunger-ERG feel.bad dog 3-AUG-TR-do.say-PFV
+The dogs are hungry.
+
+
+#15 involves verb -ni- 'sit' (hungry = sharp)
+garrja i-ni-n ginyinggi jamooyoon.
+sharp 3-sit-CONT 3MIN knife
+`The knife is sharp'
+(p.508)
+
+#16 (park = cave)
+iila-nim gardin-on i-rr-ni
+dog-ERG park-LOC 3-AUG-be
+The dogs are in the park.
+
+(park = beach) (null locative)
+iila-nim jaala i-rr-ni
+dog-ERG park 3-AUG-be
+The dogs are in the park.
+
+no evidence of such a construction but maybe:
+
+#17 for ergative 
+iila-nim i-rr-ni-irr aarli
+dog-ERG 3-AUG-be-3AUG cat
+The dogs are the cats.
+ 
+ OR
+ #17 for null copula
+ Ginyinggi iila aarli
+ This dog cat
+   `This man is a widower.’
+ 
+ 
+More translation
+  
+  Anggaba inyarrjarrmin
+  anggaba i-ny-arr-jarrmi-n
+  Who sleeps? 
+  can parse but can't translate yet
+  
+  can translate futrhter
+  #8: 11812 results
+      #11: 24 results
+      
+    From lab 6
       #2: 12 results (possibly the result of implementation of object dropping
         this is explained more as a new ambiguity source below)
       #3: 0 results (expected at this point)
@@ -22,49 +140,38 @@ Phenomenon
 
 TSDB
   Initial Run
-    corpus (tsdb/home/bardi/lab6/lab5grammar/corpus)
-      1. 0 items parsed
-      2. We averaged 0 parses per parsed item.
-      3. Our most ambiguous item got 0 readings.
+    corpus (tsdb/home/bardi/lab7/lab6grammar/corpus)
+      1.  items parsed
+      2. We averaged  parses per parsed item.
+      3. Our most ambiguous item got  readings.
 
-    testsuite (tsdb/home/bardi/lab6/lab5grammar/lab6)
-      1. 13 items parsed
-      2. We averaged ~2 parses per parsed item.
-      3. Our most ambiguous item got 6 parses.
-      4. Our most ambiguous item has 6 parses due to different combinations of
-        the EX-ADJ and EX-SUBJ rules applying to the VP formed by the COMP-HEAD
-        rule in this sentence:
-          Ngamarlang nganangajimgal.
-          nga-marla-ng nga-na-ngajim-gal
-          1MIN.POSS-hand-INS 1-TR.PST-hit-REC.PST
-          `I hit him with my hand.'
-        This is an example of the possessive marker on an inalienable noun. We
-        are not entirely sure why this is happening or really what those 2 rules
-        are doing.
+    testsuite (tsdb/home/bardi/lab7/lab6grammar/lab7)
+      1.  items parsed
+      2. We averaged  parses per parsed item.
+      3. Our most ambiguous item got  parses.
+      4. Our most ambiguous item has  parses due to different combinations of
+        
 
   Final Run
-    corpus (tsdb/home/bardi/lab6/lab6grammar/corpus)
+    corpus (tsdb/home/bardi/lab7/lab7grammar/corpus)
       1. 0 items parsed
       2. We averaged 0 parses per parsed item.
       3. Our most ambiguous item got 0 readings.
 
-    testsuite (tsdb/home/bardi/lab6/lab6grammar/lab6)
-      1. 12 items parsed
-      2. We averaged ~2 parses per parsed item.
-      3. Our most ambiguous item(s) got 4 parses.
-      4. A new source of ambiguity is with the new direct object lexical rules.
-        Since the 3min direct object marker is null, it is getting applied to
-        a lot of sentences that shouldn't have it. In many cases, when there is
-        an overt direct object, no marker is needed. However, there are also
-        cases where a marker is allowed. I'm not entirely sure how to fix this.
+    testsuite (tsdb/home/bardi/lab7/lab7grammar/lab7)
+      1.  items parsed
+      2. We averaged  parses per parsed item.
+      3. Our most ambiguous item(s) got  parses.
+      4. A new source of ambiguity is with 
+      
 
   Coverage
     - Initial Run
-      - corpus: 0% coverage
-      - testsuite: 16.2% coverage
+      - corpus: % coverage
+      - testsuite: % coverage
     - Final Run
-      - corpus: 0% coverage
-      - testsuite: 14.9% coverage
+      - corpus: % coverage
+      - testsuite: % coverage
     - Comparison
       - corpus: 
       - testsuite: 
