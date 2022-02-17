@@ -22,38 +22,107 @@ Example [doesn’t parse] (p.601):
 Ginyinggi aamba galgarr.
 This man widower
 `This man is a widower.’
-   
+
+arri aamba garnibina.
+jarri aamba garnibina
+this man murderer
+`This man's a murderer.'
+
+Jalnggoogoorr jana nyami.
+jalnggoogoorr jana nyami
+doctor.man 1M.POSS mother's.father
+`My grandfather was a doctorman.'
+
+- preference for predicates to be possessed when describing qualities (pp. 604)
+
+Aman jina laya.
+aman jina laya
+little 3MIN.POSS fat
+`It's got a little bit of fat.'
+
+Niimana jina lagoorr.
+many 3MIN.POSS egg
+`It's got a lot of eggs.'
+
+- nominal predicates can take the predicate marker -a (pp. 340)
+(maybe make boorrboorriid = dancer for purpose of parsing)
+
+Jarr aamba boorrboorriida.
+jarr aamba boorrboorr-iid-a
+this man dance-EXP-PRED
+`This man's a dancer.'
+
+- plural can be marked on predicate even if not verb (pp. 173)
+
+#17
+Irr iila irr aarli.
+irr iila irr aarli
+3AUG dog 3AUG cat
+`The dogs are the cats.'
+
+- no copula refers to permanent state
+
+Niiwandi ngamarlangay.
+niiwanda nga-marla-ngay
+long 1-hand.or.finger-1MIN
+`My fingers are long.'
+
 Clauses with -ni- ‘sit’:
+
 - Combining the verb -ni- ‘sit’ in dfferent ways with predicative adjectives can be used as copula. 
 
-Examples [don't parse] (p. 554)
+Example [doesn't parse] (p. 554)
 garrja -ni- ‘be sharp’:
 garrja i-ni-n ginyinggi jamooyoon.
 sharp 3-sit-CONT 3MIN knife
 `The knife is sharp'
 
 Location
-- providing “spatial” information
+- providing “spatial” information and stative readings
 translated to ‘there was + noun + location/place (over there, in his camp)’
 
-Assertion of existence
-- informing of the presence/existence (as opposed to absence) of the subject 
-- translated to ‘there is’ or ‘here is + noun’
+Inin baaloon.
+i-ni-n baal-oon
+3-be-CONT boughshed-LOC
+`It's in the boughshed.'
 
-Pointing out
-- both locational and existential; uses deictic marker _jiiba_ ‘this’ 
-before the place to emphasize the location of something
-- translated to ‘this is it’ or ‘here it is’ 
+- Some nouns take the locative suffix while others don't. For example, gardin 'cave' does take the suffix but jaala 'beach' doesn't.
+
+Iilanim gardinon irrni.
+iila-nim gardin-on i-rr-ni
+dog-ERG cave-LOC 3-AUG-be
+`The dogs are in the cave.'
+
+Iilanim jaala irrni.
+iila-nim jaala i-rr-ni
+dog-ERG beach 3-AUG-be
+`The dogs are at the beach.'
+
+#16 (park = cave)
+Iilanim gardinon irrni.
+iila-nim gardin-on i-rr-ni
+dog-ERG park-LOC 3-AUG-be
+`The dogs are in the park.'
 
 Aspectual modification of adjectives
 - -ni- as a light verb used with an adjective creating syntactic minimal pairs 
 between sentences w/ complex predicate and those w/ null copula
+
 - translated to copula as in ‘be + adjective’
+
 Example [doesn't parse]
-Garnka inin jorndi
-Garnka i-ni-n jorndi
-raw 3-sit-CONT still
-   
+Garnka inin.
+garnka i-ni-n
+raw 3-sit-CONT
+`It is raw.'
+
+- copula refers to transient state
+
+Niiwandi inin ngamarla.
+niiwanda i-ni-n nga-marla
+long 3-sit-CONT 1-hand.or.finger
+`My fingers are stretched out.'
+
 Elided Verbs:
 - Verbs can only be seen elided in answers to questions having 
 a single noun phrase standing alone as the answer.
