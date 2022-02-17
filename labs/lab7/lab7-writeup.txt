@@ -9,8 +9,8 @@ Summary:
 - Adjectives do not really exist independent of stative verbs. 
 - There is no PP either, and NPs are used with a locative verb.
 - Locative case is frequently used to indicate 'static location.'
-- To give a stative reading to the predicate, the light verb -ni- ‘sit’ is used to
-indicate states; for instance: iilan -ni- ‘be sick’; miyala -ni- ‘be awake’ (p. 538)
+- The light verb -ni- ‘sit’ is used to indicate states; 
+for instance: iilan -ni- ‘be sick’; miyala -ni- ‘be awake’ (p. 538)
 - Adjectival preverbs which form stative predicates with -ni- ‘sit’ may also
 combine with the light verb -joo- ‘do/say’ to form inchoatives.
 
