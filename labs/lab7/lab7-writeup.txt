@@ -1,9 +1,6 @@
 Lab 7 - Bardi - Tara and Hanieh
  
-Phenomenon
- Non-Verbal Predicates
-    
-Summary:
+Non-Verbal Predicates Phenomenon
 
 - Bardi has nominal and adjectival predicates, and the copula is normally null (pp.601-610). 
 - Adjectives do not really exist independent of stative verbs. 
@@ -17,85 +14,84 @@ combine with the light verb -joo- ‘do/say’ to form inchoatives.
 Below are the detailed ways non-verbal predicates are constructed:
 
 Null Predicates:
- The presence of copula is independent of tense and can remain null for all tenses  
- Order of subject and predicate is flexible 
- Oblique pronouns (in the predicate) used along with a location case-marked noun in the subject can make copula predicates too.
+- The presence of copula is independent of tense and can remain null for all tenses  
+- Order of subject and predicate is flexible 
+- Oblique pronouns (in the predicate) used along with a location case-marked noun in the subject can make copula predicates too.
 
-  Example [doesn’t parse] (p.601):
-   Ginyinggi aamba galgarr.
-   This man widower
-   `This man is a widower.’
+Example [doesn’t parse] (p.601):
+Ginyinggi aamba galgarr.
+This man widower
+`This man is a widower.’
    
-   'Ginyinggi' is ...
+Clauses with -ni- ‘sit’:
+- Combining the verb -ni- ‘sit’ in dfferent ways with predicative adjectives can be used as copula. 
 
-Clauses with -ni- ‘sit’
- Combining the verb -ni- ‘sit’ in dfferent ways with predicative adjectives can be used as copula. 
-
-Examples [don't parse]
-
+Examples [don't parse] (p. 554)
 garrja -ni- ‘be sharp’:
-
 garrja i-ni-n ginyinggi jamooyoon.
 sharp 3-sit-CONT 3MIN knife
 `The knife is sharp'
 
 Location
- providing “spatial” information
-   translated to ‘there was + noun + location/place (over there, in his camp)’
+- providing “spatial” information
+translated to ‘there was + noun + location/place (over there, in his camp)’
 
 Assertion of existence
- informing of the presence/existence (as opposed to absence) of the subject 
-   translated to ‘there is’ or ‘here is + noun’
+- informing of the presence/existence (as opposed to absence) of the subject 
+- translated to ‘there is’ or ‘here is + noun’
 
 Pointing out
- both locational and existential; uses deictic marker _jiiba_ ‘this’ 
- before the place to emphasize the location of something
-   translated to ‘this is it’ or ‘here it is’ 
+- both locational and existential; uses deictic marker _jiiba_ ‘this’ 
+before the place to emphasize the location of something
+- translated to ‘this is it’ or ‘here it is’ 
 
 Aspectual modification of adjectives
- -ni- as a light verb used with an adjective creating syntactic minimal pairs 
- between sentences w/ complex predicate and those w/ null copula
-   translated to copula as in ‘be + adjective’
+- -ni- as a light verb used with an adjective creating syntactic minimal pairs 
+between sentences w/ complex predicate and those w/ null copula
+- translated to copula as in ‘be + adjective’
+Example [doesn't parse]
+Garnka inin jorndi
+Garnka i-ni-n jorndi
+raw 3-sit-CONT still
    
-Elided verbs
- Verbs can only be seen elided in answers to questions having 
- a single noun phrase standing alone as the answer.
+Elided Verbs:
+- Verbs can only be seen elided in answers to questions having 
+a single noun phrase standing alone as the answer.
+
+Example [doesn’t parse] (p.609):
+Angginim goorr?
+Anggi-nim goorr
+what-ERG 2AUG
+‘What’s wrong with you? What happened to you?’
+
+
+Wh-Questions and Copula: 
+- To make constituent (wh-) questions, Bardi uses a number of interrogative pronouns that usually
+appear clause initially. This analysis should work together with 
+the null-copula analysis of nominal non-verbal predicates. 
+- I beleive this would could also be an "elided" verb way of constructing
+non-verbal predicates explained above. 
   
-  Example [doesn’t parse] (p.609):
-    Angginim goorr?
-    Anggi-nim goorr
-    what-ERG 2AUG
-    ‘What’s wrong with you? What happened to you?’
-
-
- Wh-Questions and Copula 
-  - To make constituent (wh-) questions, Bardi uses a number of interrogative pronouns that usually
-  appear clause initially. This analysis should work together with 
-  the null-copula analysis of nominal non-verbal predicates. 
-  - I beleive this would could also be an "elided" verb way of constructing 
-  non-verbal predicates explained above. 
-  
-  Below is an example, which doesn't parse:
-
-        Anggaba nyinga joo?
-        Anggaba nyi-nga joo
-        who 2MIN-name 2MIN
-        `What’s your name?'
+Below is an example, which doesn't parse:
+Anggaba nyinga joo?
+Anggaba nyi-nga joo
+who 2MIN-name 2MIN
+`What’s your name?'
   
   
 Translation
- According to Bowern words such as ‘hungry’ and ‘thirsty’ are primarily nouns in Bardi, not
- adjectives. The noun in the ergative and the experiencer as the subject is used 
- to construct a causal relation to express that one is hungry or thirsty,. (pp. 268)
- 
- The other major use of the ergative is to mark low-animacy causers. In this 
- case the subject is the high-animacy patient and it takes the subject agreement 
- marker on the verb. (pp. 198)
- 
- There is very littel evidence in the descriptive text to help with the translation of 
- the three sentences for this lab. We have used the different ways of constructing 
- non-verbals to translate them. Hence, multiple translations below. The page numbers are to 
- show evidenced examples pages off of which we have translated the sentences. 
+- According to Bowern words such as ‘hungry’ and ‘thirsty’ are primarily nouns in Bardi, not
+adjectives. The noun in the ergative and the experiencer as the subject is used 
+to construct a causal relation to express that one is hungry or thirsty,. (pp. 268)
+
+- The other major use of the ergative is to mark low-animacy causers. In this 
+case the subject is the high-animacy patient and it takes the subject agreement 
+marker on the verb. (pp. 198)
+
+- There is very littel evidence in the descriptive text to help with the translation of 
+the three sentences for this lab. We have used the different ways of constructing 
+non-verbals to translate them. Hence, multiple translations below. The page numbers are to 
+show evidenced examples pages off of which we have translated the sentences. 
 
 #15 preverb do.say
 manyjal-nim alig iila i-rr-oo-j-ij
