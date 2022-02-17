@@ -69,7 +69,7 @@ Wh-Questions and Copula:
 - To make constituent (wh-) questions, Bardi uses a number of interrogative pronouns that usually
 appear clause initially. This analysis should work together with 
 the null-copula analysis of nominal non-verbal predicates. 
-- I beleive this would could also be an "elided" verb way of constructing
+- I beleive this could also be an "elided" verb way of constructing
 non-verbal predicates explained above. 
   
 Below is an example, which doesn't parse:
