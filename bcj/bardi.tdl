@@ -6,7 +6,7 @@
 ;;; based on Matrix customization system version of:
 ;;;     Mon Aug  2 23:22:15 UTC 2021
 ;;;
-;;; 
+;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ; Type assigning empty mod list. Added to basic types for nouns, verbs and determiners.
@@ -260,7 +260,7 @@ no-spr-noun-lex := noun-lex &
 ; Nouns which cannot take specifiers mark their SPR requirement
 ; as OPT +.  Making the non-head daughter OPT - in this rule
 ; keeps such nouns out.
-; 
+;
 ; Rules for building NPs.  Note that the Matrix uses SPR for
 ; the specifier of nouns and SUBJ for the subject (specifier) of verbs.
 
@@ -491,7 +491,8 @@ neg-comp-lex := basic-scopal-adverb-lex &
                               MOD < [ LOCAL.CAT.HEAD verb ] > ] ] ].
 
 two-rel-adposition-lex := basic-icons-lex-item &
-  [ SYNSEM [ LOCAL [ CAT [ HEAD adp,
+  [ SYNSEM [ NON-LOCAL non-local-none,
+             LOCAL [ CAT [ HEAD adp,
                            VAL.COMPS < [ LOCAL [ CAT cat-sat,
                                                  CONT.HOOK #hook &
                                                            [ INDEX #ind,

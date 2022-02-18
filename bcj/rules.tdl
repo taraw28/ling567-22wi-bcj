@@ -43,4 +43,4 @@ ex-subj := extracted-subj-phrase.
 
 wh-ques := wh-ques-phrase.
 
-ex-det := extracted-det-phrase.
+;ex-det := extracted-det-phrase.
