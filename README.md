@@ -11,12 +11,12 @@ git pull
 ```
 
 ## Labs
-- [Lab 2](mds/lab2.md)
-- [Lab 3](mds/lab3.md)
-- [Lab 4](mds/lab4.md)
-- [Lab 5](mds/lab5.md)
-- [Lab 6](mds/lab6.md)
-- [Lab 7](mds/lab7.md)
+- [Lab 2](labs/lab2/README.md)
+- [Lab 3](labs/lab3/README.md)
+- [Lab 4](labs/lab4/README.md)
+- [Lab 5](labs/lab5/README.md)
+- [Lab 6](labs/lab6/README.md)
+- [Lab 7](labs/lab7/README.md)
 
 ## Changes to Choices for Translation Purposes
 - changed fish_n_rel to cat_n_rel
