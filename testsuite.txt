@@ -125,7 +125,7 @@ a-n-arli-a jiiba may
 IMP-TR-eat-FUT this food
 `Eat this food!'
 
-#14 irrealis and verbal agreement in predicate
+#13 irrealis and verbal agreement in predicate
 Source: a:117
 Vetted: t
 Judgement: g
@@ -135,7 +135,7 @@ arra ng-l-inya-n aarli
 NEG 1-IRR-catch-CONT fish
 `I didn't catch a fish.'
 
-#15 recent past
+#14 recent past
 Source: a:227
 Vetted: t
 Judgement: g
@@ -145,7 +145,7 @@ grrin-ngan daab i-n-nya-gal
 hill-ALL go.up.to 3-TR-catch-REC.PST
 `He went up the hill.'
 
-#16 remote past
+#15 remote past
 Source: a:464
 Vetted: t
 Judgement: g
@@ -155,7 +155,7 @@ i-m-bala-n-in
 3-PST-believe-REM.PST-3MIN.IO
 `He believed him.'
 
-#17 continuative and verbal agreement in predicate
+#16 continuative and verbal agreement in predicate
 Source: a:426
 Vetted: t
 Judgement: g
@@ -165,7 +165,7 @@ i-rr-arli-n
 3-AUG-eat-CONT
 `They are eating.'
 
-#18 coordination noun both have case
+#17 coordination noun both have case
 Source: author
 Vetted: f
 Judgement: g
@@ -175,7 +175,7 @@ may darr i-n-ar-n bardaga-yoon agal gaara-yoon
 food come 3-TR-pierce-CONT tree-SOURCE and ground-SOURCE
 `Food comes from the trees and from the ground.'
 
-#19 coordination conflicting case
+#18 coordination conflicting case
 Source: author
 Vetted: f
 Judgement: u
@@ -185,7 +185,7 @@ may darr i-n-ar-n bardaga-yoon agal gaara-nim
 food come 3-TR-pierce-CONT tree-SOURCE and ground-ERG
 `Food comes from the trees and from the ground.'
 
-#20 coordination conflicting case
+#19 coordination conflicting case
 Source: author
 Vetted: f
 Judgement: u
@@ -195,7 +195,7 @@ may darr i-n-ar-n bardaga-nim agal gaara-yoon
 food come 3-TR-pierce-CONT tree-ERG and ground-SOURCE
 `Food comes from the trees and from the ground.'
 
-#21 coordination noun first has case
+#20 coordination noun first has case
 Source: author
 Vetted: f
 Judgement: g
@@ -205,7 +205,7 @@ Boorrgoornda-nim agal Barlarramay i-ng-irr-i-loonga-n jinala-jina
 Boorrgoornda-ERG and Barlarramay 3-PST-AUG-TR-collect-CONT spear-3MIN.POSS
 `Boorrgoornda and Balarrmay gathered together their spears.'
 
-#22 coordination noun second has case
+#21 coordination noun second has case
 Source: a:352
 Vetted: t
 Judgement: g
@@ -215,7 +215,7 @@ i-rr-alboo-n-jirr nalaarrad birrii agal gooloo-nim
 3AUG-TR-dig-CONT-3AUG.IO turtle.eggs mother and father-ERG
 `Their mother and father dug up turtle eggs.'
 
-#23 coordination preverb
+#22 coordination preverb
 Source: author
 Vetted: f
 Judgement: g
@@ -225,7 +225,7 @@ bilirl agal girringg nga-n-ar-gal
 yawn and cough 1-TR-spear-REC.PST
 `I yawned and coughed.'
 
-#24 coordination preverb
+#23 coordination preverb
 Source: author
 Vetted: f
 Judgement: g
@@ -235,7 +235,7 @@ bilirl nga-n-ar-gal agal girringgirring nga-n-ar-gal
 yawn 1-TR-spear-REC.PST and cough 1-TR-spear-REC.PST
 `I yawned and coughed.'
 
-#25 coordination multiple
+#24 coordination multiple
 Source: a:658
 Vetted: t
 Judgement: g
@@ -245,7 +245,7 @@ molon goo-la-rr-arli agal garaginyarra agal goolarrji agal gambarla.
 giant.trevally 2-IRR-AUG-eat and garaginyarra and Spanish.mackerel and surgeon.fish
 `You must eat molon (giant trevally), garaginyarra (unidentified fish species), goolarrji (Spanish mackeral) or gambarl (surgeon fish).'
 
-#26 subject agreement in imperative
+#25 subject agreement in imperative
 Source: a:395
 Vetted: t
 Judgement: g
@@ -255,7 +255,7 @@ a-n-jal-a
 2-TR-look.at-FUT
 `Look at it!'
 
-#27 verbal agreement in predicate with direct object
+#26 verbal agreement in predicate with direct object
 Source: a:394
 Vetted: t
 Judgement: g
@@ -265,7 +265,7 @@ i-na-m-boo-na-ngay
 3-TR-PST-hit-REM.PST-1MIN.DO
 `He/she/it hit me.'
 
-#31 adjectival agreement in predicate
+#27 adjectival agreement in predicate
 Source: a:394
 Vetted: t
 Judgement: g
@@ -275,7 +275,7 @@ joo ngaada-jirri
 2MIN tall-2MIN.IO
 `You're tall.'
 
-#33 verbal agreement in predicate
+#28 verbal agreement in predicate
 Source: a:704
 Vetted: t
 Judgement: g
@@ -285,7 +285,7 @@ daab i-n-nya-na garrin
 climb.up 3MIN-tr-get-rem.pst hill
 `He climbed a hill.'
 
-#34 verbal agreement in predicate
+#29 verbal agreement in predicate
 Source: a:706
 Vetted: t
 Judgement: g
@@ -295,7 +295,7 @@ i-m-banya
 3MIN-pst-finish
 `He died.'
 
-#37 agreement as a theme
+#30 agreement as a theme
 Source: a:432
 Vetted: t
 Judgement: g
@@ -305,7 +305,7 @@ arra boojool-goon mi-l-i-ng-jarrngay
 NEG stare-LOC 2-IRR-do-APPL-1MIN.DO
 `Don't stare at me.'
 
-#38 direct object on collective noun
+#31 direct object on collective noun
 Source: a:401
 Vetted: t
 Judgement: g
@@ -315,7 +315,7 @@ nga-n-arli-na niimana aarli
 1-TR-eat-REM.PST many fish
 `I ate many fish.'
 
-#39 direct object extra suffix and noun-erg intrans-verb
+#32 direct object extra suffix and noun-erg intrans-verb
 Source: a:401
 Vetted: t
 Judgement: g
@@ -325,7 +325,7 @@ inkoorr-nim nga-ngi-mili-jarrngay
 cold-ERG 1-PST-wake.up-1MIN.DO
 `Cold woke me up.'
 
-#40 Oblique & Possessive
+#33 Oblique & Possessive
 Source: a:410
 Vetted: t
 Judgement: g
@@ -335,7 +335,7 @@ i-ngi-lirrmi-gal-jarran
 3-PST-call.out-REC.PST-1MIN.IO
 `He sang out to me.'
 
-#41 Oblique & Possessive
+#34 Oblique & Possessive
 Source: a:410
 Vetted: t
 Judgement: g
@@ -345,7 +345,7 @@ nga-n-jargi-gal-jirrin
 1-TR-fear-REC.PST-3MIN.IO
 `I was frightened by him.'
 
-#43 noun-erg trans-verb noun
+#35 noun-erg trans-verb noun
 Source: a:460
 Vetted: t
 Judgement: g
@@ -355,7 +355,7 @@ oorany-nim i-n-jala-gal aamba
 woman-ERG 3-TR-see-REC.PST man
 `The woman saw the man.'
 
-#44 noun-ins trans-appl-verb
+#36 noun-ins trans-appl-verb
 Source: a:495
 Vetted: t
 Judgement: g
@@ -365,7 +365,7 @@ baal-nga i-ng-orr-ondi-ni-ng-irr
 bark-INS 3-PST.AUG-TR-cover-REM.PST-APPL-3AUG.DO
 `They covered them with bark.'
 
-#46 noun imperative-verb noun-all
+#37 noun imperative-verb noun-all
 Source: a:225
 Vetted: t
 Judgement: g
@@ -375,7 +375,7 @@ aarlimayi a-rr-a-ya nyami-ngan
 food 2-AUG-take-FUT mother's.father-ALL
 `Take food to grandfather's place!'
 
-#47 allative
+#38 allative
 Source: a:739
 Vetted: t
 Judgement: g
@@ -385,7 +385,7 @@ bardi barda arr a-ng-irr-i-n Goorrbarlgoon-ngan
 yesterday away go 1-PST-AUG-do.say-CONT pender.bay-ALL
 `Yesterday we went to Pender Bay.'
 
-#48 verb noun noun-loc-all
+#39 verb noun noun-loc-all
 Source: author
 Vetted: f
 Judgement: g
@@ -395,7 +395,7 @@ i-rr-al-gal-nidi bigibigi ngoorrngool-ondarr
 3-AUG-be-REC.PST-GROUP pigs mangrove-L.ALL
 `All the pigs were in the mangroves.'
 
-#49 noun-abl trans-verb
+#40 noun-abl trans-verb
 Source: a:232
 Vetted: t
 Judgement: g
@@ -405,7 +405,7 @@ oolooman-ko jin booroo darr nga-n-ar-gal
 old.woman-ABL 3MIN.POSS place come 1-TR-pierce-REC.PST
 `I've come from the old lady's place.'
 
-#50 trans-verb noun-perl
+#41 trans-verb noun-perl
 Source: a:240
 Vetted: t
 Judgement: g
@@ -415,7 +415,7 @@ warrga i-n-joo-n morr-jarr
 walk 3-TR-do/say-CONT path-PERL
 `He went along his path.'
 
-#51 polar-question free-question-word-nganyji
+#42 polar-question free-question-word-nganyji
 Source: a:618
 Vetted: t
 Judgement: g
@@ -425,7 +425,7 @@ nganyji mi-n-jala-gal ooldoobal
 INTERROG 2-TR-see-REC.PST things
 `Did you see the things?'
 
-#52 polar-question free-question-word-nganyji
+#43 polar-question free-question-word-nganyji
 Source: author
 Vetted: t
 Judgement: u
@@ -435,7 +435,7 @@ Mi-n-jala-gal Nganyji ooldoobal
 2-TR-see-REC.PST INTERROG things
 `Did you see the things?'
 
-#53 polar-question free-question-word-nganyji
+#44 polar-question free-question-word-nganyji
 Source: a:618
 Vetted: t
 Judgement: g
@@ -445,7 +445,7 @@ nganyji ngay nga-n-k-iid-a Broome-ngan
 INTERROG 1MIN 1-TR-FUT-go-FUT Broome-ALL
 `Will I go to Broome?'
 
-#54 polar-question free-question-word-nganyji
+#45 polar-question free-question-word-nganyji
 Source: author
 Vetted: t
 Judgement: u
@@ -455,7 +455,7 @@ nganyji aalga-nim nga-nga-marra-na
 INTERROG sun-ERG 1-PST-cook-REM.PST
 `Did I get sun-burnt?'
 
-#55 polar-question free-question-word-nganyji
+#46 polar-question free-question-word-nganyji
 Source: a:621
 Vetted: t
 Judgement: g
@@ -465,7 +465,7 @@ nganyji lol i-ny-jiidi-gal mayar
 INTERROG burn 3-PST-go-REC.PST house
 `Did the house burn?'
 
-#56 polar-question clitic-garda-or-arda
+#47 polar-question clitic-garda-or-arda
 Source: author
 Vetted: f
 Judgement: g
@@ -475,7 +475,7 @@ aarli-arda mi-n-nya-gal
 fish-INT 2-TR.PST-catch-REC.PST
 `Was it fish you caught?'
 
-#58 double-interrogative
+#48 double-interrogative
 Source: a:625
 Vetted: t
 Judgement: g
@@ -485,7 +485,7 @@ anggaba-nim anggi i-na-arli-gal
 who-ERG what 3-TR-eat-REC.PST
 `Who ate what?'
 
-#59 multiple-interrogative
+#49 multiple-interrogative
 Source: a:627
 Vetted: t
 Judgement: g
@@ -495,7 +495,7 @@ anggaba mi-n-jala-gal janaboor
 who 2-TR-see-REC.PST where
 `Who did you see where?'
 
-#60 argument-optionality subj-pro-drop
+#50 argument-optionality subj-pro-drop
 Source: author
 Vetted: t
 Judgement: g
@@ -505,7 +505,7 @@ roowil i-ng-irr-i-nya-na Ngalngoorarra
 walk 3-PST-AUG-TR-catch-REM.PST Ngalngoorarra
 `They walked to Ngalngoorarra.'
 
-#61 argument-optionality pro-drop-not-allowed
+#51 argument-optionality pro-drop-not-allowed
 Source: a:294
 Vetted: t
 Judgement: u
@@ -515,7 +515,7 @@ ngayoo-nim nga-na-na-rri malarr
 1MIN-ERG 1-CONT-REM.PST-2MIN.DO wife
 `I gave you wives.'
 
-#62 argument-optionality pro-drop-not-allowed ergative-differentiates-subject-from-oblique
+#52 argument-optionality pro-drop-not-allowed ergative-differentiates-subject-from-oblique
 Source: a:412
 Vetted: t
 Judgement: u
@@ -525,27 +525,27 @@ i-ny-jargi-jin ngaarri
 3-PST-fear-3MIN.IO devil.ABS
 `The devil was afraid of him.'
 
-#63 free possessive pronoun
+#53 free possessive pronoun
 Source: author
 Vetted: f
 Judgement: g
 Phenomena: poss
-Ngajana bo inambijjan goorlil.
-ngajana bo i-na-m-b-ij-jan goorlil.
+Jana bo inambijjan goorlil.
+jana bo i-na-m-b-ij-jan goorlil.
 1MIN.POSS woman's.child 3-TR-PST-poke-PFV-1MIN.IO turtle
 `My son speared a turtle.'
 
-#64 free possessive pronoun
+#54 free possessive pronoun
 Source: author
 Vetted: f
 Judgement: g
 Phenomena: poss
-Ngajana gooloo bard roowil innyana.
-ngajana gooloo bard roowil i-n-nya-na
+Jana gooloo bard roowil innyana.
+jana gooloo bard roowil i-n-nya-na
 1MIN.POSS father off walk 3MIN-TR-catch-REM.PST
 `My father walked off.'
 
-#65 free possessive pronoun
+#55 free possessive pronoun
 Source: author
 Vetted: f
 Judgement: g
@@ -555,7 +555,7 @@ mi-n-jala-gal jiy-irr ooldoobal
 2-TR-see-REC.PST 2MIN.POSS-3A things
 `You see your things.'
 
-#66 free possessive pronoun
+#56 free possessive pronoun
 Source: author
 Vetted: f
 Judgement: g
@@ -565,7 +565,7 @@ jina jiiwa mi-n-joogool-ij
 3MIN.POSS boomerang 2-TR-break-PFV
 You broke his boomerang.
 
-#67 free possessive pronoun
+#57 free possessive pronoun
 Source: author
 Vetted: f
 Judgement: g
@@ -575,7 +575,7 @@ lol i-ny-jiidi-gal jan mayar
 burn 3-PST-go-REC.PST 1MIN.POSS house
 `My house burned.'
 
-#68 free possessive pronoun
+#58 free possessive pronoun
 Source: a:468
 Vetted: t
 Judgement: g
@@ -585,7 +585,7 @@ ginyinggi-nim i-n-jooloong-gal ajaw-irr irrol
 3MIN-ERG 3-TR.PST-pick.up-REC.PST 1+2MIN.POSS-3AUG spear.ABS
 `He picked up our spears.'
 
-#69 free possessive pronoun
+#59 free possessive pronoun
 Source: a:289
 Vetted: t
 Judgement: g
@@ -595,7 +595,7 @@ ngayoo jana gandoorrman
 1MIN 1MIN.POSS country.man
 `He is my countryman.'
 
-#70 inalienable noun
+#60 inalienable noun
 Source: a:210
 Vetted: t
 Judgement: g
@@ -605,7 +605,7 @@ nga-marla-ng nga-na-ngajim-gal
 1MIN.POSS-hand-INS 1-TR.PST-hit-REC.PST
 `I hit him with my hand.'
 
-#71 inalienable noun
+#61 inalienable noun
 Source: a:305
 Vetted: t
 Judgement: g
@@ -615,7 +615,7 @@ aamba ni-nga Ngoolmoongoolmoo
 man 3.POSS-name Ngoolmoongoolmoo
 `The man's name was Ngoolmoongoolmoo.'
 
-#72 posessive pronoun cliticized to verb
+#62 posessive pronoun cliticized to verb
 Source: author
 Vetted: f
 Judgement: g
@@ -625,7 +625,7 @@ ginyinggi-nim i-n-joogooloo-jan daanggoo
 3MIN-ERG 3-TR-break-1MIN.POSS jaw
 `He broke my jaw.'
 
-#73 posessive pronoun cliticized to verb
+#63 posessive pronoun cliticized to verb
 Source: author
 Vetted: f
 Judgement: g
@@ -635,7 +635,7 @@ joo-nim jiya-rr bo i-rr-jargi-n-jin-an bo
 2MIN-ERG 2MIN.POSS-3A woman's.child 3-AUG-fear-CONT-3MIN.IO-1MIN.POSS woman's.child
 `Your children are frightened of my children.'
 
-#74 inalienable noun
+#64 inalienable noun
 Source: author
 Vetted: f
 Judgement: g
@@ -645,7 +645,7 @@ nga-marla-ng nga-na-boo-gal
 1MIN.POSS-hand-INS 1-TR.PST-hit-REC.PST
 `I hit him with my hand.'
 
-#75 intrans-verb noun-abs
+#65 intrans-verb noun-abs
 Source: author
 Vetted: f
 Judgement: g
@@ -655,7 +655,7 @@ i-ny-jarrmi-n baawa
 3-PST-get.up-REM.PST child.ABS
 `The child got up.'
 
-#76 1aug free possessive
+#66 1aug free possessive
 Source: author
 Vetted: f
 Judgement: g
@@ -665,7 +665,7 @@ i-ny-jarrmi-n jard baawa
 3-PST-get.up-REM.PST 1AUG.POSS child.ABS
 `Our child got up.'
 
-#77 wh question person
+#67 wh question person
 Source: author
 Vetted: f
 Judgement: g
@@ -675,7 +675,7 @@ anggaba-nim i-ny-jarrmi-n
 who-ERG 3-PST-get.up-REM.PST
 `Who got up?'
 
-#78 wh question thing
+#68 wh question thing
 Source: author
 Vetted: f
 Judgement: g
@@ -685,27 +685,27 @@ anggi-nim i-ny-jarrmi-n
 what-ERG 3-PST-get.up-REM.PST
 `What got up?'
 
-#79 1min free possessive
+#69 1min free possessive
 Source: author
 Vetted: f
 Judgement: g
 Phenomena: poss
-Ngajana aarli inyjarrmin.
-ngajana aarli i-ny-jarrmi-n
+Jana aarli inyjarrmin.
+jana aarli i-ny-jarrmi-n
 1MIN.POSS fish 3-PST-get.up-REM.PST
 `My fish got up.'
 
-#80 1min free possessive
+#70 1min free possessive
 Source: author
 Vetted: f
 Judgement: g
 Phenomena: poss
-Ngajana irrol i-ny-jarrmi-n.
-ngajana irrol i-ny-jarrmi-n
+Jana irrol i-ny-jarrmi-n.
+jana irrol i-ny-jarrmi-n
 1MIN.POSS irrol 3-PST-rise-REM.PST
 `My spear ries.'
 
-#81 agreement with verb as host
+#71 agreement with verb as host
 Source: author
 Vetted: f
 Judgement: g
@@ -715,7 +715,7 @@ nga-jala
 1MIN-see
 `I see.'
 
-#82 prefixal agreement for subject of imperative
+#72 prefixal agreement for subject of imperative
 Source: a:395
 Vetted: t
 Judgement: g
@@ -725,7 +725,7 @@ nga-yarral-a
 2-run-FUT
 `Run!'
 
-#83 agreement
+#73 agreement
 Source: author
 Vetted: t
 Judgement: g
@@ -735,7 +735,7 @@ i-jala
 3MIN-see
 `He/she sees.'
 
-#84 present
+#74 present
 Source: author
 Vetted: f
 Judgement: g
@@ -745,7 +745,7 @@ i-banya
 3MIN-finish
 `He dies.'
 
-#85 present
+#75 present
 Source: author
 Vetted: f
 Judgement: g
@@ -755,7 +755,7 @@ aarla i-banya
 fish 3MIN-die
 `The fish dies.'
 
-#86 future
+#76 future
 Source: author
 Vetted: f
 Judgement: g
@@ -765,7 +765,7 @@ a-ngg-arr-a-marra
 1-FUT-AUG-TR-cook
 `We will cook it.'
 
-#87 intrans-verb noun-abs plural
+#77 intrans-verb noun-abs plural
 Source: author
 Vetted: f
 Judgement: g
@@ -775,7 +775,7 @@ i-ny-arr-jarrmi-n gool
 3-PST-AUG-get.up-REM.PST father.ABS
 `The fathers got up.'
 
-#88 MMT 1
+#78 MMT 1
 Source: author
 Vetted: f
 Judgement: g
@@ -785,7 +785,7 @@ iila i-rr-jarrmi
 dog.ABS 3-AUG-sleep
 `Dogs sleep.'
 
-#89 MMT 2
+#79 MMT 2
 Source: author
 Vetted: f
 Judgement: g
@@ -795,7 +795,7 @@ iila-nim yandilybar oo-rr-oo-ngoorribi
 dog-ERG car 3-AUG-TR-chase
 `Dogs chase cars.'
 
-#90 MMT 3 doesn't parse yet
+#80 MMT 3 doesn't parse yet
 Source: author
 Vetted: f
 Judgement: g
@@ -805,7 +805,7 @@ nga-na-ngoorribi-rri
 1-TR-chase-2MIN.DO
 `I chase you.'
 
-#91 MMT 4
+#81 MMT 4
 Source: author
 Vetted: f
 Judgement: g
@@ -815,7 +815,7 @@ iila oo-rr-arli
 dog.ABS 3-AUG-eat
 `Dogs eat.'
 
-#92 MMT 5
+#82 MMT 5
 Source: author
 Vetted: f
 Judgement: g
@@ -825,7 +825,7 @@ arra iila-nim i-la-rr-oo-ngoorribi yandilybar
 NEG dog-ERG 3-IRR-AUG-TR-chase boat
 `The dogs don't chase boats.'
 
-#93 MMT 18
+#83 MMT 18
 Source: author
 Vetted: f
 Judgement: g
@@ -835,17 +835,17 @@ iila jina yandilybar i-rr-jarrmi
 dog 3MIN.POSS car 3-AUG-sleep
 `The dog's car sleeps. (lit. dog his car sleeps)'
 
-#94 MMT 19
+#84 MMT 19
 Source: author
 Vetted: f
 Judgement: g
 Phenomena: poss
-Ngajana iila irrjarrmi.
-ngajana iila i-rr-jarrmi
+Jana iila irrjarrmi.
+jana iila i-rr-jarrmi
 1MIN.POSS dog 3-AUG-sleep
 `My dogs sleep.'
 
-#95 object dropping
+#85 object dropping
 Source: author
 Vetted: f
 Judgement: g
@@ -855,7 +855,7 @@ iila-nim i-rr-oo-ngoorribi-irr
 dog-ERG 3-AUG-TR-chase-3AUG.DO
 `Dogs chase them.'
 
-#96 negation without irrealis (bad)
+#86 negation without irrealis (bad)
 Source: author
 Vetted: f
 Judgement: u
