@@ -703,7 +703,7 @@ Phenomena: poss
 Jana irrol i-ny-jarrmi-n.
 jana irrol i-ny-jarrmi-n
 1MIN.POSS irrol 3-PST-rise-REM.PST
-`My spear ries.'
+`My spear rises.'
 
 #71 agreement with verb as host
 Source: author

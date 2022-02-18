@@ -1358,3 +1358,71 @@ extracted-subj-phrase := basic-extracted-subj-phrase &
 adj-head-int-phrase :+ [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ clist ].
 
 head-adj-int-phrase :+ [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ clist ].
+
+verb-lex-supertype := basic-verb-lex-super & aspect-rule-dtr & aug-rule-dtr & dir-obj-rule-dtr & pernum-rule-dtr & tense-rule-dtr &
+  [ INFLECTED [ TR-ERG-ABS-VERB-OR-TR-ERG-ALL-VERB-OR-TR-ERG-INS-VERB-FLAG na-or--,
+                TENSE-FLAG -,
+                PERNUM-FLAG -] ].
+
+copula-verb-lex := verb-lex-supertype & trans-first-arg-raising-lex-item-2 &
+  [ SYNSEM.LOCAL [ CAT.VAL [ SUBJ < #subj >,
+                             COMPS < #comps >,
+                             SPR < >,
+                             SPEC < > ],
+                   CONT.HOOK.XARG #xarg ],
+    ARG-ST < #subj &
+             [ LOCAL [ CONT.HOOK.INDEX #xarg,
+                       CAT [ VAL [ SPR < >,
+                                   COMPS < > ],
+                             HEAD noun ] ] ],
+             #comps &
+             [ LOCAL.CAT [ VAL [ SUBJ <[]>,
+                                 COMPS < > ],
+                           HEAD +vp ] ] > ].
+
+locative-pp-phrase := unary-phrase &
+[ SYNSEM [ NON-LOCAL #nl,
+           LOCAL.CAT [ HEAD adp & [ MOD < [ LOCAL intersective-mod &
+                                          [ CAT.HEAD verb,
+                                            CONT.HOOK.INDEX #xarg ] ] > ],
+                                    VAL [ COMPS < >,
+                                    SUBJ < [ LOCAL [ CONT.HOOK.INDEX #xarg,
+                                                     CAT.HEAD noun] ] >,
+                                    SPR < > ]]],
+  C-CONT [ HOOK [ LTOP #ltop,
+           INDEX #index,
+           XARG #xarg ],
+    RELS.LIST < arg12-ev-relation &
+       [ PRED "_loc_p_rel",
+         LBL #ltop,
+         ARG0 #index,
+         ARG1 #xarg,
+         ARG2 #dtr ] >,
+       HCONS.LIST < >  ],
+  ARGS < [ SYNSEM [ NON-LOCAL #nl,
+                    LOCAL [ CAT [ HEAD noun & [CASE loc],
+                                  VAL.SPR < > ],
+                    CONT.HOOK [ INDEX #dtr ] ] ] ] > ].
+
+noun-predicate-rule := basic-unary-phrase & nocoord &
+  [ SYNSEM [ LOCAL.CAT [ HEAD verb,
+               VAL [ COMPS < >,
+             SUBJ < [ LOCAL [ CONT.HOOK.INDEX #arg1,
+                   CAT [ HEAD noun,
+              VAL.SPR < > ] ] ] > ] ],
+             NON-LOCAL #nl ],
+    C-CONT [ HOOK [ LTOP #ltop,
+        INDEX #index,
+        XARG #arg1 ],
+       RELS.LIST < arg12-ev-relation &
+       [ PRED "_be_v_id_rel",
+         LBL #ltop,
+         ARG0 #index,
+         ARG1 #arg1,
+         ARG2 #arg2 ] >,
+       HCONS.LIST < qeq & [ LARG #larg ] > ],
+    ARGS < [ SYNSEM [ LOCAL [ CAT [ HEAD noun,
+             VAL.SPR cons ],
+            CONT.HOOK [ INDEX #arg2,
+                                    LTOP #larg ]],
+                NON-LOCAL #nl ]] > ].

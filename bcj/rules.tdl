@@ -43,4 +43,8 @@ ex-subj := extracted-subj-phrase.
 
 wh-ques := wh-ques-phrase.
 
+loc-pp := locative-pp-phrase.
+
+noun-pred := noun-predicate-rule.
+
 ;ex-det := extracted-det-phrase.

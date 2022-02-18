@@ -111,28 +111,6 @@ iila-nim gardin-on i-rr-ni
 dog-ERG park-LOC 3-AUG-be
 `The dogs are in the park.'
 
-
-; Copula
-
-verb-lex-supertype := transitive-verb-lex &
-  [ SYNSEM.LOCAL.CAT.HEAD verb ].
-
-copula-verb-lex := verb-lex-supertype & trans-first-arg-raising-lex-item-2 &
-  [ SYNSEM.LOCAL [ CAT.VAL [ SUBJ < #subj >,
-                             COMPS < #comps >,
-                             SPR < >,
-                             SPEC < > ],
-                   CONT.HOOK.XARG #xarg ],
-    ARG-ST < #subj &
-             [ LOCAL [ CONT.HOOK.INDEX #xarg,
-                       CAT [ VAL [ SPR < >,
-                                   COMPS < > ],
-                             HEAD noun ] ] ],
-             #comps &
-             [ LOCAL.CAT [ VAL [ SUBJ <[]>,
-                                 COMPS < > ],
-                           HEAD +vp ] ] > ].
-
 ; Prepositional phrase
 
 locative-pp-phrase := unary-phrase &
