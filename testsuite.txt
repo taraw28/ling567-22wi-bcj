@@ -864,3 +864,153 @@ Arra iilanim irroongoorribi yandilybar.
 arra iila-nim i-rr-oo-ngoorribi yandilybar
 NEG dog-ERG 3-AUG-TR-chase boat
 `*The dogs don't chase boats.
+
+#87 NP non-verbal no copula
+Source: a:601
+Vetted: t
+Judgement: g
+Phenomena: cop
+Ginyinggi aamba galgarr.
+ginyinggi aamba galgarr
+this man widower
+`This man is a widower.'
+
+#88 NP non-verbal no copula
+Source: a:603
+Vetted: t
+Judgement: g
+Phenomena: cop
+Jarri aamba garnibina.
+jarri aamba garnibina
+this man murderer
+`This man's a murderer.'
+
+#89 NP non-verbal no copula
+Source: a:603
+Vetted: t
+Judgement: g
+Phenomena: cop
+Jalnggoogoorr jana nyami.
+jalnggoogoorr jana nyami
+doctor.man 1M.POSS mother's.father
+`My grandfather was a doctorman.'
+
+#90 NP non-verbal no copula singular
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: cop
+Iila aarli.
+iila aarli
+dog cat
+`The dog is the cat.'
+
+#91 MMT 17 NP non-verbal no copula plural
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: cop
+Irr iila irr aarli.
+irr iila irr aarli
+3AUG dog 3AUG cat
+`The dogs are the cats.'
+
+#92 Adj non-verbal preverb copula
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: cop
+Garnka inin.
+garnka i-ni-n
+raw 3-sit-CONT
+`It is raw.'
+
+#93 Adj non-verbal no copula permanent state
+Source: a:608
+Vetted: t
+Judgement: g
+Phenomena: cop
+Niiwandi ngamarlangay.
+niiwanda nga-marla-ngay
+long 1-hand.or.finger-1MIN
+`My fingers are long.'
+
+#94 Adj non-verbal copula transient state
+Source: a:608
+Vetted: t
+Judgement: g
+Phenomena: cop
+Niiwandi inin ngamarla.
+niiwanda i-ni-n nga-marla
+long 3-sit-CONT 1-hand.or.finger
+`My fingers are stretched out.'
+
+#95 Adj non-verbal hungry
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: cop
+Manyjalnim alig nganjij.
+manyjal-nim alig nga-n-j-ij
+hunger-ERG feel.bad 1-TR-do.say-PFV
+`I am hungry.'
+
+#96 MMT 15
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: cop
+Manyjalnim alig iila irroojij.
+manyjal-nim alig iila i-rr-oo-j-ij
+hunger-ERG feel.bad dog 3-AUG-TR-do.say-PFV
+`The dogs are hungry.'
+
+#97 PP non-verbal loc
+Source: a:217
+Vetted: t
+Judgement: g
+Phenomena: cop
+Inin baaloon.
+i-ni-n baal-oon
+3-be-CONT boughshed-LOC
+`It's in the boughshed.'
+
+#98 PP non-verbal no loc
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: cop
+Iilanim jaala irrni.
+iila-nim jaala i-rr-ni
+dog-ERG beach 3-AUG-be
+`The dogs are at the beach.'
+
+#99 MMT 16
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: cop
+Iilanim gardinon irrni.
+iila-nim gardin-on i-rr-ni
+dog-ERG park-LOC 3-AUG-be
+`The dogs are in the park.'
+
+#100 Adj non-verbal copula
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: cop
+Garrja i-ni-n ginyinggi jamooyoon.
+garrja i-ni-n ginyinggi jamooyoon
+sharp 3-sit-CONT 3MIN knife
+`The knife is sharp.'
+
+#101 Wh non-verbal no copula
+Source: a:609
+Vetted: t
+Judgement: g
+Phenomena: cop
+Anggaba nyinga joo?
+anggaba nyi-nga joo
+who 2MIN-name 2MIN
+`What’s your name?'

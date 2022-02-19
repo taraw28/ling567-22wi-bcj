@@ -359,7 +359,7 @@ gambarla := noun1-noun-lex &
 
 baal := noun1-noun-lex &
   [ STEM < "baal" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_bark_n_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_bark.or.boughshed_n_rel" ].
 
 midijin := noun1-noun-lex &
   [ STEM < "midijin" >,
@@ -436,6 +436,26 @@ liyan := noun1-noun-lex &
 manyjal := noun1-noun-lex &
   [ STEM < "manyjal" >,
     SYNSEM.LKEYS.KEYREL.PRED "_hunger_n_rel" ].
+
+galgarr := noun1-noun-lex &
+  [ STEM < "galgarr" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_widower_n_rel" ].
+
+garnibina := noun1-noun-lex &
+  [ STEM < "garnibina" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_murderer_n_rel" ].
+
+nyami := noun1-noun-lex &
+  [ STEM < "nyami" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_mother's.father_n_rel" ].
+
+jalnggoogoorr := noun1-noun-lex &
+  [ STEM < "jalnggoogoorr" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_doctor.man_n_rel" ].
+
+jamooyoon := noun1-noun-lex &
+  [ STEM < "jamooyoon" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_knife_n_rel" ].
 
 anggaba := q-pronoun-noun-lex &
   [ STEM < "anggaba" >,
@@ -535,11 +555,11 @@ imar := inalien-stem-noun-lex &
 
 marl := inalien-stem-noun-lex &
   [ STEM < "marl" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_hand.or.lower.arm_n_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_hand.or.lower.arm.or.finger_n_rel" ].
 
 marla := inalien-stem-noun-lex &
   [ STEM < "marla" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_hand.or.lower.arm_n_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_hand.or.lower.arm.or.finger_n_rel" ].
 
 jambal := inalien-stem-noun-lex &
   [ STEM < "jambal" >,
@@ -816,6 +836,26 @@ rinyi := it-preverb-verb-lex &
 boojool := it-preverb-verb-lex &
   [ STEM < "boojool" >,
     SYNSEM.LKEYS.KEYREL.PRED "_stare_v_rel" ].
+
+garnka := it-preverb-verb-lex &
+  [ STEM < "garnka" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_raw_v_rel" ].
+
+niiwanda := it-preverb-verb-lex &
+  [ STEM < "niiwanda" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_long_v_rel" ].
+
+manyjal := it-preverb-verb-lex &
+  [ STEM < "manyjal" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_hunger_v_rel" ].
+
+alig := it-preverb-verb-lex &
+  [ STEM < "alig" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_feel.bad_v_rel" ].
+
+garrja := it-preverb-verb-lex &
+  [ STEM < "garrja" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_sharp_v_rel" ].
 
 ju := light-verb-verb-lex &
   [ STEM < "ju" >,
