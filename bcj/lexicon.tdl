@@ -1028,3 +1028,7 @@ agal4 := conj-lex &
   [ STEM < "agal" >,
     SYNSEM.LKEYS.KEYREL.PRED "_and_coord_rel",
     CFORM "4" ].
+
+ni-copula := copula-verb-lex &
+  [ STEM < "ni" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_be_p_rel" ].
