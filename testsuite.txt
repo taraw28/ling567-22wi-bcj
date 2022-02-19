@@ -1014,3 +1014,33 @@ Anggaba nyinga joo?
 anggaba nyi-nga joo
 who 2MIN-name 2MIN
 `What’s your name?'
+
+#102 Wh non-verbal no copula
+Source: a:609
+Vetted: t
+Judgement: g
+Phenomena: cop
+Angginim goorr?
+anggi-nim goorr
+what-ERG 2AUG
+`What’s wrong with you? What happened to you?'
+
+#103
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: poss
+Najana iila  inyarlin.
+ngajana iila  i-ny-arli-n
+1MIN.POSS dog 3-PST-eat-REM.PST
+`My dog ate.'
+
+#104 MMT 20
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: wh
+Anggaba iarrjarrmin
+anggaba i-arr-jarrmi-n
+who 3-AUG-sleep-CONT
+`Who sleeps?'

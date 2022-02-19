@@ -699,6 +699,10 @@ garrja := adj1-adj-lex &
   [ STEM < "garrja" >,
     SYNSEM.LKEYS.KEYREL.PRED "_sharp_a_rel" ].
 
+rarrjin := adj1-adj-lex &
+  [ STEM < "rarrjin" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_shame_a_rel" ].
+
 ;;; Verbs
 
 jarrmi := it-abs-verb-lex &

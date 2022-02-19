@@ -51,13 +51,13 @@ Then, we added a non-branching non-headed phrase structure rule (noun-predicate-
                               ARG1 #arg1,
                               ARG2 #arg2 ] >,
                         HCONS.LIST < qeq & [ LARG #larg ] > ],
-              ARGS < [ SYNSEM [ LOCAL [ CAT [ HEAD noun,
+              ARGS < [ SYNSEM [ LOCAL [ CAT [ HEAD noun & [ CASE abs ],
                                               VAL.SPR cons ],
                                         CONT.HOOK [ INDEX #arg2,
                                                     LTOP #larg ]],
                                 NON-LOCAL #nl ]] > ].
 
-This allowed us to parse "The dog is the cat" as well as other similar sentences. We expected it to generate 2 sentences but it generated 4. The noun-pred-rule will take nouns uninflected for case but it shouldn't. We tried to constrain it to CASES abs with:
+This allowed us to parse "The dog is the cat" as well as other similar sentences. We expected it to generate 2 sentences but it generated 4. The noun-pred-rule will take nouns uninflected for case but it shouldn't. We tried to constrain it to CASE abs with:
 
               ARGS < [ SYNSEM [ LOCAL [ CAT [ HEAD noun & [ CASE abs ],
                                               VAL.SPR cons ],
@@ -65,11 +65,11 @@ This allowed us to parse "The dog is the cat" as well as other similar sentences
                                                     LTOP #larg ]],
                                 NON-LOCAL #nl ]] > ].
 
-but this did not work. Our case position class is obligatory and the absolutive case is null marked so we are not entirely sure why this is happening or how to fix it.
+but this did not work. Adding this case constraint does prevent nouns inflected with other case markers from forming VPs but does not prevent un-inflected nouns from forming VPs. Our case position class is obligatory and the absolutive case is null marked so we are not entirely sure why this is happening or how to fix it.
 
 Next, we worked on getting the plural "The dogs are the cats" to parse. When there is no verb, the plural can be expressed using the third person augmented pronoun acting as a determiner:
 
-  # does parse
+  # does parse (but not correctly)
   Irr iila irr aarli.
   irr iila irr aarli
   3AUG dog 3AUG cat
@@ -87,57 +87,99 @@ This allowed us to parse the sentence however, it resulted in 164 trees. Part of
 
 For the purpose of trying to prevent the noun version from being used, we changed the stem to "irr2". However, this made it so that the sentence couldn't be parsed at all. It seems that the noun-pred rule can only take N nouns and not NPs. However, we need the NP (irr iila) or the NP (irr aarli) to undergo the noun-pred rule so that a sentence can be formed. We are not sure how we could modify the noun-predicate-rule to allow for NPs so any advice would be appreciated.
 
-- Bardi has nominal and adjectival predicates, and the copula is normally null (pp.601-610).
-- Adjectives do not really exist independent of stative verbs.
-- There is no PP either, and NPs are used with a locative verb.
-- Locative case is frequently used to indicate 'static location.'
-- The light verb -ni- ‘sit’ is used to indicate states;
-for instance: iilan -ni- ‘be sick’; miyala -ni- ‘be awake’ (p. 538)
-- Adjectival preverbs which form stative predicates with -ni- ‘sit’ may also
-combine with the light verb -joo- ‘do/say’ to form inchoatives.
+For PP non-verbal predicates, the copula -ni- (which acts as a regular verb) in addition to a locative NP is used:
 
-Below are the detailed ways non-verbal predicates are constructed:
+# does parse
+Iilanim gardinon irrni.
+iila-nim gardin-on i-rr-ni
+dog-ERG park-LOC 3-AUG-be
+`The dogs are in the park.'
 
-Null Predicates:
-- The presence of copula is independent of tense and can remain null for all tenses
-- Order of subject and predicate is flexible
-- Oblique pronouns (in the predicate) used along with a location case-marked noun in the subject can make copula predicates too.
+# doesn't parse (we do not have affixed subjects implemented yet)
+Inin baaloon.
+i-ni-n baal-oon
+3-be-CONT boughshed-LOC
+`It's in the boughshed.'
 
-Example [doesn’t parse] (p.601):
-Ginyinggi aamba galgarr.
-This man widower
-`This man is a widower.’
+To implement this, we added the copula to the lexicon:
 
-arri aamba garnibina.
-jarri aamba garnibina
-this man murderer
-`This man's a murderer.'
+  ni-copula := copula-verb-lex &
+  [ STEM < "ni" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_be_p_rel" ].
 
-Jalnggoogoorr jana nyami.
-jalnggoogoorr jana nyami
-doctor.man 1M.POSS mother's.father
-`My grandfather was a doctorman.'
+It inherits from the copula-verb-lex which, in addition to the verb-lex-supertype, we added to bardi.tdl. The verb-lex-supertype inherits from the basic-verb-lex-super to get HEAD verb and also inherits from most morphological rules that apply to regular verbs:
 
-- preference for predicates to be possessed when describing qualities (pp. 604)
+  verb-lex-supertype := basic-verb-lex-super & aspect-rule-dtr & aug-rule-dtr & dir-obj-rule-dtr & pernum-rule-dtr & tense-rule-dtr &
+    [ INFLECTED [ TR-ERG-ABS-VERB-OR-TR-ERG-ALL-VERB-OR-TR-ERG-INS-VERB-FLAG na-or--,
+                  TENSE-FLAG -,
+                  PERNUM-FLAG -] ].
 
-Aman jina laya.
-aman jina laya
-little 3MIN.POSS fat
-`It's got a little bit of fat.'
+  copula-verb-lex := verb-lex-supertype & trans-first-arg-raising-lex-item-2 &
+    [ SYNSEM.LOCAL [ CAT.VAL [ SUBJ < #subj >,
+                              COMPS < #comps >,
+                              SPR < >,
+                              SPEC < > ],
+                    CONT.HOOK.XARG #xarg ],
+      ARG-ST < #subj &
+              [ LOCAL [ CONT.HOOK.INDEX #xarg,
+                        CAT [ VAL [ SPR < >,
+                                    COMPS < > ],
+                              HEAD noun ] ] ],
+              #comps &
+              [ LOCAL.CAT [ VAL [ SUBJ <[]>,
+                                  COMPS < > ],
+                            HEAD +vp ] ] > ].
 
-Niimana jina lagoorr.
-many 3MIN.POSS egg
-`It's got a lot of eggs.'
+Doing this allowed us to parse "The dogs are in the park" with one (correct) tree!
 
-- nominal predicates can take the predicate marker -a (pp. 340)
-(maybe make boorrboorriid = dancer for purpose of parsing)
 
-Jarr aamba boorrboorriida.
-jarr aamba boorrboorr-iid-a
-this man dance-EXP-PRED
-`This man's a dancer.'
+For AP non-verbal predicates, according to Bowern, adjectives don't exist as a class, and adjectival non-verbal predicates involve complex predicates of a preverb and a light verb. Here is an example with rarrjin+ ‘be ashamed of’indicating with a third personal min (p.468).
 
-- plural can be marked on predicate even if not verb (pp. 173)
+  # doesn't parse
+  Rarrjin inmanjarrngay.
+  rarrjin i-n-ma-n=jarrngay
+  shame 3-TR-put-CONT-1M.DO
+  `I’m ashamed of it.'
+
+Preverbal adjectives combine with the light verb -ni- 'sit.do' in a complex predicate. This is where Bardi adjectives take on a stative meaning (p.608)
+
+  # doesn't parse
+  Niiwandi inin ngamarla.
+  Niiwandi i-ni-n nga-marla.
+  long 3-sit-CONT 1-hand/finger
+  `My fingers are stretched out.'
+
+Another way to express adjectives, Bardi uses a "causal construction" with an ergative noun and a subject as the expriencer (p.268). For the causal construction to convey adjectival meaning, the Badi speaker would says "I want water. I am thirsty."
+
+For sentence #15 `The dogs are hungry' the preverb "alig" (feel.bad) is used along with the light verb "-j-" (do.say) as well as making the adjective "hunger" take the ergative case:
+
+  #15 doesn't parse
+  Manyjalnim alig irroojij iila.
+  manyjal-nim alig i-rr-oo-j-ij iila
+  hunger-ERG feel.bad 3-AUG-TR-do.say-PFV dog
+  `The dogs are hungry.'
+
+Since the adjective non-verbal predicates constructions involve complex predicates, which we do not have implemented, we decided to focus on just NP and PP non-verbal predicates this week. Hopefully next week we can possibly get started on these complex predicates.
+
+MT
+
+Since #15 sentence involves complex predicates, it will not parse and therefore will not translate (as described above).
+
+  #15
+  Manyjalnim alig irroojij iila.
+  manyjal-nim alig i-rr-oo-j-ij iila
+  hunger-ERG feel.bad 3-AUG-TR-do.say-PFV dog
+  `The dogs are hungry.'
+
+#16 does parse however will not translate. This is because Bardi uses a locative noun which has the _loc_p_rel while the English sentence has _in_p_rel. We tried changed "_loc_p_rel" to "_in_p_rel" however, this did not allow it to translate. We assume we need some kind of transfer rule to allow for this sentence to translate, since the MRSes seem to be identical.
+
+  #16
+  Iilanim gardinon irrni.
+  iila-nim gardin-on i-rr-ni
+  dog-ERG park-LOC 3-AUG-be
+  `The dogs are in the park.'
+
+#17 does parse but incorrectly (as described above) and also doesn't translate. We also tried to translate "The dog is the cat" as that sentence does parse in our grammar. However, this did not translate either. Again, the MRSes are identical so we probably need a transfer rule.
 
 #17
 Irr iila irr aarli.
@@ -145,216 +187,77 @@ irr iila irr aarli
 3AUG dog 3AUG cat
 `The dogs are the cats.'
 
-- no copula refers to permanent state
+Iila aarli.
+iila aarli
+dog cat
+`The dog is the cat.'
 
-Niiwandi ngamarlangay.
-niiwanda nga-marla-ngay
-long 1-hand.or.finger-1MIN
-`My fingers are long.'
+Wh Questions
 
-Clauses with -ni- ‘sit’:
+To make constituent (wh-) questions, Bardi uses a number of interrogative pronouns that usually appear clause initially. This analysis should work together with the null-copula analysis of nominal non-verbal predicates. With wh- questions, Bowern refers to this phenomena as "ellided verbs" (p. 609). Verbs can only be seen elided in answers to questions having
+a single noun phrase standing alone as the answer:
 
-- Combining the verb -ni- ‘sit’ in dfferent ways with predicative adjectives can be used as copula.
-
-Example [doesn't parse] (p. 554)
-garrja -ni- ‘be sharp’:
-garrja i-ni-n ginyinggi jamooyoon.
-sharp 3-sit-CONT 3MIN knife
-`The knife is sharp'
-
-Location
-- providing “spatial” information and stative readings
-translated to ‘there was + noun + location/place (over there, in his camp)’
-
-Inin baaloon.
-i-ni-n baal-oon
-3-be-CONT boughshed-LOC
-`It's in the boughshed.'
-
-- Some nouns take the locative suffix while others don't. For example, gardin 'cave' does take the suffix but jaala 'beach' doesn't.
-
-Iilanim gardinon irrni.
-iila-nim gardin-on i-rr-ni
-dog-ERG cave-LOC 3-AUG-be
-`The dogs are in the cave.'
-
-Iilanim jaala irrni.
-iila-nim jaala i-rr-ni
-dog-ERG beach 3-AUG-be
-`The dogs are at the beach.'
-
-#16 (park = cave)
-Iilanim gardinon irrni.
-iila-nim gardin-on i-rr-ni
-dog-ERG park-LOC 3-AUG-be
-`The dogs are in the park.'
-
-Aspectual modification of adjectives
-- -ni- as a light verb used with an adjective creating syntactic minimal pairs
-between sentences w/ complex predicate and those w/ null copula
-
-- translated to copula as in ‘be + adjective’
-
-Example [doesn't parse]
-Garnka inin.
-garnka i-ni-n
-raw 3-sit-CONT
-`It is raw.'
-
-- copula refers to transient state
-
-Niiwandi inin ngamarla.
-niiwanda i-ni-n nga-marla
-long 3-sit-CONT 1-hand.or.finger
-`My fingers are stretched out.'
-
-Elided Verbs:
-- Verbs can only be seen elided in answers to questions having
-a single noun phrase standing alone as the answer.
-
-Example [doesn’t parse] (p.609):
+# doesn't parse (our grammar does not currently allow question pronouns to get case)
 Angginim goorr?
-Anggi-nim goorr
+anggi-nim goorr
 what-ERG 2AUG
-‘What’s wrong with you? What happened to you?’
+`What’s wrong with you? What happened to you?'
 
-
-Wh-Questions and Copula:
-- To make constituent (wh-) questions, Bardi uses a number of interrogative pronouns that usually
-appear clause initially. This analysis should work together with
-the null-copula analysis of nominal non-verbal predicates.
-- I beleive this could also be an "elided" verb way of constructing
-non-verbal predicates explained above.
-
-Below is an example, which doesn't parse:
+# does parse
 Anggaba nyinga joo?
-Anggaba nyi-nga joo
+anggaba nyi-nga joo
 who 2MIN-name 2MIN
 `What’s your name?'
 
-TDL Changes
-- In order to account for locative NPs:
- - added a non-branching rule to create PPs,
- - created a lexical rule for the NP constrained to be [CASE loc]
- - the following provides a modifier function to the verb
- - made sure the locative NP had non-empty SUBJ value with an NP [CASE loc] on it
- with a coindexed xarg and INDEX
+The "What's your name" sentence does parse with 8 trees but some of them construct a PP out of "anggaba" using the loc-pp rule. We are not sure why this is happening since that rule should only allow nouns with locative case to become a PP. There are also some trees where "anggaba" goes through the poss-unary-pron-1 or poss-unary-2 rule and becomes a determiner:
 
-locative-pp-phrase := unary-phrase &
-[ SYNSEM [ NON-LOCAL #nl,
-           LOCAL.CAT [ HEAD adp & [ MOD < [ LOCAL intersective-mod &
-                                                    [ CAT.HEAD verb,
-                                                      CONT.HOOK.INDEX #xarg ] ] > ],
-		          VAL [ COMPS < >,
-			        SUBJ < >,
-			        SPR < > ]]],
-    C-CONT [ HOOK [ LTOP #ltop,
-		    INDEX #index,
-		    XARG #xarg ],
-	  RELS.LIST < arg12-ev-relation &
-		   [ PRED "_loc_p_rel",
-		     LBL #ltop,
-		     ARG0 #index,
-		     ARG1 #xarg,
-		     ARG2 #dtr ] >,
-	     HCONS.LIST < >  ],
-	  ARGS < [ SYNSEM [ NON-LOCAL #nl,
-		            LOCAL [ CAT [ HEAD noun & [CASE loc],
-		                          VAL.SPR < > ]],
-			            CONT.HOOK [ INDEX #dtr ]]] > ].
+  poss-unary-phrase-2 := poss-unary-phrase &
+  [ ARGS < [ SYNSEM.LOCAL.CAT.HEAD.POSSESSOR possessor-2 ] >,
+    SYNSEM.LOCAL.CAT [ HEAD.SPEC-INIT +,
+                       VAL.SPEC.FIRST.LOCAL.CAT.POSSESSUM nonpossessive ] ].
 
+  poss-unary-phrase-pron-1 := poss-unary-phrase &
+  [ ARGS < [ SYNSEM.LOCAL.CAT.HEAD.POSSESSOR possessor-pron-1 ] >,
+    SYNSEM.LOCAL.CAT [ HEAD.SPEC-INIT +,
+                       VAL.SPEC.FIRST.LOCAL.CAT.POSSESSUM nonpossessive ] ].
 
+  poss-unary-phrase := basic-unary-phrase &
+    [ SYNSEM [ NON-LOCAL #nonloc,
+              LOCAL [ CONT.HOOK #hook,
+                      CAT [ HEAD det &
+                                  [ POSSESSOR possessor ],
+                            VAL [ SPR < >,
+                                  COMPS < >,
+                                  SUBJ < >,
+                                  SPEC < [ LOCAL [ CAT [ VAL.COMPS < >,
+                                                          HEAD noun &
+                                                              [ PRON - ] ],
+                                                    CONT.HOOK #hook &
+                                                              [ INDEX #possessum &
+                                                                      [ COG-ST uniq-id ],
+                                                                LTOP #lbl ] ] ] > ] ] ] ],
+      C-CONT [ RELS.LIST < arg12-ev-relation &
+                          [ PRED "poss_rel",
+                            LBL #lbl,
+                            ARG1 #possessum,
+                            ARG2 #possessor ],
+                          quant-relation &
+                          [ PRED "exist_q_rel",
+                            ARG0 #possessum,
+                            RSTR #harg ] >,
+              HCONS.LIST < qeq &
+                            [ HARG #harg,
+                              LARG #lbl ] >,
+              ICONS.LIST < > ],
+      ARGS < [ SYNSEM [ LOCAL [ CAT [ VAL [ SPR < >,
+                                            COMPS < >,
+                                            SUBJ < >,
+                                            SPEC < > ],
+                                      HEAD +np ],
+                                CONT.HOOK.INDEX #possessor ],
+                        NON-LOCAL #nonloc ] ] > ].
 
-Translation
-- According to Bowern words such as ‘hungry’ and ‘thirsty’ are primarily nouns in Bardi, not
-adjectives. The noun in the ergative and the experiencer as the subject is used
-to construct a causal relation to express that one is hungry or thirsty,. (pp. 268)
-
-- The other major use of the ergative is to mark low-animacy causers. In this
-case the subject is the high-animacy patient and it takes the subject agreement
-marker on the verb. (pp. 198)
-
-- There is very littel evidence in the descriptive text to help with the translation of
-the three sentences for this lab. We have used the different ways of constructing
-non-verbals to translate them. Hence, multiple translations below. The page numbers are to
-show evidenced examples pages off of which we have translated the sentences.
-
-#15 preverb do.say
-manyjal-nim alig iila i-rr-oo-j-ij
-hunger-ERG feel.bad dog 3-AUG-TR-do.say-PFV
-The dogs are hungry.
-(p.268)
-
-#15 verb -ni- 'sit' (hungry = sharp)
-garrja i-ni-n ginyinggi jamooyoon.
-sharp 3-sit-CONT 3MIN knife
-`The knife is sharp'
-(p.508)
-
-#16 noun locative and -ni- 'sit.be' (park = cave)
-iila-nim gardin-on i-rr-ni
-dog-ERG park-LOC 3-AUG-be
-The dogs are in the park.
-
-OR
-
-#16 noun locative (park = cave)
-iila-nim gardin-on
-dog-ERG park-LOC
-The dogs are in the park.
-
-OR
-
-#16 null locative(park = beach)
-iila-nim jaala i-rr-ni
-dog-ERG park 3-AUG-be
-The dogs are in the park.
-
-
-no evidence of such a construction but maybe:
-
-#17 for ergative involving -ni- 'sit.be'
-iila-nim i-rr-ni-irr aarli
-dog-ERG 3-AUG-be-3AUG cat
-The dogs are the cats.
-
- OR
-
- #17 for null copula
- Ginyinggi iila aarli
- This dog cat
- `These dogs are cats.’
-
- OR
-
- #17 for null copula
- Ginyinggion iila aarli
- Ginyinggi-on iila aarli dog cat
- This-LOC
- `These dogs are cats.’’
-
-
-More parses and translations
-
-  Anggaba inyarrjarrmin
-  anggaba i-ny-arr-jarrmi-n
-  Who sleeps?
-  can parse but can't translate yet
-
-  can translate futrhter
-  	#8: 11812 results
-      #11: 24 results
-
-    From lab 6
-      #2: 12 results (possibly the result of implementation of object dropping
-        this is explained more as a new ambiguity source below)
-      #3: 0 results (expected at this point)
-      #4: 2 results
-      #5: 24 results (first test after adding negation)
-      #18: 0 results (it parses in lkb but won't generate most likely because
-        Bardi doesn't have determiners for nouns like "the" or "a"; it goes from
-        "the dog" in English to "dog" in Bardi)
-      #19: 2 results
+We have a specific set of possessive pronouns defined under a possessive strategy that undergoes these rules. and "anggaba" is not one of them. We are not sure why this is happening or how to fix it so any insight into this would be great.
 
 TSDB
   Initial Run
