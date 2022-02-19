@@ -20,3 +20,29 @@ irr iila irr aarli
 3AUG dog 3AUG cat
 `The dogs are the cats.'
 ```
+
+## Removed from bardi.tdl
+```
+;;; Adjectives
+
+adj-lex := basic-intersective-adjective-lex.
+
+adj1-adj-lex := attr-adj-lex & stative-pred-adj-lex &
+  [ SYNSEM.LOCAL.CAT.HEAD.PRD - ].
+
+; Basic attributive adjective definition
+
+attr-adj-lex := adj-lex & intersective-mod-lex &
+  [ SYNSEM.LOCAL.CAT.HEAD.MOD < [ LOCAL.CAT [ HEAD noun,
+                                              VAL.SPR cons ] ] > ].
+
+; Stative predicate adjective definition
+
+stative-pred-adj-lex := adj-lex &
+  [ SYNSEM.LOCAL [ CAT.VAL.SUBJ < [ LOCAL [ CAT.HEAD.CASE real-case,
+                                            CONT.HOOK.INDEX #xarg,
+                                            CAT [ VAL [ SPR < >,
+                                                        COMPS < > ],
+                                                  HEAD noun ] ] ] >,
+                   CONT.HOOK.XARG #xarg ] ].
+```

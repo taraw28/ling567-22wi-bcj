@@ -67,6 +67,26 @@ This allowed us to parse "The dog is the cat" as well as other similar sentences
 
 but this did not work. Our case position class is obligatory and the absolutive case is null marked so we are not entirely sure why this is happening or how to fix it.
 
+Next, we worked on getting the plural "The dogs are the cats" to parse. When there is no verb, the plural can be expressed using the third person augmented pronoun acting as a determiner:
+
+  # does parse
+  Irr iila irr aarli.
+  irr iila irr aarli
+  3AUG dog 3AUG cat
+  `The dogs are the cats.'
+
+We used the customization system to add a 3aug determiner:
+
+  det3_name=det3
+      det3_stem1_orth=irr
+      det3_stem1_pred=_exist_q_rel
+      det3_feat1_name=pernum
+      det3_feat1_value=3aug
+
+This allowed us to parse the sentence however, it resulted in 164 trees. Part of this was due to the fact that we added ajectives into the lexicon when adding this determiner (to avoid having to go back to through the customization system a second time). By commenting out the new adj-head rule in rules.tdl, we were able to get this down to 120 trees (this is probably not the best idea in the long run but for now, since we won't be able to get non-verbal sentences with adjectives working this week, hopefully this is ok). Also, in many trees, "irr" was going through our new noun-pred or loc-pp rules. This was happening because "irr" was being realized as a noun, instead of a determiner. This is because "irr" also exists in the lexicon as a third person augmented pronoun. I'm not sure if there is a way to constrain the rules in a way that would prevent the noun from being used.
+
+For the purpose of trying to prevent the noun version from being used, we changed the stem to "irr2". However, this made it so that the sentence couldn't be parsed at all. It seems that the noun-pred rule can only take N nouns and not NPs. However, we need the NP (irr iila) or the NP (irr aarli) to undergo the noun-pred rule so that a sentence can be formed. We are not sure how we could modify the noun-predicate-rule to allow for NPs so any advice would be appreciated.
+
 - Bardi has nominal and adjectival predicates, and the copula is normally null (pp.601-610).
 - Adjectives do not really exist independent of stative verbs.
 - There is no PP either, and NPs are used with a locative verb.
