@@ -2,6 +2,71 @@ Lab 7 - Bardi - Tara and Hanieh
 
 Non-Verbal Predicates Phenomenon
 
+For NP non-verbal predicates, no copula is present:
+
+  # does parse
+  Jarri aamba galgarr.
+  jarri aamba galgarr
+  this man widower
+  `This man is a widower.'
+
+  # does parse
+  Jarri aamba garnibina.
+  jarri aamba garnibina
+  this man murderer
+  `This man's a murderer.'
+
+Tense is not included in these sentences directly. Instead, tense would be based on the context of the surrounding sentences. The order of the subject and object is flexible. It has been noted that focus is often applied to the element in the first position of a clause (as seen above). However, this is not always the case:
+
+  # does parse
+  Jalnggoogoorr jana nyami.
+  jalnggoogoorr jana nyami
+  doctor.man 1M.POSS mother's.father
+  `My grandfather was a doctorman.'
+
+To implement this, we started with a basic example sentence:
+
+  # does parse
+  Iila aarli.
+  iila aarli
+  dog cat
+  `The dog is the cat.'
+
+Then, we added a non-branching non-headed phrase structure rule (noun-predicate-rule) to bardi.tdl and instantiated it in rules.tdl. This rule allows for a noun to become a VP and introduces the "_be_v_id_rel" relation.
+
+  noun-predicate-rule := basic-unary-phrase & nocoord &
+    [ SYNSEM [ LOCAL.CAT [ HEAD verb,
+                          VAL [ COMPS < >,
+                          SUBJ < [ LOCAL [ CONT.HOOK.INDEX #arg1,
+                                            CAT [ HEAD noun,
+                                                  VAL.SPR < > ] ] ] > ] ],
+              NON-LOCAL #nl ],
+              C-CONT [ HOOK [ LTOP #ltop,
+                              INDEX #index,
+                              XARG #arg1 ],
+                        RELS.LIST < arg12-ev-relation &
+                            [ PRED "_be_v_id_rel",
+                              LBL #ltop,
+                              ARG0 #index,
+                              ARG1 #arg1,
+                              ARG2 #arg2 ] >,
+                        HCONS.LIST < qeq & [ LARG #larg ] > ],
+              ARGS < [ SYNSEM [ LOCAL [ CAT [ HEAD noun,
+                                              VAL.SPR cons ],
+                                        CONT.HOOK [ INDEX #arg2,
+                                                    LTOP #larg ]],
+                                NON-LOCAL #nl ]] > ].
+
+This allowed us to parse "The dog is the cat" as well as other similar sentences. We expected it to generate 2 sentences but it generated 4. The noun-pred-rule will take nouns uninflected for case but it shouldn't. We tried to constrain it to CASES abs with:
+
+              ARGS < [ SYNSEM [ LOCAL [ CAT [ HEAD noun & [ CASE abs ],
+                                              VAL.SPR cons ],
+                                        CONT.HOOK [ INDEX #arg2,
+                                                    LTOP #larg ]],
+                                NON-LOCAL #nl ]] > ].
+
+but this did not work. Our case position class is obligatory and the absolutive case is null marked so we are not entirely sure why this is happening or how to fix it.
+
 - Bardi has nominal and adjectival predicates, and the copula is normally null (pp.601-610).
 - Adjectives do not really exist independent of stative verbs.
 - There is no PP either, and NPs are used with a locative verb.

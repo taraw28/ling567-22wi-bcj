@@ -870,8 +870,8 @@ Source: a:601
 Vetted: t
 Judgement: g
 Phenomena: cop
-Ginyinggi aamba galgarr.
-ginyinggi aamba galgarr
+Jarri aamba galgarr.
+jarri aamba galgarr
 this man widower
 `This man is a widower.'
 
