@@ -433,7 +433,7 @@ liyan := noun1-noun-lex &
   [ STEM < "liyan" >,
     SYNSEM.LKEYS.KEYREL.PRED "_heart_n_rel" ].
 
-manyjal := noun1-noun-lex &
+manyjal_1 := noun1-noun-lex &
   [ STEM < "manyjal" >,
     SYNSEM.LKEYS.KEYREL.PRED "_hunger_n_rel" ].
 
@@ -521,7 +521,7 @@ goorr := 2aug-pronoun-noun-lex &
   [ STEM < "goorr" >,
     SYNSEM.LKEYS.KEYREL.PRED "_pronoun_n_rel" ].
 
-irr := 3aug-pronoun-noun-lex &
+irr_1 := 3aug-pronoun-noun-lex &
   [ STEM < "irr" >,
     SYNSEM.LKEYS.KEYREL.PRED "_pronoun_n_rel" ].
 
@@ -683,6 +683,22 @@ roonggooroongg := inalien-stem-noun-lex &
 
 ;;; Adjectives
 
+garnka := adj1-adj-lex &
+  [ STEM < "garnka" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_raw_a_rel" ].
+
+niiwanda := adj1-adj-lex &
+  [ STEM < "niiwanda" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_long_a_rel" ].
+
+manyjal_2 := adj1-adj-lex &
+  [ STEM < "manyjal" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_hunger_a_rel" ].
+
+garrja := adj1-adj-lex &
+  [ STEM < "garrja" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_sharp_a_rel" ].
+
 ;;; Verbs
 
 jarrmi := it-abs-verb-lex &
@@ -837,25 +853,9 @@ boojool := it-preverb-verb-lex &
   [ STEM < "boojool" >,
     SYNSEM.LKEYS.KEYREL.PRED "_stare_v_rel" ].
 
-garnka := it-preverb-verb-lex &
-  [ STEM < "garnka" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_raw_v_rel" ].
-
-niiwanda := it-preverb-verb-lex &
-  [ STEM < "niiwanda" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_long_v_rel" ].
-
-manyjal := it-preverb-verb-lex &
-  [ STEM < "manyjal" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_hunger_v_rel" ].
-
 alig := it-preverb-verb-lex &
   [ STEM < "alig" >,
     SYNSEM.LKEYS.KEYREL.PRED "_feel.bad_v_rel" ].
-
-garrja := it-preverb-verb-lex &
-  [ STEM < "garrja" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_sharp_v_rel" ].
 
 ju := light-verb-verb-lex &
   [ STEM < "ju" >,
@@ -979,6 +979,10 @@ barni_2 := det2-determiner-lex &
   [ STEM < "barni" >,
     SYNSEM.LKEYS.KEYREL.PRED "_exist_q_rel" ].
 
+irr_2 := det3-determiner-lex &
+  [ STEM < "irr" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_exist_q_rel" ].
+
 ;;; Adverbs
 
 nganyji := q-particle1-lex &
@@ -1024,7 +1028,3 @@ agal4 := conj-lex &
   [ STEM < "agal" >,
     SYNSEM.LKEYS.KEYREL.PRED "_and_coord_rel",
     CFORM "4" ].
-
-ni-copula := copula-verb-lex &
-  [ STEM < "ni" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_be_p_rel" ].

@@ -1,4 +1,8 @@
 ;;; -*- Mode: TDL; Coding: utf-8 -*-
+head-adj := my-head-adj-phrase.
+
+adj-head := my-adj-head-phrase.
+
 basic-head-opt-comp := basic-head-opt-comp-phrase.
 
 head-comp := head-comp-phrase.
@@ -43,8 +47,4 @@ ex-subj := extracted-subj-phrase.
 
 wh-ques := wh-ques-phrase.
 
-loc-pp := locative-pp-phrase.
-
-noun-pred := noun-predicate-rule.
-
-;ex-det := extracted-det-phrase.
+ex-det := extracted-det-phrase.
