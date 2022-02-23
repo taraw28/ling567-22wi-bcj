@@ -1,0 +1,362 @@
+Lab 7 - Bardi - Tara and Hanieh
+
+Non-Verbal Predicates Phenomenon
+
+For NP non-verbal predicates, no copula is present:
+
+  # does parse
+  Jarri aamba galgarr.
+  jarri aamba galgarr
+  this man widower
+  `This man is a widower.'
+
+  # does parse
+  Jarri aamba garnibina.
+  jarri aamba garnibina
+  this man murderer
+  `This man's a murderer.'
+
+Tense is not included in these sentences directly. Instead, tense would be based on the context of the surrounding sentences. The order of the subject and object is flexible. It has been noted that focus is often applied to the element in the first position of a clause (as seen above). However, this is not always the case:
+
+  # does parse
+  Jalnggoogoorr jana nyami.
+  jalnggoogoorr jana nyami
+  doctor.man 1M.POSS mother's.father
+  `My grandfather was a doctorman.'
+
+To implement this, we started with a basic example sentence:
+
+  # does parse
+  Iila aarli.
+  iila aarli
+  dog cat
+  `The dog is the cat.'
+
+Then, we added a non-branching non-headed phrase structure rule (noun-predicate-rule) to bardi.tdl and instantiated it in rules.tdl. This rule allows for a noun to become a VP and introduces the "_be_v_id_rel" relation.
+
+  noun-predicate-rule := basic-unary-phrase & nocoord &
+    [ SYNSEM [ LOCAL.CAT [ HEAD verb,
+                          VAL [ COMPS < >,
+                          SUBJ < [ LOCAL [ CONT.HOOK.INDEX #arg1,
+                                            CAT [ HEAD noun,
+                                                  VAL.SPR < > ] ] ] > ] ],
+              NON-LOCAL #nl ],
+              C-CONT [ HOOK [ LTOP #ltop,
+                              INDEX #index,
+                              XARG #arg1 ],
+                        RELS.LIST < arg12-ev-relation &
+                            [ PRED "_be_v_id_rel",
+                              LBL #ltop,
+                              ARG0 #index,
+                              ARG1 #arg1,
+                              ARG2 #arg2 ] >,
+                        HCONS.LIST < qeq & [ LARG #larg ] > ],
+              ARGS < [ SYNSEM [ LOCAL [ CAT [ HEAD noun & [ CASE abs ],
+                                              VAL.SPR cons ],
+                                        CONT.HOOK [ INDEX #arg2,
+                                                    LTOP #larg ]],
+                                NON-LOCAL #nl ]] > ].
+
+This allowed us to parse "The dog is the cat" as well as other similar sentences. We expected it to generate 2 sentences but it generated 4. The noun-pred-rule will take nouns uninflected for case but it shouldn't. We tried to constrain it to CASE abs with:
+
+              ARGS < [ SYNSEM [ LOCAL [ CAT [ HEAD noun & [ CASE abs ],
+                                              VAL.SPR cons ],
+                                        CONT.HOOK [ INDEX #arg2,
+                                                    LTOP #larg ]],
+                                NON-LOCAL #nl ]] > ].
+
+but this did not work. Adding this case constraint does prevent nouns inflected with other case markers from forming VPs but does not prevent un-inflected nouns from forming VPs. Our case position class is obligatory and the absolutive case is null marked so we are not entirely sure why this is happening or how to fix it.
+
+Next, we worked on getting the plural "The dogs are the cats" to parse. When there is no verb, the plural can be expressed using the third person augmented pronoun acting as a determiner:
+
+  # does parse (but not correctly)
+  Irr iila irr aarli.
+  irr iila irr aarli
+  3AUG dog 3AUG cat
+  `The dogs are the cats.'
+
+We used the customization system to add a 3aug determiner:
+
+  det3_name=det3
+      det3_stem1_orth=irr
+      det3_stem1_pred=_exist_q_rel
+      det3_feat1_name=pernum
+      det3_feat1_value=3aug
+
+This allowed us to parse the sentence however, it resulted in 164 trees. Part of this was due to the fact that we added ajectives into the lexicon when adding this determiner (to avoid having to go back to through the customization system a second time). By commenting out the new adj-head rule in rules.tdl, we were able to get this down to 120 trees (this is probably not the best idea in the long run but for now, since we won't be able to get non-verbal sentences with adjectives working this week, hopefully this is ok). Also, in many trees, "irr" was going through our new noun-pred or loc-pp rules. This was happening because "irr" was being realized as a noun, instead of a determiner. This is because "irr" also exists in the lexicon as a third person augmented pronoun. I'm not sure if there is a way to constrain the rules in a way that would prevent the noun from being used.
+
+For the purpose of trying to prevent the noun version from being used, we changed the stem to "irr2". However, this made it so that the sentence couldn't be parsed at all. It seems that the noun-pred rule can only take N nouns and not NPs. However, we need the NP (irr iila) or the NP (irr aarli) to undergo the noun-pred rule so that a sentence can be formed. We are not sure how we could modify the noun-predicate-rule to allow for NPs so any advice would be appreciated.
+
+For PP non-verbal predicates, the copula -ni- (which acts as a regular verb) in addition to a locative NP is used:
+
+# does parse
+Iilanim gardinon irrni.
+iila-nim gardin-on i-rr-ni
+dog-ERG park-LOC 3-AUG-be
+`The dogs are in the park.'
+
+# doesn't parse (we do not have affixed subjects implemented yet)
+Inin baaloon.
+i-ni-n baal-oon
+3-be-CONT boughshed-LOC
+`It's in the boughshed.'
+
+To implement this, we added the copula to the lexicon:
+
+  ni-copula := copula-verb-lex &
+  [ STEM < "ni" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_be_p_rel" ].
+
+It inherits from the copula-verb-lex which, in addition to the verb-lex-supertype, we added to bardi.tdl. The verb-lex-supertype inherits from the basic-verb-lex-super to get HEAD verb and also inherits from most morphological rules that apply to regular verbs:
+
+  verb-lex-supertype := basic-verb-lex-super & aspect-rule-dtr & aug-rule-dtr & dir-obj-rule-dtr & pernum-rule-dtr & tense-rule-dtr &
+    [ INFLECTED [ TR-ERG-ABS-VERB-OR-TR-ERG-ALL-VERB-OR-TR-ERG-INS-VERB-FLAG na-or--,
+                  TENSE-FLAG -,
+                  PERNUM-FLAG -] ].
+
+  copula-verb-lex := verb-lex-supertype & trans-first-arg-raising-lex-item-2 &
+    [ SYNSEM.LOCAL [ CAT.VAL [ SUBJ < #subj >,
+                              COMPS < #comps >,
+                              SPR < >,
+                              SPEC < > ],
+                    CONT.HOOK.XARG #xarg ],
+      ARG-ST < #subj &
+              [ LOCAL [ CONT.HOOK.INDEX #xarg,
+                        CAT [ VAL [ SPR < >,
+                                    COMPS < > ],
+                              HEAD noun ] ] ],
+              #comps &
+              [ LOCAL.CAT [ VAL [ SUBJ <[]>,
+                                  COMPS < > ],
+                            HEAD +vp ] ] > ].
+
+Doing this allowed us to parse "The dogs are in the park" with one (correct) tree!
+
+
+For AP non-verbal predicates, according to Bowern, adjectives don't exist as a class, and adjectival non-verbal predicates involve complex predicates of a preverb and a light verb. Here is an example with rarrjin+ ‘be ashamed of’indicating with a third personal min (p.468).
+
+  # doesn't parse
+  Rarrjin inmanjarrngay.
+  rarrjin i-n-ma-n=jarrngay
+  shame 3-TR-put-CONT-1M.DO
+  `I’m ashamed of it.'
+
+Preverbal adjectives combine with the light verb -ni- 'sit.do' in a complex predicate. This is where Bardi adjectives take on a stative meaning (p.608)
+
+  # doesn't parse
+  Niiwandi inin ngamarla.
+  Niiwandi i-ni-n nga-marla.
+  long 3-sit-CONT 1-hand/finger
+  `My fingers are stretched out.'
+
+Another way to express adjectives, Bardi uses a "causal construction" with an ergative noun and a subject as the expriencer (p.268). For the causal construction to convey adjectival meaning, the Badi speaker would says "I want water. I am thirsty."
+
+For sentence #15 `The dogs are hungry' the preverb "alig" (feel.bad) is used along with the light verb "-j-" (do.say) as well as making the adjective "hunger" take the ergative case:
+
+  #15 doesn't parse
+  Manyjalnim alig irroojij iila.
+  manyjal-nim alig i-rr-oo-j-ij iila
+  hunger-ERG feel.bad 3-AUG-TR-do.say-PFV dog
+  `The dogs are hungry.'
+
+Since the adjective non-verbal predicates constructions involve complex predicates, which we do not have implemented, we decided to focus on just NP and PP non-verbal predicates this week. Hopefully next week we can possibly get started on these complex predicates.
+
+MT
+
+Since #15 sentence involves complex predicates, it will not parse and therefore will not translate (as described above).
+
+  #15
+  Manyjalnim alig irroojij iila.
+  manyjal-nim alig i-rr-oo-j-ij iila
+  hunger-ERG feel.bad 3-AUG-TR-do.say-PFV dog
+  `The dogs are hungry.'
+
+#16 does parse however will not translate. This is because Bardi uses a locative noun which has the _loc_p_rel while the English sentence has _in_p_rel. We tried changed "_loc_p_rel" to "_in_p_rel" however, this did not allow it to translate. We assume we need some kind of transfer rule to allow for this sentence to translate, since the MRSes seem to be identical.
+
+  #16
+  Iilanim gardinon irrni.
+  iila-nim gardin-on i-rr-ni
+  dog-ERG park-LOC 3-AUG-be
+  `The dogs are in the park.'
+
+#17 does parse but incorrectly (as described above) and also doesn't translate. We also tried to translate "The dog is the cat" as that sentence does parse in our grammar. However, this did not translate either. Again, the MRSes are identical so we probably need a transfer rule.
+
+#17
+Irr iila irr aarli.
+irr iila irr aarli
+3AUG dog 3AUG cat
+`The dogs are the cats.'
+
+Iila aarli.
+iila aarli
+dog cat
+`The dog is the cat.'
+
+Wh Questions
+
+To make constituent (wh-) questions, Bardi uses a number of interrogative pronouns that usually appear clause initially. This analysis should work together with the null-copula analysis of nominal non-verbal predicates. With wh- questions, Bowern refers to this phenomena as "ellided verbs" (p. 609). Verbs can only be seen elided in answers to questions having
+a single noun phrase standing alone as the answer:
+
+# doesn't parse (our grammar does not currently allow question pronouns to get case)
+Angginim goorr?
+anggi-nim goorr
+what-ERG 2AUG
+`What’s wrong with you? What happened to you?'
+
+# does parse
+Anggaba nyinga joo?
+anggaba nyi-nga joo
+who 2MIN-name 2MIN
+`What’s your name?'
+
+The "What's your name" sentence does parse with 8 trees but some of them construct a PP out of "anggaba" using the loc-pp rule. We are not sure why this is happening since that rule should only allow nouns with locative case to become a PP. There are also some trees where "anggaba" goes through the poss-unary-pron-1 or poss-unary-2 rule and becomes a determiner:
+
+  poss-unary-phrase-2 := poss-unary-phrase &
+  [ ARGS < [ SYNSEM.LOCAL.CAT.HEAD.POSSESSOR possessor-2 ] >,
+    SYNSEM.LOCAL.CAT [ HEAD.SPEC-INIT +,
+                       VAL.SPEC.FIRST.LOCAL.CAT.POSSESSUM nonpossessive ] ].
+
+  poss-unary-phrase-pron-1 := poss-unary-phrase &
+  [ ARGS < [ SYNSEM.LOCAL.CAT.HEAD.POSSESSOR possessor-pron-1 ] >,
+    SYNSEM.LOCAL.CAT [ HEAD.SPEC-INIT +,
+                       VAL.SPEC.FIRST.LOCAL.CAT.POSSESSUM nonpossessive ] ].
+
+  poss-unary-phrase := basic-unary-phrase &
+    [ SYNSEM [ NON-LOCAL #nonloc,
+              LOCAL [ CONT.HOOK #hook,
+                      CAT [ HEAD det &
+                                  [ POSSESSOR possessor ],
+                            VAL [ SPR < >,
+                                  COMPS < >,
+                                  SUBJ < >,
+                                  SPEC < [ LOCAL [ CAT [ VAL.COMPS < >,
+                                                          HEAD noun &
+                                                              [ PRON - ] ],
+                                                    CONT.HOOK #hook &
+                                                              [ INDEX #possessum &
+                                                                      [ COG-ST uniq-id ],
+                                                                LTOP #lbl ] ] ] > ] ] ] ],
+      C-CONT [ RELS.LIST < arg12-ev-relation &
+                          [ PRED "poss_rel",
+                            LBL #lbl,
+                            ARG1 #possessum,
+                            ARG2 #possessor ],
+                          quant-relation &
+                          [ PRED "exist_q_rel",
+                            ARG0 #possessum,
+                            RSTR #harg ] >,
+              HCONS.LIST < qeq &
+                            [ HARG #harg,
+                              LARG #lbl ] >,
+              ICONS.LIST < > ],
+      ARGS < [ SYNSEM [ LOCAL [ CAT [ VAL [ SPR < >,
+                                            COMPS < >,
+                                            SUBJ < >,
+                                            SPEC < > ],
+                                      HEAD +np ],
+                                CONT.HOOK.INDEX #possessor ],
+                        NON-LOCAL #nonloc ] ] > ].
+
+We have a specific set of possessive pronouns defined under a possessive strategy that undergoes these rules. and "anggaba" is not one of them. We are not sure why this is happening or how to fix it so any insight into this would be great.
+
+TSDB
+  Initial Run
+    corpus (tsdb/home/bardi/lab7/lab6grammar/corpus)
+      1. 0 items parsed
+      2. We averaged 0 parses per parsed item.
+
+    testsuite (tsdb/home/bardi/lab7/lab6grammar/lab7)
+      1. 16 items parsed
+      2. We averaged ~2 parses per parsed item.
+      3. Our most ambiguous item got 4 parses.
+      4. There were no new sources of ambiguity.
+
+
+  Final Run
+    corpus (tsdb/home/bardi/lab7/lab7grammar/corpus)
+      1. 0 items parsed
+      2. We averaged 0 parses per parsed item.
+
+    testsuite (tsdb/home/bardi/lab7/lab7grammar/lab7)
+      1. 27 items parsed
+      2. We averaged 11 parses per parsed item.
+      3. Our most ambiguous item got 120 parses.
+      4. All of the new sources of ambiguity were already discussed in depth above as issues that needed to be fixed. There is definitely over-generation with the new NP and PP non-verbal predicate rules we added. If we can constrain them a bit more, we should be able to reduce ambiguity.
+
+
+  Coverage
+    - Initial Run
+      - corpus: 0% coverage
+      - testsuite: 16.3% coverage
+    - Final Run
+      - corpus: 0% coverage
+      - testsuite: 28.3% coverage
+    - Comparison
+      - Our coverage went up but so did our ambiguity. All of the new sentences added this week that we expected to parse did parse. However, the new rules we added increased our ambiguity. Hopefully we can work on improving that for next week. One way that our ambiguity did decrease was one sentence that previously had 4 parses, two of which were incorrect.:
+
+      Aambanim aarli inamanyana.
+      aamba-nim aarli i-na-ma-nya-na
+      man-ERG fish.ABS 3-TR-PST-catch-REM.PST
+      `The man caught the fish.'
+
+      Previously, the direct object lexical rule was being applied to sentences it shouldn't. We got rid of this ambiguity by updating the way argument optionality works (to require a marker when the object is dropped) and putting require constraints on transitive verbs for the direct object lexical rules. We also made the 3min direct object lexical rule (which has no affix) have an overt-arg value of not-permitted.
+
+        section=arg-opt
+          subj-drop=subj-drop-all
+          subj-mark-drop=subj-mark-drop-opt
+          subj-mark-no-drop=subj-mark-no-drop-opt
+          subj-con=subj-con-some
+          obj-drop=obj-drop-all
+          obj-mark-drop=obj-mark-drop-req
+          obj-mark-no-drop=obj-mark-no-drop-opt
+
+        verb-pc7_lrt3_name=3min-dir-obj
+          verb-pc7_lrt3_feat1_name=pernum
+          verb-pc7_lrt3_feat1_value=3min
+          verb-pc7_lrt3_feat1_head=obj
+          verb-pc7_lrt3_feat2_name=overt-arg
+          verb-pc7_lrt3_feat2_value=not-permitted
+          verb-pc7_lrt3_feat2_head=obj
+          verb-pc7_lrt3_lri1_inflecting=no
+
+        verb2_name=tr-erg-abs
+          verb2_feat1_name=case
+          verb2_feat1_value=erg
+          verb2_feat1_head=subj
+          verb2_feat2_name=case
+          verb2_feat2_value=abs
+          verb2_feat2_head=obj
+        verb2_valence=trans
+          verb2_stem1_orth=nya
+          verb2_stem1_pred=_catch_v_rel
+          ...
+          verb2_require1_others=verb-pc5, verb-pc6
+          verb2_require2_others=verb-pc7
+
+        verb6_name=tr-erg-all
+          verb6_feat1_name=case
+          verb6_feat1_value=erg
+          verb6_feat1_head=subj
+          verb6_feat2_name=case
+          verb6_feat2_value=all
+          verb6_feat2_head=obj
+        verb6_valence=trans
+          verb6_stem1_orth=goondoorroo
+          verb6_stem1_pred=_cross.over_v_rel
+          ...
+          verb6_require1_others=verb-pc5, verb-pc6
+          verb6_require2_others=verb-pc7
+
+          verb8_name=tr-erg-ins
+            verb8_feat1_name=case
+            verb8_feat1_value=erg
+            verb8_feat1_head=subj
+            verb8_feat2_name=case
+            verb8_feat2_value=ins
+            verb8_feat2_head=obj
+          verb8_valence=trans
+            verb8_stem1_orth=boo
+            verb8_stem1_pred=_hit_v_rel
+            ...
+            verb8_require1_others=verb-pc5, verb-pc6
+            verb8_require2_others=verb-pc7
