@@ -2,11 +2,11 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Grammar of bardi
 ;;; created at:
-;;;     Wed Feb 23 02:47:49 UTC 2022
+;;;     Sat Feb 19 03:08:44 UTC 2022
 ;;; based on Matrix customization system version of:
 ;;;     Mon Aug  2 23:22:15 UTC 2021
 ;;;
-;;; 
+;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ; Type assigning empty mod list. Added to basic types for nouns, verbs and determiners.
@@ -33,27 +33,27 @@ head :+ [ PRON bool,
 
 noun :+ [ CASE case ].
 
-inflected :+ [ PERNUM-FLAG luk,
-    AUG-FLAG luk,
+inflected :+ [ DIR-OBJ-FLAG luk,
     IT-ABS-VERB-OR-IT-ERG-VERB-FLAG luk,
-    PRS-FLAG luk,
-    TR-ERG-ABS-VERB-OR-TR-ERG-ALL-VERB-OR-TR-ERG-INS-VERB-FLAG luk,
-    TENSE-FLAG luk,
-    DIR-OBJ-FLAG luk,
-    TR-AUG-OR-TR-MIN-FLAG luk,
     INALIEN-POSS-FLAG luk,
-    CASE-PC-FLAG luk ].
+    PRS-FLAG luk,
+    TR-AUG-OR-TR-MIN-FLAG luk,
+    PERNUM-FLAG luk,
+    TR-ERG-ABS-VERB-OR-TR-ERG-ALL-VERB-OR-TR-ERG-INS-VERB-FLAG luk,
+    CASE-PC-FLAG luk,
+    AUG-FLAG luk,
+    TENSE-FLAG luk ].
 
-infl-satisfied :+ [ PERNUM-FLAG na-or-+,
-    AUG-FLAG na-or-+,
+infl-satisfied :+ [ DIR-OBJ-FLAG na-or-+,
     IT-ABS-VERB-OR-IT-ERG-VERB-FLAG na-or-+,
-    PRS-FLAG na-or-+,
-    TR-ERG-ABS-VERB-OR-TR-ERG-ALL-VERB-OR-TR-ERG-INS-VERB-FLAG na-or-+,
-    TENSE-FLAG na-or-+,
-    DIR-OBJ-FLAG na-or-+,
-    TR-AUG-OR-TR-MIN-FLAG na-or-+,
     INALIEN-POSS-FLAG na-or-+,
-    CASE-PC-FLAG na-or-+ ].
+    PRS-FLAG na-or-+,
+    TR-AUG-OR-TR-MIN-FLAG na-or-+,
+    PERNUM-FLAG na-or-+,
+    TR-ERG-ABS-VERB-OR-TR-ERG-ALL-VERB-OR-TR-ERG-INS-VERB-FLAG na-or-+,
+    CASE-PC-FLAG na-or-+,
+    AUG-FLAG na-or-+,
+    TENSE-FLAG na-or-+ ].
 
 png :+ [ PERNUM pernum ].
 
@@ -260,7 +260,7 @@ no-spr-noun-lex := noun-lex &
 ; Nouns which cannot take specifiers mark their SPR requirement
 ; as OPT +.  Making the non-head daughter OPT - in this rule
 ; keeps such nouns out.
-; 
+;
 ; Rules for building NPs.  Note that the Matrix uses SPR for
 ; the specifier of nouns and SUBJ for the subject (specifier) of verbs.
 
@@ -518,7 +518,8 @@ neg-comp-lex := basic-scopal-adverb-lex &
                               MOD < [ LOCAL.CAT.HEAD verb ] > ] ] ].
 
 two-rel-adposition-lex := basic-icons-lex-item &
-  [ SYNSEM [ LOCAL [ CAT [ HEAD adp,
+  [ SYNSEM [ NON-LOCAL non-local-none,
+             LOCAL [ CAT [ HEAD adp,
                            VAL.COMPS < [ LOCAL [ CAT cat-sat,
                                                  CONT.HOOK #hook &
                                                            [ INDEX #ind,
@@ -578,37 +579,37 @@ possessor-adp-lex-2 := two-rel-adposition-lex &
 ;;; Intermediate rule types
 
 tr-min-rule-dtr := word-or-lexrule.
-dir-obj-rule-dtr := word-or-lexrule.
-tense-rule-dtr := word-or-lexrule.
 pernum-rule-dtr := word-or-lexrule.
+aug-rule-dtr := word-or-lexrule.
 tr-aug-rule-dtr := word-or-lexrule.
 case-pc-rule-dtr := word-or-lexrule.
+tense-rule-dtr := word-or-lexrule.
 aspect-rule-dtr := word-or-lexrule.
-aug-rule-dtr := word-or-lexrule.
+dir-obj-rule-dtr := word-or-lexrule.
 
 ;;; Lexical rule types
 
 case-pc-lex-rule-super := add-only-no-ccont-rule &
   [ INFLECTED [ CASE-PC-FLAG +,
-                PERNUM-FLAG #pernum,
-                AUG-FLAG #aug,
-                IT-ABS-VERB-OR-IT-ERG-VERB-FLAG #it-abs-verb-or-it-erg-verb,
-                PRS-FLAG #prs,
-                TR-ERG-ABS-VERB-OR-TR-ERG-ALL-VERB-OR-TR-ERG-INS-VERB-FLAG #tr-erg-abs-verb-or-tr-erg-all-verb-or-tr-erg-ins-verb,
-                TENSE-FLAG #tense,
                 DIR-OBJ-FLAG #dir-obj,
+                IT-ABS-VERB-OR-IT-ERG-VERB-FLAG #it-abs-verb-or-it-erg-verb,
+                INALIEN-POSS-FLAG #inalien-poss,
+                PRS-FLAG #prs,
                 TR-AUG-OR-TR-MIN-FLAG #tr-aug-or-tr-min,
-                INALIEN-POSS-FLAG #inalien-poss ],
+                PERNUM-FLAG #pernum,
+                TR-ERG-ABS-VERB-OR-TR-ERG-ALL-VERB-OR-TR-ERG-INS-VERB-FLAG #tr-erg-abs-verb-or-tr-erg-all-verb-or-tr-erg-ins-verb,
+                AUG-FLAG #aug,
+                TENSE-FLAG #tense ],
     DTR case-pc-rule-dtr &
-        [ INFLECTED [ PERNUM-FLAG #pernum,
-                      AUG-FLAG #aug,
+        [ INFLECTED [ DIR-OBJ-FLAG #dir-obj,
                       IT-ABS-VERB-OR-IT-ERG-VERB-FLAG #it-abs-verb-or-it-erg-verb,
+                      INALIEN-POSS-FLAG #inalien-poss,
                       PRS-FLAG #prs,
-                      TR-ERG-ABS-VERB-OR-TR-ERG-ALL-VERB-OR-TR-ERG-INS-VERB-FLAG #tr-erg-abs-verb-or-tr-erg-all-verb-or-tr-erg-ins-verb,
-                      TENSE-FLAG #tense,
-                      DIR-OBJ-FLAG #dir-obj,
                       TR-AUG-OR-TR-MIN-FLAG #tr-aug-or-tr-min,
-                      INALIEN-POSS-FLAG #inalien-poss ] ] ].
+                      PERNUM-FLAG #pernum,
+                      TR-ERG-ABS-VERB-OR-TR-ERG-ALL-VERB-OR-TR-ERG-INS-VERB-FLAG #tr-erg-abs-verb-or-tr-erg-all-verb-or-tr-erg-ins-verb,
+                      AUG-FLAG #aug,
+                      TENSE-FLAG #tense ] ] ].
 
 erg-lex-rule := case-pc-lex-rule-super & infl-lex-rule &
   [ SYNSEM.LOCAL.CAT.HEAD.CASE erg ].
@@ -654,25 +655,25 @@ ins-lex-rule := case-pc-lex-rule-super & infl-lex-rule &
 
 inalien-poss-lex-rule-super := case-pc-rule-dtr & infl-lex-rule &
   [ INFLECTED [ INALIEN-POSS-FLAG +,
-                PERNUM-FLAG #pernum,
-                AUG-FLAG #aug,
+                DIR-OBJ-FLAG #dir-obj,
                 IT-ABS-VERB-OR-IT-ERG-VERB-FLAG #it-abs-verb-or-it-erg-verb,
                 PRS-FLAG #prs,
-                TR-ERG-ABS-VERB-OR-TR-ERG-ALL-VERB-OR-TR-ERG-INS-VERB-FLAG #tr-erg-abs-verb-or-tr-erg-all-verb-or-tr-erg-ins-verb,
-                TENSE-FLAG #tense,
-                DIR-OBJ-FLAG #dir-obj,
                 TR-AUG-OR-TR-MIN-FLAG #tr-aug-or-tr-min,
-                CASE-PC-FLAG #case-pc ],
+                PERNUM-FLAG #pernum,
+                TR-ERG-ABS-VERB-OR-TR-ERG-ALL-VERB-OR-TR-ERG-INS-VERB-FLAG #tr-erg-abs-verb-or-tr-erg-all-verb-or-tr-erg-ins-verb,
+                CASE-PC-FLAG #case-pc,
+                AUG-FLAG #aug,
+                TENSE-FLAG #tense ],
     DTR inalien-stem-noun-lex &
-        [ INFLECTED [ PERNUM-FLAG #pernum,
-                      AUG-FLAG #aug,
+        [ INFLECTED [ DIR-OBJ-FLAG #dir-obj,
                       IT-ABS-VERB-OR-IT-ERG-VERB-FLAG #it-abs-verb-or-it-erg-verb,
                       PRS-FLAG #prs,
-                      TR-ERG-ABS-VERB-OR-TR-ERG-ALL-VERB-OR-TR-ERG-INS-VERB-FLAG #tr-erg-abs-verb-or-tr-erg-all-verb-or-tr-erg-ins-verb,
-                      TENSE-FLAG #tense,
-                      DIR-OBJ-FLAG #dir-obj,
                       TR-AUG-OR-TR-MIN-FLAG #tr-aug-or-tr-min,
-                      CASE-PC-FLAG #case-pc ] ] ].
+                      PERNUM-FLAG #pernum,
+                      TR-ERG-ABS-VERB-OR-TR-ERG-ALL-VERB-OR-TR-ERG-INS-VERB-FLAG #tr-erg-abs-verb-or-tr-erg-all-verb-or-tr-erg-ins-verb,
+                      CASE-PC-FLAG #case-pc,
+                      AUG-FLAG #aug,
+                      TENSE-FLAG #tense ] ] ].
 
 1min-poss-lex-rule := inalien-poss-lex-rule-super &
   [ SYNSEM.LOCAL.CAT [ HEAD #head,
@@ -999,23 +1000,23 @@ fut-aspect-lex-rule := aspect-lex-rule-super &
 
 tense-lex-rule-super := aspect-rule-dtr & dir-obj-rule-dtr & lex-rule & pernum-rule-dtr & tr-min-rule-dtr &
   [ INFLECTED [ TENSE-FLAG +,
-                PERNUM-FLAG #pernum,
-                AUG-FLAG #aug,
-                IT-ABS-VERB-OR-IT-ERG-VERB-FLAG #it-abs-verb-or-it-erg-verb,
-                TR-ERG-ABS-VERB-OR-TR-ERG-ALL-VERB-OR-TR-ERG-INS-VERB-FLAG #tr-erg-abs-verb-or-tr-erg-all-verb-or-tr-erg-ins-verb,
                 DIR-OBJ-FLAG #dir-obj,
-                TR-AUG-OR-TR-MIN-FLAG #tr-aug-or-tr-min,
+                IT-ABS-VERB-OR-IT-ERG-VERB-FLAG #it-abs-verb-or-it-erg-verb,
                 INALIEN-POSS-FLAG #inalien-poss,
-                CASE-PC-FLAG #case-pc ],
+                TR-AUG-OR-TR-MIN-FLAG #tr-aug-or-tr-min,
+                PERNUM-FLAG #pernum,
+                TR-ERG-ABS-VERB-OR-TR-ERG-ALL-VERB-OR-TR-ERG-INS-VERB-FLAG #tr-erg-abs-verb-or-tr-erg-all-verb-or-tr-erg-ins-verb,
+                CASE-PC-FLAG #case-pc,
+                AUG-FLAG #aug ],
     DTR tense-rule-dtr &
-        [ INFLECTED [ PERNUM-FLAG #pernum,
-                      AUG-FLAG #aug,
+        [ INFLECTED [ DIR-OBJ-FLAG #dir-obj,
                       IT-ABS-VERB-OR-IT-ERG-VERB-FLAG #it-abs-verb-or-it-erg-verb,
-                      TR-ERG-ABS-VERB-OR-TR-ERG-ALL-VERB-OR-TR-ERG-INS-VERB-FLAG #tr-erg-abs-verb-or-tr-erg-all-verb-or-tr-erg-ins-verb,
-                      DIR-OBJ-FLAG #dir-obj,
-                      TR-AUG-OR-TR-MIN-FLAG #tr-aug-or-tr-min,
                       INALIEN-POSS-FLAG #inalien-poss,
-                      CASE-PC-FLAG #case-pc ] ] ].
+                      TR-AUG-OR-TR-MIN-FLAG #tr-aug-or-tr-min,
+                      PERNUM-FLAG #pernum,
+                      TR-ERG-ABS-VERB-OR-TR-ERG-ALL-VERB-OR-TR-ERG-INS-VERB-FLAG #tr-erg-abs-verb-or-tr-erg-all-verb-or-tr-erg-ins-verb,
+                      CASE-PC-FLAG #case-pc,
+                      AUG-FLAG #aug ] ] ].
 
 prs-lex-rule := add-only-no-ccont-rule & const-lex-rule & tense-lex-rule-super &
   [ INFLECTED.PRS-FLAG +,
@@ -1055,25 +1056,25 @@ irr-lex-rule := infl-lex-rule & tense-lex-rule-super & val-change-only-lex-rule 
 
 pernum-lex-rule-super := add-only-no-ccont-rule & aspect-rule-dtr & dir-obj-rule-dtr & infl-lex-rule &
   [ INFLECTED [ PERNUM-FLAG +,
-                AUG-FLAG #aug,
-                IT-ABS-VERB-OR-IT-ERG-VERB-FLAG #it-abs-verb-or-it-erg-verb,
-                PRS-FLAG #prs,
-                TR-ERG-ABS-VERB-OR-TR-ERG-ALL-VERB-OR-TR-ERG-INS-VERB-FLAG #tr-erg-abs-verb-or-tr-erg-all-verb-or-tr-erg-ins-verb,
-                TENSE-FLAG #tense,
                 DIR-OBJ-FLAG #dir-obj,
-                TR-AUG-OR-TR-MIN-FLAG #tr-aug-or-tr-min,
+                IT-ABS-VERB-OR-IT-ERG-VERB-FLAG #it-abs-verb-or-it-erg-verb,
                 INALIEN-POSS-FLAG #inalien-poss,
-                CASE-PC-FLAG #case-pc ],
+                PRS-FLAG #prs,
+                TR-AUG-OR-TR-MIN-FLAG #tr-aug-or-tr-min,
+                TR-ERG-ABS-VERB-OR-TR-ERG-ALL-VERB-OR-TR-ERG-INS-VERB-FLAG #tr-erg-abs-verb-or-tr-erg-all-verb-or-tr-erg-ins-verb,
+                CASE-PC-FLAG #case-pc,
+                AUG-FLAG #aug,
+                TENSE-FLAG #tense ],
     DTR pernum-rule-dtr &
-        [ INFLECTED [ AUG-FLAG #aug,
+        [ INFLECTED [ DIR-OBJ-FLAG #dir-obj,
                       IT-ABS-VERB-OR-IT-ERG-VERB-FLAG #it-abs-verb-or-it-erg-verb,
-                      PRS-FLAG #prs,
-                      TR-ERG-ABS-VERB-OR-TR-ERG-ALL-VERB-OR-TR-ERG-INS-VERB-FLAG #tr-erg-abs-verb-or-tr-erg-all-verb-or-tr-erg-ins-verb,
-                      TENSE-FLAG #tense,
-                      DIR-OBJ-FLAG #dir-obj,
-                      TR-AUG-OR-TR-MIN-FLAG #tr-aug-or-tr-min,
                       INALIEN-POSS-FLAG #inalien-poss,
-                      CASE-PC-FLAG #case-pc ] ] ].
+                      PRS-FLAG #prs,
+                      TR-AUG-OR-TR-MIN-FLAG #tr-aug-or-tr-min,
+                      TR-ERG-ABS-VERB-OR-TR-ERG-ALL-VERB-OR-TR-ERG-INS-VERB-FLAG #tr-erg-abs-verb-or-tr-erg-all-verb-or-tr-erg-ins-verb,
+                      CASE-PC-FLAG #case-pc,
+                      AUG-FLAG #aug,
+                      TENSE-FLAG #tense ] ] ].
 
 1aug-lex-rule := pernum-lex-rule-super &
   [ DTR.INFLECTED.AUG-FLAG +,
@@ -1101,94 +1102,94 @@ pernum-lex-rule-super := add-only-no-ccont-rule & aspect-rule-dtr & dir-obj-rule
 
 aug-lex-rule := add-only-no-ccont-rule & aspect-rule-dtr & dir-obj-rule-dtr & infl-lex-rule & pernum-rule-dtr & tense-rule-dtr & tr-min-rule-dtr &
   [ INFLECTED [ AUG-FLAG +,
-                PERNUM-FLAG #pernum,
-                IT-ABS-VERB-OR-IT-ERG-VERB-FLAG #it-abs-verb-or-it-erg-verb,
-                PRS-FLAG #prs,
-                TR-ERG-ABS-VERB-OR-TR-ERG-ALL-VERB-OR-TR-ERG-INS-VERB-FLAG #tr-erg-abs-verb-or-tr-erg-all-verb-or-tr-erg-ins-verb,
-                TENSE-FLAG #tense,
                 DIR-OBJ-FLAG #dir-obj,
-                TR-AUG-OR-TR-MIN-FLAG #tr-aug-or-tr-min,
+                IT-ABS-VERB-OR-IT-ERG-VERB-FLAG #it-abs-verb-or-it-erg-verb,
                 INALIEN-POSS-FLAG #inalien-poss,
-                CASE-PC-FLAG #case-pc ],
+                PRS-FLAG #prs,
+                TR-AUG-OR-TR-MIN-FLAG #tr-aug-or-tr-min,
+                PERNUM-FLAG #pernum,
+                TR-ERG-ABS-VERB-OR-TR-ERG-ALL-VERB-OR-TR-ERG-INS-VERB-FLAG #tr-erg-abs-verb-or-tr-erg-all-verb-or-tr-erg-ins-verb,
+                CASE-PC-FLAG #case-pc,
+                TENSE-FLAG #tense ],
     DTR aug-rule-dtr &
-        [ INFLECTED [ PERNUM-FLAG #pernum,
+        [ INFLECTED [ DIR-OBJ-FLAG #dir-obj,
                       IT-ABS-VERB-OR-IT-ERG-VERB-FLAG #it-abs-verb-or-it-erg-verb,
-                      PRS-FLAG #prs,
-                      TR-ERG-ABS-VERB-OR-TR-ERG-ALL-VERB-OR-TR-ERG-INS-VERB-FLAG #tr-erg-abs-verb-or-tr-erg-all-verb-or-tr-erg-ins-verb,
-                      TENSE-FLAG #tense,
-                      DIR-OBJ-FLAG #dir-obj,
-                      TR-AUG-OR-TR-MIN-FLAG #tr-aug-or-tr-min,
                       INALIEN-POSS-FLAG #inalien-poss,
-                      CASE-PC-FLAG #case-pc ] ],
+                      PRS-FLAG #prs,
+                      TR-AUG-OR-TR-MIN-FLAG #tr-aug-or-tr-min,
+                      PERNUM-FLAG #pernum,
+                      TR-ERG-ABS-VERB-OR-TR-ERG-ALL-VERB-OR-TR-ERG-INS-VERB-FLAG #tr-erg-abs-verb-or-tr-erg-all-verb-or-tr-erg-ins-verb,
+                      CASE-PC-FLAG #case-pc,
+                      TENSE-FLAG #tense ] ],
     SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM aug ].
 
 tr-min-lex-rule := add-only-no-ccont-rule & aspect-rule-dtr & dir-obj-rule-dtr & infl-lex-rule & pernum-rule-dtr &
   [ INFLECTED [ TR-AUG-OR-TR-MIN-FLAG +,
-                PERNUM-FLAG #pernum,
-                AUG-FLAG #aug,
-                IT-ABS-VERB-OR-IT-ERG-VERB-FLAG #it-abs-verb-or-it-erg-verb,
-                PRS-FLAG #prs,
-                TR-ERG-ABS-VERB-OR-TR-ERG-ALL-VERB-OR-TR-ERG-INS-VERB-FLAG #tr-erg-abs-verb-or-tr-erg-all-verb-or-tr-erg-ins-verb,
-                TENSE-FLAG #tense,
                 DIR-OBJ-FLAG #dir-obj,
+                IT-ABS-VERB-OR-IT-ERG-VERB-FLAG #it-abs-verb-or-it-erg-verb,
                 INALIEN-POSS-FLAG #inalien-poss,
-                CASE-PC-FLAG #case-pc ],
+                PRS-FLAG #prs,
+                PERNUM-FLAG #pernum,
+                TR-ERG-ABS-VERB-OR-TR-ERG-ALL-VERB-OR-TR-ERG-INS-VERB-FLAG #tr-erg-abs-verb-or-tr-erg-all-verb-or-tr-erg-ins-verb,
+                CASE-PC-FLAG #case-pc,
+                AUG-FLAG #aug,
+                TENSE-FLAG #tense ],
     DTR tr-min-rule-dtr &
-        [ INFLECTED [ PERNUM-FLAG #pernum,
-                      AUG-FLAG #aug,
+        [ INFLECTED [ DIR-OBJ-FLAG #dir-obj,
                       IT-ABS-VERB-OR-IT-ERG-VERB-FLAG #it-abs-verb-or-it-erg-verb & na,
-                      PRS-FLAG #prs,
-                      TR-ERG-ABS-VERB-OR-TR-ERG-ALL-VERB-OR-TR-ERG-INS-VERB-FLAG #tr-erg-abs-verb-or-tr-erg-all-verb-or-tr-erg-ins-verb,
-                      TENSE-FLAG #tense,
-                      DIR-OBJ-FLAG #dir-obj,
                       INALIEN-POSS-FLAG #inalien-poss,
-                      CASE-PC-FLAG #case-pc ] ],
+                      PRS-FLAG #prs,
+                      PERNUM-FLAG #pernum,
+                      TR-ERG-ABS-VERB-OR-TR-ERG-ALL-VERB-OR-TR-ERG-INS-VERB-FLAG #tr-erg-abs-verb-or-tr-erg-all-verb-or-tr-erg-ins-verb,
+                      CASE-PC-FLAG #case-pc,
+                      AUG-FLAG #aug,
+                      TENSE-FLAG #tense ] ],
     SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM min ].
 
 tr-aug-lex-rule := add-only-no-ccont-rule & aspect-rule-dtr & aug-rule-dtr & dir-obj-rule-dtr & infl-lex-rule & pernum-rule-dtr & tense-rule-dtr & tr-min-rule-dtr &
   [ INFLECTED [ TR-AUG-OR-TR-MIN-FLAG +,
-                PERNUM-FLAG #pernum,
-                AUG-FLAG #aug,
-                IT-ABS-VERB-OR-IT-ERG-VERB-FLAG #it-abs-verb-or-it-erg-verb,
-                PRS-FLAG #prs,
-                TR-ERG-ABS-VERB-OR-TR-ERG-ALL-VERB-OR-TR-ERG-INS-VERB-FLAG #tr-erg-abs-verb-or-tr-erg-all-verb-or-tr-erg-ins-verb,
-                TENSE-FLAG #tense,
                 DIR-OBJ-FLAG #dir-obj,
+                IT-ABS-VERB-OR-IT-ERG-VERB-FLAG #it-abs-verb-or-it-erg-verb,
                 INALIEN-POSS-FLAG #inalien-poss,
-                CASE-PC-FLAG #case-pc ],
+                PRS-FLAG #prs,
+                PERNUM-FLAG #pernum,
+                TR-ERG-ABS-VERB-OR-TR-ERG-ALL-VERB-OR-TR-ERG-INS-VERB-FLAG #tr-erg-abs-verb-or-tr-erg-all-verb-or-tr-erg-ins-verb,
+                CASE-PC-FLAG #case-pc,
+                AUG-FLAG #aug,
+                TENSE-FLAG #tense ],
     DTR tr-aug-rule-dtr &
-        [ INFLECTED [ PERNUM-FLAG #pernum,
-                      AUG-FLAG #aug,
+        [ INFLECTED [ DIR-OBJ-FLAG #dir-obj,
                       IT-ABS-VERB-OR-IT-ERG-VERB-FLAG #it-abs-verb-or-it-erg-verb & na,
-                      PRS-FLAG #prs,
-                      TR-ERG-ABS-VERB-OR-TR-ERG-ALL-VERB-OR-TR-ERG-INS-VERB-FLAG #tr-erg-abs-verb-or-tr-erg-all-verb-or-tr-erg-ins-verb,
-                      TENSE-FLAG #tense,
-                      DIR-OBJ-FLAG #dir-obj,
                       INALIEN-POSS-FLAG #inalien-poss,
-                      CASE-PC-FLAG #case-pc ] ],
+                      PRS-FLAG #prs,
+                      PERNUM-FLAG #pernum,
+                      TR-ERG-ABS-VERB-OR-TR-ERG-ALL-VERB-OR-TR-ERG-INS-VERB-FLAG #tr-erg-abs-verb-or-tr-erg-all-verb-or-tr-erg-ins-verb,
+                      CASE-PC-FLAG #case-pc,
+                      AUG-FLAG #aug,
+                      TENSE-FLAG #tense ] ],
     SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM aug ].
 
 dir-obj-lex-rule-super := add-only-no-ccont-rule &
   [ INFLECTED [ DIR-OBJ-FLAG +,
-                PERNUM-FLAG #pernum,
-                AUG-FLAG #aug,
                 IT-ABS-VERB-OR-IT-ERG-VERB-FLAG #it-abs-verb-or-it-erg-verb,
-                PRS-FLAG #prs,
-                TR-ERG-ABS-VERB-OR-TR-ERG-ALL-VERB-OR-TR-ERG-INS-VERB-FLAG #tr-erg-abs-verb-or-tr-erg-all-verb-or-tr-erg-ins-verb,
-                TENSE-FLAG #tense,
-                TR-AUG-OR-TR-MIN-FLAG #tr-aug-or-tr-min,
                 INALIEN-POSS-FLAG #inalien-poss,
-                CASE-PC-FLAG #case-pc ],
+                PRS-FLAG #prs,
+                TR-AUG-OR-TR-MIN-FLAG #tr-aug-or-tr-min,
+                PERNUM-FLAG #pernum,
+                TR-ERG-ABS-VERB-OR-TR-ERG-ALL-VERB-OR-TR-ERG-INS-VERB-FLAG #tr-erg-abs-verb-or-tr-erg-all-verb-or-tr-erg-ins-verb,
+                CASE-PC-FLAG #case-pc,
+                AUG-FLAG #aug,
+                TENSE-FLAG #tense ],
     DTR dir-obj-rule-dtr &
-        [ INFLECTED [ PERNUM-FLAG #pernum,
-                      AUG-FLAG #aug,
-                      IT-ABS-VERB-OR-IT-ERG-VERB-FLAG #it-abs-verb-or-it-erg-verb,
-                      PRS-FLAG #prs,
-                      TR-ERG-ABS-VERB-OR-TR-ERG-ALL-VERB-OR-TR-ERG-INS-VERB-FLAG #tr-erg-abs-verb-or-tr-erg-all-verb-or-tr-erg-ins-verb & +,
-                      TENSE-FLAG #tense,
-                      TR-AUG-OR-TR-MIN-FLAG #tr-aug-or-tr-min,
+        [ INFLECTED [ IT-ABS-VERB-OR-IT-ERG-VERB-FLAG #it-abs-verb-or-it-erg-verb,
                       INALIEN-POSS-FLAG #inalien-poss,
-                      CASE-PC-FLAG #case-pc ] ] ].
+                      PRS-FLAG #prs,
+                      TR-AUG-OR-TR-MIN-FLAG #tr-aug-or-tr-min,
+                      PERNUM-FLAG #pernum,
+                      TR-ERG-ABS-VERB-OR-TR-ERG-ALL-VERB-OR-TR-ERG-INS-VERB-FLAG #tr-erg-abs-verb-or-tr-erg-all-verb-or-tr-erg-ins-verb & +,
+                      CASE-PC-FLAG #case-pc,
+                      AUG-FLAG #aug,
+                      TENSE-FLAG #tense ] ] ].
 
 1min-dir-obj-lex-rule := dir-obj-lex-rule-super & infl-lex-rule &
   [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 1min_excl ].
@@ -1396,3 +1397,71 @@ extracted-subj-phrase := basic-extracted-subj-phrase &
 adj-head-int-phrase :+ [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ clist ].
 
 head-adj-int-phrase :+ [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ clist ].
+
+verb-lex-supertype := basic-verb-lex-super & aspect-rule-dtr & aug-rule-dtr & dir-obj-rule-dtr & pernum-rule-dtr & tense-rule-dtr &
+  [ INFLECTED [ TR-ERG-ABS-VERB-OR-TR-ERG-ALL-VERB-OR-TR-ERG-INS-VERB-FLAG na-or--,
+                TENSE-FLAG -,
+                PERNUM-FLAG -] ].
+
+copula-verb-lex := verb-lex-supertype & trans-first-arg-raising-lex-item-2 &
+  [ SYNSEM.LOCAL [ CAT.VAL [ SUBJ < #subj >,
+                             COMPS < #comps >,
+                             SPR < >,
+                             SPEC < > ],
+                   CONT.HOOK.XARG #xarg ],
+    ARG-ST < #subj &
+             [ LOCAL [ CONT.HOOK.INDEX #xarg,
+                       CAT [ VAL [ SPR < >,
+                                   COMPS < > ],
+                             HEAD noun ] ] ],
+             #comps &
+             [ LOCAL.CAT [ VAL [ SUBJ <[]>,
+                                 COMPS < > ],
+                           HEAD +vp ] ] > ].
+
+locative-pp-phrase := unary-phrase &
+[ SYNSEM [ NON-LOCAL #nl,
+           LOCAL.CAT [ HEAD adp & [ MOD < [ LOCAL intersective-mod &
+                                          [ CAT.HEAD verb,
+                                            CONT.HOOK.INDEX #xarg ] ] > ],
+                                    VAL [ COMPS < >,
+                                    SUBJ < [ LOCAL [ CONT.HOOK.INDEX #xarg,
+                                                     CAT.HEAD noun] ] >,
+                                    SPR < > ]]],
+  C-CONT [ HOOK [ LTOP #ltop,
+           INDEX #index,
+           XARG #xarg ],
+    RELS.LIST < arg12-ev-relation &
+       [ PRED "_be_p_rel",
+         LBL #ltop,
+         ARG0 #index,
+         ARG1 #xarg,
+         ARG2 #dtr ] >,
+       HCONS.LIST < >  ],
+  ARGS < [ SYNSEM [ NON-LOCAL #nl,
+                    LOCAL [ CAT [ HEAD noun & [ CASE loc ],
+                                  VAL.SPR < > ],
+                    CONT.HOOK [ INDEX #dtr ] ] ] ] > ].
+
+noun-predicate-rule := basic-unary-phrase & nocoord &
+  [ SYNSEM [ LOCAL.CAT [ HEAD verb,
+                         VAL [ COMPS < >,
+                         SUBJ < [ LOCAL [ CONT.HOOK.INDEX #arg1,
+                                          CAT [ HEAD noun,
+                                                VAL.SPR < > ] ] ] > ] ],
+             NON-LOCAL #nl ],
+             C-CONT [ HOOK [ LTOP #ltop,
+                             INDEX #index,
+                             XARG #arg1 ],
+                      RELS.LIST < arg12-ev-relation &
+                          [ PRED "_be_v_id_rel",
+                            LBL #ltop,
+                            ARG0 #index,
+                            ARG1 #arg1,
+                            ARG2 #arg2 ] >,
+                      HCONS.LIST < qeq & [ LARG #larg ] > ],
+             ARGS < [ SYNSEM [ LOCAL [ CAT [ HEAD noun & [ CASE abs ],
+                                             VAL.SPR cons ],
+                                       CONT.HOOK [ INDEX #arg2,
+                                                   LTOP #larg ]],
+                               NON-LOCAL #nl ]] > ].
