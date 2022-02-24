@@ -7,11 +7,11 @@ Pronouns
 
 
 
- 
+
 Pronouns Implementation
 
 
-TDL 
+TDL
 
 
 IGT
@@ -40,13 +40,13 @@ After Cleanup
 MMT Item Status
 
 sje as source
-1. 
+1.
 
 
 
 
 eng as source
-1. 
+1.
 
 
 
@@ -73,7 +73,7 @@ TSDB
       1. 27 items parsed
       2. We averaged 11 parses per parsed item.
       3. Our most ambiguous item got 120 parses.
-      4. All of the new sources of ambiguity were 
+      4. All of the new sources of ambiguity were
 
 
   Coverage
@@ -84,6 +84,6 @@ TSDB
       - corpus: 0% coverage
       - testsuite: 28.3% coverage
     - Comparison
-      - Our coverage 
+      - Our coverage
 
-      
+

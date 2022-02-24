@@ -1,0 +1,52 @@
+;;; -*- Mode: TDL; Coding: utf-8 -*-
+head-adj := my-head-adj-phrase.
+
+adj-head := my-adj-head-phrase.
+
+basic-head-opt-comp := basic-head-opt-comp-phrase.
+
+basic-head-opt-subj := basic-head-opt-subj-phrase.
+
+head-comp := head-comp-phrase.
+
+head-subj := head-subj-phrase.
+
+comp-head := comp-head-phrase.
+
+subj-head := subj-head-phrase.
+
+head-comp-2 := head-comp-phrase-2.
+
+comp-head-2 := comp-head-phrase-2.
+
+poss-unary-1 := poss-unary-phrase-1.
+
+poss-unary-2 := poss-unary-phrase-2.
+
+poss-unary-pron-1 := poss-unary-phrase-pron-1.
+
+head-spec := head-spec-phrase.
+
+bare-np := bare-np-phrase.
+
+np2-top-coord := np2-top-coord-rule.
+
+np2-mid-coord := np2-mid-coord-rule.
+
+np2-bottom-coord := np2-bottom-coord-rule.
+
+vp4-top-coord := vp4-top-coord-rule.
+
+vp4-mid-coord := vp4-mid-coord-rule.
+
+vp4-bottom-coord := vp4-bottom-coord-rule.
+
+ex-comp := extracted-comp-phrase.
+
+ex-adj := basic-extracted-adj-phrase.
+
+ex-subj := extracted-subj-phrase.
+
+wh-ques := wh-ques-phrase.
+
+ex-det := extracted-det-phrase.
