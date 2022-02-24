@@ -23,7 +23,7 @@
   `Dogs chase you.'
   ```
 
-All three sentences parse with bcj-download-og grammar. Need to merge that grammar with our lab7 grammar.
+All three sentences parse with bcj-download-og grammar. Need to merge that grammar with our lab7 grammar. (has been merged, need to double check merge was done correctly by testing the sentences above)
 
 From canvas discussion:
 ```
