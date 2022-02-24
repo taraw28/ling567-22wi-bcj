@@ -73,6 +73,8 @@ basic-head-1st-comp-phrase :+ [ SYNSEM.LOCAL.CAT.POSSESSUM #poss,
 
 basic-head-opt-subj-phrase :+ [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS < > ].
 
+;basic-head-opt-comp-phrase :+ [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ cons ].
+
 ; We can't just use the V-final and V-initial word
 ; order modules together to get a good free word order
 ; module. The root of the problem seems to be that we
