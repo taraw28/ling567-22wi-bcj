@@ -249,6 +249,7 @@
     - went from 2 trees to 14 trees
     - added SPEC < > to mother of noun-pred
       - went from 14 to 2 trees!!
+  - removed PRON - (need to find better way of constraining this)
 - added case pc flag to q-pronoun
   ```
   q-pronoun-noun-lex := wh-pronoun-noun-lex &
@@ -267,6 +268,8 @@
     - 3 different possessive strategies; not sure how to fix
     - also sentence being created from "your name" is wrong. Should be using a possessive strategy?? maybe possession is just broken??
     - adding PRON - made it so it doesn't parse (this is probably good since they were all bad trees)
+    - removed PRON -
+    - added QUE.LIST < > to poss-unary-phrase
     - issues getting "nyi-nga joo" = "your-name you" (or "you your-name") to parse
     - issue is "nyi-nga" is NP so can't go through HEAD-SPEC but D can't go through HEAD-SUBJ
 - need to fix underspecified MOD values
