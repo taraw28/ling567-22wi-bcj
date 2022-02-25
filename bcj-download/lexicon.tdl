@@ -447,7 +447,7 @@ garnibina := noun1-noun-lex &
 
 nyami := noun1-noun-lex &
   [ STEM < "nyami" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_mother's.father_n_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_mothers.father_n_rel" ].
 
 jalnggoogoorr := noun1-noun-lex &
   [ STEM < "jalnggoogoorr" >,
@@ -698,10 +698,6 @@ manyjal_2 := adj1-adj-lex &
 garrja := adj1-adj-lex &
   [ STEM < "garrja" >,
     SYNSEM.LKEYS.KEYREL.PRED "_sharp_a_rel" ].
-
-rarrjin := adj1-adj-lex &
-  [ STEM < "rarrjin" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_shame_a_rel" ].
 
 ;;; Verbs
 
@@ -1032,7 +1028,3 @@ agal4 := conj-lex &
   [ STEM < "agal" >,
     SYNSEM.LKEYS.KEYREL.PRED "_and_coord_rel",
     CFORM "4" ].
-
-ni-copula := copula-verb-lex &
-  [ STEM < "ni" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_be_p_rel" ].
