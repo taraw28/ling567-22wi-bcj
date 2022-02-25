@@ -1322,7 +1322,7 @@ poss-unary-phrase := basic-unary-phrase &
                                           SPEC < > ],
                                     HEAD +np ],
                               CONT.HOOK.INDEX #possessor ],
-                      NON-LOCAL #nonloc ] ] > ].
+                      NON-LOCAL #nonloc & [ QUE.LIST < > ] ] ] > ].
 
 ;Constraint on MC used to be part of matrix.tdl
 ;;it applies to all wo implementations, except for v2
@@ -1473,9 +1473,10 @@ locative-pp-phrase := unary-phrase &
 noun-predicate-rule := basic-unary-phrase & nocoord &
   [ SYNSEM [ LOCAL.CAT [ HEAD verb,
                          VAL [ COMPS < >,
-                         SUBJ < [ LOCAL [ CONT.HOOK.INDEX #arg1,
-                                          CAT [ HEAD noun,
-                                                VAL.SPR < > ] ] ] > ] ],
+                               SUBJ < [ LOCAL [ CONT.HOOK.INDEX #arg1,
+                                                CAT [ HEAD noun & [ MOD < > ],
+                                                      VAL.SPR < > ] ] ] >,
+                               SPEC < > ] ],
              NON-LOCAL #nl ],
              C-CONT [ HOOK [ LTOP #ltop,
                              INDEX #index,
@@ -1486,16 +1487,8 @@ noun-predicate-rule := basic-unary-phrase & nocoord &
                             ARG0 #index,
                             ARG1 #arg1,
                             ARG2 #arg2 ] >,
-                      HCONS.LIST < qeq &
-                                    [ LARG #larg ] > ],
+                      HCONS.LIST < > ],
              ARGS < [ SYNSEM [ LOCAL [ CAT [ HEAD noun & [ CASE abs ] & [ PRON - ],
                                              VAL.SPR < > ],
-                                       CONT.HOOK [ INDEX #arg2,
-                                                   LTOP #larg ]],
+                                       CONT.HOOK [ INDEX #arg2 ]],
                                NON-LOCAL #nl ]] > ].
-
-;,
-;                            RSTR #harg ] >,
-;                      HCONS.LIST < qeq &
-;                                    [ HARG #harg,
-;                                      LARG #larg ] > ],

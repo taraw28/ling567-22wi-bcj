@@ -230,6 +230,8 @@
   - added INFLECTED infl-satisfied to noun-predicate rule
   - tested and it works! one tree generated
 - noun pred
+  - temporarily commented out basic-head-opt-subj := basic-head-opt-subj-phrase.
+    while working on improving noun pred
   - added INFLECTED infl-satisfied to noun pred
     - went from 120 trees to 56 trees
   - added PRON bool feat to nouns
@@ -240,6 +242,13 @@
     - went from 17 trees to 29 trees
   - added PRON - to loc-pp
     - went from 29 trees to 6 trees
+  - removed qeq & [ LARG #larg ] and LTOP #larg
+  - added PRON - to basic-bare-np-phrase
+    - went from 6 down to 2 trees
+  - added basic-head-opt-subj := basic-head-opt-subj-phrase. back in
+    - went from 2 trees to 14 trees
+    - added SPEC < > to mother of noun-pred
+      - went from 14 to 2 trees!!
 - added case pc flag to q-pronoun
   ```
   q-pronoun-noun-lex := wh-pronoun-noun-lex &
@@ -257,4 +266,7 @@
     - went from 14 to 6 trees
     - 3 different possessive strategies; not sure how to fix
     - also sentence being created from "your name" is wrong. Should be using a possessive strategy?? maybe possession is just broken??
+    - adding PRON - made it so it doesn't parse (this is probably good since they were all bad trees)
+    - issues getting "nyi-nga joo" = "your-name you" (or "you your-name") to parse
+    - issue is "nyi-nga" is NP so can't go through HEAD-SPEC but D can't go through HEAD-SUBJ
 - need to fix underspecified MOD values

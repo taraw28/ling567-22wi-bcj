@@ -531,7 +531,7 @@ Vetted: f
 Judgement: g
 Phenomena: poss
 Jana bo inambijjan goorlil.
-jana bo i-na-m-b-ij-jan goorlil.
+jana bo i-na-m-b-ij-jan goorlil
 1MIN.POSS woman's.child 3-TR-PST-poke-PFV-1MIN.IO turtle
 `My son speared a turtle.'
 
