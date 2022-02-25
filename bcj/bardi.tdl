@@ -31,7 +31,8 @@ head :+ [ PRON bool,
     SPEC-INIT bool,
     FORM form ].
 
-noun :+ [ CASE case ].
+noun :+ [ PRON bool,
+          CASE case ].
 
 inflected :+ [ CASE-PC-FLAG luk,
     AUG-FLAG luk,
@@ -207,9 +208,9 @@ finite := form.
 
 ;;; Tense
 
-pst := tense.
+pst := non-fut.
 non-fut := tense.
-prs := tense.
+prs := non-fut.
 fut := tense.
 
 ;;; Aspect
@@ -275,7 +276,9 @@ head-spec-phrase := basic-head-spec-phrase & head-final &
 noun1-noun-lex := noun-lex & case-pc-rule-dtr &
   [ INFLECTED.CASE-PC-FLAG - ].
 
-q-pronoun-noun-lex := wh-pronoun-noun-lex.
+q-pronoun-noun-lex := wh-pronoun-noun-lex &
+  [ INFLECTED.CASE-PC-FLAG -,
+    SYNSEM.LOCAL.CAT.HEAD.PRON + ].
 
 1min-pronoun-noun-lex := no-spr-noun-lex &
   [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
@@ -1428,10 +1431,10 @@ verb-lex-supertype := basic-verb-lex-super & aspect-rule-dtr & aug-rule-dtr & di
 
 copula-verb-lex := verb-lex-supertype & trans-first-arg-raising-lex-item-2 &
   [ SYNSEM.LOCAL [ CAT [ HEAD.MOD < >,
-			 VAL [ SUBJ < #subj >,
-			       COMPS < #comps >,
-			       SPR < >,
-			       SPEC < > ] ],
+       VAL [ SUBJ < #subj >,
+             COMPS < #comps >,
+             SPR < >,
+             SPEC < > ] ],
                    CONT.HOOK.XARG #xarg ],
     ARG-ST < #subj &
              [ LOCAL [ CONT.HOOK.INDEX #xarg,
@@ -1463,9 +1466,9 @@ locative-pp-phrase := unary-phrase &
          ARG2 #dtr ] >,
        HCONS.LIST < >  ],
   ARGS < [ SYNSEM [ NON-LOCAL #nl,
-                    LOCAL [ CAT [ HEAD noun & [ CASE loc ],
+                    LOCAL [ CAT [ HEAD noun & [ CASE loc ] & [ PRON - ],
                                   VAL.SPR < > ],
-                    CONT.HOOK [ INDEX #dtr ] ] ] ] > ].
+                            CONT.HOOK [ INDEX #dtr ] ] ] ] > ].
 
 noun-predicate-rule := basic-unary-phrase & nocoord &
   [ SYNSEM [ LOCAL.CAT [ HEAD verb,
@@ -1483,10 +1486,16 @@ noun-predicate-rule := basic-unary-phrase & nocoord &
                             ARG0 #index,
                             ARG1 #arg1,
                             ARG2 #arg2 ] >,
-                      HCONS.LIST < qeq & [ LARG #larg ] > ],
-             ARGS < [ INFLECTED infl-satisfied,
-          SYNSEM [ LOCAL [ CAT [ HEAD noun & [ CASE abs ],
-                                             VAL.SPR cons ],
+                      HCONS.LIST < qeq &
+                                    [ LARG #larg ] > ],
+             ARGS < [ SYNSEM [ LOCAL [ CAT [ HEAD noun & [ CASE abs ] & [ PRON - ],
+                                             VAL.SPR < > ],
                                        CONT.HOOK [ INDEX #arg2,
                                                    LTOP #larg ]],
                                NON-LOCAL #nl ]] > ].
+
+;,
+;                            RSTR #harg ] >,
+;                      HCONS.LIST < qeq &
+;                                    [ HARG #harg,
+;                                      LARG #larg ] > ],

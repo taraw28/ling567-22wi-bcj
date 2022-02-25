@@ -136,6 +136,15 @@
   ```
   - no longer generating "incorrect" tree
   - now no longer generating object pronoun sentence
+    - see canvas post for explanation of what i did and how i fixed it
+      ```
+      ;;; Tense
+
+      pst := non-fut.
+      non-fut := tense.
+      prs := non-fut.
+      fut := tense.
+      ```
 
 
 ## Object Pronoun
@@ -212,3 +221,40 @@
   basic-head-opt-comp-phrase :+ [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ cons ].
   ```
   - this worked and only one tree is generated
+
+## From Lab 7 Comments
+- demo day stuff
+  - got rid of pred in copula
+  - added copula trigger rule
+  - be to loc rel
+  - added INFLECTED infl-satisfied to noun-predicate rule
+  - tested and it works! one tree generated
+- noun pred
+  - added INFLECTED infl-satisfied to noun pred
+    - went from 120 trees to 56 trees
+  - added PRON bool feat to nouns
+  - added PRON - to noun pred
+    - went from 56 trees to 17 trees
+    - still realizing some "irr" as N  but that's because it's going through loc-pp and not noun pred
+  - made daughter SPR < > and removed INFLECTED infl-satisfied
+    - went from 17 trees to 29 trees
+  - added PRON - to loc-pp
+    - went from 29 trees to 6 trees
+- added case pc flag to q-pronoun
+  ```
+  q-pronoun-noun-lex := wh-pronoun-noun-lex &
+    [ INFLECTED.CASE-PC-FLAG - ].
+  ```
+    - went from 44 trees to 28
+    - commented out `ex-adj := basic-extracted-adj-phrase.` because we haven't implemented adjective related things and also haven't gotten around to constraining MOD yet
+    - went from 28 to 14 trees
+    - added PRON + to q-pronoun-noun-lex
+      ```
+      q-pronoun-noun-lex := wh-pronoun-noun-lex &
+        [ INFLECTED.CASE-PC-FLAG -,
+          SYNSEM.LOCAL.CAT.HEAD.PRON + ].
+      ```
+    - went from 14 to 6 trees
+    - 3 different possessive strategies; not sure how to fix
+    - also sentence being created from "your name" is wrong. Should be using a possessive strategy?? maybe possession is just broken??
+- need to fix underspecified MOD values
