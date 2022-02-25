@@ -135,13 +135,14 @@
         verb-pc3_lrt10_lri1_orth=a-
   ```
   - no longer generating "incorrect" tree
+  - now no longer generating object pronoun sentence
 
 
 ## Object Pronoun
 - target sentence:
   ```
-  Iilanim oorroongoorribirri.
-  iila-nim oo-rr-oo-ngoorribi-rri
+  Iilanim irroongoorribirri.
+  iila-nim i-rr-oo-ngoorribi-rri
   dog-ERG 3-AUG-TR-chase-2MIN.DO
   `Dogs chase you.'
   ```

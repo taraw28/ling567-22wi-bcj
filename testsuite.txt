@@ -791,7 +791,7 @@ Vetted: f
 Judgement: g
 Phenomena: c
 Iilanim yandilybar oorroongoorribi.
-iila-nim yandilybar oo-rr-oo-ngoorribi
+iila-nim yandilybar i-rr-oo-ngoorribi
 dog-ERG car 3-AUG-TR-chase
 `Dogs chase cars.'
 
@@ -811,7 +811,7 @@ Vetted: f
 Judgement: g
 Phenomena: c
 Iil oorrarli.
-iila oo-rr-arli
+iila i-rr-arli
 dog.ABS 3-AUG-eat
 `Dogs eat.'
 
