@@ -18,7 +18,7 @@ git pull
 - [Lab 6](labs/lab6/README.md)
 - [Lab 7](labs/lab7/README.md)
 - [Lab 8](labs/lab8/README.md)
-- [Lab 9](labs/lab8/README.md)
+- [Lab 9](labs/lab9/README.md)
 
 ## Changes to Choices for Translation Purposes
 - changed fish_n_rel to cat_n_rel
