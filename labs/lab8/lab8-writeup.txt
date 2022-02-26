@@ -1,55 +1,56 @@
 Lab 8 - Bardi - Tara and Hanieh
 
-Pronouns
+Pronouns, PNG
+  Explanation
+    In Bardi, personal pronoun subject and objects are affixed to the verb and agree in person, number, and/or tense.
+    Subjects
+      If there is an overt subject, there must be a prefix on the verb that agrees in person and number (pernum) with that subject and agrees in tense with the verb. If there is no overt subject, that pernum prefix gives the pernum information about the subject pronoun. The list of pernum prefixes, with their respective tenses, are as follows:
+
+        Past/Present (Non-future) Tense:
+          2min: mi-
+          2aug: goo-
+          3min, 3aug: i-
+        Future Tense:
+          2min (transitive): a-
+          2min (intransitive): nga-
+          2aug: a-
+          3min, 3aug: oo-
+        No Tense Distinction:
+          1min: ng(a)-
+          1aug: a-
+          1+2min a-
+
+      For example,
+
+        Nganangoorribi iila.
+        nga-na-ngoorribi iila
+        1-TR-chase dog
+        `I chase the dog.'
+
+        Minangoorribi iila.
+        mi-na-ngoorribi iila
+        2MIN.PRS-TR-chase dog
+        `You chase the dog.'
 
 
 
 
 
+  IGT
+  Implementation
+    Prose Description
+    TDL
+    IGT
+    Questions
 
-
-Pronouns Implementation
-
-
-TDL
-
-
-IGT
-
-
-
-
-
-
-Questions on the implementation
-
-
-MT Cleanup and Relevant Working MMT Items
-
-
-Sources of Extra Generation Output
-
-
-Outputs
-
-Before Cleanup
-
-After Cleanup
-
+Clean Up
 
 MMT Item Status
+  With sje as Source
+  1.
 
-sje as source
-1.
-
-
-
-
-eng as source
-1.
-
-
-
+  With eng as Source
+  1.
 
 TSDB
   Initial Run
