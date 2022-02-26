@@ -237,10 +237,10 @@
   - added PRON bool feat to nouns
   - added PRON - to noun pred
     - went from 56 trees to 17 trees
-    - still realizing some "irr" as N  but that's because it's going through loc-pp and not noun pred
   - made daughter SPR < > and removed INFLECTED infl-satisfied
     - went from 17 trees to 29 trees
   - added PRON - to loc-pp
+    - still realizing some "irr" as N  but that's because it's going through loc-pp and not noun pred
     - went from 29 trees to 6 trees
   - removed qeq & [ LARG #larg ] and LTOP #larg
   - added PRON - to basic-bare-np-phrase

@@ -795,14 +795,14 @@ iila-nim yandilybar i-rr-oo-ngoorribi
 dog-ERG car 3-AUG-TR-chase
 `Dogs chase cars.'
 
-#80 MMT 3 doesn't parse yet
+#80 MMT 3
 Source: author
 Vetted: f
 Judgement: g
 Phenomena: pn
 Nganangoorribirri.
 nga-na-ngoorribi-rri
-1-TR-chase-2MIN.DO
+1MIN-TR-chase-2MIN.DO
 `I chase you.'
 
 #81 MMT 4
@@ -862,8 +862,8 @@ Judgement: u
 Phenomena: neg
 Arra iilanim irroongoorribi yandilybar.
 arra iila-nim i-rr-oo-ngoorribi yandilybar
-NEG dog-ERG 3-AUG-TR-chase boat
-`*The dogs don't chase boats.
+NEG dog-ERG 3-AUG-TR-chase car
+`*The dogs don't chase car.
 
 #87 NP non-verbal no copula
 Source: a:601
@@ -1044,3 +1044,113 @@ Anggaba iarrjarrmin
 anggaba i-arr-jarrmi-n
 who 3-AUG-sleep-CONT
 `Who sleeps?'
+
+#105 MMT 8
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: crd
+Aarlinim agal iilanim oorroongoorribiirr yandilybar.
+aarli-nim agal iila-nim i-rr-oo-ngoorribi-irr yandilybar
+cat-ERG and dog-ERG 3AUG-AUG-TR-chase-3AUG car
+`Cats and dogs chase cars.'
+
+#106 MMT 9
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: crd
+iilanim irroongoorribiirr yandilybar agal aarlinim irroongoorribiirr yandilybar
+iila-nim i-rr-oo-ngoorribi-irr yandilybar agal aarli-nim i-rr-oo-ngoorribi-irr yandilybar
+dog-ERG 3AUG-AUG-TR-chase-3AUG car and cat-ERG 3AUG-AUG-TR-chase-3AUG car
+`Dogs chase cars and cats chase cars.'
+
+#107 MMT 13/14
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: cop
+iilanim gardinon irrarli
+iila-nim gardin-on i-rr-arli
+dog-ERG park-LOC 3AUG-AUG-eat
+`Dogs eat in the park'
+
+#108 MMT 11
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: q
+Nganyji aarlinim irroongoorribiirr iila
+nganyji aarli-nim i-rr-oo-ngoorribi-irr iila
+INTERROG cat-ERG 3AUG-AUG-TR-chase-3AUG dog
+`Do cats chase dogs?'
+
+#109 subject pronoun
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: pn
+Nganangoorribi iila.
+nga-na-ngoorribi iila
+1MIN-TR-chase dog
+`I chase the dog.'
+
+#110 subject pronoun
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: pn
+Minangoorribi iila.
+mi-na-ngoorribi iila
+2MIN.PRS-TR-chase dog
+`You chase the dog.'
+
+#111 subject pronoun
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: pn
+Ananggngoorribi iila.
+a-na-ngg-ngoorribi iila
+2MIN-TR-FUT-chase dog
+`You will chase the dog.'
+
+#112 subject pronoun
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: pn
+Ngankngoorribi
+nga-n-k-ngoorribi
+1MIN-TR-FUT-chase
+`I will chase (it).'
+
+#113 subject pronoun
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: pn
+Oonkngoorribi iila.
+oo-n-k-ngoorribi iila
+3MIN-TR-FUT-chase dog
+`He/She will chase the dog.'
+
+#114 subject pronoun
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: pn
+Ngakjarrmi.
+nga-k-jarrmi
+2MIN-FUT-get.up
+`You will get up.'
+
+#115 object pronoun
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: pn
+Iilanim irroongoorribirri.
+iila-nim i-rr-oo-ngoorribi-rri
+dog-ERG 3-AUG-TR-chase-2MIN.DO
+`Dogs chase you.'

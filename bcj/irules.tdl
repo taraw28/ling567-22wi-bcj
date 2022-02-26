@@ -125,9 +125,9 @@ irr-lex-rule.
 %prefix (* mi-)
 2min-nfut-lex-rule.
 
-3-fut-prefix :=
+3min-fut-prefix :=
 %prefix (* oo-)
-3-fut-lex-rule.
+3min-fut-lex-rule.
 
 1plus2min-prefix :=
 %prefix (* a-)
@@ -141,9 +141,9 @@ irr-lex-rule.
 %prefix (* goo-)
 2aug-nfut-lex-rule.
 
-3-nfut-prefix :=
+3min-nfut-prefix :=
 %prefix (* i-)
-3-nfut-lex-rule.
+3min-nfut-lex-rule.
 
 2min-fut-tr-prefix :=
 %prefix (* a-)
@@ -156,6 +156,14 @@ irr-lex-rule.
 2aug-fut-prefix :=
 %prefix (* a-)
 2aug-fut-lex-rule.
+
+3aug-nfut-prefix :=
+%prefix (* i-)
+3aug-nfut-lex-rule.
+
+3aug-fut-prefix :=
+%prefix (* oo-)
+3aug-fut-lex-rule.
 
 aug-prefix1 :=
 %prefix (* arr-) (* rr-)

@@ -1,0 +1,1156 @@
+Language: Bardi
+Language code: bcj
+Lines: orth orth-seg gloss translat
+Author: Tara Wueger and Hanieh Nezakati
+Date: January 15, 2022
+Source a: A grammar of Bardi by Claire Bowern
+
+#1 intrans-verb noun-abs
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: c
+Inyjarrmin gool.
+i-ny-jarrmi-n gool
+3-PST-get.up-REM.PST father.ABS
+`The father got up.'
+
+#2 noun-ins intrans-verb
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: c
+Niimarlgang daab innyanana.
+niimarlga-ng daab i-n-nya-na-na
+by.himself-INS go.ashore 3-TR-catch-CONT-REM.PST
+`He went ashore by himself.'
+
+#3 *noun-erg intrans-verb
+Source: author
+Vetted: f
+Judgement: u
+Phenomena: c
+Inyjarrmin goolnim.
+i-ny-jarrmi-n gool-nim
+3-PST-get.up-REM.PST father-ERG
+`The father got up.'
+
+#4 *intrans-verb noun-erg
+Source: author
+Vetted: f
+Judgement: u
+Phenomena: c
+Goolnim Inyjarrmin.
+gool-nim i-ny-jarrmi-n
+father-ERG 3-PST-get.up-REM.PST
+`The father got up.'
+
+#5 noun-erg noun-abs trans-verb
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: c
+Aambanim aarli inamanyana.
+aamba-nim aarli i-na-ma-nya-na
+man-ERG fish.ABS 3-TR-PST-catch-REM.PST
+`The man caught the fish.'
+
+#6 trans-verb noun-ins
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: c
+Ingirrinyanajin aarling.
+i-ngi-rr-i-nya-na-jin aarli-ng
+3-PST-AUG-TR-catch-APPL.PST-3MIN.IO fish-INS
+`They caught fish with him.'
+
+#7 *noun-abs trans-verb noun-abs
+Source: author
+Vetted: f
+Judgement: u
+Phenomena: c
+Aamba aarli inamanyana.
+aamba aarli i-na-ma-nya-na
+man fish.ABS 3-TR-PST-catch-REM.PST
+`The man caught the fish.'
+
+#8 *noun-abs trans-verb noun-erg
+Source: author
+Vetted: f
+Judgement: u
+Phenomena: c
+Aamba aarlinim inamanyana.
+aamba aarli-nim i-na-ma-nya-na
+man fish-ERG 3-TR-PST-catch-REM.PST
+`The man caught the fish.'
+
+#9 present and verbal agreement in predicate
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: {tam, agr}
+Irrjala.
+i-rr-jala
+3-AUG-see
+`They see.'
+
+#10 past and verbal agreement in predicate
+Source: a:127
+Vetted: t
+Judgement: g
+Phenomena: {tam, agr}
+Injalagal.
+i-n-jala-gal
+3-TR-see-REC.PST
+`He/she saw it.'
+
+#11 past (bad)
+Source: a:127
+Vetted: t
+Judgement: u
+Phenomena: tam
+Inanyjalagal.
+i-n-any-jala-gal
+3-TR-PST-see-REC.PST
+`He/she saw it.'
+
+#12 future imperative
+Source: a:396
+Vetted: t
+Judgement: g
+Phenomena: tam
+Anarla kiiba may!
+a-n-arli-a jiiba may
+IMP-TR-eat-FUT this food
+`Eat this food!'
+
+#13 irrealis and verbal agreement in predicate
+Source: a:117
+Vetted: t
+Judgement: g
+Phenomena: {tam, agr}
+Arra ngalinyan aarli.
+arra ng-l-inya-n aarli
+NEG 1-IRR-catch-CONT fish
+`I didn't catch a fish.'
+
+#14 recent past
+Source: a:227
+Vetted: t
+Judgement: g
+Phenomena: tam
+Garrinngan daab innyagal.
+grrin-ngan daab i-n-nya-gal
+hill-ALL go.up.to 3-TR-catch-REC.PST
+`He went up the hill.'
+
+#15 remote past
+Source: a:464
+Vetted: t
+Judgement: g
+Phenomena: tam
+Imbalanin.
+i-m-bala-n-in
+3-PST-believe-REM.PST-3MIN.IO
+`He believed him.'
+
+#16 continuative and verbal agreement in predicate
+Source: a:426
+Vetted: t
+Judgement: g
+Phenomena: {tam, agr}
+Irrirlin.
+i-rr-arli-n
+3-AUG-eat-CONT
+`They are eating.'
+
+#17 coordination noun both have case
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: crd
+May darr inarn bardagayoon agal gaarayoon.
+may darr i-n-ar-n bardaga-yoon agal gaara-yoon
+food come 3-TR-pierce-CONT tree-SOURCE and ground-SOURCE
+`Food comes from the trees and from the ground.'
+
+#18 coordination conflicting case
+Source: author
+Vetted: f
+Judgement: u
+Phenomena: crd
+May darr inarn bardagayoon agal gaaranim.
+may darr i-n-ar-n bardaga-yoon agal gaara-nim
+food come 3-TR-pierce-CONT tree-SOURCE and ground-ERG
+`Food comes from the trees and from the ground.'
+
+#19 coordination conflicting case
+Source: author
+Vetted: f
+Judgement: u
+Phenomena: crd
+May darr inarn bardaganim agal gaarayoon.
+may darr i-n-ar-n bardaga-nim agal gaara-yoon
+food come 3-TR-pierce-CONT tree-ERG and ground-SOURCE
+`Food comes from the trees and from the ground.'
+
+#20 coordination noun first has case
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: crd
+Boorrgoorndanim agal Barlarramay ingirriloongan jinalajina.
+Boorrgoornda-nim agal Barlarramay i-ng-irr-i-loonga-n jinala-jina
+Boorrgoornda-ERG and Barlarramay 3-PST-AUG-TR-collect-CONT spear-3MIN.POSS
+`Boorrgoornda and Balarrmay gathered together their spears.'
+
+#21 coordination noun second has case
+Source: a:352
+Vetted: t
+Judgement: g
+Phenomena: crd
+Irralboonjirr nalaarrad birrii agal gooloonim.
+i-rr-alboo-n-jirr nalaarrad birrii agal gooloo-nim
+3AUG-TR-dig-CONT-3AUG.IO turtle.eggs mother and father-ERG
+`Their mother and father dug up turtle eggs.'
+
+#22 coordination preverb
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: crd
+Bilirl agal girringg nganargal.
+bilirl agal girringg nga-n-ar-gal
+yawn and cough 1-TR-spear-REC.PST
+`I yawned and coughed.'
+
+#23 coordination preverb
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: crd
+Bilirl nganargal agal girringgirring nganargal.
+bilirl nga-n-ar-gal agal girringgirring nga-n-ar-gal
+yawn 1-TR-spear-REC.PST and cough 1-TR-spear-REC.PST
+`I yawned and coughed.'
+
+#24 coordination multiple
+Source: a:658
+Vetted: t
+Judgement: g
+Phenomena: crd
+Molon goolarrarli agal garaginyarra agal goolarrji agal gambarla.
+molon goo-la-rr-arli agal garaginyarra agal goolarrji agal gambarla.
+giant.trevally 2-IRR-AUG-eat and garaginyarra and Spanish.mackerel and surgeon.fish
+`You must eat molon (giant trevally), garaginyarra (unidentified fish species), goolarrji (Spanish mackeral) or gambarl (surgeon fish).'
+
+#25 subject agreement in imperative
+Source: a:395
+Vetted: t
+Judgement: g
+Phenomena: agr
+Anjala!
+a-n-jal-a
+2-TR-look.at-FUT
+`Look at it!'
+
+#26 verbal agreement in predicate with direct object
+Source: a:394
+Vetted: t
+Judgement: g
+Phenomena: agr
+Inamboonangay.
+i-na-m-boo-na-ngay
+3-TR-PST-hit-REM.PST-1MIN.DO
+`He/she/it hit me.'
+
+#27 adjectival agreement in predicate
+Source: a:394
+Vetted: t
+Judgement: g
+Phenomena: agr
+Joo ngaadajirri.
+joo ngaada-jirri
+2MIN tall-2MIN.IO
+`You're tall.'
+
+#28 verbal agreement in predicate
+Source: a:704
+Vetted: t
+Judgement: g
+Phenomena: agreement
+Daab innyana garrin.
+daab i-n-nya-na garrin
+climb.up 3MIN-tr-get-rem.pst hill
+`He climbed a hill.'
+
+#29 verbal agreement in predicate
+Source: a:706
+Vetted: t
+Judgement: g
+Phenomena: agr
+Imbanya.
+i-m-banya
+3MIN-pst-finish
+`He died.'
+
+#30 agreement as a theme
+Source: a:432
+Vetted: t
+Judgement: g
+Phenomena: agr
+Arra boojoolgoon milingjarrngay.
+arra boojool-goon mi-l-i-ng-jarrngay
+NEG stare-LOC 2-IRR-do-APPL-1MIN.DO
+`Don't stare at me.'
+
+#31 direct object on collective noun
+Source: a:401
+Vetted: t
+Judgement: g
+Phenomena: agr
+Nganarlina niimana aarli.
+nga-n-arli-na niimana aarli
+1-TR-eat-REM.PST many fish
+`I ate many fish.'
+
+#32 direct object extra suffix and noun-erg intrans-verb
+Source: a:401
+Vetted: t
+Judgement: g
+Phenomena: {agr, c}
+Inkoorrnim ngangimilijarrngay.
+inkoorr-nim nga-ngi-mili-jarrngay
+cold-ERG 1-PST-wake.up-1MIN.DO
+`Cold woke me up.'
+
+#33 Oblique & Possessive
+Source: a:410
+Vetted: t
+Judgement: g
+Phenomena: agr
+Ingilirrmigaljarran.
+i-ngi-lirrmi-gal-jarran
+3-PST-call.out-REC.PST-1MIN.IO
+`He sang out to me.'
+
+#34 Oblique & Possessive
+Source: a:410
+Vetted: t
+Judgement: g
+Phenomena: agr
+Nganjargigaljirrin.
+nga-n-jargi-gal-jirrin
+1-TR-fear-REC.PST-3MIN.IO
+`I was frightened by him.'
+
+#35 noun-erg trans-verb noun
+Source: a:460
+Vetted: t
+Judgement: g
+Phenomena: c
+Ooranynim injalagal aamba.
+oorany-nim i-n-jala-gal aamba
+woman-ERG 3-TR-see-REC.PST man
+`The woman saw the man.'
+
+#36 noun-ins trans-appl-verb
+Source: a:495
+Vetted: t
+Judgement: g
+Phenomena: c
+Baalnga ingorrondiningirr.
+baal-nga i-ng-orr-ondi-ni-ng-irr
+bark-INS 3-PST.AUG-TR-cover-REM.PST-APPL-3AUG.DO
+`They covered them with bark.'
+
+#37 noun imperative-verb noun-all
+Source: a:225
+Vetted: t
+Judgement: g
+Phenomena: c
+Aarlimayi arraya nyamingan!
+aarlimayi a-rr-a-ya nyami-ngan
+food 2-AUG-take-FUT mother's.father-ALL
+`Take food to grandfather's place!'
+
+#38 allative
+Source: a:739
+Vetted: t
+Judgement: g
+Phenomena: c
+Bardi barda arr angirrin Goorrbarlgoonngan.
+bardi barda arr a-ng-irr-i-n Goorrbarlgoon-ngan
+yesterday away go 1-PST-AUG-do.say-CONT pender.bay-ALL
+`Yesterday we went to Pender Bay.'
+
+#39 verb noun noun-loc-all
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: c
+Irralgalnidi bigibigi ngoorngoolondarr.
+i-rr-al-gal-nidi bigibigi ngoorrngool-ondarr
+3-AUG-be-REC.PST-GROUP pigs mangrove-L.ALL
+`All the pigs were in the mangroves.'
+
+#40 noun-abl trans-verb
+Source: a:232
+Vetted: t
+Judgement: g
+Phenomena: c
+Ooloomanko jin booroo darr nganargal.
+oolooman-ko jin booroo darr nga-n-ar-gal
+old.woman-ABL 3MIN.POSS place come 1-TR-pierce-REC.PST
+`I've come from the old lady's place.'
+
+#41 trans-verb noun-perl
+Source: a:240
+Vetted: t
+Judgement: g
+Phenomena: c
+Warrga injoon morrjarr.
+warrga i-n-joo-n morr-jarr
+walk 3-TR-do/say-CONT path-PERL
+`He went along his path.'
+
+#42 polar-question free-question-word-nganyji
+Source: a:618
+Vetted: t
+Judgement: g
+Phenomena: q
+Nganyji minjalagal ooldoobal.
+nganyji mi-n-jala-gal ooldoobal
+INTERROG 2-TR-see-REC.PST things
+`Did you see the things?'
+
+#43 polar-question free-question-word-nganyji
+Source: author
+Vetted: t
+Judgement: u
+Phenomena: q
+Minjalagal Nganyji ooldoobal.
+Mi-n-jala-gal Nganyji ooldoobal
+2-TR-see-REC.PST INTERROG things
+`Did you see the things?'
+
+#44 polar-question free-question-word-nganyji
+Source: a:618
+Vetted: t
+Judgement: g
+Phenomena: q
+Nganyji ngay ngankiida Broomengan?
+nganyji ngay nga-n-k-iid-a Broome-ngan
+INTERROG 1MIN 1-TR-FUT-go-FUT Broome-ALL
+`Will I go to Broome?'
+
+#45 polar-question free-question-word-nganyji
+Source: author
+Vetted: t
+Judgement: u
+Phenomena: q
+Nganyji aalganim ngangamarrana.
+nganyji aalga-nim nga-nga-marra-na
+INTERROG sun-ERG 1-PST-cook-REM.PST
+`Did I get sun-burnt?'
+
+#46 polar-question free-question-word-nganyji
+Source: a:621
+Vetted: t
+Judgement: g
+Phenomena: q
+Nganyji lol inyjiidigal mayar?
+nganyji lol i-ny-jiidi-gal mayar
+INTERROG burn 3-PST-go-REC.PST house
+`Did the house burn?'
+
+#47 polar-question clitic-garda-or-arda
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: q
+Gooyarrarda aarli minnyagal?
+aarli-arda mi-n-nya-gal
+fish-INT 2-TR.PST-catch-REC.PST
+`Was it fish you caught?'
+
+#48 double-interrogative
+Source: a:625
+Vetted: t
+Judgement: g
+Phenomena: wh
+Anggabanim anggi inarligal?
+anggaba-nim anggi i-na-arli-gal
+who-ERG what 3-TR-eat-REC.PST
+`Who ate what?'
+
+#49 multiple-interrogative
+Source: a:627
+Vetted: t
+Judgement: g
+Phenomena: wh
+Anggaba minjalagal janaboor?
+anggaba mi-n-jala-gal janaboor
+who 2-TR-see-REC.PST where
+`Who did you see where?'
+
+#50 argument-optionality subj-pro-drop
+Source: author
+Vetted: t
+Judgement: g
+Phenomena: pro-d
+Roowil ingirrinyana Ngalngoorarra.
+roowil i-ng-irr-i-nya-na Ngalngoorarra
+walk 3-PST-AUG-TR-catch-REM.PST Ngalngoorarra
+`They walked to Ngalngoorarra.'
+
+#51 argument-optionality pro-drop-not-allowed
+Source: a:294
+Vetted: t
+Judgement: u
+Phenomena: pro-d
+Ngayoonim ngananarri malarr.
+ngayoo-nim nga-na-na-rri malarr
+1MIN-ERG 1-CONT-REM.PST-2MIN.DO wife
+`I gave you wives.'
+
+#52 argument-optionality pro-drop-not-allowed ergative-differentiates-subject-from-oblique
+Source: a:412
+Vetted: t
+Judgement: u
+Phenomena: pro-d
+Inyjargijin ngaarri.
+i-ny-jargi-jin ngaarri
+3-PST-fear-3MIN.IO devil.ABS
+`The devil was afraid of him.'
+
+#53 free possessive pronoun
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: poss
+Jana bo inambijjan goorlil.
+jana bo i-na-m-b-ij-jan goorlil
+1MIN.POSS woman's.child 3-TR-PST-poke-PFV-1MIN.IO turtle
+`My son speared a turtle.'
+
+#54 free possessive pronoun
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: poss
+Jana gooloo bard roowil innyana.
+jana gooloo bard roowil i-n-nya-na
+1MIN.POSS father off walk 3MIN-TR-catch-REM.PST
+`My father walked off.'
+
+#55 free possessive pronoun
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: poss
+Minjalagal jiyirr ooldoobal.
+mi-n-jala-gal jiy-irr ooldoobal
+2-TR-see-REC.PST 2MIN.POSS-3A things
+`You see your things.'
+
+#56 free possessive pronoun
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: poss
+Jina jiiwa minjoogoolij.
+jina jiiwa mi-n-joogool-ij
+3MIN.POSS boomerang 2-TR-break-PFV
+You broke his boomerang.
+
+#57 free possessive pronoun
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: poss
+Lol inyjiidigal jan mayar.
+lol i-ny-jiidi-gal jan mayar
+burn 3-PST-go-REC.PST 1MIN.POSS house
+`My house burned.'
+
+#58 free possessive pronoun
+Source: a:468
+Vetted: t
+Judgement: g
+Phenomena: poss
+Ginyingginim injooloonggal ajawirr irrol.
+ginyinggi-nim i-n-jooloong-gal ajaw-irr irrol
+3MIN-ERG 3-TR.PST-pick.up-REC.PST 1+2MIN.POSS-3AUG spear.ABS
+`He picked up our spears.'
+
+#59 free possessive pronoun
+Source: a:289
+Vetted: t
+Judgement: g
+Phenomena: poss
+Ngayoo jana gandoorrman.
+ngayoo jana gandoorrman
+1MIN 1MIN.POSS country.man
+`He is my countryman.'
+
+#60 inalienable noun
+Source: a:210
+Vetted: t
+Judgement: g
+Phenomena: poss
+Ngamarlang nganangajimgal.
+nga-marla-ng nga-na-ngajim-gal
+1MIN.POSS-hand-INS 1-TR.PST-hit-REC.PST
+`I hit him with my hand.'
+
+#61 inalienable noun
+Source: a:305
+Vetted: t
+Judgement: g
+Phenomena: poss
+Aamba ninga Ngoolmoongoolmoo.
+aamba ni-nga Ngoolmoongoolmoo
+man 3.POSS-name Ngoolmoongoolmoo
+`The man's name was Ngoolmoongoolmoo.'
+
+#62 posessive pronoun cliticized to verb
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: poss
+Ginyingginim injoogooloojan daanggoo
+ginyinggi-nim i-n-joogooloo-jan daanggoo
+3MIN-ERG 3-TR-break-1MIN.POSS jaw
+`He broke my jaw.'
+
+#63 posessive pronoun cliticized to verb
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: poss
+Joonim jiyarr bo irrjarginjinan bo.
+joo-nim jiya-rr bo i-rr-jargi-n-jin-an bo
+2MIN-ERG 2MIN.POSS-3A woman's.child 3-AUG-fear-CONT-3MIN.IO-1MIN.POSS woman's.child
+`Your children are frightened of my children.'
+
+#64 inalienable noun
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: poss
+Ngamarlang nganangajimgal.
+nga-marla-ng nga-na-boo-gal
+1MIN.POSS-hand-INS 1-TR.PST-hit-REC.PST
+`I hit him with my hand.'
+
+#65 intrans-verb noun-abs
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: c
+Inyjarrmin baawa.
+i-ny-jarrmi-n baawa
+3-PST-get.up-REM.PST child.ABS
+`The child got up.'
+
+#66 1aug free possessive
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: poss
+Inyjarrmin jard baawa.
+i-ny-jarrmi-n jard baawa
+3-PST-get.up-REM.PST 1AUG.POSS child.ABS
+`Our child got up.'
+
+#67 wh question person
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: wh
+Anggaba-nim inyjarrmin
+anggaba-nim i-ny-jarrmi-n
+who-ERG 3-PST-get.up-REM.PST
+`Who got up?'
+
+#68 wh question thing
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: wh
+Angginim inyjarrmin.
+anggi-nim i-ny-jarrmi-n
+what-ERG 3-PST-get.up-REM.PST
+`What got up?'
+
+#69 1min free possessive
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: poss
+Jana aarli inyjarrmin.
+jana aarli i-ny-jarrmi-n
+1MIN.POSS fish 3-PST-get.up-REM.PST
+`My fish got up.'
+
+#70 1min free possessive
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: poss
+Jana irrol i-ny-jarrmi-n.
+jana irrol i-ny-jarrmi-n
+1MIN.POSS irrol 3-PST-rise-REM.PST
+`My spear rises.'
+
+#71 agreement with verb as host
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: agr
+Ngajala.
+nga-jala
+1MIN-see
+`I see.'
+
+#72 prefixal agreement for subject of imperative
+Source: a:395
+Vetted: t
+Judgement: g
+Phenomena: agr
+Ngayarrala!
+nga-yarral-a
+2-run-FUT
+`Run!'
+
+#73 agreement
+Source: author
+Vetted: t
+Judgement: g
+Phenomena: agr
+Ijala.
+i-jala
+3MIN-see
+`He/she sees.'
+
+#74 present
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: tam
+Ibanya.
+i-banya
+3MIN-finish
+`He dies.'
+
+#75 present
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: tam
+Aarla ibanya.
+aarla i-banya
+fish 3MIN-die
+`The fish dies.'
+
+#76 future
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: tam
+Anggarramarra.
+a-ngg-arr-a-marra
+1-FUT-AUG-TR-cook
+`We will cook it.'
+
+#77 intrans-verb noun-abs plural
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: c
+Inyarrjarrmin gool.
+i-ny-arr-jarrmi-n gool
+3-PST-AUG-get.up-REM.PST father.ABS
+`The fathers got up.'
+
+#78 MMT 1
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: c
+Iila irrjarrmi.
+iila i-rr-jarrmi
+dog.ABS 3-AUG-sleep
+`Dogs sleep.'
+
+#79 MMT 2
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: c
+Iilanim yandilybar oorroongoorribi.
+iila-nim yandilybar i-rr-oo-ngoorribi
+dog-ERG car 3-AUG-TR-chase
+`Dogs chase cars.'
+
+#80 MMT 3
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: pn
+Nganangoorribirri.
+nga-na-ngoorribi-rri
+1MIN-TR-chase-2MIN.DO
+`I chase you.'
+
+#81 MMT 4
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: c
+Iil oorrarli.
+iila i-rr-arli
+dog.ABS 3-AUG-eat
+`Dogs eat.'
+
+#82 MMT 5
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: neg
+Arra iilanim ilarroongoorribi yandilybar.
+arra iila-nim i-la-rr-oo-ngoorribi yandilybar
+NEG dog-ERG 3-IRR-AUG-TR-chase boat
+`The dogs don't chase boats.'
+
+#83 MMT 18
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: poss
+Iila jina yandilybar irrjarrmi.
+iila jina yandilybar i-rr-jarrmi
+dog 3MIN.POSS car 3-AUG-sleep
+`The dog's car sleeps. (lit. dog his car sleeps)'
+
+#84 MMT 19
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: poss
+Jana iila irrjarrmi.
+jana iila i-rr-jarrmi
+1MIN.POSS dog 3-AUG-sleep
+`My dogs sleep.'
+
+#85 object dropping
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: pro-d
+Iilanim irroongoorribiirr.
+iila-nim i-rr-oo-ngoorribi-irr
+dog-ERG 3-AUG-TR-chase-3AUG.DO
+`Dogs chase them.'
+
+#86 negation without irrealis (bad)
+Source: author
+Vetted: f
+Judgement: u
+Phenomena: neg
+Arra iilanim irroongoorribi yandilybar.
+arra iila-nim i-rr-oo-ngoorribi yandilybar
+NEG dog-ERG 3-AUG-TR-chase car
+`*The dogs don't chase car.
+
+#87 NP non-verbal no copula
+Source: a:601
+Vetted: t
+Judgement: g
+Phenomena: cop
+Jarri aamba galgarr.
+jarri aamba galgarr
+this man widower
+`This man is a widower.'
+
+#88 NP non-verbal no copula
+Source: a:603
+Vetted: t
+Judgement: g
+Phenomena: cop
+Jarri aamba garnibina.
+jarri aamba garnibina
+this man murderer
+`This man's a murderer.'
+
+#89 NP non-verbal no copula
+Source: a:603
+Vetted: t
+Judgement: g
+Phenomena: cop
+Jalnggoogoorr jana nyami.
+jalnggoogoorr jana nyami
+doctor.man 1M.POSS mother's.father
+`My grandfather was a doctorman.'
+
+#90 NP non-verbal no copula singular
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: cop
+Iila aarli.
+iila aarli
+dog cat
+`The dog is the cat.'
+
+#91 MMT 17 NP non-verbal no copula plural
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: cop
+Irr iila irr aarli.
+irr iila irr aarli
+3AUG dog 3AUG cat
+`The dogs are the cats.'
+
+#92 Adj non-verbal preverb copula
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: cop
+Garnka inin.
+garnka i-ni-n
+raw 3-sit-CONT
+`It is raw.'
+
+#93 Adj non-verbal no copula permanent state
+Source: a:608
+Vetted: t
+Judgement: g
+Phenomena: cop
+Niiwandi ngamarlangay.
+niiwanda nga-marla-ngay
+long 1-hand.or.finger-1MIN
+`My fingers are long.'
+
+#94 Adj non-verbal copula transient state
+Source: a:608
+Vetted: t
+Judgement: g
+Phenomena: cop
+Niiwandi inin ngamarla.
+niiwanda i-ni-n nga-marla
+long 3-sit-CONT 1-hand.or.finger
+`My fingers are stretched out.'
+
+#95 Adj non-verbal hungry
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: cop
+Manyjalnim alig nganjij.
+manyjal-nim alig nga-n-j-ij
+hunger-ERG feel.bad 1-TR-do.say-PFV
+`I am hungry.'
+
+#96 MMT 15
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: cop
+Manyjalnim alig iila irroojij.
+manyjal-nim alig iila i-rr-oo-j-ij
+hunger-ERG feel.bad dog 3-AUG-TR-do.say-PFV
+`The dogs are hungry.'
+
+#97 PP non-verbal loc
+Source: a:217
+Vetted: t
+Judgement: g
+Phenomena: cop
+Inin baaloon.
+i-ni-n baal-oon
+3-be-CONT boughshed-LOC
+`It's in the boughshed.'
+
+#98 PP non-verbal no loc
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: cop
+Iilanim jaala irrni.
+iila-nim jaala i-rr-ni
+dog-ERG beach 3-AUG-be
+`The dogs are at the beach.'
+
+#99 MMT 16
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: cop
+Iilanim gardinon irrni.
+iila-nim gardin-on i-rr-ni
+dog-ERG park-LOC 3-AUG-be
+`The dogs are in the park.'
+
+#100 Adj non-verbal copula
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: cop
+Garrja i-ni-n ginyinggi jamooyoon.
+garrja i-ni-n ginyinggi jamooyoon
+sharp 3-sit-CONT 3MIN knife
+`The knife is sharp.'
+
+#101 Wh non-verbal no copula
+Source: a:609
+Vetted: t
+Judgement: g
+Phenomena: cop
+Anggaba nyinga joo?
+anggaba nyi-nga joo
+who 2MIN-name 2MIN
+`What's your name?'
+
+#102 Wh non-verbal no copula
+Source: a:609
+Vetted: t
+Judgement: g
+Phenomena: cop
+Angginim goorr?
+anggi-nim goorr
+what-ERG 2AUG
+`What's wrong with you? What happened to you?'
+
+#103
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: poss
+Najana iila  inyarlin.
+ngajana iila  i-ny-arli-n
+1MIN.POSS dog 3-PST-eat-REM.PST
+`My dog ate.'
+
+#104 MMT 20
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: wh
+Anggaba iarrjarrmin
+anggaba i-arr-jarrmi-n
+who 3-AUG-sleep-CONT
+`Who sleeps?'
+
+#105 MMT 8
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: crd
+Aarlinim agal iilanim oorroongoorribiirr yandilybar.
+aarli-nim agal iila-nim i-rr-oo-ngoorribi-irr yandilybar
+cat-ERG and dog-ERG 3AUG-AUG-TR-chase-3AUG car
+`Cats and dogs chase cars.'
+
+#106 MMT 9
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: crd
+iilanim irroongoorribiirr yandilybar agal aarlinim irroongoorribiirr yandilybar
+iila-nim i-rr-oo-ngoorribi-irr yandilybar agal aarli-nim i-rr-oo-ngoorribi-irr yandilybar
+dog-ERG 3AUG-AUG-TR-chase-3AUG car and cat-ERG 3AUG-AUG-TR-chase-3AUG car
+`Dogs chase cars and cats chase cars.'
+
+#107 MMT 13/14
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: cop
+iilanim gardinon irrarli
+iila-nim gardin-on i-rr-arli
+dog-ERG park-LOC 3AUG-AUG-eat
+`Dogs eat in the park'
+
+#108 MMT 11
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: q
+Nganyji aarlinim irroongoorribiirr iila
+nganyji aarli-nim i-rr-oo-ngoorribi-irr iila
+INTERROG cat-ERG 3AUG-AUG-TR-chase-3AUG dog
+`Do cats chase dogs?'
+
+#109 subject pronoun
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: pn
+Nganangoorribi iila.
+nga-na-ngoorribi iila
+1MIN-TR-chase dog
+`I chase the dog.'
+
+#110 subject pronoun
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: pn
+Minangoorribi iila.
+mi-na-ngoorribi iila
+2MIN.PRS-TR-chase dog
+`You chase the dog.'
+
+#111 subject pronoun
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: pn
+Ananggngoorribi iila.
+a-na-ngg-ngoorribi iila
+2MIN-TR-FUT-chase dog
+`You will chase the dog.'
+
+#112 subject pronoun
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: pn
+Ngankngoorribi
+nga-n-k-ngoorribi
+1MIN-TR-FUT-chase
+`I will chase (it).'
+
+#113 subject pronoun
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: pn
+Oonkngoorribi iila.
+oo-n-k-ngoorribi iila
+3MIN-TR-FUT-chase dog
+`He/She will chase the dog.'
+
+#114 subject pronoun
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: pn
+Ngakjarrmi.
+nga-k-jarrmi
+2MIN-FUT-get.up
+`You will get up.'
+
+#115 object pronoun
+Source: author
+Vetted: f
+Judgement: g
+Phenomena: pn
+Iilanim irroongoorribirri.
+iila-nim i-rr-oo-ngoorribi-rri
+dog-ERG 3-AUG-TR-chase-2MIN.DO
+`Dogs chase you.'

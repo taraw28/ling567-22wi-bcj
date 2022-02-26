@@ -57,9 +57,10 @@ PNG.GEND : PNG.GEND
   * <> *
 
 E.TENSE : E.TENSE
+  fut <> fut
   pst <> pst
   prs <> prs
-  fut <> fut
+  non-fut <> non-fut
   * <> *
 
 E.ASPECT : E.ASPECT

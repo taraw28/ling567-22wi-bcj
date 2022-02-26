@@ -1,0 +1,10 @@
+;;; -*- Mode: TDL; Coding: utf-8 -*-
+;;; Semantically Empty Lexical Entries
+
+nganyji_gr := generator_rule &
+  [ CONTEXT.RELS.LIST < [ ARG0.SF ques ] >,
+    FLAGS.TRIGGER "nganyji" ].
+
+cop-lex_gr := arg0e_gtr &
+  [ CONTEXT [ RELS.LIST < [ PRED "~.*_p_"] > ],
+    FLAGS.TRIGGER "ni-copula" ].

@@ -1034,4 +1034,4 @@ agal4 := conj-lex &
     CFORM "4" ].
 
 ni-copula := copula-verb-lex &
-  [ STEM < "ni" >].
+  [ STEM < "ni" > ].

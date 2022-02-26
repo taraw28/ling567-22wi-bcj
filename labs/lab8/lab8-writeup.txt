@@ -2,9 +2,40 @@ Lab 8 - Bardi - Tara and Hanieh
 
 Pronouns, PNG
   Explanation
-    In Bardi, personal pronoun subject and objects are affixed to the verb and agree in person, number, and/or tense.
+    In Bardi, personal pronoun subject and objects are affixed to the verb, which have person,
+    number, and/or tense features. Subject pronouns are prefixes and objects are suffixes on the verb.
+
     Subjects
-      If there is an overt subject, there must be a prefix on the verb that agrees in person and number (pernum) with that subject and agrees in tense with the verb. If there is no overt subject, that pernum prefix gives the pernum information about the subject pronoun. The list of pernum prefixes, with their respective tenses, are as follows:
+      If there is an overt subject, there must be a prefix on the verb that agrees in person and
+      number (pernum) with that subject and agrees in tense with the verb. If there is no overt
+      subject, that pernum prefix gives the pernum information about the subject pronoun. One
+      example sentence with no overt subject is:
+
+        Nganangoorribi iila.
+        nga-na-ngoorribi iila
+        1MIN-TR-chase dog
+        `I chase the dog.'
+
+      We implemented the verb marker by updating arg-opt in the customization system to require a
+      ]marker when there is an overt subject and when there is no overt subject:
+
+        section=arg-opt
+        subj-drop=subj-drop-all
+        subj-mark-drop=subj-mark-drop-req
+        subj-mark-no-drop=subj-mark-no-drop-req
+        subj-con=subj-con-some
+
+      This added the new rule to our grammar however, for some reason, an instance of this rule was
+      not added to rules.tdl, so we added it with:
+
+        basic-head-opt-subj := basic-head-opt-subj-phrase.
+
+      This allowed us to parse "I chase the dog" but there were two trees being created when there
+      should only be one. We discovered this was due to ambiguity with some pernum lexical rules
+      having the same affix. While looking into a way to eliminate this ambiguity, we realized
+      that our original implementation of the pernum lexical rules was less than ideal. Our
+      original lexical rules didn't account for tense and there was a clear future vs non-future
+      distinction with this prefixes. The list of pernum prefixes, with their respective tenses, are:
 
         Past/Present (Non-future) Tense:
           2min: mi-
@@ -20,71 +51,516 @@ Pronouns, PNG
           1aug: a-
           1+2min a-
 
-      For example,
-
-        Nganangoorribi iila.
-        nga-na-ngoorribi iila
-        1-TR-chase dog
-        `I chase the dog.'
+      Some example sentences with this prefixes as subjects are:
 
         Minangoorribi iila.
         mi-na-ngoorribi iila
         2MIN.PRS-TR-chase dog
         `You chase the dog.'
 
+        Ngananggngoorribi iila.
+        nga-na-ngg-ngoorribi iila
+        2MIN-TR-FUT-chase dog
+        `You will chase the dog.'
 
+        Oonkngoorribi iila.
+        oo-n-k-ngoorribi iila
+        3MIN-TR-FUT-chase dog
+        `He/She will chase the dog.'
 
+      To update our pernum lexical rules to account for tense, we used the morphology tab of the
+      customization system. We split each pernum feature that had a tense distinction into two lexical
+      rules, making sure that any new aug lexical rules required the aug position class. This led to
+      the following position class in our choices file:
 
+        verb-pc3_name=pernum
+          verb-pc3_obligatory=on
+          verb-pc3_order=prefix
+          verb-pc3_inputs=verb-pc2, verb-pc5
+            verb-pc3_lrt1_name=1min
+              verb-pc3_lrt1_feat1_name=pernum
+              verb-pc3_lrt1_feat1_value=1min_excl
+              verb-pc3_lrt1_feat1_head=subj
+              verb-pc3_lrt1_lri1_inflecting=yes
+              verb-pc3_lrt1_lri1_orth=nga-
+              verb-pc3_lrt1_lri2_inflecting=yes
+              verb-pc3_lrt1_lri2_orth=ng-
+            verb-pc3_lrt2_name=2min-nfut
+              verb-pc3_lrt2_feat1_name=pernum
+              verb-pc3_lrt2_feat1_value=2min
+              verb-pc3_lrt2_feat1_head=subj
+              verb-pc3_lrt2_feat2_name=tense
+              verb-pc3_lrt2_feat2_value=pst, prs
+              verb-pc3_lrt2_feat2_head=verb
+              verb-pc3_lrt2_lri1_inflecting=yes
+              verb-pc3_lrt2_lri1_orth=mi-
+            verb-pc3_lrt3_name=3-fut
+              verb-pc3_lrt3_feat1_name=pernum
+              verb-pc3_lrt3_feat1_value=3min, 3aug
+              verb-pc3_lrt3_feat1_head=subj
+              verb-pc3_lrt3_feat2_name=tense
+              verb-pc3_lrt3_feat2_value=fut
+              verb-pc3_lrt3_feat2_head=verb
+              verb-pc3_lrt3_lri2_inflecting=yes
+              verb-pc3_lrt3_lri2_orth=oo-
+            verb-pc3_lrt4_name=1plus2min
+              verb-pc3_lrt4_feat1_name=pernum
+              verb-pc3_lrt4_feat1_value=1min_incl
+              verb-pc3_lrt4_feat1_head=subj
+              verb-pc3_lrt4_lri1_inflecting=yes
+              verb-pc3_lrt4_lri1_orth=a-
+            verb-pc3_lrt5_name=1aug
+              verb-pc3_lrt5_feat1_name=pernum
+              verb-pc3_lrt5_feat1_value=1aug
+              verb-pc3_lrt5_feat1_head=subj
+              verb-pc3_lrt5_require1_others=verb-pc4
+              verb-pc3_lrt5_lri1_inflecting=yes
+              verb-pc3_lrt5_lri1_orth=a-
+            verb-pc3_lrt6_name=2aug-nfut
+              verb-pc3_lrt6_feat1_name=pernum
+              verb-pc3_lrt6_feat1_value=2aug
+              verb-pc3_lrt6_feat1_head=subj
+              verb-pc3_lrt6_feat2_name=tense
+              verb-pc3_lrt6_feat2_value=pst, prs
+              verb-pc3_lrt6_feat2_head=verb
+              verb-pc3_lrt6_require1_others=verb-pc4
+              verb-pc3_lrt6_lri1_inflecting=yes
+              verb-pc3_lrt6_lri1_orth=goo-
+            verb-pc3_lrt7_name=3-nfut
+              verb-pc3_lrt7_feat1_name=pernum
+              verb-pc3_lrt7_feat1_value=3min, 3aug
+              verb-pc3_lrt7_feat1_head=subj
+              verb-pc3_lrt7_feat2_name=tense
+              verb-pc3_lrt7_feat2_value=pst, prs
+              verb-pc3_lrt7_feat2_head=verb
+              verb-pc3_lrt7_require1_others=verb-pc4
+              verb-pc3_lrt7_lri1_inflecting=yes
+              verb-pc3_lrt7_lri1_orth=i-
+            verb-pc3_lrt8_name=2min-fut-tr
+              verb-pc3_lrt8_feat1_name=pernum
+              verb-pc3_lrt8_feat1_value=1min_excl
+              verb-pc3_lrt8_feat1_head=subj
+              verb-pc3_lrt8_feat2_name=tense
+              verb-pc3_lrt8_feat2_value=fut
+              verb-pc3_lrt8_feat2_head=verb
+              verb-pc3_lrt8_require1_others=verb2, verb6, verb8
+              verb-pc3_lrt8_lri1_inflecting=yes
+              verb-pc3_lrt8_lri1_orth=a-
+            verb-pc3_lrt9_name=2min-fut-it
+              verb-pc3_lrt9_feat1_name=pernum
+              verb-pc3_lrt9_feat1_value=1min_excl
+              verb-pc3_lrt9_feat1_head=subj
+              verb-pc3_lrt9_feat2_name=tense
+              verb-pc3_lrt9_feat2_value=fut
+              verb-pc3_lrt9_feat2_head=verb
+              verb-pc3_lrt9_require1_others=verb1, verb3
+              verb-pc3_lrt9_lri1_inflecting=yes
+              verb-pc3_lrt9_lri1_orth=nga-
+            verb-pc3_lrt10_name=2aug-fut
+              verb-pc3_lrt10_feat1_name=pernum
+              verb-pc3_lrt10_feat1_value=2aug
+              verb-pc3_lrt10_feat1_head=subj
+              verb-pc3_lrt10_feat2_name=tense
+              verb-pc3_lrt10_feat2_value=fut
+              verb-pc3_lrt10_feat2_head=verb
+              verb-pc3_lrt10_lri1_inflecting=yes
+              verb-pc3_lrt10_lri1_orth=a-
 
-  IGT
-  Implementation
-    Prose Description
-    TDL
-    IGT
-    Questions
+        This also added the non-future tense to bardi.tdl. Doing this allowed us to parse sentences
+        with subject pronouns but stopped sentences with object pronouns from parsing. We discovered
+        that this was because the verb was no longer going through the tense position class and
+        therefore not inflecting for tense. We eventually figured out that this was because, when
+        the non-future tense was added to bardi.tdl, the past and present tenses were not inheriting
+        from it. After we fixed this, we were able to parse sentences with object pronouns again:
+
+          pst := non-fut.
+          prs := non-fut.
+          fut := tense.
+          non-fut := tense.
+
+        Now, we only get one result for "I chase the dog."
+
+    Objects
+      We got object pronouns partially working in lab 6 so we already had this in our choices file:
+
+        section=arg-opt
+        ...
+        obj-drop=obj-drop-all
+        obj-mark-drop=obj-mark-drop-req
+        obj-mark-no-drop=obj-mark-no-drop-opt
+
+      and had added this position class for direct object suffixes
+
+        verb-pc7_name=dir-obj
+        verb-pc7_order=suffix
+        verb-pc7_inputs=verb-pc1, verb-pc3
+          verb-pc7_require1_others=verb2, verb6, verb8
+          verb-pc7_lrt1_name=1min-dir-obj
+            verb-pc7_lrt1_feat1_name=pernum
+            verb-pc7_lrt1_feat1_value=1min_excl
+            verb-pc7_lrt1_feat1_head=obj
+            verb-pc7_lrt1_lri1_inflecting=yes
+            verb-pc7_lrt1_lri1_orth=-ngay
+          verb-pc7_lrt2_name=2min-dir-obj
+            verb-pc7_lrt2_feat1_name=pernum
+            verb-pc7_lrt2_feat1_value=2min
+            verb-pc7_lrt2_feat1_head=obj
+            verb-pc7_lrt2_lri1_inflecting=yes
+            verb-pc7_lrt2_lri1_orth=-rri
+          verb-pc7_lrt3_name=3min-dir-obj
+            verb-pc7_lrt3_feat1_name=pernum
+            verb-pc7_lrt3_feat1_value=3min
+            verb-pc7_lrt3_feat1_head=obj
+            verb-pc7_lrt3_feat2_name=overt-arg
+            verb-pc7_lrt3_feat2_value=not-permitted
+            verb-pc7_lrt3_feat2_head=obj
+            verb-pc7_lrt3_lri1_inflecting=no
+          verb-pc7_lrt4_name=1plus2min-dir-obj
+            verb-pc7_lrt4_feat1_name=pernum
+            verb-pc7_lrt4_feat1_value=1min_incl
+            verb-pc7_lrt4_feat1_head=obj
+            verb-pc7_lrt4_lri1_inflecting=yes
+            verb-pc7_lrt4_lri1_orth=-way
+          verb-pc7_lrt5_name=1aug-dir-obj
+            verb-pc7_lrt5_feat1_name=pernum
+            verb-pc7_lrt5_feat1_value=1aug
+            verb-pc7_lrt5_feat1_head=obj
+            verb-pc7_lrt5_lri1_inflecting=yes
+            verb-pc7_lrt5_lri1_orth=-moord
+          verb-pc7_lrt6_name=2aug-dir-obj
+            verb-pc7_lrt6_feat1_name=pernum
+            verb-pc7_lrt6_feat1_value=2aug
+            verb-pc7_lrt6_feat1_head=obj
+            verb-pc7_lrt6_lri1_inflecting=yes
+            verb-pc7_lrt6_lri1_orth=-goorr
+          verb-pc7_lrt7_name=3aug-dir-obj
+            verb-pc7_lrt7_feat1_name=pernum
+            verb-pc7_lrt7_feat1_value=3aug
+            verb-pc7_lrt7_feat1_head=obj
+            verb-pc7_lrt7_lri1_inflecting=yes
+            verb-pc7_lrt7_lri1_orth=-irr
+
+      This allowed us to parse this sentence:
+
+        Iilanim irroongoorribirri.
+        iila-nim i-rr-oo-ngoorribi-rri
+        dog-ERG 3-AUG-TR-chase-2MIN.DO
+        `Dogs chase you.'
+
+      and it produced two trees, one of which was incorrect. In this incorrect tree, the root S was
+      being created using the basic-head-opt-comp rule when only the VP "chase you" should have gone
+      through this rule. We took this problem to Canvas and were advised to constrict the basic-head-opt-comp
+      rule to require [ SUBJ cons ] on the head daughter so we added this to bardi.tdl
+
+        basic-head-opt-comp-phrase :+ [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.SUBJ cons ].
+
+      which resulted in only one tree being produced.
+
+    After implementing both subject and object pronouns, we tried to parse this MT sentence:
+
+      Nganangoorribirri.
+      nga-na-ngoorribi-rri
+      1MIN-TR-chase-2MIN.DO
+      `I chase you.'
+
+    which parsed with one tree.
 
 Clean Up
+  We worked on quite a bit of clean up this week since we already had object pronouns working (for
+  the most part).
+
+  Copula
+    During week 7, we added the copula -ni- to the grammar in order to implement PP non-verbal
+    predicates. We were able to get sentences with this phenomena to parse but not translate. This
+    was because we needed to add a trigger rule, which was helpfully demoed in class. We added this
+    to trigger.mtr:
+
+      cop-lex_gr := arg0e_gtr &
+      [ CONTEXT [ RELS.LIST < [ PRED "~.*_p_"] > ],
+        FLAGS.TRIGGER "ni-copula" ].
+
+    We also got rid of the PRED feature on the ni-copula in the lexicon
+
+      ni-copula := copula-verb-lex &
+      [ STEM < "ni" > ].
+
+    and changed "_be_p_rel" to "_loc_p_rel" in C-CONT.RELS.LIST in the locative-pp-phrase:
+
+      ... < arg12-ev-relation &
+            [ PRED "_loc_p_rel",
+              LBL #ltop,
+              ARG0 #index,
+              ARG1 #xarg,
+              ARG2 #dtr ] > ...
+
+  Noun Predicate
+    Our noun-predicate-rule led to a lot of overgeneration in other sentences due to it not being
+    constrained enough. We focused on the following sentence (which was producing 120 trees) when
+    working on improving the ambiguity:
+
+      Irr iila irr aarli.
+      irr iila irr aarli
+      3AUG dog 3AUG cat
+      `The dogs are the cats.'
+
+    We were informed in our lab 7 comments that some of this overgeneration was due to the fact that
+    this rule was not enforcing that its daughter be fully inflected and were advised to add INFLECTED
+    infl-satisfied to the noun-predicate-rule, which we did. This allowed us to go from 120 trees down
+    to 56 trees. Then we got to work on tackling other sources of ambiguity. While working on this,
+    we temporarily commented out the basic-head-opt-subj rule as it still needed to be constrained a
+    lot (don't worry we uncommented it again later!)
+
+    One issue we were having with the trees was that "irr" was being realized as a noun. This is
+    because "irr" exists in the lexicon as both a pronoun as well as a determiner. To prevent this,
+    we added the PRON bool feature to nouns and required [ PRON - ] on the daughter of the noun-predicate-rule.
+    The pronouns already had the [ PRON + ] feature so we didn't need to add it. This brought us from
+    56 trees to 17 trees.
+
+    Next, we updated the rule to allow for NPs to become predicates. This involved making the daughter
+    of the rule be SPR < > and removing the INFLECTED infl-satisfied feature we had previously added
+    in. This brought us from 17 trees up to 29 trees.
+
+    We noticed that some instances of "irr" were still being parsed as nouns due to the fact that
+    they were going through the locative-pp rule. We required [ PRON - ] on the daughter of this
+    rule and went from 29 trees to 6 trees. We went to Canvas, thinking this had to do with the HCONS.LIST
+    (it didn't), but we made the HCONS.LIST empty so that the rule wasn't contributing any handle
+    constraints. We also added [ MOD < > ] to the mother of the noun-predicate rule as advised on Canvas
+    to prevent head-modifier rules from leading to overgeneration. After this, we still parsed 6 trees.
+    Of these 6 trees, only 2 of them were correct ones and the others still had one of the "irr" words
+    being realized as a noun. We believed this was because the pronoun was allowed to go through the
+    basic-bare-np-phrase and that it shouldn't be allowed to go through that rule. We added [ PRON - ]
+    to this rule which allowed us to go from 6 trees down to 2. However, this was not the right
+    approach as it didn't allow other sentences with pronouns that needed to become NPs go through
+    that rule so we removed the PRON feature.
+
+    At this point, we added the basic-head-opt-subj rule back in, which brought us up to 14 trees.
+    We added SPEC < > to the mother of the noun-predicate-rule which brought us back down to 2 trees!
+    All of the changes to the noun-predicate rule describe above can be seen here:
+
+      noun-predicate-rule := basic-unary-phrase & nocoord &
+        [ SYNSEM [ LOCAL.CAT [ HEAD verb,
+                              VAL [ COMPS < >,
+                                    SUBJ < [ LOCAL [ CONT.HOOK.INDEX #arg1,
+                                                      CAT [ HEAD noun & [ MOD < > ],
+                                                            VAL.SPR < > ] ] ] >,
+                                    SPEC < > ] ],
+                  NON-LOCAL #nl ],
+                  C-CONT [ HOOK [ LTOP #ltop,
+                                  INDEX #index,
+                                  XARG #arg1 ],
+                            RELS.LIST < arg12-ev-relation &
+                                [ PRED "_be_v_id_rel",
+                                  LBL #ltop,
+                                  ARG0 #index,
+                                  ARG1 #arg1,
+                                  ARG2 #arg2 ] >,
+                            HCONS.LIST < > ],
+                  ARGS < [ SYNSEM [ LOCAL [ CAT [ HEAD noun & [ CASE abs ] & [ PRON - ],
+                                                  VAL.SPR < > ],
+                                            CONT.HOOK [ INDEX #arg2 ]],
+                                    NON-LOCAL #nl ]] > ].
+
+  Question Pronoun
+    In lab 7, we worked on non-verbal wh-questions like:
+
+      Anggaba nyinga joo?
+      anggaba nyi-nga joo
+      who 2MIN-name 2MIN
+      `What’s your name?'
+
+    We were able to get the sentence to parse but none of those parses were correct. We couldn't figure
+    out why "anggaba" was going through the locative-pp-rule which should have only allowed things
+    with locative case as its daughter. In our lab 7 comments, we found out that our question pronouns
+    don't have a flag for case, which is why there were allowed to go through that rule. We added this:
+
+      q-pronoun-noun-lex := wh-pronoun-noun-lex &
+        [ INFLECTED.CASE-PC-FLAG - ].
+
+    This brought us from 44 incorrect trees down to 28 incorrect trees. At this point, we commented out
+    the ex-adj rule as we have not yet implemented any adjective-related phenomena or constrained MOD.
+    This brought us down to 14 trees. Next, we add the [ PRON + ] feature to the q-pronoun-noun-lex:
+
+      q-pronoun-noun-lex := wh-pronoun-noun-lex &
+        [ INFLECTED.CASE-PC-FLAG -,
+          SYNSEM.LOCAL.CAT.HEAD.PRON + ].
+
+    which brought us from 14 trees down to 6. We went to office hours to try an figure out how to get
+    this to work. Here, it was noticed that "anggaba" was becoming a determiner so we added an empty
+    QUE.LIST to the poss-unary-phrase (which all other possessive rules inherit from).
+
+      poss-unary-phrase := basic-unary-phrase &
+        ...
+          ARGS < [ SYNSEM [ LOCAL [ CAT [ VAL [ SPR < >,
+                                                COMPS < >,
+                                                SUBJ < >,
+                                                SPEC < > ],
+                                          HEAD +np ],
+                                    CONT.HOOK.INDEX #possessor ],
+                            NON-LOCAL #nonloc & [ QUE.LIST < > ] ] ] > ].
+
+    The sentence now no longer parses.We had issues getting "nyi-nga joo" ("your-name you") to parse.
+    We switched "joo" out for the possessive "jina" and focused on figuring out why they couldn't be
+    combine through some rule. We found a similar sentence, one without the question, that does parse:
+
+      Ngayoo jana gandoorrman.
+      ngayoo jana gandoorrman
+      1MIN 1MIN.POSS country.man
+      `He is my countryman.'
+
+    In this sentence, the D "jana" and N "gandoorrman" went through the HEAD-SPEC rule and became an
+    NP which went through the noun-predicate rule and became a VP. We tried using the HEAD-SPEC rule
+    on our "What's your name" sentence however, we ran into 2 issues. One, our sentence would need a
+    SPEC-HEAD rule and 2, that rule would expect a noun and "my name" is a noun phrase. We then tried
+    to use the SUBJ-HEAD rule however, we got a unification failure when adding "jiya". In
+    SYNSEM.LOCAL.CAT.VAL.SUBJ of poss-unary-phrase-pron-1, it was expecting cons but got null. This
+    is where we got stuck and have yet to figure out how to move forward. We will be following up on
+    Canvas about this.
 
 MMT Item Status
-  With sje as Source
-  1.
 
   With eng as Source
-  1.
+  1. 2 results
+  2. 12 results
+  3. doesn't work
+     MRSes are different. Since Bardi has the subject and object affixed to the verb, there is no
+     pron_rel or exist_rel.
+  4. 2 results
+  5. 24 results
+  6. doesn't work
+     We haven't implemented this.
+  7. doesn't work
+     We haven't implemented this.
+  8. 16464 results
+  9. doesn't work
+     This doesn't parse in Bardi. We never worked on coordination beyond just adding the
+     coordination stem.
+  10. doesn't work
+      We haven't implemented VP coordination.
+  11. 24 parses
+  12. doesn't work
+      We haven't implemented adjectives.
+  13. doesn't work
+      We need a trigger rule for _loc_p_rel when there is no copula.
+  14. doesn't work
+      We need a trigger rule for _loc_p_rel when there is no copula.
+  15. doesn't work
+      We haven't implemented adjective predicates.
+  16. doesn't work
+      We have a trigger rule for _loc_p_rel when there is a copula. However, we are still getting a
+      "_in_p_rel is unknown in the semantic index" error. The MRSes look the same so we aren't sure
+      what is going on.
+  17. 28 results
+      None of them are correct. It is putting random cases on the noun. Definitely need some kind of
+      transfer and/or trigger rules to get this sentence translating.
+  18. doesn't work
+      The MRS in Bardi is missing poss_rel. We would need to work more on possessives to get it
+      parsing correctly.
+  19. 2 results
+  20. doesn't work
+      This sentence doesn't parse yet. We would need to work more on wh questions.
+  21. doesn't work
+     We haven't fully implemented  wh questions.
+  22. doesn't work
+     We haven't fully implemented  wh questions.
+  23. doesn't work
+     We haven't fully implemented  wh questions.
+  24. doesn't work
+     We haven't implemented this.
+  25. doesn't work
+     We haven't implemented this.
+  26. doesn't work
+     We haven't implemented this.
+
+  With sje as Source
+  1. 2 results
+  2. 12 results
+  3. doesn't work
+     MRSes are different. Since Bardi has the subject and object affixed to the verb, there is no
+     pron_rel or exist_rel.
+  4. 2 results
+  5. 24 results
+  6. doesn't work
+     We haven't implemented this.
+  7. doesn't exist in sje
+  8. 16464 results
+  9. doesn't work
+     This doesn't parse in Bardi. We never worked on coordination beyond just adding the
+     coordination stem.
+  10. doesn't work
+      We haven't implemented VP coordination.
+  11. 12 results
+  12. doesn't work
+      We haven't implemented adjectives.
+  13. doesn't exist in sje
+  14. doesn't exist in sje
+  15. doesn't exist in sje
+  16. doesn't exist in sje
+  17. doesn't exist in sje
+  18. doesn't work
+      The MRS in Bardi is missing poss_rel. We would need to work more on possessives to get it
+      parsing correctly.
+  19. 2 results
+  20. doesn't work
+      This sentence doesn't parse yet. We would need to work more on wh questions.
+  21. doesn't work
+      We haven't fully implemented  wh questions.
+  22. doesn't work
+      We haven't fully implemented  wh questions.
+  23. doesn't work
+      We haven't fully implemented  wh questions.
+  24. doesn't work
+      We haven't implemented this.
+  25. doesn't exist in sje
+  26. doesn't exist in sje
+  27. doesn't exist in sje
+  28. doesn't exist in sje
 
 TSDB
   Initial Run
     corpus (tsdb/home/bardi/lab8/lab7grammar/corpus)
-      1.  items parsed
+      1. 0 items parsed
       2. We averaged 0 parses per parsed item.
 
     testsuite (tsdb/home/bardi/lab8/lab7grammar/lab8)
-      1.  items parsed
-      2. We averaged ~ parses per parsed item.
-      3. Our most ambiguous item got  parses.
+      1. 30 items parsed
+      2. We averaged ~10 parses per parsed item.
+      3. Our most ambiguous item got 120 parses.
       4. There were no new sources of ambiguity.
 
 
   Final Run
     corpus (tsdb/home/bardi/lab8/lab8grammar/corpus)
-      1. 0 items parsed
-      2. We averaged 0 parses per parsed item.
+      1. 2 items parsed
+      2. We averaged ~1.5 parses per parsed item.
+      3. Our most ambiguous item got 2 parses.
+      4. There were no new sources of ambiguity (the sentence that got 2 parses got them becuase
+      of free word order)
 
     testsuite (tsdb/home/bardi/lab8/lab8grammar/lab8)
-      1. 27 items parsed
-      2. We averaged 11 parses per parsed item.
-      3. Our most ambiguous item got 120 parses.
-      4. All of the new sources of ambiguity were
+      1. 43 items parsed
+      2. We averaged ~11 parses per parsed item.
+      3. Our most ambiguous item got 410 parses.
+      4. The sentence that got 410 parses (#24) involves coordination (which we never worked on).
+      Previously, this sentence got 34 parses. One of the new sources of ambiguity is the basic-head-opt-subj
+      rule. We added this rule during this lab but we didn't test coordinated sentences while working
+      on it. We aren't sure how to constrain this rule to not take in all coordinated phrases. Another
+      (somewhat) new source of ambiguity is with the noun-predicate-rule. We did a lot to reduce
+      ambiguity with this rule during this lab but again, we didn't test any coordinated sentences,
+      so we didn't see how it interacted with the different coordination rules.
 
 
   Coverage
     - Initial Run
       - corpus: 0% coverage
-      - testsuite: 16.3% coverage
+      - testsuite: 28.2% coverage
     - Final Run
-      - corpus: 0% coverage
-      - testsuite: 28.3% coverage
+      - corpus: 1.1% coverage
+      - testsuite: 40.8% coverage
     - Comparison
-      - Our coverage
-
-
+      - corpus: We got some coverage in the corpus! One sentence with a subject pronoun and one with
+      a noun predicate now parses.
+      - testsuite: Our coverage increased by a lot. We had huge spikes in ambiguity with the 2
+      coordinated sentences that parse in our testsuite. However, not including those 2 sentences,
+      the ambiguity decreased on average across the other parsing sentences. We lost some sentences
+      involving possession, specifically inalianble noun possession. This is related to what we were
+      working on with q-pronouns above.
