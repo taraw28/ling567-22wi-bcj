@@ -550,8 +550,9 @@ possessor-adp-lex-1 := two-rel-adposition-lex &
                                COMPS.FIRST [ OPT -,
                                              LOCAL [ CAT [ VAL.SPR < >,
                                                            HEAD noun &
-                                                                [ PRON - ] ],
-                                                     CONT.HOOK.INDEX.PNG.PERNUM min ] ] ] ] ] ].
+                                                                [ PRON -,
+                                                                  CASE abs ] ],
+                                                     CONT.HOOK.INDEX.PNG.PERNUM 3min ] ] ] ] ] ].
 
 basic-adposition-lex :+ [ SYNSEM.LOCAL.CAT [ HEAD.POSSESSOR nonpossessive,
                        POSSESSUM nonpossessive ] ].
@@ -1286,16 +1287,20 @@ head-subj-phrase := decl-head-subj-phrase & head-initial-head-nexus.
 
 subj-head-phrase := decl-head-subj-phrase & head-final-head-nexus.
 
-head-comp-phrase := basic-head-1st-comp-phrase & head-initial-head-nexus.
+head-comp-phrase := basic-head-1st-comp-phrase & head-initial-head-nexus &
+  [ HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD.INIT + ].
 
 ; The head of comp-head-phrase can't be: ['comp']
 
 comp-head-phrase := basic-head-1st-comp-phrase & head-final-head-nexus &
-  [ SYNSEM.LOCAL.CAT.HEAD +nvjrpdmo ].
+  [ SYNSEM.LOCAL.CAT.HEAD +nvjrpdmo,
+    HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD.INIT - ].
 
-head-comp-phrase-2 := basic-head-2nd-comp-phrase & head-initial-head-nexus.
+head-comp-phrase-2 := basic-head-2nd-comp-phrase & head-initial-head-nexus &
+  [ HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD.INIT + ].
 
-comp-head-phrase-2 := basic-head-2nd-comp-phrase & head-final-head-nexus.
+comp-head-phrase-2 := basic-head-2nd-comp-phrase & head-final-head-nexus &
+  [ HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD.INIT - ].
 
 poss-unary-phrase-1 := poss-unary-phrase &
   [ ARGS < [ SYNSEM.LOCAL.CAT.HEAD.POSSESSOR possessor-1 ] >,
@@ -1395,6 +1400,7 @@ wh-ques-phrase := basic-head-filler-phrase & interrogative-clause & head-final &
 
 np2-top-coord-rule := basic-np-top-coord-rule & monopoly-top-coord-rule &
   [ SYNSEM.LOCAL [ CAT.HEAD.CASE #case,
+                   CONT.HOOK.INDEX.PNG.PERNUM 3aug,
                    COORD-STRAT "2" ],
     LCOORD-DTR.SYNSEM.LOCAL.CAT.HEAD.CASE #case,
     RCOORD-DTR.SYNSEM.LOCAL.CAT.HEAD.CASE #case ].
@@ -1462,7 +1468,7 @@ copula-verb-lex := verb-lex-supertype & trans-first-arg-raising-lex-item-2 &
              [ LOCAL [ CONT.HOOK.INDEX #xarg,
                        CAT [ VAL [ SPR < >,
                                    COMPS < > ],
-                             HEAD noun ] ] ],
+                             HEAD noun & [ CASE erg ] ] ] ],
              #comps &
              [ LOCAL.CAT [ VAL [ SUBJ <[]>,
                                  COMPS < > ],
@@ -1475,7 +1481,7 @@ locative-pp-phrase := unary-phrase &
                                               CONT.HOOK.INDEX #xarg ] ] > ],
                                       VAL [ COMPS < >,
                                       SUBJ < [ LOCAL [ CONT.HOOK.INDEX #xarg,
-                                                      CAT.HEAD noun] ] >,
+                                                      CAT.HEAD noun ] ] >,
                                       SPR < > ]]],
     C-CONT [ HOOK [ LTOP #ltop,
                     INDEX #index,
