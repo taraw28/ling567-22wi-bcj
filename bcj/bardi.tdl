@@ -31,8 +31,7 @@ head :+ [ PRON bool,
     SPEC-INIT bool,
     FORM form ].
 
-noun :+ [ PRON bool,
-          CASE case ].
+noun :+ [ CASE case ].
 
 inflected :+ [ CASE-PC-FLAG luk,
     AUG-FLAG luk,
@@ -1395,13 +1394,21 @@ wh-ques-phrase := basic-head-filler-phrase & interrogative-clause & head-final &
 ;;; Coordination Strategy 2
 
 np2-top-coord-rule := basic-np-top-coord-rule & monopoly-top-coord-rule &
-  [ SYNSEM.LOCAL.COORD-STRAT "2" ].
+  [ SYNSEM.LOCAL [ CAT.HEAD.CASE #case,
+                   COORD-STRAT "2" ],
+    LCOORD-DTR.SYNSEM.LOCAL.CAT.HEAD.CASE #case,
+    RCOORD-DTR.SYNSEM.LOCAL.CAT.HEAD.CASE #case ].
 
 np2-mid-coord-rule := basic-np-mid-coord-rule & monopoly-mid-coord-rule &
-  [ SYNSEM.LOCAL.COORD-STRAT "2" ].
+  [ SYNSEM.LOCAL [ CAT.HEAD.CASE #case,
+                   COORD-STRAT "2" ],
+    LCOORD-DTR.SYNSEM.LOCAL.CAT.HEAD.CASE #case,
+    RCOORD-DTR.SYNSEM.LOCAL.CAT.HEAD.CASE #case ].
 
 np2-bottom-coord-rule := conj-first-bottom-coord-rule & np-bottom-coord-phrase &
-  [ SYNSEM.LOCAL.COORD-STRAT "2" ].
+  [ SYNSEM.LOCAL [ CAT.HEAD.CASE #case,
+                   COORD-STRAT "2" ],
+    NONCONJ-DTR.SYNSEM.LOCAL.CAT.HEAD.CASE #case ].
 
 ;;; Coordination Strategy 4
 
