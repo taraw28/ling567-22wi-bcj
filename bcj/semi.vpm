@@ -46,9 +46,9 @@ PNG.PERNUM : PER NUM
   1min_excl <> first sg
   1min_incl <> first pl
   1min <> first *
-  3 <> third *
-  2 <> second *
-  1 <> first *
+  3rd <> third *
+  2nd <> second *
+  1st <> first *
   aug <> * pl
   min <> * sg
 

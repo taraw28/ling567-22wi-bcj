@@ -18,6 +18,10 @@ non-mod-lex-item := lex-item &
 ;;; Matrix Type Addenda
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 
+qeq :+
+    [ HARG.INSTLOC #il,
+      LARG.INSTLOC #il ].
+
 basic-head-comp-phrase :+ [ SYNSEM [ LIGHT #light,
              LOCAL.CAT [ HC-LIGHT #light,
                          MC #mc ] ],
@@ -1093,11 +1097,6 @@ pernum-lex-rule-super := add-only-no-ccont-rule & aspect-rule-dtr & dir-obj-rule
     SYNSEM.LOCAL [ CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 2aug,
                    CONT.HOOK.INDEX.E.TENSE non-fut ] ].
 
-3-nfut-lex-rule := pernum-lex-rule-super &
-  [ DTR.INFLECTED.AUG-FLAG +,
-    SYNSEM.LOCAL [ CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 3rd,
-                   CONT.HOOK.INDEX.E.TENSE non-fut ] ].
-
 2min-fut-tr-lex-rule := pernum-lex-rule-super &
   [ DTR.INFLECTED.TR-ERG-ABS-VERB-OR-TR-ERG-ALL-VERB-OR-TR-ERG-INS-VERB-FLAG +,
     SYNSEM.LOCAL [ CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG.PERNUM 1min_excl,
@@ -1502,7 +1501,7 @@ noun-predicate-rule := basic-unary-phrase & nocoord &
   [ SYNSEM [ LOCAL.CAT [ HEAD verb,
                          VAL [ COMPS < >,
                                SUBJ < [ LOCAL [ CONT.HOOK.INDEX #arg1,
-                                                CAT [ HEAD noun & [ MOD < > ],
+                                                CAT [ HEAD noun & [ MOD < > ] & [ CASE abs ],
                                                       VAL.SPR < > ] ] ] >,
                                SPEC < > ] ],
              NON-LOCAL #nl ],

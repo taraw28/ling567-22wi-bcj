@@ -61,12 +61,19 @@
   - 12 results
   - this is expected due to free word order and because having a direct object suffix is optional
 3
-  - 0 results even after instantiating pro-insert-arg1 and pro-insert-arg2 transfer rules
+  - 0 results
+  - even after instantiating pro-insert-arg1 and pro-insert-arg2 transfer rules
+  - probably has to do with ICONS and no HCONS
+  - didn't get a chance to ask about this on canvas
 4
   - 2 results (in both sje and eng)
   - this is expected due to free word order
 5
   - 24 results (in both sje and eng)
+  - went down to 16 after adding
+      qeq :+
+        [ HARG.INSTLOC #il,
+          LARG.INSTLOC #il ].
   - this is expected due to free word order
 6 SKIPPED (not implemented)
 7 SKIPPED (not implemented)
@@ -86,35 +93,51 @@
   - doesn't parse because vp coordination doesn't work
 11
   - 24 results in eng
+    - 12 of the sentences are missing ngangyi
     - this is expected due to free word order and because having a direct object suffix is optional
   - 12 results in sje
     - results aren't correct because they don't include the interrogative nganyji
+    - didn't get a chance to ask about this on canvas
 12 SKIPPED (not implemented)
 13
   - 8 results in eng
-    - not completely correct; 4 sentences have the interrogative nganyji for some reason and other 4 sentences are missing ergative case on the subject
+    - not completely correct; 4 sentences have the interrogative nganyji for some reason
+    - didn't get a chance to ask about this on canvas
   - SKIPPED in sje
 14
   - 18 results in eng
-    - some sentences have interrogative nganyji, all sentences missing ergative case on the subject, some verbs have irrealis marker for some reason
+    - some sentences have interrogative nganyji and some verbs have irrealis marker for some reason
+    - didn't get a chance to ask about this on canvas
   - SKIPPED in sje
 15 SKIPPED (not implemented)
 16
   - 336 results in eng
-    - allowing for min prefixes on verb for some
-!      - need to fix pernum/aug position classes with customization
     - allowing any case on subject
       - constrained subject of copula to be ergative
+      - 24 results
+        - allowing for min prefixes on verb for some
+          - need to fix pernum/aug position classes with customization
+          - but it doesn't make sense to make the aug position class obligatory
+          - there are 2 routes a verb can take, depending on if the subject is min or aug
+            1. min: pernum-(tr)-tense-root
+            2. aug: pernum-tense-aug-(tr)-root
+          - if the aug position class is obligatory, it would create issues with the way that the tr and tense position classes work for min subjects
+            - i couldn't think of a way to fix this. i looked into doing something with the aug-flag, since that is what should make sure that all aug subjects go through the aug rule but wasn't able to solve it
   - SKIPPED in sje
 17
   - 28 results in eng
     - all cases allowed on the subject but there shouldn't be any case
-    - not included the pronoun to make this plural but not really sure how to fix that (maybe trigger rule?)
+      - made subj of noun-pred rule [ CASE abs ]
+      - 2 results
+      - not including the pronoun to make this plural but not really sure how to fix that (maybe trigger rule?)
+        - didn't get a chance to ask about this on canvas
   - SKIPPED in sje
 18
   - parses but doesn't translate
   - did stuff listed under possession above
     - 8 results
+      - 4 of these results have the verb taking jina as a complement, which is incorrect
+      - asked on canvas but probably won't hear back in time
 19
   - doesn't parse because this kind of possession doesn't work yet
 20

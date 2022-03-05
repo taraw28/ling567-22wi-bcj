@@ -1,7 +1,119 @@
 Lab 9 - Bardi - Tara and Hanieh
 
-Possession
+MMT Sentences
+1.  2 results (in both sje and eng)
+    This is expected due to free word order.
+2.  12 results (in both sje and eng)
+    This is expected due to free word order and because having a direct-object is optional.
+3.  0 results (in both sje and eng)
+    In Bardi, this is done with a pro-dropped subject and object. We instantiated the pro-insert-arg1 and pr-insert-arg2 transfer rules but were unable to get it to translate. When inspecting the MRS of the Bardi sentence, it doesn't have HCONS and instead has ICONS with non-focus for the subject and for the object. We sadly didn't get a chance to ask about this on canvas as we were focused on improving the translation of the coordination and possession sentences.
+4.  2 results (in both sje and eng)
+    This is expected due to free word order.
+5.  16 results (in both sje and eng)
+    We started with 24 results (in  both sje and eng) but after adding
+        qeq :+
+          [ HARG.INSTLOC #il,
+            LARG.INSTLOC #il ].
+    the sentence went down to 16 results, which is expected due to free word order.
+6.  SKIPPED (not implemented)
+7.  SKIPPED (not implemented)
+8.  12 results (in both sje and eng)
+    We started with 16464 results (in both sje and eng). We hadn't properly worked on coordination before this so we started by parsing the sentence:
 
-Coordination
+      aarli-nim agal iila-nim i-rr-oo-ngoorribi-irr yandilybar
+      cat-ERG and dog-ERG 3AUG-AUG-TR-chase-3AUG car
+      `Cats and dogs chase cars.'
 
-Translation
+    This resulted in 15 trees. Many of the trees had "dogs and cats" or "and cats" going through the locative-pp rule. From this, we realized that coordination wasn't preserving case. We tried modifying the top-coord rule but that didn't work and resulted in a syntax error so we posted on canvas for some guidance. We were told that the top-coord rule was also applying to verbs, which we didn't realize, so we switched to modifying the np coord rules. We made sure that both the left and right daughters preserved case:
+
+      np2-top-coord-rule := basic-np-top-coord-rule & monopoly-top-coord-rule &
+        [ SYNSEM.LOCAL [ CAT.HEAD.CASE #case,
+                        COORD-STRAT "2" ],
+          LCOORD-DTR.SYNSEM.LOCAL.CAT.HEAD.CASE #case,
+          RCOORD-DTR.SYNSEM.LOCAL.CAT.HEAD.CASE #case ].
+
+      np2-mid-coord-rule := basic-np-mid-coord-rule & monopoly-mid-coord-rule &
+        [ SYNSEM.LOCAL [ CAT.HEAD.CASE #case,
+                        COORD-STRAT "2" ],
+          LCOORD-DTR.SYNSEM.LOCAL.CAT.HEAD.CASE #case,
+          RCOORD-DTR.SYNSEM.LOCAL.CAT.HEAD.CASE #case ].
+
+      np2-bottom-coord-rule := conj-first-bottom-coord-rule & np-bottom-coord-phrase &
+        [ SYNSEM.LOCAL [ CAT.HEAD.CASE #case,
+                        COORD-STRAT "2" ],
+          NONCONJ-DTR.SYNSEM.LOCAL.CAT.HEAD.CASE #case ].
+
+    After doing this, parsing the sentence resulted in only 1 tree! We went back to translating and, from eng, we were down to 84 results. From sje we got 12 results, which is expected due to free word order and because having a direct object suffix is optional. We noticed that, in some of the generations, the subject marker on the verb was not aug. We went to canvas and were given two possible ways of fixing this. One involved going into the customization system and adding a "feature resolution" strategy while the other was to make mother of the np-top-coord rule be 3aug. For the sake of time, we went with the second "partial solution." This brought us down to 12 sentences when translating from eng, which is expected due to free word order and because having a direct object suffix is optional.
+9.  0 results
+    Although this sentence does exist in bcj.txt, we have yet to get this sentence to parse as we haven't worked on VP coordination at all.
+10. 0 results
+    Although this sentence does exist in bcj.txt, we have yet to get this sentence to parse as we haven't worked on VP coordination at all.
+11. 24 results in eng and 12 results in sje
+    The 24 results from eng are not completely expected. 12 of the results are missing "nganyji", which is the interrogative in Bardi. We have a trigger rule for this word:
+
+      nganyji_gr := generator_rule &
+        [ CONTEXT.RELS.LIST < [ ARG0.SF ques ] >,
+          FLAGS.TRIGGER "nganyji" ].
+
+    but there must be something else that we are missing. The other 12 results from eng are correct translations. All 12 of the results from sje are missing "nganyji". We were not able to ask about this on canvas (and it affected generations of some other sentences as well).
+12. SKIPPED (not implemented)
+13. 8 results in eng (SKIPPED in sje)
+    We started with 0 results but, after instantiating the transfer rule for _in_p_rel -> _loc_p_rel (in-loc-mtr), we got 8 results. Of these results, 4 of them had the interrogative "nganyji" (see 11). Also, it generated each sentence twice. Sadly, we didn't notice this till it was too late so we were unable to post on canvas about it. It is probably a fairly easy fix.
+14. 18 results in eng (SKIPPED in sje)
+    We started with 0 results but, after instantiating the in-loc transfer rule, we got 18 results. Again, some sentences had the interrogative "nganyji" (see 11) while other sentences had the irrealis marker on the verb. We are not sure where this irrealis marker is coming from and, again, did not get a chance to ask about it on canvas. Also, all of the sentences were duplicated and, when translating, it logged the output three times to the terminal. This is the only sentence this happened with.
+15. SKIPPED (not implemented)
+16. 24 results (SKIPPED in sje)
+    We started with 0 results but, after instantiating the in-loc transfer rule, we got 336 results. We noticed that it was allowing any case on the subject so we constrained the subject of the copula to only allow ergative case. This got us down to 24 results. The next thign we noticed was the min prefixes were allowed on the verb. After going in to office hours, we planned on fixing the pernum/aug position classes in the customization system by making the aug pc obligatory and adding aug as an input to the pernum pc. However, after attempting to do this, we realized it was a bit more complicated and it doesn't really make sense to make the aug pc obligatory. There are 2 routes a verb can take, dependin gon if the subject is min or aug:
+      1. min: pernum-(tr)-tense-root
+      2: aug: pernum-tense-aug-(tr)-root
+    If the aug pc is obligatory, it would create issues with the way that the tr and tense pcs work for min subjects. We couldn't think of a way to fix this. We looked into doing something with the aug-flag, since that is what should make sure that all verbs with aug subjects go through the aug pc but weren't able to solve it.
+17. 2 results in eng (SKIPPED in sje)
+    We started with 28 results. We noticed that all cases were allowed on the subject but there shouldn't be any case. To fix this, we made the subject of the noun-pred rule [ CASE abs ]. From this, we got 2 results. However, those 2 results do not completely align with the eng sentence "The dogs are the cats." The Bardi sentence translates to "The dog is the cat." It should be:
+
+      irr iila irr aarli
+      3AUG dog 3AUG cat
+      `The dogs are the cats.'
+
+    We need a way to add the pronouns in when translating non-predicate aug sentences. This is a bit of a weird construction though, since determiners like this are not normally included in Bardi sentences. We probably needed to write a trigger rule for this but weren't sure on what condition it should be triggered and didn't get a chance to post about it on canvas.
+18. 8 results
+    We started with 0 results. However, before we could work on translation, we needed to decrease ambgiuity when parsing. Parsing the sentence:
+
+      iila jina yandilybar i-rr-jarrmi
+      dog 3MIN.POSS car 3-AUG-sleep
+      `The dog's car sleeps. (lit. dog his car sleeps)'
+
+    resulted in 3 trees, 1 of which was correct. We went to office hours and worked on getting the sentence translating (by generating from the parsing tree in the lkb). At first, we had to add
+
+      (defparameter *gen-start-symbol* '(root))
+
+    to .lkbrc so that generating would work. Then, we added
+
+      HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD.INIT +
+
+    to head-comp-phrase and head-comp-phrase-2 as well as
+
+      HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD.INIT -
+
+    to comp-head-phrase and comp-head-phrase-2.We also added a trigger rule for the possessor "jina":
+
+      jina_gr := generator_rule &
+      [ CONTEXT.RELS.LIST < [ PRED "poss_rel" ] >,
+        FLAGS.TRIGGER "possessor-adp-1" ].
+
+    and made the complement of the possessor-adp-lex-1 be 3MIN and have abs case:
+
+      possessor-adp-lex-1 := two-rel-adposition-lex &
+      ...
+      COMPS.FIRST [ OPT -,
+                    LOCAL [ CAT [ VAL.SPR < >,
+                                  HEAD noun &
+                                      [ PRON -,
+                                        CASE abs ] ],
+                            CONT.HOOK.INDEX.PNG.PERNUM 3min ] ] ] ] ] ].
+
+    This allowed the sentence to be translated with 8 results. However, in 4 of these results, the verb was incorrectly taking jina as a complement. We posted to canvas about it and were told to make the the PP complement of the verb have [ COMPS < > ] but were unable to figure out how to do that.
+19. 0 results
+    This sentence doesn't parse because this kind of possession doesn't work yet.
+20. 0 results
+    This sentence doesn't parse yet because we haven't fully implemented wh-questions.
+21-26 SKIPPED (not implemented)
