@@ -18,19 +18,21 @@ MMT Sentences
 6.  SKIPPED (not implemented)
 7.  SKIPPED (not implemented)
 8.  12 results (in both sje and eng)
+    Coordination with agal' meaning 'and' in Bardi is monosyndetic apearing at the beginning of the second phrase or clause to combine, and multiple combinations of clauses using 'agal' aren't found in Bardi (p.658). Coordinatin in Bardi also allows combining negation under a single scope (e.g. You musn't eat melon, fish, chips, or chocolate) as well as allowing conjoining clauses without verbs, and that it doesn't preserve case. 
+
     We started with 16464 results (in both sje and eng). We hadn't properly worked on coordination before this so we started by parsing the sentence:
 
       aarli-nim agal iila-nim i-rr-oo-ngoorribi-irr yandilybar
       cat-ERG and dog-ERG 3AUG-AUG-TR-chase-3AUG car
       `Cats and dogs chase cars.'
 
-    This resulted in 15 trees. Many of the trees had "dogs and cats" or "and cats" going through the locative-pp rule. From this, we realized that coordination wasn't preserving case. We tried modifying the top-coord rule but that didn't work and resulted in a syntax error so we posted on canvas for some guidance. We were told that the top-coord rule was also applying to verbs, which we didn't realize, so we switched to modifying the np coord rules. We made sure that both the left and right daughters preserved case:
+    This resulted in 15 trees. Many of the trees had "dogs and cats" or "and cats" going through the locative-pp rule. From this, we realized that coordination wasn't preserving case. We tried modifying the top-coord rule but that didn't work and resulted in a syntax error so we posted on canvas for some guidance. We were told that the top-coord rule was also applying to verbs, which we didn't realize, so we switched to modifying the np coord rules. We made sure that both the left and right daughters preserved case:  
 
-      np2-top-coord-rule := basic-np-top-coord-rule & monopoly-top-coord-rule &
-        [ SYNSEM.LOCAL [ CAT.HEAD.CASE #case,
-                        COORD-STRAT "2" ],
-          LCOORD-DTR.SYNSEM.LOCAL.CAT.HEAD.CASE #case,
-          RCOORD-DTR.SYNSEM.LOCAL.CAT.HEAD.CASE #case ].
+      np2-top-coord-rule := basic-np-top-coord-rule & monopoly-top-coord-rule &.  
+        [ SYNSEM.LOCAL [ CAT.HEAD.CASE #case,   
+                        COORD-STRAT "2" ],   
+          LCOORD-DTR.SYNSEM.LOCAL.CAT.HEAD.CASE #case,    
+          RCOORD-DTR.SYNSEM.LOCAL.CAT.HEAD.CASE #case ].     
 
       np2-mid-coord-rule := basic-np-mid-coord-rule & monopoly-mid-coord-rule &
         [ SYNSEM.LOCAL [ CAT.HEAD.CASE #case,
@@ -63,7 +65,7 @@ MMT Sentences
     We started with 0 results but, after instantiating the in-loc transfer rule, we got 18 results. Again, some sentences had the interrogative "nganyji" (see 11) while other sentences had the irrealis marker on the verb. We are not sure where this irrealis marker is coming from and, again, did not get a chance to ask about it on canvas. Also, all of the sentences were duplicated and, when translating, it logged the output three times to the terminal. This is the only sentence this happened with.
 15. SKIPPED (not implemented)
 16. 24 results (SKIPPED in sje)
-    We started with 0 results but, after instantiating the in-loc transfer rule, we got 336 results. We noticed that it was allowing any case on the subject so we constrained the subject of the copula to only allow ergative case. This got us down to 24 results. The next thign we noticed was the min prefixes were allowed on the verb. After going in to office hours, we planned on fixing the pernum/aug position classes in the customization system by making the aug pc obligatory and adding aug as an input to the pernum pc. However, after attempting to do this, we realized it was a bit more complicated and it doesn't really make sense to make the aug pc obligatory. There are 2 routes a verb can take, dependin gon if the subject is min or aug:
+    We started with 0 results but, after instantiating the in-loc transfer rule, we got 336 results. We noticed that it was allowing any case on the subject so we constrained the subject of the copula to only allow ergative case. This got us down to 24 results. The next thign we noticed was the min prefixes were allowed on the verb. After going in to office hours, we planned on fixing the pernum/aug position classes in the customization system by making the aug pc obligatory and adding aug as an input to the pernum pc. However, after attempting to do this, we realized it was a bit more complicated and it doesn't really make sense to make the aug pc obligatory. There are 2 routes a verb can take, depending on if the subject is min or aug:
       1. min: pernum-(tr)-tense-root
       2: aug: pernum-tense-aug-(tr)-root
     If the aug pc is obligatory, it would create issues with the way that the tr and tense pcs work for min subjects. We couldn't think of a way to fix this. We looked into doing something with the aug-flag, since that is what should make sure that all verbs with aug subjects go through the aug pc but weren't able to solve it.
@@ -111,7 +113,7 @@ MMT Sentences
                                         CASE abs ] ],
                             CONT.HOOK.INDEX.PNG.PERNUM 3min ] ] ] ] ] ].
 
-    This allowed the sentence to be translated with 8 results. However, in 4 of these results, the verb was incorrectly taking jina as a complement. We posted to canvas about it and were told to make the the PP complement of the verb have [ COMPS < > ] but were unable to figure out how to do that.
+    This allowed the sentence to be translated with 8 results. However, in 4 of these results, the verb was incorrectly taking "jina" as a complement. We posted to canvas about it and were told to make the the PP complement of the verb have [ COMPS < > ] but were unable to figure out how to do that.
 19. 0 results
     This sentence doesn't parse because this kind of possession doesn't work yet.
 20. 0 results
