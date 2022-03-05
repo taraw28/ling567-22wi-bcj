@@ -1154,13 +1154,3 @@ Iilanim irroongoorribirri.
 iila-nim i-rr-oo-ngoorribi-rri
 dog-ERG 3-AUG-TR-chase-2MIN.DO
 `Dogs chase you.'
-
-#116 vp coordination
-Source: author
-Vetted: f
-Judgement: g
-Phenomena: coord
-Aarlinim iila irroongoorribiirr agal irrjarrmi.
-aarli-nim iila i-rr-oo-ngoorribi-irr agal i-rr-jarrmi
-cat-ERG dog 3AUG-AUG-TR-chase-3AUG and 3AUG-AUG-sleep
-`Cats chase dogs and sleep.'

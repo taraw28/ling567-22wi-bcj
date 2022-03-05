@@ -138,6 +138,7 @@
     - 8 results
       - 4 of these results have the verb taking jina as a complement, which is incorrect
       - asked on canvas but probably won't hear back in time
+  - 8 results from sje; same as with eng
 19
   - doesn't parse because this kind of possession doesn't work yet
 20
