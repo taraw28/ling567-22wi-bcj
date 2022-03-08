@@ -27,12 +27,5 @@ git pull
 - changed sleep_v_rel (for daag) to sleeps_v_rel
 - changed it-abs get.up_v_rel to sleep_v_rel
 
-## To Ask on Canvas
-- q-pronoun thing
-- how to get coordinated phrases to not go through loc-pp
-- how to get VP coord
-- how to get coordinated phrases to not all go through basic-head-opt-subj
-- how to get coordinated phrases to not all go through noun-predicate
-
 ## Things to Fix
 - need to fix underspecified MOD values
