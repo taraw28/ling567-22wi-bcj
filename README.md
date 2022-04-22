@@ -2,6 +2,7 @@
 Hanieh Nezakati + Tara Wueger
 
 Link to the [LinGO Grammar Matrix](https://matrix.ling.washington.edu/customize/matrix.cgi)
+
 Link to [LING 567 Labs](http://courses.washington.edu/ling567/)
 
 ## Labs
