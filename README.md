@@ -1,14 +1,9 @@
-# LING 567 - Bardi (bcj)
+# LING 567 - Spring 2022 - Bardi (bcj)
 Hanieh Nezakati + Tara Wueger
 
-## Git Commands
-```
-git add .
-git commit -m "commit message"
-git push
+Link to the [LinGO Grammar Matrix](https://matrix.ling.washington.edu/customize/matrix.cgi)
 
-git pull
-```
+Link to [LING 567 Labs](http://courses.washington.edu/ling567/)
 
 ## Labs
 - [Lab 2](labs/lab2/README.md)
